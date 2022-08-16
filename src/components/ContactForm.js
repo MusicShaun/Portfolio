@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBlack, colorBlue, colorGrey, colorSand, colorCream, colorWhite,colorSoftYellow } from '../helpers/colors';
+import { colorGrey, colorSand, colorCream, } from '../helpers/colors';
 
 
 export default function ContactForm() {
