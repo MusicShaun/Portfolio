@@ -149,7 +149,7 @@ export default function About_text (props) {
 
 {/*  9th 9th 9th  */}
     <Partition style={{justifyContent: 'flex-end', marginBottom: ' 220px'}}>
-      <RightText>
+      <RightText style={{maxWidth: '100%'}}>
         9 I didn't study coding at Uni or a bootcamp. I didn't study because a 
         lecturer required me to complete an assignment or because I needed to pass.
 
@@ -162,7 +162,7 @@ export default function About_text (props) {
 
 {/*  10 10 10 10 */}
     <Partition style={{width: '100%', marginBottom: ' 80px'}}>
-      <LeftText style={{maxWidth: '100%'}}>
+      <LeftText style={{maxWidth: '100%', textAlign: 'center'}}>
         10 I studied because I wanted to. I studied because I see coding as my long term 
         future and because I'm a ridiculously passionate person.
       </LeftText>

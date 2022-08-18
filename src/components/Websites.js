@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-import { colorBlack, colorBlue, colorWhite,colorSoftYellow } from '../helpers/colors';
+import { colorBlack, colorBlue, colorWhite,colorSoftYellow, colorSand } from '../helpers/colors';
+import face from '../img/Belvoire.jpg'
+import column from '../img/columnsdesign.png';
+import mastering from '../img/mastering.png';
+import banana from '../img/bananashop.png';
+
 
 export default function Websites() {
 
@@ -9,33 +14,65 @@ export default function Websites() {
   return (
     <Wrapper>
     <BigBorder>
-      <H1>Apps</H1>
+      <H1>Projects</H1>
       <UnorderedList>
 
-      <Link to='/websites/banana-shop' style={{textDecoration: 'none'}}>
-        <Headings>Banana Shop - react</Headings>
-      </Link>
-      <NewTab><AA target='_blank' href='https://playful-pudding-43fa23.netlify.app'>Open in new tab</AA></NewTab>
+        <ListItem style={{justifyContent: 'flex-start'}}
+          target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
+          <WebImage style={{backgroundImage: `url(${banana})`}}/>
+          <Text>
+            <H3>
+              Banana Shop
+            </H3>
+            <Para>i wrote hi for etc etc etc </Para>
+          </Text>
+        </ListItem>
 
-      <Link to='/websites/todo-list' style={{textDecoration: 'none'}}>
-        <Headings>Todo List - react</Headings>
-      </Link>
-      <NewTab><AA target='_blank' href='https://playful-pudding-43fa23.netlify.app'>Open in new tab</AA></NewTab>
+        <ListItem style={{justifyContent: 'flex-end'}}
+           target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
+          <Text>
+            <H3>
+              Todo List
+            </H3>
+            <Para>i wrote hi for etc etc etc </Para>
+          </Text>
+          <WebImage style={{backgroundImage: `url(${banana})`}}/>
+        </ListItem>
 
-      <Link to='/websites/quiz' style={{textDecoration: 'none'}}>
-        <Headings>Quiz - react</Headings>
-      </Link>
-      <NewTab><AA target='_blank' href='https://elegant-pony-0acf58.netlify.app'>Open in new tab</AA></NewTab>
+        <ListItem style={{justifyContent: 'flex-start'}}
+           target='_blank' href='https://elegant-pony-0acf58.netlify.app'>
+          <WebImage style={{backgroundImage: `url(${banana})`}}/>
+          <Text>
+            <H3>
+            Quiz
+            </H3>
+            <Para>i wrote hi for etc etc etc </Para>
+          </Text>
+        </ListItem>
 
-      <Link to='/websites/mastering' style={{textDecoration: 'none'}}>
-        <Headings>My Mastering Website</Headings>
-      </Link>
-      <NewTab><AA target='_blank' href='https://www.digital-bath-studio.com/'>Open in new tab</AA></NewTab>
+        <ListItem style={{justifyContent: 'flex-end'}}
+          target='_blank' href='https://www.digital-bath-studio.com/'>
+          <Text>
+            <H3>
+              Mastering Website
+            </H3>
+            <Para>My personal </Para>
+          </Text>
+          <WebImage style={{backgroundImage: `url(${mastering})`}}/>
+        </ListItem>
 
-      <Link to='/websites/columns' style={{textDecoration: 'none'}}>
-        <Headings>Delicious Website template</Headings>
-      </Link>
-      <NewTab><AA target='_blank' href='https://creative-cactus-5109fd.netlify.app/'>Open in new tab</AA></NewTab>
+        <ListItem style={{justifyContent: 'flex-start'}}
+           target='_blank' href='https://creative-cactus-5109fd.netlify.app/'>
+          <WebImage style={{backgroundImage: `url(${column})`}}/>
+          <Text>
+            <H3>
+               Delicious Navigation Style
+            </H3>
+            <Para>i wrote hi for etc etc etc </Para>
+          </Text>
+        </ListItem>
+
+
 
       </UnorderedList>
       </BigBorder>
@@ -63,43 +100,52 @@ const BigBorder = styled.div`
   background-color: ${colorWhite}; 
 `;
 const UnorderedList = styled.ul`
-  text-decoration:none;
+  width: 90%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 `;
 const H1 = styled.h1`
   margin: 0 ;
   padding: 0;
   font-size: 3rem;
   text-decoration: underline;
-`;
-const Headings = styled.li`
-  font-size: 2rem;
-  padding: 1.5rem;
-  margin: 0;
-  line-height: 0rem;
-  border-radius: 10px;
-  text-decoration:none;
-  color: black;
-  &:hover {
-    color: ${colorSoftYellow};
-    background-color: ${colorBlue};
-  }
-`;
-const NewTab = styled.div`
-  text-decoration:none;
   color: ${colorBlack};
-  margin-bottom: 1rem;
 `;
-
-const AA = styled.a`
-  text-decoration:none;
-  padding: 0.3rem 2rem;
-  line-height: 0rem;
-  margin: 0;
-  border-radius: 10px;
-  color: black;
+const ListItem = styled.a`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  color: ${colorBlack};
+  text-decoration: none;
+  border-bottom: 3px solid ${colorSoftYellow};
   &:hover {
-    color: ${colorSoftYellow};
-    background-color: ${colorBlue};
+    color: ${colorBlue};
+    background-color: ${colorSand};
+    cursor: pointer;
   }
+`;
+const Text = styled.div`
+  padding: 0 1rem;
+`;
+const H3 = styled.li`
+
+
+`;
+const Para = styled.p`
+  font-size: 1rem;
+  color: ${colorBlack};
+`;
+const WebImage = styled.div`
+  width: 178px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 

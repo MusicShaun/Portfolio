@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-
+import {device} from '../../helpers/screenSizes';
 
 export default function WebsiteSVG(props) {
 
 
   return (
-    <SVG    style={{width: `${props.IconSize}`, height: `${props.IconSize}`}}
+    <SVG  
     viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10"></circle>
     <circle cx="12" cy="12" r="4"></circle>
@@ -26,5 +26,10 @@ const SVG = styled.svg`
     stroke-linecap:round ;
     stroke-linejoin:round;
     margin-right: 0.8rem;
-
+    width: 32px;
+    height: 32px;
+    ${device.laptop} {
+      width: 25px;
+      height: 25px;
+    }
 `;

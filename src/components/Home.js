@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream } from '../helpers/colors';
+import { colorCream } from '../helpers/colors';
+import device from '../helpers/screenSizes';
 
 export default function Home () {
+
   return (
     <Wrapper>
       <Container>

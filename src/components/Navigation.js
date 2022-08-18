@@ -9,8 +9,8 @@ import Instagram from '../img/SVGs/Instagram';
 import Github from '../img/SVGs/Github';
 import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
+import {device} from '../helpers/screenSizes';
 
-const IconSize = '32px';
 
 export default function Navigation(){
 
@@ -23,34 +23,35 @@ export default function Navigation(){
         </Link> 
         <Name>Shaun Pickett</Name>
         <p style={{fontSize: '0.8rem'}}>Novice Developer</p>
+        <p style={{fontSize: '0.8rem', lineHeight: '0rem', margin: '0rem'}}>0412 220 332</p>
       </HeroImage>
 
       <NavigationPane>
         <UnorderedList>
           <Link to='/' style={{textDecoration: 'none'}}>
             <ListItem>
-              <HomeSVG   IconSize={IconSize} />
+              <HomeSVG  />
                 Home
             </ListItem>
           </Link>
 
           <Link to='/about' style={{textDecoration: 'none'}}>
             <ListItem>
-              <AboutSVG    IconSize={IconSize}  />
+              <AboutSVG  />
                 About
             </ListItem>
           </Link>
 
           <Link to='/Websites' style={{textDecoration: 'none'}}>
             <ListItem>
-              <WebsiteSVG   IconSize={IconSize} />
-                Apps
+              <WebsiteSVG />
+                Projects
             </ListItem>
           </Link>
 
           <Link to='/contact' style={{textDecoration: 'none'}}>
             <ListItem>
-              <MailSVG  IconSize={IconSize} />
+              <MailSVG  />
                 Contact
             </ListItem>
           </Link>
@@ -59,9 +60,9 @@ export default function Navigation(){
       </NavigationPane>
 
       <Footer>
-        <FootList><Facebook IconSize={IconSize}/></FootList>
-        <FootList><Github IconSize={IconSize} /></FootList>
-        <FootList><Instagram IconSize={IconSize} /></FootList>
+        <FootList><Facebook /></FootList>
+        <FootList><Github /></FootList>
+        <FootList><Instagram /></FootList>
       </Footer>
 
     </Wrapper>
@@ -92,6 +93,16 @@ const Profile = styled.div`
   border: 2px solid ${colorWhite};
   background-image: url(${profilePic});
   background-size: contain;
+  background-repeat: no-repeat;
+  ${device.laptopL} {
+    width: 9em; 
+    height: 9em; 
+    margin-top: 1rem;
+  }
+  ${device.laptop} {
+    width: 7.5em; 
+    height: 7.5em; 
+  }
 `;
 const Name = styled.h3`
   margin: 2rem 0 0 0 ;
@@ -126,11 +137,13 @@ const ListItem = styled.li`
   gap: 1rem;
   text-decoration: none;
   transition: all 0.1s ease-out;
-
   &:hover {
     background-color: ${colorSand};
     color: hsl(40, 3%, 17%);
     transition: all 0.1s ease-out;
+  }
+  ${device.laptop} {
+    font-size: 1.1rem;
   }
 `;
 const Footer = styled.div`
