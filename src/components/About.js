@@ -9,31 +9,33 @@ import backer from '../img/backer.jpg';
 export default function About () {
 
   const [scrollState, setScrollState] = useState(0);
+  const [pageHeight, setPageHeight] = useState(0)
 
   function handleScroll(e) {
-    // console.log('scrollTop: ', e.currentTarget.scrollTop);
-    // console.log('offsetHeight: ', e.currentTarget.offsetHeight);
+    // console.log('div height!: ', e.currentTarget.scrollHeight - e.target.offsetHeight);
     const position = e.currentTarget.scrollTop;
+    const size = e.currentTarget.scrollHeight - e.target.offsetHeight;
     setScrollState(position);
+    setPageHeight(size)
   };
-
 
 
   return (
     <Wrapper>
       <Container>
-        <Text  onScroll={handleScroll} >
+        <Text  onScroll={handleScroll}>
 
         <Hone>I've been a musician my whole life.</Hone>
-          <Stage>
-            <Shots style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
+
+          <Stage><Shots style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
           </Stage>
 
           <ParallaxContainer>
             <Parallax style={{transform: `translateY(${0.7 * scrollState}px)`}}/>
           </ParallaxContainer>
 
-          <About_text scrollState={scrollState}/>
+          <About_text scrollState={scrollState}  pageHeight={pageHeight}/>
+
         </Text>
 
 
@@ -83,15 +85,15 @@ const Stage = styled.div`
   display: flex;
   flex-direction: row;
   z-index: 2;
-  margin-bottom: 8rem;
   overflow: hidden;
 `;
 const Shots = styled.div`
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px ;
   background-position: 0px -110px;
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const ParallaxContainer = styled.div`
@@ -102,7 +104,7 @@ const ParallaxContainer = styled.div`
 `;
 const Parallax = styled.div`
   position: relative;
-  height: 100%;
+  height: 180%;
   width: 100%;
   background-position: top;
   background-repeat: repeat;

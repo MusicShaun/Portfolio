@@ -36,7 +36,7 @@ export default function Navigation(){
 
           <Link to='/about' style={{textDecoration: 'none'}}>
             <ListItem>
-              <AboutSVG   IconSize={IconSize} />
+              <AboutSVG    IconSize={IconSize}  />
                 About
             </ListItem>
           </Link>
