@@ -10,13 +10,17 @@ import Github from '../img/SVGs/Github';
 import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 
+const IconSize = '32px';
+
 export default function Navigation(){
 
 
   return (
     <Wrapper>
       <HeroImage> 
-        <Profile />
+        <Link to='/' style={{textDecoration: 'none'}}>
+          <Profile />
+        </Link> 
         <Name>Shaun Pickett</Name>
         <p style={{fontSize: '0.8rem'}}>Novice Developer</p>
       </HeroImage>
@@ -25,28 +29,28 @@ export default function Navigation(){
         <UnorderedList>
           <Link to='/' style={{textDecoration: 'none'}}>
             <ListItem>
-              <HomeSVG />
+              <HomeSVG   IconSize={IconSize} />
                 Home
             </ListItem>
           </Link>
 
           <Link to='/about' style={{textDecoration: 'none'}}>
             <ListItem>
-              <AboutSVG />
+              <AboutSVG   IconSize={IconSize} />
                 About
             </ListItem>
           </Link>
 
           <Link to='/Websites' style={{textDecoration: 'none'}}>
             <ListItem>
-              <WebsiteSVG />
+              <WebsiteSVG   IconSize={IconSize} />
                 Apps
             </ListItem>
           </Link>
 
           <Link to='/contact' style={{textDecoration: 'none'}}>
             <ListItem>
-              <MailSVG />
+              <MailSVG  IconSize={IconSize} />
                 Contact
             </ListItem>
           </Link>
@@ -55,9 +59,9 @@ export default function Navigation(){
       </NavigationPane>
 
       <Footer>
-        <FootList><Facebook /></FootList>
-        <FootList><Github /></FootList>
-        <FootList><Instagram /></FootList>
+        <FootList><Facebook IconSize={IconSize}/></FootList>
+        <FootList><Github IconSize={IconSize} /></FootList>
+        <FootList><Instagram IconSize={IconSize} /></FootList>
       </Footer>
 
     </Wrapper>
@@ -69,6 +73,8 @@ export default function Navigation(){
 const Wrapper = styled.div`
   height: 100%;
   background-color: hsl(40, 3%, 17%);
+  display: flex;
+  flex-direction: column;
 `;
 const HeroImage = styled.div`
   width: 100%;
@@ -80,9 +86,8 @@ const HeroImage = styled.div`
   color: white;
 `;
 const Profile = styled.div`
-  width: 8em; 
-  height: 8em; 
-  margin-top: 1rem;
+  width: 11em; 
+  height: 11em; 
   border-radius: 50%;
   border: 2px solid ${colorWhite};
   background-image: url(${profilePic});
@@ -97,6 +102,7 @@ const Name = styled.h3`
 const NavigationPane = styled.div`
   width: 100%;
   height: 50%;
+  max-height: 450px;
 `;
 const UnorderedList = styled.ul`
   list-style: none;
@@ -119,24 +125,27 @@ const ListItem = styled.li`
   color: white;
   gap: 1rem;
   text-decoration: none;
+  transition: all 0.1s ease-out;
 
   &:hover {
     background-color: ${colorSand};
     color: hsl(40, 3%, 17%);
+    transition: all 0.1s ease-out;
   }
 `;
 const Footer = styled.div`
   width: 100%;
-  height: 15%;
+  min-height: 15%;
+  margin-top: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.5rem;
 `;
 const FootList = styled.div`
   position: relative;
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
   display: flex ;
   justify-content: center;
   height: 60px;
@@ -161,7 +170,7 @@ const FootList = styled.div`
   transition: all .2s ease-in-out;
   }
   &:hover {
-    background-color: ${colorWhite}; 
+    background-color: ${colorSand}; 
   }
   &:hover:after {
     opacity: 1;  

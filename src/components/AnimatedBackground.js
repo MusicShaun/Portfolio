@@ -86,10 +86,10 @@ const Sun = styled.div`
 `;
 const SettingSun = styled.div`
   position: absolute;
-  left: -40%;
+  left: -44%;
   top: 15%;
-  width: 180%;
-  height: 150%;
+  width: 200%;
+  height: 200%;
   z-index: -2;
   background:radial-gradient(circle at 11% 50%, rgba(255, 75, 0, 1) 0%, rgba(0, 188, 212, 0) 31%, rgba(238, 130, 238, 0) 100%);
   animation: sunMovement2 ${dayLength} linear infinite;
@@ -138,7 +138,7 @@ const MoonContainer = styled.div`
 const Moon = styled.div`
   width: 20%;
   height: 20%;
-  opacity: 0.9;
+  filter: brightness(0.85);
   background-size: contain;
   background-image: url(${moon});
   background-repeat: no-repeat;
@@ -154,8 +154,10 @@ const StaticBackground = styled.div`
     0% {
       opacity: 0;
     } 25% {
-      opacity: 0.9;
+      opacity: 1;
     } 75% {
+      opacity: 0;
+    } 100% {
       opacity: 0;
   }
 }
@@ -169,11 +171,16 @@ const Dawn = styled.div`
   animation: dawn ${dayLength} linear infinite;
   @keyframes dawn {
     0% {
-      opacity: 0.7; }
+      opacity: 0.3; }
+    5% {
+      opacity: 1; }
     10% {
       opacity: 0;}
-    90% {
+    95% {
       opacity: 0} 
+    100% {
+      opacity: 0.3;
+    }  
   }
 `;
 const Sunset = styled.div`
@@ -205,15 +212,16 @@ const Night = styled.div`
   animation: nightChange ${dayLength} linear infinite;
   @keyframes nightChange {
     0% {
+      opacity: 1; }
+    10% {
       opacity: 0; }
     45% {
       opacity: 0;}
     55% {
       opacity: 1} 
-    90% {
-      opacity: 1;}
+
     100% {
-      opacity: 0} 
+      opacity: 1} 
   }
 `;
 

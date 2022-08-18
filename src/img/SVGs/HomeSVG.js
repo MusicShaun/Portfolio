@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 
-export default function HomeSVG() {
+export default function HomeSVG(props) {
 
 
   return (
-    <SVG  viewBox="0 0 24 24">
+    <SVG   style={{width: `${props.IconSize}`, height: `${props.IconSize}`}}
+    viewBox="0 0 24 24">
     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
     <polyline points="9 22 9 12 15 12 15 22"></polyline>
 </SVG>
@@ -13,8 +14,6 @@ export default function HomeSVG() {
 }
 
 const SVG = styled.svg`
-    width: 25px;
-    height:25px;
     fill:none;
     stroke:white ;
     stroke-width:2 ;

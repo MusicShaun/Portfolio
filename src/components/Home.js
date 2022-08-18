@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import pizza from '../img/pizza.jpeg';
-import { colorCream } from '../helpers/colors';
+import { colorBlack, colorCream } from '../helpers/colors';
 
 export default function Home () {
   return (
@@ -11,7 +10,6 @@ export default function Home () {
           <SubHeader>My name is Shaun.</SubHeader>
           <SubHeader>Please take a look around.</SubHeader>
         </Text>
-        <BackIMG />
       </Container>
     </Wrapper>
   )
@@ -25,14 +23,18 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${colorCream};
+  border: 16px solid ${colorCream}; 
 `;
 const Container = styled.div`
-  width: 98%;
-  height: 98%;
+  position: absolute;
+  width: 99%;
+  height: 99%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 20px solid ${colorCream};
+  border-radius: 40px;
+  box-sizing: content-box;
 `;
 const Text = styled.div`
   width: 100%;
@@ -43,23 +45,15 @@ const Text = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-const BackIMG = styled.img`
-  position: absolute;
-  width: 98%;
-  height: 98%;
-  background-image: url(${pizza});
-  background-size: cover;
-  filter: contrast(50%);
-`;
 const Header = styled.h1`
   margin: 1rem;
   color: ${colorCream};
-  font-size: 3rem;
+  font-size: 4rem;  
 `;
 const SubHeader = styled.p`
   margin: 0;
   line-height: 1.8rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: ${colorCream};
 `;

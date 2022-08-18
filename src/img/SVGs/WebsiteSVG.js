@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 
-export default function WebsiteSVG() {
+export default function WebsiteSVG(props) {
 
 
   return (
-    <SVG  viewBox="0 0 24 24">
+    <SVG    style={{width: `${props.IconSize}`, height: `${props.IconSize}`}}
+    viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10"></circle>
     <circle cx="12" cy="12" r="4"></circle>
     <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
@@ -18,8 +19,7 @@ export default function WebsiteSVG() {
 }
 
 const SVG = styled.svg`
-    width: 25px;
-    height:25px;
+
     fill:none;
     stroke:white ;
     stroke-width:2 ;

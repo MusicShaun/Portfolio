@@ -1,41 +1,43 @@
 import styled from "styled-components";
+import {colorCream, colorGrey } from '../helpers/colors';
+import About_text from "./About_text";
+import { useState, useEffect } from 'react'; 
 import StageShot from '../img/big-stage.jpeg';
-import { colorBlack, colorCream, colorGrey } from '../helpers/colors';
-
+import JustFriends2 from '../img/just-friends-2.jpg';
+import backer from '../img/backer.jpg';
 
 export default function About () {
+
+  const [scrollState, setScrollState] = useState(0);
+
+  function handleScroll(e) {
+    // console.log('scrollTop: ', e.currentTarget.scrollTop);
+    // console.log('offsetHeight: ', e.currentTarget.offsetHeight);
+    const position = e.currentTarget.scrollTop;
+    setScrollState(position);
+  };
+
+
 
   return (
     <Wrapper>
       <Container>
-        <Stage>
-          <Shots style={{ backgroundImage: `url(${StageShot})`}} />
-        </Stage>
+        <Text  onScroll={handleScroll} >
 
-        <Header>I've been a musician my whole life.
-        <br />Specialising in audio engineering and audio production.
-          <br /><span style={{ borderBottom: `1px solid ${colorGrey}`}}>Until COVID.</span>
-        </Header>
+        <Hone>I've been a musician my whole life.</Hone>
+          <Stage>
+            <Shots style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
+          </Stage>
 
-        <Paragraphs>
-          <Words>
-            The world shuts down and along with it, music, theatre, touring etc. 
-          <br />In less than a week, all my income streams had vanished and in case you're wondering, musicians aren't cashing in redundancy payouts. 
-          <br />However, this exposes a new opportunity. 
-            To find something just as challenging and exciting.
-            As it turns out, coding is very challenging, creative and incredibly satisfying.
-            <br />Now I am but a novice, with much to learn and much to create.
-          </Words>
-          <Words>
-          I hope to find myself as a humble intern, side by side with the pro's in this field, building apps, 
-            games, solving problems, you name it.
-            <br />I didn't study coding at Uni or a bootcamp. I didn't study because a lecturer required me to complete an assignment or because 
-            I needed to pass.
+          <ParallaxContainer>
+            <Parallax style={{transform: `translateY(${0.7 * scrollState}px)`}}/>
+          </ParallaxContainer>
 
-            <br />I studied because I wanted to.
-            I studied because I see coding as my long term future and because I'm a ridiculously passionate person.
-          </Words>
-        </Paragraphs>
+          <About_text scrollState={scrollState}/>
+        </Text>
+
+
+
 
       </Container>
     </Wrapper>
@@ -57,46 +59,55 @@ const Container = styled.div`
   height: 98%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
-  border: 1px solid ${colorBlack};
+  overflow: hidden;
+`;
+const Text = styled.div`
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: ${colorCream}; */
+  overflow: hidden auto;
+`;
+const Hone = styled.h1`
+  margin: 15%;
+  font-size: 2.6rem;
 `;
 const Stage = styled.div`
+  position: relative;
   width: 100%;
-  height: 200px;
-  left: 0;
-  top: 0;
-  min-height: 200px;
+  min-height: 500px;
   display: flex;
   flex-direction: row;
+  z-index: 2;
+  margin-bottom: 8rem;
+  overflow: hidden;
 `;
 const Shots = styled.div`
-  background-position: 0px -85px;
+  border-radius: 10px 10px 0 0;
+  background-position: 0px -110px;
   width: 100%;
   height: 100%;
   background-size: cover;
 `;
-const Header = styled.div`
-  margin-top: 2rem;
-  width: 80%;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  white-space: nowrap;
-`;
-const Paragraphs = styled.div`
+
+const ParallaxContainer = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100%;
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
-  font-size: 0.9rem;
 `;
-const Words = styled.p`
-  width: 40%;
-  line-height: 1.4rem;
-  white-space: pre-wrap;
+const Parallax = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+  background-image: url(${backer});
+  opacity: 0.3;
+  filter:contrast(70%) brightness(300%)
 `;

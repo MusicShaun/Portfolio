@@ -4,14 +4,13 @@ import Navigation from './Navigation';
 import { Routes , Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
-import Game from './Game';
 import Websites from './Websites';
-import BananaShop from './BananaShop';
-import TodoList from './TodoList';
+import BananaShop from './iFrames/BananaShop';
+import TodoList from './iFrames/TodoList';
 import Contact from './Contact';
-import Mastering from './Mastering';
-import Quiz from './Quiz';
-import Columns from './Columns';
+import Mastering from './iFrames/Mastering';
+import Quiz from './iFrames/Quiz';
+import Columns from './iFrames/Columns';
 
 export default function WindowContainer() {
 
@@ -30,7 +29,6 @@ export default function WindowContainer() {
           <Routes>
             <Route path='/' element={ <Home />} />
             <Route path='/about' element={ <About />} />
-            <Route path='/game' element={ <Game />} />
             <Route path='/websites' element={ <Websites />} />
             <Route path='/websites/banana-shop' element={ <BananaShop /> } />              
             <Route path='/websites/todo-list' element={ <TodoList /> } />              
@@ -63,7 +61,6 @@ const Container = styled.div`
   width: 75%;
   height: 85%;
   display: flex;
-  background-color: white;
 `;
 const LeftSide = styled.div`
   width: 320px;
