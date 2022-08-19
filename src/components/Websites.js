@@ -29,7 +29,7 @@ export default function Websites() {
         </ListItem>
 
         <ListItem style={{justifyContent: 'flex-end'}}
-           target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
+           target='_blank' href='https://marvelous-kheer-2d615e.netlify.app/'>
           <Text>
             <H3>
               Todo List
@@ -40,7 +40,7 @@ export default function Websites() {
         </ListItem>
 
         <ListItem style={{justifyContent: 'flex-start'}}
-           target='_blank' href='https://elegant-pony-0acf58.netlify.app'>
+           target='_blank' href='https://elegant-pony-0acf58.netlify.app/'>
           <WebImage style={{backgroundImage: `url(${banana})`}}/>
           <Text>
             <H3>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {colorCream, colorGrey } from '../helpers/colors';
 import About_text from "./About_text";
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect, useRef , useCallback} from 'react'; 
 import StageShot from '../img/big-stage.jpeg';
 import JustFriends2 from '../img/just-friends-2.jpg';
 import backer from '../img/backer.jpg';
@@ -10,20 +10,93 @@ export default function About () {
 
   const [scrollState, setScrollState] = useState(0);
   const [pageHeight, setPageHeight] = useState(0)
+  const [scrollDir, setScrollDir] = useState(true);
+
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollTo(0, 1000);
+
+  const firstScrollDestination = ((pageHeight / 100) * 17)
+  const secondScrollDestination = ((pageHeight / 100) * 45)
+  const thirdScrollDestination = ((pageHeight / 100) * 71)
+  const lastScrollDestination = (pageHeight)
+
+  //DETERMINE SCROLL DIRECTION
+  useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = myRef.current.scrollTop;
+    let ticking = false;
+    const updateScrollDir = () => {
+      const scrollY = myRef.current.scrollTop;
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollDir(scrollY > lastScrollY ? true : false);
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
+    };
+    myRef.current.addEventListener("scroll", onScroll);
+    console.log(scrollDir);
+    return () => myRef.current.removeEventListener("scroll", onScroll);
+  }, [scrollDir]);
+
+
 
   function handleScroll(e) {
-    // console.log('div height!: ', e.currentTarget.scrollHeight - e.target.offsetHeight);
     const position = e.currentTarget.scrollTop;
     const size = e.currentTarget.scrollHeight - e.target.offsetHeight;
+    const window = e.currentTarget;
     setScrollState(position);
     setPageHeight(size)
+
+
+    // Apply AUTO SCROLLING
+    //PAGE 1
+    if (Math.floor((100 /pageHeight) * scrollState) === 5 && scrollDir) {
+      executeScroll();
+      myRef.current.scrollTo(0, firstScrollDestination)
+    } 
+    if (Math.floor((100 /pageHeight) * scrollState) === 14 && !scrollDir) {
+      executeScroll();
+      myRef.current.scrollTo(0, 0)
+    } 
+    //PAGE 2
+    if (Math.floor((100 /pageHeight) * scrollState) === 26 && scrollDir ) {
+      executeScroll();
+      myRef.current.scrollTo(0, secondScrollDestination)
+    }  else if (Math.floor((100 /pageHeight) * scrollState) === 35 && !scrollDir) {
+      executeScroll();
+      myRef.current.scrollTo(0, firstScrollDestination)
+    } 
+    //PAGE 3
+    if (Math.floor((100 /pageHeight) * scrollState) === 52 && scrollDir ) {
+      executeScroll();
+      myRef.current.scrollTo(0, thirdScrollDestination)
+    }  else if (Math.floor((100 /pageHeight) * scrollState) === 66 && !scrollDir) {
+      executeScroll();
+      myRef.current.scrollTo(0, secondScrollDestination)
+    } 
+    //PAGE 4
+    if (Math.floor((100 /pageHeight) * scrollState) === 82 && scrollDir ) {
+      executeScroll();
+      myRef.current.scrollTo(0, lastScrollDestination)
+    } else if (Math.floor((100 /pageHeight) * scrollState) === 90 && !scrollDir) {
+      executeScroll();
+      myRef.current.scrollTo(0, thirdScrollDestination)
+    } 
   };
 
 
   return (
     <Wrapper>
       <Container>
-        <Text  onScroll={handleScroll}>
+        <Text  onScroll={handleScroll} ref={myRef} >
 
         <Hone>I've been a musician my whole life.</Hone>
 
@@ -37,9 +110,6 @@ export default function About () {
           <About_text scrollState={scrollState}  pageHeight={pageHeight}/>
 
         </Text>
-
-
-
 
       </Container>
     </Wrapper>
@@ -71,7 +141,6 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: ${colorCream}; */
   overflow: hidden auto;
 `;
 const Hone = styled.h1`
@@ -109,7 +178,7 @@ const Parallax = styled.div`
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  background-image: url(${backer});
+  /* background-image: url(${backer}); */
   opacity: 0.3;
   filter:contrast(70%) brightness(300%)
 `;

@@ -15,8 +15,9 @@ import Columns from './iFrames/Columns';
 export default function WindowContainer() {
 
 
+
   return (<>
-    <AnimatedBackground />
+    {/* <AnimatedBackground /> */}
     
     <Wrapper>
       <Container>
