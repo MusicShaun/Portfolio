@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: -3;
 `;
 const SunSpot = styled.div`
   position: absolute;

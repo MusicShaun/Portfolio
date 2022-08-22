@@ -11,13 +11,24 @@ import Contact from './Contact';
 import Mastering from './iFrames/Mastering';
 import Quiz from './iFrames/Quiz';
 import Columns from './iFrames/Columns';
+import Loader from './Loader';
+import { useState , useEffect } from 'react'; 
 
 export default function WindowContainer() {
-
-
+  const [loading, setLoading] = useState(false);
+  const handleLoading = () => {
+    setLoading(false); 
+  }
+  useEffect(() => {
+    window.addEventListener('load', handleLoading);
+    return () => window.removeEventListener('load', handleLoading);
+  }, [])
 
   return (<>
-    {/* <AnimatedBackground /> */}
+  
+  {loading ? <Loader /> : <>
+
+    <AnimatedBackground />
     
     <Wrapper>
       <Container>
@@ -29,7 +40,9 @@ export default function WindowContainer() {
         <RightSide>
           <Routes>
             <Route path='/' element={ <Home />} />
-            <Route path='/about' element={ <About />} />
+            
+            <Route path='/about' element={<About />} />
+            
             <Route path='/websites' element={ <Websites />} />
             <Route path='/websites/banana-shop' element={ <BananaShop /> } />              
             <Route path='/websites/todo-list' element={ <TodoList /> } />              
@@ -42,8 +55,8 @@ export default function WindowContainer() {
         </RightSide>
 
       </Container>
-    </Wrapper>
-
+    </Wrapper></>
+  }
   </>)
 }
 

@@ -6,7 +6,7 @@ import arrow from '../img/arrow.png';
 const animator = keyframes`${flipInX}`;
 
 
-export default function Home () {
+export default function Home (props) {
 
   const [showHeader, setShowHeader] = useState(false);
   const [showSubHeader, setShowSubHeader] = useState(false);
@@ -22,18 +22,20 @@ export default function Home () {
     }, 2300);
     const intervalID3 = setInterval(() => {
       setShowSubHeader2(true)
-    }, 2700);
+    }, 3100);
     const intervalID4 = setInterval(() => {
       setShowSubHeader3(true)
-    }, 6000);
+    }, 7000);
     return (() => clearInterval(intervalID),   
             () => clearInterval(intervalID2),  
             () => clearInterval(intervalID3),
             () => clearInterval(intervalID4))
   }, [])
 
-  return (
+  return (<>
+
     <Wrapper>
+    <BorderClose/>
       <Container>
         <Text>
 
@@ -46,7 +48,7 @@ export default function Home () {
         </Text>
       </Container>
     </Wrapper>
-  )
+    </>)
 }
 
 
@@ -69,6 +71,14 @@ const Container = styled.div`
   border: 20px solid ${colorCream};
   border-radius: 40px;
   box-sizing: content-box;
+`;
+const BorderClose  = styled.div`
+position: absolute;
+width: 99%;
+height: 99%;
+border: 10px solid ${colorCream};
+box-sizing: content-box;
+border-radius: 10px;
 `;
 const Text = styled.div`
   width: 100%;

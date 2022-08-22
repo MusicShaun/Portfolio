@@ -1,20 +1,21 @@
 import styled from "styled-components";
-import {colorCream, colorGrey } from '../helpers/colors';
-import About_text from "./About_text";
-import { useState, useEffect, useRef , useCallback} from 'react'; 
+import {colorCream } from '../helpers/colors';
+import AboutText from "./AboutText";
+import { useState, useEffect, useRef} from 'react'; 
 import StageShot from '../img/big-stage.jpeg';
-import JustFriends2 from '../img/just-friends-2.jpg';
 import backer from '../img/backer.jpg';
+import Loader from './Loader';
+
 
 export default function About () {
 
   const [scrollState, setScrollState] = useState(0);
   const [pageHeight, setPageHeight] = useState(0)
   const [scrollDir, setScrollDir] = useState(true);
-
   const myRef = useRef(null);
   const executeScroll = () => myRef.current.scrollTo(0, 1000);
 
+  // HANDLE WHERE THE PAGE AUTO SCROLLS TOO
   const firstScrollDestination = ((pageHeight / 100) * 17)
   const secondScrollDestination = ((pageHeight / 100) * 45)
   const thirdScrollDestination = ((pageHeight / 100) * 71)
@@ -23,10 +24,11 @@ export default function About () {
   //DETERMINE SCROLL DIRECTION
   useEffect(() => {
     const threshold = 0;
-    let lastScrollY = myRef.current.scrollTop;
+    const aboutElement = myRef.current;
+    let lastScrollY = aboutElement.scrollTop;
     let ticking = false;
     const updateScrollDir = () => {
-      const scrollY = myRef.current.scrollTop;
+      const scrollY = aboutElement.scrollTop;
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false;
         return;
@@ -41,24 +43,24 @@ export default function About () {
         ticking = true;
       }
     };
-    myRef.current.addEventListener("scroll", onScroll);
-    console.log(scrollDir);
-    return () => myRef.current.removeEventListener("scroll", onScroll);
+    aboutElement.addEventListener("scroll", onScroll);
+    return () => {
+      aboutElement.removeEventListener("scroll", onScroll)};
   }, [scrollDir]);
-
+  console.log(scrollDir)
 
 
   function handleScroll(e) {
     const position = e.currentTarget.scrollTop;
     const size = e.currentTarget.scrollHeight - e.target.offsetHeight;
-    const window = e.currentTarget;
     setScrollState(position);
     setPageHeight(size)
 
 
     // Apply AUTO SCROLLING
     //PAGE 1
-    if (Math.floor((100 /pageHeight) * scrollState) === 5 && scrollDir) {
+    if (Math.floor((100 /pageHeight) * scrollState) > 2 && 
+        Math.floor((100 /pageHeight) * scrollState) < 10  && scrollDir) {
       executeScroll();
       myRef.current.scrollTo(0, firstScrollDestination)
     } 
@@ -67,15 +69,15 @@ export default function About () {
       myRef.current.scrollTo(0, 0)
     } 
     //PAGE 2
-    if (Math.floor((100 /pageHeight) * scrollState) === 26 && scrollDir ) {
+    if (Math.floor((100 /pageHeight) * scrollState) === 18 && scrollDir ) {
       executeScroll();
       myRef.current.scrollTo(0, secondScrollDestination)
-    }  else if (Math.floor((100 /pageHeight) * scrollState) === 35 && !scrollDir) {
+    }  else if (Math.floor((100 /pageHeight) * scrollState) === 41 && !scrollDir) {
       executeScroll();
       myRef.current.scrollTo(0, firstScrollDestination)
     } 
     //PAGE 3
-    if (Math.floor((100 /pageHeight) * scrollState) === 52 && scrollDir ) {
+    if (Math.floor((100 /pageHeight) * scrollState) === 48 && scrollDir ) {
       executeScroll();
       myRef.current.scrollTo(0, thirdScrollDestination)
     }  else if (Math.floor((100 /pageHeight) * scrollState) === 66 && !scrollDir) {
@@ -83,19 +85,30 @@ export default function About () {
       myRef.current.scrollTo(0, secondScrollDestination)
     } 
     //PAGE 4
-    if (Math.floor((100 /pageHeight) * scrollState) === 82 && scrollDir ) {
+    if (Math.floor((100 /pageHeight) * scrollState) === 75 && scrollDir ) {
       executeScroll();
       myRef.current.scrollTo(0, lastScrollDestination)
-    } else if (Math.floor((100 /pageHeight) * scrollState) === 90 && !scrollDir) {
+    } else if (Math.floor((100 /pageHeight) * scrollState) === 95 && !scrollDir) {
       executeScroll();
       myRef.current.scrollTo(0, thirdScrollDestination)
     } 
   };
 
+// LOADING 
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+  return () => clearTimeout(timer);
+}, [])
 
   return (
     <Wrapper>
-      <Container>
+    <BareBack />
+        {loading && <Loader /> }
+      <Container >
         <Text  onScroll={handleScroll} ref={myRef} >
 
         <Hone>I've been a musician my whole life.</Hone>
@@ -104,10 +117,13 @@ export default function About () {
           </Stage>
 
           <ParallaxContainer>
-            <Parallax style={{transform: `translateY(${0.7 * scrollState}px)`}}/>
+            <Parallax style={{transform: `translateY(${0.7 * scrollState}px)`}}>
+              {!scrollState > firstScrollDestination - 2 ? null : <Cleaner></Cleaner> }
+            </Parallax>
           </ParallaxContainer>
 
-          <About_text scrollState={scrollState}  pageHeight={pageHeight}/>
+
+          <AboutText scrollState={scrollState}  pageHeight={pageHeight}/>
 
         </Text>
 
@@ -124,7 +140,14 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${colorCream};
+`;
+const BareBack = styled.div`
+  position: absolute  ;
+  width: 100%;
+  height: 100%;
+  background-color: ${colorCream};
+  z-index: -2;
+  transition: all 1s;
 `;
 const Container = styled.div`
   width: 98%;
@@ -178,7 +201,16 @@ const Parallax = styled.div`
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
-  /* background-image: url(${backer}); */
-  opacity: 0.3;
-  filter:contrast(70%) brightness(300%)
+  background-image: url(${backer});
+  opacity: 0.6;
+  filter:contrast(70%) brightness(300%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+`;
+const Cleaner = styled.div`
+  height: 100%;
+  width: 75%;
+  background-color: ${colorCream};
 `;
