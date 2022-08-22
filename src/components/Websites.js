@@ -8,6 +8,7 @@ import todo from '../img/Todo.png';
 import quiz from '../img/Quiz.png';
 import { useState, useEffect } from 'react';
 import Loader from './Loader';
+import { device } from '../helpers/screenSizes';
 
 
 export default function Websites() {
@@ -16,7 +17,7 @@ export default function Websites() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [])
 
@@ -36,21 +37,8 @@ export default function Websites() {
           target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
           <WebImage style={{backgroundImage: `url(${banana})`, backgroundPositionX: '-8px'}}/>
           <Text>
-            <H3>
-              Banana Shop
-            </H3>
+            <H3>Banana Shop</H3>
             <Para>React store with a mock product api and Stripe payment.</Para>
-          </Text>
-        </ListItem>
-
-        <ListItem style={{}}
-           target='_blank' href='https://marvelous-kheer-2d615e.netlify.app/'>
-          <WebImage style={{backgroundImage: `url(${todo})` , backgroundPositionX: '-8px'}}/>
-          <Text>
-            <H3>
-              Todo List
-            </H3>
-            <Para>Simple array manipulation with local storage.</Para>
           </Text>
         </ListItem>
 
@@ -58,10 +46,17 @@ export default function Websites() {
            target='_blank' href='https://elegant-pony-0acf58.netlify.app/'>
           <WebImage style={{backgroundImage: `url(${quiz})`, backgroundPositionX: '-8px'}}/>
           <Text>
-            <H3>
-            Quiz
-            </H3>
+            <H3>Quiz</H3>
             <Para>State. Many, many states. </Para>
+          </Text>
+        </ListItem>
+
+        <ListItem style={{}}
+           target='_blank' href='https://marvelous-kheer-2d615e.netlify.app/'>
+          <WebImage style={{backgroundImage: `url(${todo})` , backgroundPositionX: '-8px'}}/>
+          <Text>
+            <H3>Todo List</H3>
+            <Para>Simple array manipulation with local storage.</Para>
           </Text>
         </ListItem>
 
@@ -69,9 +64,7 @@ export default function Websites() {
           target='_blank' href='https://www.digital-bath-studio.com/'>
           <WebImage style={{backgroundImage: `url(${mastering})`}}/>
           <Text>
-            <H3>
-              Mastering Website
-            </H3>
+            <H3>Mastering Website</H3>
             <Para>Among the first websites I'd created, 
               this happens to be my personal business.</Para>
           </Text>
@@ -81,9 +74,7 @@ export default function Websites() {
            target='_blank' href='https://creative-cactus-5109fd.netlify.app/'>
           <WebImage style={{backgroundImage: `url(${column})`}}/>
           <Text>
-            <H3>
-               Delicious Navigation
-            </H3>
+            <H3>Delicious Navigation</H3>
             <Para>This is a website template. 
               I really enjoy the creative style of the navigation columns </Para>
           </Text>
@@ -156,7 +147,7 @@ const ListItem = styled.a`
   height: 20%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   font-size: 2rem;
   color: ${colorBlack};
   text-decoration: none;
@@ -165,6 +156,11 @@ const ListItem = styled.a`
     background-color: ${colorSand};
     cursor: pointer;
   }
+  ${device.mobile}{
+   flex-direction : column;
+   height: fit-content;
+   margin-bottom: 1rem;
+  }
 `;
 const Text = styled.div`
   padding: 0 1rem;
@@ -172,6 +168,11 @@ const Text = styled.div`
 const H3 = styled.li`
   line-height: 1rem;
   font-family: "Handvetica Neue";
+  ${device.mobile}{
+    line-height: 2rem;
+    font-size: 1.6rem;
+    text-decoration: underline;
+  }
 `;
 const Para = styled.p`
   font-size: 1rem;
@@ -187,5 +188,9 @@ const WebImage = styled.div`
   background-repeat: no-repeat;
   border: 0.5px solid ${colorBlue};
   border-radius: 5px;
+
+  ${device.mobile}{
+   display: none;
+  }
 `;
 

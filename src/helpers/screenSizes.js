@@ -1,9 +1,8 @@
 
 
 export const device = {
-  // mobileS: `(min-width: ${sizes.mobileS})`,
-  // mobileM: `(min-width: ${sizes.mobileM})`,
-  // mobileL: `(min-width: ${sizes.mobileL})`,
+
+  mobile: `@media screen and (max-width: 450px)`,
   // tablet: `(min-width: ${sizes.tablet})`,
   laptop: `@media screen and (max-width: 1250px)`,
   laptopL: `@media screen and (max-width: 1500px)`,

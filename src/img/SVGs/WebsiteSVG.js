@@ -32,4 +32,7 @@ const SVG = styled.svg`
       width: 25px;
       height: 25px;
     }
+    ${device.mobile} {
+      display: none;
+    }
 `;

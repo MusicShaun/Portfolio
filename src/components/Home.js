@@ -3,6 +3,7 @@ import { colorCream } from '../helpers/colors';
 import { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
 import arrow from '../img/arrow.png';
+import { device } from '../helpers/screenSizes';
 const animator = keyframes`${flipInX}`;
 
 
@@ -41,7 +42,7 @@ export default function Home (props) {
 
           { showHeader && <Header>Hello! It's good to see you</Header> }
           { showSubHeader && <SubHeader>My name is Shaun.</SubHeader> }
-          { showSubHeader2 && <SubHeader2>Please take a look around.</SubHeader2>}
+          { showSubHeader2 && <SubHeader >Please take a look around.</SubHeader>}
           { showSubHeader3 && <BigArrow></BigArrow>}
 
 
@@ -60,9 +61,13 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   border: 16px solid ${colorCream}; 
+    
+  ${device.mobile} {
+    border: none;
+  }
 `;
 const Container = styled.div`
-  position: absolute;
+  position: relative;
   width: 98%;
   height: 98%;
   display: flex;
@@ -71,19 +76,24 @@ const Container = styled.div`
   border: 20px solid ${colorCream};
   border-radius: 40px;
   box-sizing: content-box;
+  ${device.mobile} {
+    border: none;
+  } 
 `;
 const BorderClose  = styled.div`
-position: absolute;
-width: 99%;
-height: 99%;
-border: 10px solid ${colorCream};
-box-sizing: content-box;
-border-radius: 10px;
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  border: 10px solid ${colorCream};
+  box-sizing: content-box;
+  border-radius: 10px;
+  ${device.mobile} {
+    display: none;
+  }
 `;
 const Text = styled.div`
-  width: 100%;
-  height: 100%;
-  margin-top: 44%;
+  width: 90%;
+  height: 20%;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -93,28 +103,30 @@ const Header = styled.h1`
   animation: 1.5s ${animator};
   margin: 1rem;
   color: ${colorCream};
+  text-align: center;
   font-size: 3rem;
   font-weight: 600;
+  ${device.mobile} {
+    font-size: 2.5rem;
+  }
 `;
 const SubHeader = styled.p`
   animation: 1s ${animator};
   margin: 0;
+  text-align: center;
   line-height: 2.2rem;
   font-size: 2.4rem;
   font-weight: 600;
   color: ${colorCream};
-`;
-const SubHeader2 = styled.p`
-  animation: 2s ${animator};
-  margin: 0;
-  line-height: 2.2rem;
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: ${colorCream};
+  &:last-child {
+    animation: 2s ${animator};}
+  ${device.mobile} {
+    font-size: 1.5rem;
+  }
 `;
 const BigArrow = styled.div`
   @keyframes animator2 {
-    0% { margin-left: 200px; opacity: 0.7;
+    0% { margin-left: 140px; opacity: 0.7;
     } 100%  { margin-left: 0px; opacity: 1;    
   }}
   animation: 0.5s animator2 ease-in-out infinite alternate;
@@ -125,9 +137,13 @@ const BigArrow = styled.div`
   background-repeat: no-repeat;
   transform: rotate(180deg);
   margin-right: 100%;
-  width: 200px;
-  height: 90px;
+  margin-top: 72px;
+  width: 140px;
+  height: 72px;
   filter: invert(1);
+  position: absolute;
 
-
+  ${device.mobile} {
+    display: none;
+  }
 `;

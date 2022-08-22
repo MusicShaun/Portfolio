@@ -12,8 +12,8 @@ import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 import {device} from '../helpers/screenSizes';
 
 
-export default function Navigation(){
-
+export default function Navigation(props){
+  const {hideHamburger} = props;
 
   return (
     <Wrapper>
@@ -28,28 +28,28 @@ export default function Navigation(){
 
       <NavigationPane>
         <UnorderedList>
-          <Link to='/' style={{textDecoration: 'none'}}>
+          <Link to='/' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <HomeSVG  />
                 Home
             </ListItem>
           </Link>
 
-          <Link to='/about' style={{textDecoration: 'none'}}>
+          <Link to='/about' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <AboutSVG  />
                 About
             </ListItem>
           </Link>
 
-          <Link to='/Websites' style={{textDecoration: 'none'}}>
+          <Link to='/Websites' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <WebsiteSVG />
                 Projects
             </ListItem>
           </Link>
 
-          <Link to='/contact' style={{textDecoration: 'none'}}>
+          <Link to='/contact' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <MailSVG  />
                 Contact
@@ -95,13 +95,17 @@ const Profile = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   ${device.laptopL} {
-    width: 9em; 
-    height: 9em; 
+    width: 9rem; 
+    height: 9rem; 
     margin-top: 1rem;
   }
   ${device.laptop} {
-    width: 7.5em; 
-    height: 7.5em; 
+    width: 7.5rem; 
+    height: 7.5rem; 
+  }
+  ${device.mobile} {
+    width: 11rem; 
+    height: 11rem; 
   }
 `;
 const Name = styled.h3`
@@ -141,10 +145,16 @@ const ListItem = styled.li`
     background-color: ${colorSand};
     color: hsl(40, 3%, 17%);
     transition: all 0.1s ease-out;
-  }
+    }
   ${device.laptop} {
     font-size: 1.1rem;
-  }
+    }
+  ${device.mobile} {
+      text-align: center;
+      justify-content: center;
+      padding-left: 0;
+      font-size: 2rem;
+    }
 `;
 const Footer = styled.div`
   width: 100%;

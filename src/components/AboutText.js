@@ -12,6 +12,8 @@ import {device} from '../helpers/screenSizes';
 import studio from '../img/studio.png';
 import vscode from '../img/vscode.png';
 import thanks from '../img/thanks.jpg';
+import StageShot from '../img/big-stage.jpeg';
+import { colorCream } from "../helpers/colors";
 
 export default function AboutText (props) {
 
@@ -28,169 +30,184 @@ export default function AboutText (props) {
   console.log(`picSlide ${picSlide}%`)
 
   return (<>
+    <Page1>
+      <Opener>I've been a musician my whole life.</Opener>
+        <Stage><div style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
+      </Stage>
+    </Page1>
 
-    <Paragraphs style={{transform: `translateY(-350px)`}}>
+
+
     
-{/* 1st  */}
-    <Partition style={{justifyContent: 'flex-end', marginBottom: '50px'}}>
-      <RightText>And lucky enough to travel and collaborate with people all over the world.</RightText>
-
-      <ContainerRect>
-        {picSlide > 3 && <RightFlip style={{backgroundImage: `url(${Belvoire})`}}/>}
-      </ContainerRect></Partition>
-
-
-{/* 2nd */}
-    <Partition style={{ marginBottom: '80px'}}>
-      <ContainerSquare>
-        {picSlide > 7 && <LeftFlip style={{backgroundImage: `url(${studio})`}}/>}
-      </ContainerSquare>
-      <LeftText>My special skill was audio engineering and audio production, namely, Mastering.</LeftText></Partition>
-
-
-{/* 3rd  */}
-    <Partition style={{transform: 'translateY(-80px)', justifyContent: 'center',  marginBottom: '100px'}}>
-      <RightText>Then COVID happens.</RightText>
-
-      <ContainerSquare >
-        {picSlide > 12 &&<RightFlip style={{backgroundImage: `url(${corona})` }}/>}
-      </ContainerSquare></Partition>
+    <Page style={{top: '50%'}}><section>
+      <Right>
+        <RightText>And lucky enough to travel and collaborate with people from around the world.</RightText>
+        <Rect>{picSlide > 6 && <RightFlip style={{backgroundImage: `url(${Belvoire})`}}/>}</Rect>
+      </Right>  
+      <Left>
+        <Square>{picSlide > 9 && <LeftFlip style={{backgroundImage: `url(${studio})`}}/>}</Square>
+        <LeftText>My special skill was audio engineering and audio production, namely, Mastering. 
+        <br />Life was good.</LeftText>
+      </Left>
+      <Right>
+        <RightText style={{textAlign: 'center', width: '80%'}}>Then COVID happens.</RightText>
+        <Square>{picSlide > 12 &&<RightFlip style={{backgroundImage: `url(${corona})` }}/>}</Square>
+      </Right>  
+    </section></Page>
 
 
-{/* 4th */}
-    <Partition style={{marginBottom: '40px' }}>
-      <ContainerRect >
-        {picSlide > 27 && <LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>}
-      </ContainerRect>
 
-      <LeftText style={{}}>The world shuts down and along with it, music, theatre, touring, festivals, clubs etc. </LeftText>
-    </Partition>
-
-
-{/* 5th */}
-    <Partition style={{justifyContent: 'flex-end',  marginBottom: '40px'}}>
-      <RightText style={{maxWidth: '100%'}}>In less than a week, all my income streams had 
+    <Page style={{top: '150%'}}><section>
+      <Left>
+      <Rect >{picSlide > 28 && <LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>}</Rect>
+      <LeftText>The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general. </LeftText>
+      </Left>
+      <Right>
+      <RightText>In less than a week, all my income streams had 
           vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</RightText>
-
-      <ContainerSquare>
-        {picSlide > 34 && <RightFlip style={{backgroundImage: `url(${Party})`}}/>}
-      </ContainerSquare></Partition>
-
-
-{/* 6th */}
-    <Partition style={{marginBottom: ' 100px'}}>
-      <ContainerSquare>
-        {picSlide > 41 && <LeftFlip style={{backgroundImage: `url(${vscode})`}}/>}
-      </ContainerSquare>
-      <LeftText style={{maxWidth: '80%'}}>
-      However, this exposes a new opportunity. To find something just as challenging and exciting.
-        As it turns out, coding is very challenging, creative and incredibly satisfying.<br /></LeftText></Partition>
-
-{/* 7th  */}
-    <Partition style={{justifyContent: 'flex-end',marginBottom: ' 20px' }}>
-      <RightText style={{maxWidth: '80%'}}>Now I am but a coding novice, with much to learn and much to create.</RightText>
-      
-      <ContainerSquare>
-        {picSlide > 54 && <RightFlip style={{backgroundImage: `url(${eyes})`}}/>}
-      </ContainerSquare></Partition>
+      <Square>{picSlide > 32 && <RightFlip style={{backgroundImage: `url(${Party})`}}/>}</Square>
+      </Right>
+      <Left>
+      <Square>{picSlide > 36 && <LeftFlip style={{backgroundImage: `url(${vscode})`}}/>}</Square>
+      <LeftText style={{maxWidth: '60%'}}>
+        It was time to look for a new career opportunity. To find something just as challenging and exciting.
+        And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></LeftText>
+      </Left>
+    </section></Page>
 
 
-{/*  8th  */}
-    <Partition style={{marginBottom: ' 50px'}}>
-      <ContainerSquare>
-        {picSlide > 62 && <LeftFlip style={{backgroundImage: `url(${thanks})`}}/>}
-      </ContainerSquare>
-      <LeftText style={{maxWidth: '80%'}}>
-        I hope to find myself as a humble intern, side by side with the pro's in this field, building apps, 
-        games, solving problems, all of it.</LeftText></Partition>
+    <Page style={{top: '250%'}}><section>
+      <Right>
+      <RightText>Now I am but a humble Padawan, with much to learn.  </RightText>
+      <Square>{picSlide > 54 && <RightFlip style={{backgroundImage: `url(${eyes})`}}/>} </Square>
+      </Right>
+      <Left>
+      <Square> {picSlide > 58 && <LeftFlip style={{backgroundImage: `url(${thanks})`}}/>}</Square>
+      <LeftText>
+        I hope to find myself interning, side by side with the pro's, building apps, 
+        games, solving problems, failing compiles. I know this is a field I will be happy.</LeftText>
+      </Left>
+      <Right>
+      <RightText>I didn't study coding at Uni or a bootcamp. I didn't study because a 
+        lecturer required me to complete an assignment or because my Mum said I'd be good at it.</RightText>
+      <Square>   {picSlide > 62 && <RightFlip style={{backgroundImage: `url(${sarcastic})` }}/>}</Square>
+      </Right>
+    </section></Page>
 
-{/*  9th  */}
-    <Partition style={{justifyContent: 'flex-end', marginBottom: ' 220px'}}>
-      <RightText style={{maxWidth: '100%'}}>I didn't study coding at Uni or a bootcamp. I didn't study because a 
-        lecturer required me to complete an assignment or because I needed to pass.</RightText>
 
-      <ContainerSquare>   
-        {picSlide > 65 && <RightFlip style={{backgroundImage: `url(${sarcastic})` }}/>}
-      </ContainerSquare></Partition>
 
-{/*  10  */}
-    <Partition style={{width: '100%', height: '100%' ,  alignItems: 'center', 
-    justifyContent: 'center', marginBottom: ' 40px'}}>
-      <LeftText style={{ textAlign: 'center',}}>  
-      I studied because I wanted to. 
+    <Page style={{top: '350%'}}><ClosingPage>
+      <LeftText style={{maxWidth: '80%'}}>  I studied because I wanted to. 
       <br />I studied because I see coding as my long term  <br /> 
-        future and because I'm a ridiculously passionate person.</LeftText>
-    </Partition>
-    <ClosingImg >
-      <Shot style={{transform: `translateY(${scrollState - pageHeight}px)`}}/>
-    </ClosingImg>
+        future and because I'm passionate about it'.</LeftText>
+    <ClosingImg style={{backgroundPositionY: `-${(pageHeight - (scrollState -100))}px`}}/>
+    </ClosingPage> </Page>
 
-    </Paragraphs>
+
   </>)
 }
-
-const Paragraphs = styled.div`
-  position: relative;
-  width: 90%;
+const Page1 = styled.div`
+  position: absolute;
   height: 100%;
-  margin: 6rem 0 0 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1rem;
 `;
-const Partition = styled.div`
+const Opener = styled.h1`
+  height: 50%;
   width: 80%;
-  height: 250px;
+  font-size: 2.6rem;
+  text-align: center;
+  margin: 0;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+`;
+const Stage = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50%;
   z-index: 2;
-  ${device.laptopL} {
-    font-size: 1.1rem;
-  }
-  ${device.laptop} {
-    font-size: 1rem;
+  overflow: hidden;
+  & div {
+    border-radius: 10px ;
+    background-position: 0px -0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 `;
-const ContainerSquare = styled.div`
-  ${device.desktop} {
-    min-width: 220px;
+const Page = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & section {
+    width: 75%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: ${colorCream};  
+    border-radius: 20px;
+    font-size: 1.2rem;
+  
+  }
+`;
+const Square = styled.div`
+    ${device.desktop} {
+    width: 220px;
     height: 220px;}
   ${device.laptopL} {
-    min-width: 180px;
+    width: 180px;
     height: 180px;}
   ${device.laptop} {
-    min-width: 150px;
+    width: 150px;
     height: 150px;}
 `;
-const ContainerRect = styled.div`
+const Rect = styled.div`
   ${device.desktop} {
-    min-width: 400px;
+    width: 400px;
     height: 225px;}
   ${device.laptopL} {
-    min-width: 280px;
+    width: 280px;
     height: 158px;}
   ${device.laptop} {
-    min-width: 200px;
+    width: 200px;
     height: 113;}
 `;
-const leftFlip =  keyframes`${flipInX}`;
+const Left = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+const Right = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+`;
+const flipIt =  keyframes`${flipInX}`;
 const LeftFlip = styled.div`
-  animation: ${leftFlip} 0.8s;
+  animation: ${flipIt} 0.8s;
   background-size: cover;
   border-radius: 10px;
   width: 100%;
   height: 100%;
 `;
 const LeftText = styled.div`
-  margin-left: 1rem;
+  margin-left: 2rem;
   margin-right: 4rem;
   max-width: 50%;
 `;
-const rightFlip =  keyframes`${flipInX}`;
 const RightFlip = styled.div`
-  animation: ${rightFlip} 0.8s;
+  animation: ${flipIt} 0.8s;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -202,26 +219,37 @@ const RightText = styled.div`
   margin-left: 3rem;
   max-width: 50%;
 `;
-const ClosingImg = styled.div`
-  position: relative;
-  width: 100%;
+const ClosingPage = styled.div`
+  width: 98%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  z-index: 2;
+  flex-direction: column;
+  align-items: center;
   overflow: hidden;
-  ${device.desktop} {
-    min-height: 600px;}
-  ${device.laptopL} {
-    min-height: 520px;}
-  ${device.laptop} {
-    min-height: 460px;}
+  & div  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    background-color: ${colorCream};
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  & div:first-child {
+    height: 40%;} 
+  & div:nth-child(2){
+    height: 60%;}
 `;
-const Shot = styled.div`
-  background-image: url(${OnStage});
-  border-radius: 10px ;
+const ClosingImg = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  background-image: url(${OnStage});
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: 0px 10px; */
+  background-position-y: -100px;
+  border-radius:  20px 20px 0px 0px !important;
 `;
+

@@ -3,6 +3,7 @@ import ContactForm from './ContactForm';
 import { colorCream } from '../helpers/colors';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
+import { device } from '../helpers/screenSizes';
 
 
 export default function About () {
@@ -11,7 +12,7 @@ export default function About () {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [])
 
@@ -70,6 +71,9 @@ const IFrame = styled.iframe`
   width: 60%;
   border: 0;
   border-radius: 10px;
+  ${device.mobile}{
+    display: none;
+  }
 `; 
 const FormWrapper = styled.div`
   width: 40%; 
@@ -77,4 +81,7 @@ const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${device.mobile}{
+    width: 100%; 
+  }
 `;
