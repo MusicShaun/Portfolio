@@ -42,7 +42,7 @@ export default function WindowContainer() {
     }
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [innerWidth]);
   console.log(openMobile)
 
   return (<>
