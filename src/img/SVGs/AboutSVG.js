@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import {device} from '../../helpers/screenSizes';
 
 export default function AboutSVG(props) {
-  const {IconSize} = props; 
-
   return (
 
 <SVG  
