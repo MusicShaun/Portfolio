@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { colorBlack, colorCream } from '../helpers/colors';
-import stars from '../img/stars.png';
-
 
 export default function Skills() {
 
