@@ -10,14 +10,14 @@ export default function Skills() {
   return (
     <Wrapper>
     <Header>Skills</Header>
-    <Containers style={{backgroundColor: '#7691b7'}}>
+    <Containers>
       <Headings>Education      </Headings>
         <UL>
           <LI>Bachelors Degree of Classical Music at WAAPA</LI>
         </UL>
-      </Containers>
 
-      <Containers style={{backgroundColor: '#e79b5d'}}>
+      </Containers>
+      <Containers>
       <Headings>Work Titles</Headings>
         <UL>
           <LI>Mastering Engineer for COMMAND Q - 2015 to present</LI>
@@ -28,7 +28,7 @@ export default function Skills() {
         </UL>
       </Containers>
 
-      <Containers style={{backgroundColor: '#ebc661'}}>
+      <Containers>
       <Headings>Work Descriptions    </Headings>
         <SubHeading>Command Q </SubHeading>
         <UL>
@@ -57,7 +57,7 @@ export default function Skills() {
         </UL>
     </Containers>
     
-    <Containers style={{backgroundColor: '#8bc3d2'}}>
+    <Containers>
       <Headings>Skills</Headings>
         <UL>
           <LI>HTML</LI>
@@ -70,7 +70,7 @@ export default function Skills() {
         </UL>
     </Containers>
 
-    <Containers style={{backgroundColor: '#F2BC8D'}}>
+    <Containers>
       <Headings>Current</Headings>
         <UL>
           <LI>Full-Time home study</LI>
@@ -78,11 +78,97 @@ export default function Skills() {
         </UL>
     </Containers>
 
+    {/* <CircleWrap>
+    <Cirle1 />
+    <Cirle2 />
+    <Cirle3 />
+    <Cirle4 />
+    <Cirle5 />
+    </CircleWrap> */}
+    <Night />
+    <Stars />
     </Wrapper>
   )
 }
 
-
+const Night = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(1, 51, 90) 0%, rgb(0, 45, 80) 15%, rgb(0, 40, 70) 32%, rgb(0, 26, 52) 52%, rgb(1, 18, 27) 80%, rgb(0, 10, 20) 100%);
+`;
+const Stars = styled.div`
+  position: absolute;
+  width: 200%;
+  top: 0;
+  left: 0;
+  transform: rotate(180deg);
+  height: 100%;
+  background-image: url(${stars});
+  background-repeat: repeat;
+  animation: stars linear 120s infinite;
+  @keyframes stars {
+    0% {
+      left: 0;
+      transform: rotate(2deg)
+      }
+    50% {
+      left: -10%;
+      transform: rotate(-4deg);
+      }
+    100% {
+      left: 0;
+      transform: rotate(2deg)} 
+  }
+`;
+// const CircleWrap = styled.div`  
+//   opacity: 0.8;
+// `;
+// const Cirle1 = styled.div`
+//   position: absolute;
+//   top: -7%;
+//   left: -10%;
+//   border-radius: 50%;
+//   height: 260px;
+//   width: 260px;
+//   background-color: #7691b7;
+// `;
+// const Cirle2 = styled.div`
+//   position: absolute;
+//   top: 40%;
+//   left: 40%;
+//   border-radius: 50%;
+//   height: 500px;
+//   width: 500px;
+//   background-color: #e79b5d;
+// `;
+// const Cirle3 = styled.div`
+//   position: absolute;
+//   top: 80%;
+//   left: -20%;
+//   border-radius: 50%;
+//   height: 350px;
+//   width: 350px;
+//   background-color: #ebc661;
+// `;
+// const Cirle4 = styled.div`
+//   position: absolute;
+//   top: 32%;
+//   left: 7%;
+//   border-radius: 50%;
+//   height: 170px;
+//   width: 170px;
+//   background-color: #8bc3d2;
+// `;
+// const Cirle5 = styled.div`
+//   position: absolute;
+//   top: 18%;
+//   left: 62%;
+//   border-radius: 50%;
+//   height: 140px;
+//   width: 140px;
+//   background-color: #F2BC8D;
+// `;
 
 
 const Wrapper = styled.div`
@@ -103,17 +189,16 @@ const Header = styled.div`
   align-self: flex-start;
   font-weight: 600;
   z-index: 1;
+  color: ${colorCream};
 `;
 const Containers = styled.div`
   width:90%;
   height: auto;
   margin: 1rem 0;
   z-index: 1;
-  border-radius: 5px;
-  padding-bottom: 1rem;
+  color: ${colorCream};
 `;
 const Headings = styled.div`
-  margin-left: 0.6rem;
   font-size: 2rem;
   padding: 0;
   text-decoration: underline;
@@ -124,9 +209,7 @@ const UL = styled.ul`
 const SubHeading = styled.div`
   font-size: 1.5rem;
   font-weight: 500;
-  margin-left: 1rem;
 `;
 const LI = styled.li`
-  font-size: 0.9rem;
-  padding-right: 0.3rem;
+  font-size: 0.8rem;
 `;
