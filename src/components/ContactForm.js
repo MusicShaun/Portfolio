@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorGrey, colorBlack, colorCream, } from '../helpers/colors';
+import { colorGrey, colorBlack, colorCream, colorWhite, } from '../helpers/colors';
 import dog from '../img/Dog-Banner.jpeg';
 import { device } from '../helpers/screenSizes';
 
@@ -55,7 +55,6 @@ const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 `;
 const FormCutOut = styled.div`
   width: 100%;
@@ -106,16 +105,16 @@ const Message = styled.textarea`
   }
 `;
 const Submit = styled.button`
-  width: 100px;
+  width: 140px;
   height: 50px;
   color: white;
   border-radius: 10px;
   border: 1px solid ${colorGrey};
-  background-color: #04AA6D;
+  background-color: #98D0DF;
   font-size: 1.2rem;
   cursor: pointer;
   white-space: nowrap;
   &:hover {
-    background-color: hsl(158, 100%, 50%);
+    background-color: #F4A86A;
   }
 `;

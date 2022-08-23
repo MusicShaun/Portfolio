@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream } from '../helpers/colors';
+import { colorBlack, colorCream, colorDarkGrey} from '../helpers/colors';
+import { device } from '../helpers/screenSizes';
 
 export default function Skills() {
 
@@ -8,14 +9,14 @@ export default function Skills() {
   return (
     <Wrapper>
     <Header>Skills</Header>
-    <Containers style={{backgroundColor: '#7691b7'}}>
+    <Containers style={{backgroundColor: '#90ABD1'}}>
       <Headings>Education      </Headings>
         <UL>
           <LI>Bachelors Degree of Classical Music at WAAPA</LI>
         </UL>
       </Containers>
 
-      <Containers style={{backgroundColor: '#e79b5d'}}>
+      <Containers style={{backgroundColor: '#F4A86A'}}>
       <Headings>Work Titles</Headings>
         <UL>
           <LI>Mastering Engineer for COMMAND Q - 2015 to present</LI>
@@ -26,7 +27,7 @@ export default function Skills() {
         </UL>
       </Containers>
 
-      <Containers style={{backgroundColor: '#ebc661'}}>
+      <Containers style={{backgroundColor: '#FFE07B'}}>
       <Headings>Work Descriptions    </Headings>
         <SubHeading>Command Q </SubHeading>
         <UL>
@@ -55,7 +56,7 @@ export default function Skills() {
         </UL>
     </Containers>
     
-    <Containers style={{backgroundColor: '#8bc3d2'}}>
+    <Containers style={{backgroundColor: '#98D0DF'}}>
       <Headings>Skills</Headings>
         <UL>
           <LI>HTML</LI>
@@ -94,13 +95,17 @@ const Wrapper = styled.div`
   color:${colorBlack} ;
 `;
 const Header = styled.div`
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-top: 1.6rem;
   padding-left: 1rem;
-  width: 100%;
-  align-self: flex-start;
-  font-weight: 600;
+  line-height: 75%;
+  width: 90%;
+  align-self: center;
   z-index: 1;
+  font-family: 'Fredericka the Great', cursive;
+  ${device.mobile}{
+    align-self: flex-start;
+  }
 `;
 const Containers = styled.div`
   width:90%;
@@ -115,14 +120,17 @@ const Headings = styled.div`
   font-size: 2rem;
   padding: 0;
   text-decoration: underline;
+  text-decoration-thickness: 4%;
+  text-underline-offset: 10%;
 `;
 const UL = styled.ul`
   margin: 0 ;
 `;
 const SubHeading = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 500;
   margin-left: 1rem;
+  color: ${colorDarkGrey};
 `;
 const LI = styled.li`
   font-size: 0.9rem;

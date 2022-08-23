@@ -44,10 +44,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 16px solid ${colorCream};  */
-  /* background-color: ${colorCream};    */
+  border: 16px solid ${colorCream}; 
+  background-color: ${colorCream};   
   ${device.mobile}{ 
     background-color: transparent;
+    border: none; 
   }
 `;
 const Container = styled.div`
