@@ -6,5 +6,9 @@ export const colorBlack = 'hsl(40, 3%, 17%)';
 export const colorGrey = 'hsla(45, 2%, 39%, 0.592)'; 
 export const colorDarkGrey = 'hsla(45, 32%, 20%, 1)'; 
 export const colorSoftYellow = '#FBEEC1';
-
+export const specialBlue = '#90ABD1';
+export const specialOrange = '#F4A86A';
+export const specialYellow = '#FFE07B';
+export const specialAqua = '#98D0DF';
+export const specialMud = '#F2BC8D';
 // import { colorBlack, colorBlue, colorGrey, colorSand, colorCream, colorWhite,colorSoftYellow } from '../helpers/colors';

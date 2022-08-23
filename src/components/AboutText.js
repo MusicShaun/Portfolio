@@ -13,7 +13,7 @@ import studio from '../img/studio.png';
 import vscode from '../img/vscode.png';
 import thanks from '../img/thanks.jpg';
 import StageShot from '../img/big-stage.jpeg';
-import { colorCream } from "../helpers/colors";
+import { colorWhite} from "../helpers/colors";
 
 export default function AboutText (props) {
 
@@ -152,7 +152,7 @@ const Page = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${colorCream};  
+    background-color: ${colorWhite};  
     border-radius: 20px;
     font-size: 1.2rem;
   
@@ -233,7 +233,7 @@ const ClosingPage = styled.div`
     text-align: center;
     justify-content: center;
     font-size: 1.3rem;
-    background-color: ${colorCream};
+    background-color: ${colorWhite};
     border-radius: 20px;
     overflow: hidden;
   }

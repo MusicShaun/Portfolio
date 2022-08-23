@@ -12,7 +12,7 @@ import studio from '../img/studio.png';
 import vscode from '../img/vscode.png';
 import thanks from '../img/thanks.jpg';
 import StageShot from '../img/big-stage.jpeg';
-import { colorCream } from "../helpers/colors";
+import { colorCream, colorWhite } from "../helpers/colors";
 
 export default function AboutText (props) {
 
@@ -161,7 +161,7 @@ const Cleaner = styled.div`
   overflow-y: hidden;
   z-index: -1;
   opacity: 0.5;
-  background-color: ${colorCream};
+  background-color: ${colorWhite};
 `;
 const Stage = styled.div`
   position: relative;

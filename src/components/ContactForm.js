@@ -80,7 +80,7 @@ const Header = styled.div`
 const Label = styled.label`
   width: 80%;
   text-align: left;
-  color: ${colorGrey};
+  color: ${colorBlack};
 `;
 const Input = styled.input` 
   width: 100%;

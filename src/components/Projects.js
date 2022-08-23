@@ -6,13 +6,23 @@ import mastering from '../img/mastering.png';
 import banana from '../img/bananashop.png';
 import todo from '../img/Todo.png';
 import quiz from '../img/Quiz.png';
+import Loader from './Loader';
+import { useEffect , useState } from 'react';
 
 export default function Skills() {
-
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [])
 
 
   return (
     <Wrapper>
+        {loading && <Loader /> }
+
     <Header>Projects</Header>
     <Containers style={{backgroundColor: '#90ABD1'}}
       target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
@@ -69,10 +79,12 @@ export default function Skills() {
 
 
 const Wrapper = styled.div`
+  position: relative;
   width:100%;
   height: 100%;
   background-color: ${colorCream};
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;

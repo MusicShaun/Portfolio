@@ -3,8 +3,8 @@ import {colorCream } from '../helpers/colors';
 import AboutText from "./AboutText";
 import AboutTextMobile from "./AboutTextMobile";
 import { useState, useEffect, useRef} from 'react'; 
-import backer from '../img/backer.jpg';
 import Loader from './Loader';
+import AboutBackground from './AboutBackground';
 
 
 export default function About (props) {
@@ -115,10 +115,10 @@ useEffect(() => {
     <BareBack />
         {loading && <Loader /> }
 
-
-      <ParallaxContainer>
-        <Parallax style={{transform: `translateY(${-0.3 * scrollState}px)`}}></Parallax>
+      <ParallaxContainer  style={{transform: `translateY(${-0.3 * scrollState}px)`}}>
+      <AboutBackground />
       </ParallaxContainer>
+  
 
         <Text  onScroll={handleScroll} ref={myRef} >
           {onlyWidth > 500 ? 
@@ -164,21 +164,8 @@ const Text = styled.div`
 const ParallaxContainer = styled.div`
   position: absolute;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 `;
-const Parallax = styled.div`
-  position: relative;
-  height: 350%;
-  width: 100%;
-  background-position: top;
-  background-repeat: repeat;
-  background-size: cover;
-  background-image: url(${backer});
-  opacity: 0.6;
-  filter:contrast(70%) brightness(240%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
-`;
+

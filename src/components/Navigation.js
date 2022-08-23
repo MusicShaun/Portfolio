@@ -128,6 +128,7 @@ const NavigationPane = styled.div`
   width: 100%;
   height: 50%;
   max-height: 450px;
+  padding-top: 1rem;
 `;
 const UnorderedList = styled.ul`
   list-style: none;

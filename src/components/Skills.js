@@ -1,13 +1,24 @@
 import styled from 'styled-components';
 import { colorBlack, colorCream, colorDarkGrey} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
+import Loader from './Loader';
+import { useEffect , useState } from 'react';
 
 export default function Skills() {
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [])
 
 
   return (
     <Wrapper>
+            {loading && <Loader /> }
+
     <Header>Skills</Header>
     <Containers style={{backgroundColor: '#90ABD1'}}>
       <Headings>Education      </Headings>
@@ -61,10 +72,12 @@ export default function Skills() {
         <UL>
           <LI>HTML</LI>
           <LI>CSS</LI>
+          <LI>SCSS</LI>
           <LI>Javascript</LI>
           <LI>React</LI>
           <LI>Photoshop</LI>
           <LI>Word</LI>
+          <LI>Basic AWS</LI>
           <LI>Everything Audio</LI>
         </UL>
     </Containers>
@@ -85,10 +98,12 @@ export default function Skills() {
 
 
 const Wrapper = styled.div`
+  position: relative;
   width:100%;
   height: 100%;
   background-color: ${colorCream};
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
