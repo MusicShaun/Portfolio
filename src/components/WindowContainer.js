@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 import { Routes , Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
-import Websites from './Websites';
+import Projects from './Projects';
 import BananaShop from './iFrames/BananaShop';
 import TodoList from './iFrames/TodoList';
 import Contact from './Contact';
@@ -68,7 +68,7 @@ export default function WindowContainer() {
             
             <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
             
-            <Route path='/websites' element={ <Websites />} />
+            <Route path='/websites' element={ <Projects />} />
             <Route path='/websites/banana-shop' element={ <BananaShop /> } />              
             <Route path='/websites/todo-list' element={ <TodoList /> } />              
             <Route path='/websites/quiz' element={ <Quiz /> } />              

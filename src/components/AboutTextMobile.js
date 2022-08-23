@@ -12,6 +12,7 @@ import studio from '../img/studio.png';
 import vscode from '../img/vscode.png';
 import thanks from '../img/thanks.jpg';
 import StageShot from '../img/big-stage.jpeg';
+import { colorCream } from "../helpers/colors";
 
 export default function AboutText (props) {
 
@@ -43,7 +44,7 @@ export default function AboutText (props) {
       <ContainerRect>
         {/* {picSlide > 3 &&  */}
         <Flip style={{backgroundImage: `url(${Belvoire})`}}/>
-      </ContainerRect></Partition>
+      </ContainerRect>      <Cleaner /></Partition>
 
 
 {/* 2nd */}
@@ -52,7 +53,7 @@ export default function AboutText (props) {
       <ContainerSquare>
         {/* {picSlide > 7 &&  */}
         <Flip style={{backgroundImage: `url(${studio})`}}/>
-      </ContainerSquare>
+      </ContainerSquare>      <Cleaner />
       </Partition>
 
 
@@ -62,7 +63,7 @@ export default function AboutText (props) {
       <ContainerSquare >
         {/* {picSlide > 12 && */}
         <Flip style={{backgroundImage: `url(${corona})` }}/>
-      </ContainerSquare></Partition>
+      </ContainerSquare>      <Cleaner /></Partition>
 
 
 {/* 4th */}
@@ -71,7 +72,7 @@ export default function AboutText (props) {
       <ContainerRect >
         {/* {picSlide > 27 &&  */}
         <Flip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>
-      </ContainerRect>
+      </ContainerRect>      <Cleaner />
       </Partition>
 
 
@@ -83,7 +84,7 @@ export default function AboutText (props) {
       <ContainerSquare>
         {/* {picSlide > 34 &&  */}
         <Flip style={{backgroundImage: `url(${Party})`}}/>
-      </ContainerSquare></Partition>
+      </ContainerSquare>      <Cleaner /></Partition>
 
 
 {/* 6th */}
@@ -94,7 +95,7 @@ export default function AboutText (props) {
         <ContainerSquare>
         {/* {picSlide > 41 &&  */}
         <Flip style={{backgroundImage: `url(${vscode})`}}/>
-      </ContainerSquare>
+      </ContainerSquare>      <Cleaner />
       </Partition>
 
 {/* 7th  */}
@@ -104,7 +105,7 @@ export default function AboutText (props) {
       <ContainerSquare>
         {/* {picSlide > 54 &&  */}
         <Flip style={{backgroundImage: `url(${eyes})`}}/>
-      </ContainerSquare></Partition>
+      </ContainerSquare>      <Cleaner /></Partition>
 
 
 {/*  8th  */}
@@ -115,7 +116,7 @@ export default function AboutText (props) {
         <ContainerSquare>
         {/* {picSlide > 62 &&  */}
         <Flip style={{backgroundImage: `url(${thanks})`}}/>
-      </ContainerSquare></Partition>
+      </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  9th  */}
     <Partition>
@@ -125,27 +126,42 @@ export default function AboutText (props) {
       <ContainerSquare>   
         {/* {picSlide > 65 &&  */}
         <Flip style={{backgroundImage: `url(${sarcastic})` }}/>
-      </ContainerSquare></Partition>
+      </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  10  */}
-    <Stage2>
+    <Stage2><Cleaner style={{width: '100%', borderRadius: '20px'}} />
       <Text style={{ textAlign: 'center', height: '30%', alignItems: 'center'}}>  
       I studied because I wanted to. 
       <br />I studied because I see coding as my long term  <br /> 
-        future and because I'm a ridiculously passionate person.</Text>
-
+        future and because I'm a ridiculously passionate person.      
+          </Text>
       <Shot style={{}}/>
+
     </Stage2>
 
     {/* transform: `translateY(${scrollState - pageHeight}px)` */}
+
     </Paragraphs>
+
   </Wrapper>
   </>)
 }
 
 const Wrapper = styled.section`
-  height: 100vh;
+  position: absolute;
+  height: 100%;
   width: 100%;
+`;
+const Cleaner = styled.div`
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 90%;
+  height: 100%;
+  overflow-y: hidden;
+  z-index: -1;
+  opacity: 0.5;
+  background-color: ${colorCream};
 `;
 const Stage = styled.div`
   position: relative;
@@ -162,7 +178,8 @@ const Hone = styled.h1`
   width: 90%;
   font-size: 2rem;
   display: flex;
-  align-items: center;
+  padding-top: 30%;
+  /* align-items: center; */
   text-align: center;
 `;
 const Shots = styled.div`
@@ -182,13 +199,14 @@ const Paragraphs = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  margin: 2rem 0 0 0;
+  margin:  0;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1rem;
 `;
 const Partition = styled.div`
+  position: relative;
   width: 80%;
   height: 100%;
   display: flex;
@@ -222,7 +240,8 @@ const Flip = styled.div`
 const Text = styled.div`
   max-width: 95%;
   text-align: center;
-  margin: 5rem 0rem 0.6rem;
+  margin: 4rem 0rem 0.6rem;
+  font-size: 1.5rem;
 `;
 const Stage2 = styled.div`
   position: relative;

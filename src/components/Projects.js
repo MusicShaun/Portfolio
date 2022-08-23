@@ -141,7 +141,7 @@ const H1 = styled.div`
     width: 85%;
     height: 14%;
     justify-content: flex-start;
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-align: left;
   }
 `;

@@ -114,7 +114,7 @@ const Submit = styled.button`
   background-color: #04AA6D;
   font-size: 1.2rem;
   cursor: pointer;
-
+  white-space: nowrap;
   &:hover {
     background-color: hsl(158, 100%, 50%);
   }

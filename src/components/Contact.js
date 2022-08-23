@@ -43,8 +43,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 16px solid ${colorCream}; 
-  background-color: ${colorCream};   
+  /* border: 16px solid ${colorCream};  */
+  /* background-color: ${colorCream};    */
   ${device.mobile}{ 
     background-color: transparent;
   }
@@ -53,7 +53,7 @@ const Container = styled.div`
   position: absolute;
   width: 98%;
   height: 98%;
-  border: 20px solid ${colorCream};
+  /* border: 20px solid ${colorCream}; */
   box-sizing: content-box;
   border-radius: 40px;
   display: flex;
@@ -65,7 +65,7 @@ const BorderClose  = styled.div`
 position: absolute;
 width: 99%;
 height: 99%;
-border: 10px solid ${colorCream};
+/* border: 10px solid ${colorCream}; */
 box-sizing: content-box;
 border-radius: 10px;
 `;

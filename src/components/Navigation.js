@@ -131,6 +131,9 @@ const UnorderedList = styled.ul`
   flex-direction: column;
   justify-content: space-around;
   text-decoration: none;
+  ${device.mobile} {
+    padding-top: 4.5rem;
+  }
 `;
 const ListItem = styled.li`
   height: 50px;
