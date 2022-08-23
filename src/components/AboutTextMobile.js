@@ -12,7 +12,7 @@ import studio from '../img/studio.png';
 import vscode from '../img/vscode.png';
 import thanks from '../img/thanks.jpg';
 import StageShot from '../img/big-stage.jpeg';
-import { colorCream, colorWhite } from "../helpers/colors";
+import { colorWhite } from "../helpers/colors";
 
 export default function AboutText (props) {
 

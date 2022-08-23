@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 import {device} from '../helpers/screenSizes';
 
-
 export default function Navigation(props){
   const {hideHamburger} = props;
 
