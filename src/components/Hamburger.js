@@ -30,7 +30,7 @@ export default function StyledBurger(props) {
 }
 const Burger = styled.button`
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   left: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ const Burger = styled.button`
     height: 0.4rem;
     background: ${colorCream};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.15s linear;
     position: relative;
     transform-origin: 1px;
 

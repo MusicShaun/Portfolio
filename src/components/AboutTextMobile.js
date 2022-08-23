@@ -160,7 +160,7 @@ const Cleaner = styled.div`
   height: 100%;
   overflow-y: hidden;
   z-index: -1;
-  opacity: 0.5;
+  opacity: 0.7;
   background-color: ${colorWhite};
 `;
 const Stage = styled.div`

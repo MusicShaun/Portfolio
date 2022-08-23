@@ -171,7 +171,7 @@ const ListItem = styled.li`
 `;
 const Footer = styled.div`
   width: 100%;
-  min-height: 15%;
+  min-height: 12%;
   margin-top: auto;
   display: flex;
   justify-content: center;

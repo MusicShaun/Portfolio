@@ -17,8 +17,9 @@ const Background = styled.div`
  `;
 const Loading = styled.div`
   position: absolute;
-  top: calc(50% - 4em);
-  left: calc(50% - 4em);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 6em;
   height: 6em;
   border: 1.1em solid rgba(0, 0, 0, 0.2);
