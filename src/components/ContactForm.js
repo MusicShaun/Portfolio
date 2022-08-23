@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorGrey, colorBlack, colorCream, colorWhite, } from '../helpers/colors';
+import { colorGrey, colorBlack, colorCream, } from '../helpers/colors';
 import dog from '../img/Dog-Banner.jpeg';
 import { device } from '../helpers/screenSizes';
 

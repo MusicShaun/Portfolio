@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream, colorBlue, colorWhite, colorSand, colorGrey } from '../helpers/colors';
+import { colorBlack, colorCream, colorBlue } from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import column from '../img/columnsdesign.png';
 import mastering from '../img/mastering.png';
