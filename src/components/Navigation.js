@@ -85,6 +85,9 @@ const HeroImage = styled.div`
   align-items: center;
   flex-direction: column;
   color: white;
+  ${device.mobile}{
+    padding-top: 2rem;
+  }
 `;
 const Profile = styled.div`
   width: 11em; 

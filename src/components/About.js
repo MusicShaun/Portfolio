@@ -9,7 +9,7 @@ import Loader from './Loader';
 
 export default function About (props) {
 
-  const {windowWidth} = props; 
+  const {onlyWidth} = props; 
   
   //AUTOMATIC SCROLLING 
   const [scrollState, setScrollState] = useState(0);
@@ -57,32 +57,32 @@ export default function About (props) {
     const size = e.currentTarget.scrollHeight - e.target.offsetHeight;
     setScrollState(position);
     setPageHeight(size)
-
+    let scrollPercentile = Math.floor((100 /pageHeight) * scrollState);
 
     // Apply AUTO SCROLLING
     //PAGE 1
-    if (windowWidth > 500 )
-    {if (Math.floor((100 /pageHeight) * scrollState) === 4 && scrollDir) {
+    if (onlyWidth > 500 )
+    {if (scrollPercentile === 4 && scrollDir) {
       executeScroll();
       myRef.current.scrollTo({top: firstScrollDestination})
     } 
-    if (Math.floor((100 /pageHeight) * scrollState) === 10 && !scrollDir) {
+    if (scrollPercentile === 10 && !scrollDir) {
       executeScroll();
       myRef.current.scrollTo({top: 0})
     } 
     //PAGE 2
-    if (Math.floor((100 /pageHeight) * scrollState) === 18 && scrollDir ) {
+    if (scrollPercentile === 18 && scrollDir ) {
       executeScroll();
       myRef.current.scrollTo(0, secondScrollDestination)
-    } if (Math.floor((100 /pageHeight) * scrollState) === 39 && !scrollDir) {
+    } if (scrollPercentile === 39 && !scrollDir) {
       executeScroll();
       myRef.current.scrollTo(0, firstScrollDestination)
     } 
     //PAGE 3
-    if (Math.floor((100 /pageHeight) * scrollState) === 47 && scrollDir ) {
+    if (scrollPercentile === 47 && scrollDir ) {
       executeScroll();
       myRef.current.scrollTo(0, thirdScrollDestination)
-    }  if (Math.floor((100 /pageHeight) * scrollState) === 67 && !scrollDir) {
+    }  if (scrollPercentile === 67 && !scrollDir) {
       executeScroll();
       myRef.current.scrollTo(0, secondScrollDestination)
     } 
@@ -121,9 +121,10 @@ useEffect(() => {
       </ParallaxContainer>
 
         <Text  onScroll={handleScroll} ref={myRef} >
-
-          {windowWidth > 500 ? <AboutText scrollState={scrollState}  pageHeight={pageHeight}/>
-          : <AboutTextMobile scrollState={scrollState}  pageHeight={pageHeight}></AboutTextMobile>
+          {onlyWidth > 500 ? 
+          <AboutText scrollState={scrollState}  pageHeight={pageHeight} />
+          : 
+          <AboutTextMobile scrollState={scrollState}  pageHeight={pageHeight} />
           }
         </Text>
 

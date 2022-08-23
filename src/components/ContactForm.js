@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colorGrey, colorBlack, colorCream, } from '../helpers/colors';
 import dog from '../img/Dog-Banner.jpeg';
+import { device } from '../helpers/screenSizes';
 
 export default function ContactForm() {
 
@@ -41,7 +42,9 @@ const Dog = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-position: bottom;
-  
+  ${device.mobile}{
+    display: none;
+  }
 `;
 const Wrapper = styled.form`
   position: relative;
@@ -60,7 +63,9 @@ const FormCutOut = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: ${colorCream}; */
+  ${device.mobile}{
+    justify-content: center;
+  }
 `;
 const Header = styled.div`
   margin-top: 2rem;
@@ -69,12 +74,14 @@ const Header = styled.div`
   font-size: 2rem;
   font-weight: 600;
   color: ${colorBlack};
+  ${device.mobile}{ 
+    color: ${colorCream};
+  }
 `;
 const Label = styled.label`
   width: 80%;
   text-align: left;
   color: ${colorGrey};
-
 `;
 const Input = styled.input` 
   width: 100%;
@@ -82,6 +89,9 @@ const Input = styled.input`
   border-radius: 6px;
   border: 1px solid ${colorGrey};
   font-size: 1.2rem;
+  ${device.mobile}{ 
+    background-color: ${colorCream};
+  }
 `;
 const Message = styled.textarea`
   width: 100%;
@@ -90,6 +100,10 @@ const Message = styled.textarea`
   border-radius: 6px;
   border: 1px solid ${colorGrey};
   font-size: 1rem;
+  font-size: 1.2rem;
+  ${device.mobile}{ 
+    background-color: ${colorCream};
+  }
 `;
 const Submit = styled.button`
   width: 100px;

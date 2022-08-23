@@ -93,7 +93,7 @@ const BorderClose  = styled.div`
 `;
 const Text = styled.div`
   width: 90%;
-  height: 20%;
+  height: 25%;
   z-index: 2;
   display: flex;
   align-items: center;

@@ -124,6 +124,27 @@ const Background = styled.div`
   filter: saturate(0.4);
   filter: brightness(1.4);
 `;
+const H1 = styled.div`
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 4rem;
+  width: 300px;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  ${device.mobile}{
+    position: sticky;
+    padding-left: 12px;
+    top: 0; 
+    width: 85%;
+    height: 14%;
+    justify-content: flex-start;
+    font-size: 3rem;
+    text-align: left;
+  }
+`;
 const UnorderedList = styled.ul`
   width: 70%;
   height: 80%;
@@ -132,15 +153,11 @@ const UnorderedList = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-const H1 = styled.div`
-  font-family: "Handvetica Neue";
-  font-size: 4rem;
-  text-align: center; 
-  width: 300px;
-  margin: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
+  ${device.mobile}{
+    justify-content:space-evenly;
+    width: 85%;
+    height: 86%;
+  }
 `;
 const ListItem = styled.a`
   width: 100%;
@@ -157,9 +174,9 @@ const ListItem = styled.a`
     cursor: pointer;
   }
   ${device.mobile}{
+  line-height: 1rem;
    flex-direction : column;
-   height: fit-content;
-   margin-bottom: 1rem;
+   height: auto;
   }
 `;
 const Text = styled.div`
@@ -167,7 +184,7 @@ const Text = styled.div`
 `;
 const H3 = styled.li`
   line-height: 1rem;
-  font-family: "Handvetica Neue";
+  white-space: nowrap;
   ${device.mobile}{
     line-height: 2rem;
     font-size: 1.6rem;
@@ -177,7 +194,6 @@ const H3 = styled.li`
 const Para = styled.p`
   font-size: 1rem;
   color: ${colorBlack};
-  font-family: "Handvetica Neue";
 `;
 const WebImage = styled.div`
   width: 178px;

@@ -22,7 +22,7 @@ export default function About () {
     <BorderClose />
       <Container>
       <IFrame
-      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7836.456704366744!2d115.75547606894557!3d-31.894250621683256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32a8d53f5f9491%3A0x7f4796ab4a848054!2sScarborough%20Beach%20Clock%20Tower!5e0!3m2!1sen!2sau!4v1661126277571!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">' 
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26026.225998293794!2d115.7514310219168!3d-31.892581996463765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32a8d53f5f9491%3A0x7f4796ab4a848054!2sScarborough%20Beach%20Clock%20Tower!5e0!3m2!1sen!2sau!4v1661215853573!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' 
        allowfullscreen/>
 
       <FormWrapper> 
@@ -45,6 +45,9 @@ const Wrapper = styled.div`
   align-items: center;
   border: 16px solid ${colorCream}; 
   background-color: ${colorCream};   
+  ${device.mobile}{ 
+    background-color: transparent;
+  }
 `;
 const Container = styled.div`
   position: absolute;

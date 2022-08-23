@@ -27,12 +27,13 @@ export default function AboutText (props) {
   console.log(`mobile slide ${picSlide}%`)
 
   return (<>
+  <Wrapper>
     <Stage>
       <Hone>I've been a musician my whole life.</Hone>
       <Shots />
     </Stage>
 
-    <Paragraphs style={{transform: 'translateY(-100px)'}}>
+    <Paragraphs >
 
 
 {/* 1st  */}
@@ -138,44 +139,50 @@ export default function AboutText (props) {
 
     {/* transform: `translateY(${scrollState - pageHeight}px)` */}
     </Paragraphs>
+  </Wrapper>
   </>)
 }
 
-
+const Wrapper = styled.section`
+  height: 100vh;
+  width: 100%;
+`;
 const Stage = styled.div`
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 const Hone = styled.h1`
-  padding-top: 25%;
   margin: 0;
-  height: 50%;
-  font-size: 2.6rem;
+  height: 40%;
+  width: 90%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
   text-align: center;
 `;
 const Shots = styled.div`
   position: relative;
   border-radius: 10px ;
-  background-position: 0px -110px;
+  background-position: 0px -150px;
   background-size: cover;
   width: 150%;
-  height: 50%;
+  height: 60%;
   background-repeat: no-repeat;
   overflow: hidden;
   background-image: url(${StageShot});
-  background-position-x: -150px;
   background-position: top;
   ;
 `;
 const Paragraphs = styled.div`
   position: relative;
-  width: 95%;
+  width: 100%;
   height: 100%;
-  margin: 6rem 0 0 0;
+  margin: 2rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,7 +220,7 @@ const Flip = styled.div`
   height: 100%;
 `;
 const Text = styled.div`
-  max-width: 100%;
+  max-width: 95%;
   text-align: center;
   margin: 5rem 0rem 0.6rem;
 `;

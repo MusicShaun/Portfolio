@@ -15,10 +15,16 @@ import Loader from './Loader';
 import { useState , useEffect } from 'react'; 
 import { device } from '../helpers/screenSizes';
 import StyledBurger from './Hamburger';
+import {useWindowWidth, useWindowHeight} from '@react-hook/window-size';
+
+
 
 export default function WindowContainer() {
+  const onlyHeight = useWindowHeight();
+  const onlyWidth = useWindowWidth()
   const [openMobile, setOpenMobile] = useState(false);
   const [loading, setLoading] = useState(false);
+
   const handleLoading = () => {
     setLoading(false); 
   }
@@ -33,17 +39,7 @@ export default function WindowContainer() {
   function hideHamburger() {
     setOpenMobile(false)
   }
-  //GET WINDOW SIZE
-  let {innerWidth} = window;
-  const [windowWidth, setwindowWidth] = useState(innerWidth);
-  useEffect(() => {
-    function handleResize() {
-      setwindowWidth(innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [innerWidth]);
-  console.log(openMobile)
+
 
   return (<>
   
@@ -58,7 +54,7 @@ export default function WindowContainer() {
           <StyledBurger openMobile={openMobile}></StyledBurger>
         </Hamburger>
 
-        {windowWidth < 500 ? <LeftSide 
+        {onlyWidth < 500 ? <LeftSide 
           style={{transform: openMobile ? 'translateX(0px)' : 'translateX(-100%)'}}> 
           <Navigation hideHamburger={hideHamburger}/>
         </LeftSide>
@@ -70,7 +66,7 @@ export default function WindowContainer() {
           <Routes>
             <Route path='/' element={ <Home />} />
             
-            <Route path='/about' element={<About windowWidth={windowWidth}/>} />
+            <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
             
             <Route path='/websites' element={ <Websites />} />
             <Route path='/websites/banana-shop' element={ <BananaShop /> } />              
