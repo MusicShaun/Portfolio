@@ -49,6 +49,13 @@ export default function Navigation(props){
             </ListItem>
           </Link>
 
+          <Link to='/skills' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+            <ListItem>
+              <WebsiteSVG />
+                Skills
+            </ListItem>
+          </Link>
+
           <Link to='/contact' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <MailSVG  />
@@ -132,7 +139,7 @@ const UnorderedList = styled.ul`
   justify-content: space-around;
   text-decoration: none;
   ${device.mobile} {
-    padding-top: 4.5rem;
+    padding-top: 5rem;
   }
 `;
 const ListItem = styled.li`

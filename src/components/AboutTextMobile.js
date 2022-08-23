@@ -156,7 +156,7 @@ const Cleaner = styled.div`
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
-  width: 90%;
+  width: 100%;
   height: 100%;
   overflow-y: hidden;
   z-index: -1;
