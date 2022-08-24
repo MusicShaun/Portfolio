@@ -42,10 +42,10 @@ const Dog = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-position: bottom;
-  ${device.laptopL}{
+  ${device.desktop}{
     background-position-y: 100px;
   }
-  ${device.laptop}{
+  ${device.laptopL}{
     display: none;
   }
 `;

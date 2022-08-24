@@ -6,13 +6,13 @@ import Belvoire from '../img/Belvoire.jpg';
 import corona from '../img/corona.webp';
 import decks from '../img/decks.jpg';
 import sarcastic from '../img/sarcastic.jpg';
-import eyes from '../img/eyes.jpeg';
+import eyes from '../img/eyes.webp';
 import { useEffect, useState } from "react";
 import {device} from '../helpers/screenSizes';
 import studio from '../img/studio.png';
-import vscode from '../img/vscode.png';
+import vscode from '../img/vscode.webp';
 import thanks from '../img/thanks.jpg';
-import StageShot from '../img/big-stage.jpeg';
+import StageShot from '../img/big-stage.webp';
 import { colorWhite} from "../helpers/colors";
 
 export default function AboutText (props) {
@@ -84,7 +84,7 @@ export default function AboutText (props) {
       <Left>
       <Square> {picSlide > 58 && <LeftFlip style={{backgroundImage: `url(${thanks})`}}/>}</Square>
       <LeftText>
-        I hope to find myself interning, side by side with the pro's, building apps, 
+        I hope to find myself interning, side by side with the pro's, building apps and 
         games, solving problems, failing compiles. I know this is a field I will be happy.</LeftText>
       </Left>
       <Right>
@@ -97,8 +97,8 @@ export default function AboutText (props) {
 
 
     <Page style={{top: '350%'}}><ClosingPage>
-      <LeftText style={{maxWidth: '80%'}}>  I studied because I wanted to. 
-      <br />I studied because I see coding as my long term  <br /> 
+      <LeftText style={{maxWidth: '80%'}}>  I study because I want to. 
+      <br />I study because I see coding as my long term  <br /> 
         future and because I'm passionate about it'.</LeftText>
     <ClosingImg style={{backgroundPositionY: `-${(pageHeight - (scrollState -100))}px`}}/>
     </ClosingPage> </Page>

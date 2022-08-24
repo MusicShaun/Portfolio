@@ -8,6 +8,9 @@ const animator = keyframes`${flipInX}`;
 
 
 export default function Home (props) {
+  useEffect(() => {
+    document.title = 'Shaun\'s Portfolio';
+  }, [])
 
   const [showHeader, setShowHeader] = useState(false);
   const [showSubHeader, setShowSubHeader] = useState(false);
@@ -149,7 +152,7 @@ const BigArrow = styled.div`
     top: 50%;
   }
   ${device.desktop} {
-    top: 60%;
+    top: 64%;
   }
   ${device.laptop} {
     top: 68%;

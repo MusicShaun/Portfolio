@@ -9,6 +9,10 @@ import AboutBackground from './AboutBackground';
 
 export default function About (props) {
 
+  useEffect(() => {
+    document.title = 'About Shaun';
+  }, [])
+
   const {onlyWidth} = props; 
   
   //AUTOMATIC SCROLLING 

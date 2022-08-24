@@ -4,6 +4,7 @@ import AboutSVG from '../img/SVGs/AboutSVG';
 import MailSVG from '../img/SVGs/SendMail';
 import WebsiteSVG from '../img/SVGs/WebsiteSVG';
 import profilePic from '../img/profile-pic.jpeg';
+import SkillsSVG from '../img/SVGs/SkillsSVG';
 import Facebook from '../img/SVGs/Facebook';
 import Instagram from '../img/SVGs/Instagram';
 import Github from '../img/SVGs/Github';
@@ -50,7 +51,7 @@ export default function Navigation(props){
 
           <Link to='/skills' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
-              <WebsiteSVG />
+              <SkillsSVG />
                 Skills
             </ListItem>
           </Link>

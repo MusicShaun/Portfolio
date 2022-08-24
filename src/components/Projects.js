@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { colorBlack, colorCream, colorBlue } from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
-import column from '../img/columnsdesign.png';
-import mastering from '../img/mastering.png';
-import banana from '../img/bananashop.png';
-import todo from '../img/Todo.png';
-import quiz from '../img/Quiz.png';
+import column from '../img/columnsdesign.webp';
+import mastering from '../img/mastering.webp';
+import banana from '../img/bananashop.webp';
+import todo from '../img/Todo.webp';
+import quiz from '../img/Quiz.webp';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
 
@@ -18,6 +18,9 @@ export default function Skills() {
     return () => clearTimeout(timer);
   }, [])
 
+  useEffect(() => {
+    document.title = 'Shaun\'s Projects';
+  }, [])
 
   return (
     <Wrapper>

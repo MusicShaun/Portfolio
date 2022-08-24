@@ -15,6 +15,9 @@ export default function About () {
     }, 1100);
     return () => clearTimeout(timer);
   }, [])
+  useEffect(() => {
+    document.title = 'Contact Me';
+  }, [])
 
   return (
     <Wrapper>

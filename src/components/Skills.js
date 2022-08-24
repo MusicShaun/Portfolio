@@ -14,6 +14,10 @@ export default function Skills() {
     return () => clearTimeout(timer);
   }, [])
 
+  useEffect(() => {
+    document.title = 'Shaun\'s Skills';
+  }, [])
+
 
   return (
     <Wrapper>
@@ -42,7 +46,7 @@ export default function Skills() {
       <Headings>Work Descriptions    </Headings>
         <SubHeading>Command Q </SubHeading>
         <UL>
-            <LI>Leading a 4 man team, (Booking Agent, Marketing creator,live performer, Manager)</LI>
+            <LI>Leading a 4 man team, (Booking Agent, Marketing creator, live performer, Manager)</LI>
             <LI>Producing song artworks, show posters</LI>
             <LI>Liaising with promoters, club owners, labels, fans, artists, managers, lawyers, distro, radio</LI>
             <LI>Working with high pressure deadlines and intense environments</LI>
@@ -76,17 +80,18 @@ export default function Skills() {
           <LI>Javascript</LI>
           <LI>React</LI>
           <LI>Photoshop</LI>
-          <LI>Word</LI>
+          <LI>Word Apps</LI>
           <LI>Basic AWS</LI>
-          <LI>Everything Audio</LI>
+          <LI>Anything Audio</LI>
+          <LI>Making coffee</LI>
         </UL>
     </Containers>
 
     <Containers style={{backgroundColor: '#F2BC8D'}}>
       <Headings>Current</Headings>
         <UL>
-          <LI>Full-Time home study</LI>
-          <LI>Teaching Music Part-time</LI>
+          <LI>Full-Time study </LI>
+          <LI>Part-Time teaching music</LI>
         </UL>
     </Containers>
 

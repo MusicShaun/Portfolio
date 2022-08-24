@@ -6,12 +6,12 @@ import Belvoire from '../img/Belvoire.jpg';
 import corona from '../img/corona.webp';
 import decks from '../img/decks.jpg';
 import sarcastic from '../img/sarcastic.jpg';
-import eyes from '../img/eyes.jpeg';
+import eyes from '../img/eyes.webp';
 import { useEffect, useState } from "react";
 import studio from '../img/studio.png';
-import vscode from '../img/vscode.png';
+import vscode from '../img/vscode.webp';
 import thanks from '../img/thanks.jpg';
-import StageShot from '../img/big-stage.jpeg';
+import StageShot from '../img/big-stage.webp';
 import { colorWhite } from "../helpers/colors";
 
 export default function AboutText (props) {
@@ -39,7 +39,7 @@ export default function AboutText (props) {
 
 {/* 1st  */}
     <Partition>
-      <Text>And lucky enough to travel and collaborate with people all over the world.</Text>
+      <Text>And lucky enough to travel and collaborate with people around the world.</Text>
 
       <ContainerRect>
         {/* {picSlide > 3 &&  */}
@@ -49,7 +49,8 @@ export default function AboutText (props) {
 
 {/* 2nd */}
     <Partition>
-      <Text>My special skill was audio engineering and audio production, namely, Mastering.</Text>
+      <Text>My special skill was audio engineering and audio production, namely, Mastering. 
+        <br />Life was good.v</Text>
       <ContainerSquare>
         {/* {picSlide > 7 &&  */}
         <Flip style={{backgroundImage: `url(${studio})`}}/>
@@ -68,7 +69,7 @@ export default function AboutText (props) {
 
 {/* 4th */}
     <Partition>
-      <Text style={{}}>The world shuts down and along with it, music, theatre, touring, festivals, clubs etc. </Text>  
+      <Text >The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general.</Text>  
       <ContainerRect >
         {/* {picSlide > 27 &&  */}
         <Flip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>
@@ -90,8 +91,8 @@ export default function AboutText (props) {
 {/* 6th */}
     <Partition>
       <Text>
-      However, this exposes a new opportunity. To find something just as challenging and exciting.
-        As it turns out, coding is very challenging, creative and incredibly satisfying.<br /></Text>
+      It was time to look for a new career opportunity. To find something just as challenging and exciting.
+        And to no surprise, coding is very challenging, creative and incredibly satisfying<br /></Text>
         <ContainerSquare>
         {/* {picSlide > 41 &&  */}
         <Flip style={{backgroundImage: `url(${vscode})`}}/>
@@ -100,7 +101,7 @@ export default function AboutText (props) {
 
 {/* 7th  */}
     <Partition>
-      <Text>Now I am but a coding novice, with much to learn and much to create.</Text>
+      <Text>Now I am but a humble Padawan, with much to learn.  </Text>
       
       <ContainerSquare>
         {/* {picSlide > 54 &&  */}
@@ -111,8 +112,8 @@ export default function AboutText (props) {
 {/*  8th  */}
     <Partition>
       <Text>
-        I hope to find myself as a humble intern, side by side with the pro's in this field, building apps, 
-        games, solving problems, all of it.</Text>
+      I hope to find myself interning, side by side with the pro's, building apps and 
+        games, solving problems, failing compiles. I know this is a field I will be happy.</Text>
         <ContainerSquare>
         {/* {picSlide > 62 &&  */}
         <Flip style={{backgroundImage: `url(${thanks})`}}/>
@@ -121,7 +122,7 @@ export default function AboutText (props) {
 {/*  9th  */}
     <Partition>
       <Text>I didn't study coding at Uni or a bootcamp. I didn't study because a 
-        lecturer required me to complete an assignment or because I needed to pass.</Text>
+        lecturer required me to complete an assignment or because my Mum said I'd be good at it.</Text>
 
       <ContainerSquare>   
         {/* {picSlide > 65 &&  */}
@@ -131,8 +132,8 @@ export default function AboutText (props) {
 {/*  10  */}
     <Stage2><Cleaner style={{width: '100%', borderRadius: '20px'}} />
       <Text style={{ textAlign: 'center', height: '30%', alignItems: 'center'}}>  
-      I studied because I wanted to. 
-      <br />I studied because I see coding as my long term  <br /> 
+      I study because I want to. 
+      <br />I study because I see coding as my long term  <br /> 
         future and because I'm a ridiculously passionate person.      
           </Text>
       <Shot style={{}}/>
