@@ -45,9 +45,11 @@ export default function About (props) {
 
 const Wrapper = styled.div`
   position: relative;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 100vh;
-  /* max-height: 100%; */
+  height: 100%;
+  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,6 +81,7 @@ const IFrame = styled.iframe`
   }
 `; 
 const FormWrapper = styled.div`
+  position: relative;
   width: 40%; 
   height: 100%;
   display: flex;
