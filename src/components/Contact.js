@@ -5,7 +5,6 @@ import Loader from './Loader';
 import { useEffect , useState } from 'react';
 import { device } from '../helpers/screenSizes';
 
-
 export default function About (props) {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -24,6 +23,7 @@ export default function About (props) {
   }, [])
   
   return (
+// 
     <Wrapper>
         { props.onlyWidth > 500 ? loading && <Loader /> : mobileLoading && <Loader /> }
 
@@ -39,8 +39,8 @@ export default function About (props) {
 
 
     </Wrapper>
-  )
-}
+  );
+};
 
 
 const Wrapper = styled.div`
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   padding: 0;
   width: 100%;
   height: 100%;
-  max-height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,8 +82,10 @@ const IFrame = styled.iframe`
 `; 
 const FormWrapper = styled.div`
   position: relative;
+  top: 0;
   width: 40%; 
   height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

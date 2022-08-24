@@ -11,22 +11,23 @@ export default function ContactForm() {
   }
 
   return (
-    <Wrapper onSubmit={handleSubmit} method="POST" netlify>
-      <FormCutOut>
-        <Header>Hire me</Header>
-        <Label>Name: <br/>
-          <Input type='text' name='name' placeholder='' required/>
-        </Label>
-        <Label>Email: <br />
-          <Input type='email' name='email' placeholder='' required/>
-        </Label>
-        <Label>Message: <br />
-            <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' name='message' required />
-        </Label>
-        <Submit type='submit' value='submit'>Send it!</Submit>
 
-      </FormCutOut>
-      <Dog />
+      <Wrapper onSubmit={handleSubmit} method="POST" netlify>
+        <FormCutOut>
+          <Header>Hire me</Header>
+          <Label>Name: <br/>
+            <Input type='text' name='name' placeholder='' required/>
+          </Label>
+          <Label>Email: <br />
+            <Input type='email' name='email' placeholder='' required/>
+          </Label>
+          <Label>Message: <br />
+              <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' name='message' required />
+          </Label>
+          <Submit type='submit' value='submit'>Send it!</Submit>
+
+        </FormCutOut>
+        <Dog />
     </Wrapper>
   )
 }
@@ -53,6 +54,7 @@ const Dog = styled.div`
 const Wrapper = styled.form`
   position: relative;
   width: 100%;
+  top:0;
   height: auto;
   min-height: 100%;
   border-radius: 10px 10px 0 0 ;
