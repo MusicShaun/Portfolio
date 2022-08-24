@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import { flipInX} from 'react-animations';
 import OnStage from '../img/behind-booth.jpeg';
-import Party from '../img/party.jpg';
+import Party from '../img/party.webp';
 import Belvoire from '../img/Belvoire.jpg';
 import corona from '../img/corona.webp';
 import decks from '../img/decks.jpg';

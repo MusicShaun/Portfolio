@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import { flipInX} from 'react-animations';
 import OnStage from '../img/behind-booth.jpeg';
-import Party from '../img/party.jpg';
+import Party from '../img/party.webp';
 import Belvoire from '../img/Belvoire.jpg';
 import corona from '../img/corona.webp';
 import decks from '../img/decks.jpg';
@@ -13,6 +13,7 @@ import vscode from '../img/vscode.webp';
 import thanks from '../img/thanks.jpg';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite } from "../helpers/colors";
+import { device } from '../helpers/screenSizes';
 
 export default function AboutText (props) {
 
@@ -209,7 +210,7 @@ const Partition = styled.div`
 const ContainerSquare = styled.div`
     display: flex;
     min-width: 150px;
-    min-height: 150px;
+    min-height: 250px;
     height: 250px;
     width: 100%;
 `;
@@ -232,7 +233,7 @@ const Text = styled.div`
   max-width: 95%;
   text-align: center;
   margin: 4rem 0rem 0.6rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 `;
 const Stage2 = styled.div`
   position: relative;
@@ -250,4 +251,9 @@ const Shot = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -300px -0px;
+
+  ${device.mobile} {
+    background-position: -130px -0px;
+
+  }
 `;

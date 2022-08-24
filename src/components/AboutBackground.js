@@ -1,6 +1,6 @@
 import { colorCream, specialAqua, specialBlue, specialMud, specialOrange, specialYellow } from "../helpers/colors";
 import styled from 'styled-components';
-
+import { device } from '../helpers/screenSizes';
 
 export default function AboutBackground() {
 
@@ -51,6 +51,9 @@ const Wrapper = styled.div`
   background-color: ${colorCream};
   & > div {
     position: absolute;
+  }
+  ${device.mobile} {
+    height: 140%;
   }
 `;
 const Circle = styled.div`

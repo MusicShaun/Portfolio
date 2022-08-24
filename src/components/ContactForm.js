@@ -10,7 +10,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Wrapper onSubmit={handleSubmit} netlify>
+    <Wrapper onSubmit={handleSubmit} method="POST" netlify>
       <FormCutOut>
         <Header>Hire me</Header>
         <Label>Name: <br/>

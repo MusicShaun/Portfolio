@@ -73,7 +73,7 @@ export default function WindowContainer() {
             <Route path='/websites/columns' element={ <Columns /> } />              
             <Route path='/websites/mastering' element={ <Mastering /> } />              
             <Route path='/skills' element={ <Skills /> } />              
-            <Route path='/contact' element={ <Contact /> } />              
+            <Route path='/contact' element={ <Contact  onlyWidth={onlyWidth}/> } />              
            
           </Routes>
         </RightSide>

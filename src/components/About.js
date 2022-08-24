@@ -110,7 +110,6 @@ useEffect(() => {
 return () => clearInterval(timer)
 }, [])
 
-
   return (
     <Wrapper>
 
