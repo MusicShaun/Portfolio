@@ -42,16 +42,16 @@ export default function AboutText (props) {
     <Page style={{top: '50%'}}><section>
       <Right>
         <RightText>And lucky enough to travel and collaborate with people from around the world.</RightText>
-        <Rect>{picSlide > 6 && <RightFlip style={{backgroundImage: `url(${Belvoire})`}}/>}</Rect>
+        <Rect>{picSlide > 6 && <RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/>}</Rect>
       </Right>  
       <Left>
-        <Square>{picSlide > 9 && <LeftFlip style={{backgroundImage: `url(${studio})`}}/>}</Square>
+        <Square>{picSlide > 9 && <LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 9 ? 'flex' : 'none' }}/>}</Square>
         <LeftText>My special skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.</LeftText>
       </Left>
       <Right>
         <RightText style={{textAlign: 'center', width: '80%'}}>Then COVID happens.</RightText>
-        <Square>{picSlide > 12 &&<RightFlip style={{backgroundImage: `url(${corona})` }}/>}</Square>
+        <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 12 ? 'flex' : 'none' }}/></Square>
       </Right>  
     </section></Page>
 
