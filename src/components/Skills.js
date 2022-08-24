@@ -135,8 +135,8 @@ const Headings = styled.div`
   font-size: 2rem;
   padding: 0;
   text-decoration: underline;
-  text-decoration-thickness: 4%;
-  text-underline-offset: 10%;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
 `;
 const UL = styled.ul`
   margin: 0 ;

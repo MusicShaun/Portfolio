@@ -159,6 +159,7 @@ const Text = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden auto;
+  
 `;
 
 const ParallaxContainer = styled.div`

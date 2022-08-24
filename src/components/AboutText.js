@@ -122,6 +122,7 @@ const Opener = styled.h1`
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 const Stage = styled.div`
   position: relative;
@@ -142,6 +143,8 @@ const Page = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
+  max-height: 1200px;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -243,7 +246,7 @@ const ClosingPage = styled.div`
     height: 60%;}
 `;
 const ClosingImg = styled.div`
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   overflow: hidden;
   background-image: url(${OnStage});

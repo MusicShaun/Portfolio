@@ -43,12 +43,12 @@ export default function Home (props) {
           { showHeader && <Header>Hello! It's good to see you</Header> }
           { showSubHeader && <SubHeader>My name is Shaun.</SubHeader> }
           { showSubHeader2 && <SubHeader >Please take a look around.</SubHeader>}
-          { showSubHeader3 && <BigArrow></BigArrow>}
-
 
         </Text>
       </Container>
+      { showSubHeader3 && <BigArrow></BigArrow>}
     </Wrapper>
+
     </>)
 }
 
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   align-items: center;
   border: 16px solid ${colorCream}; 
     
-  ${device.mobile} {
+  ${device.tablet} {
     border: none;
   }
 `;
@@ -76,18 +76,18 @@ const Container = styled.div`
   border: 20px solid ${colorCream};
   border-radius: 40px;
   box-sizing: content-box;
-  ${device.mobile} {
+  ${device.tablet} {
     border: none;
   } 
 `;
 const BorderClose  = styled.div`
   position: absolute;
-  width: 99%;
-  height: 99%;
+  width: 98.6%;
+  height: 98.6%;
   border: 10px solid ${colorCream};
   box-sizing: content-box;
   border-radius: 10px;
-  ${device.mobile} {
+  ${device.tablet} {
     display: none;
   }
 `;
@@ -98,6 +98,9 @@ const Text = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  ${device.laptop} {
+    height: 50%;
+  }
 `;
 const Header = styled.h1`
   animation: 1.5s ${animator};
@@ -126,7 +129,7 @@ const SubHeader = styled.p`
 `;
 const BigArrow = styled.div`
   @keyframes animator2 {
-    0% { margin-left: 140px; opacity: 0.7;
+    0% { margin-left: 10%; opacity: 0.7;
     } 100%  { margin-left: 0px; opacity: 1;    
   }}
   animation: 0.5s animator2 ease-in-out infinite alternate;
@@ -136,14 +139,22 @@ const BigArrow = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   transform: rotate(180deg);
-  margin-right: 100%;
-  margin-top: 72px;
   width: 140px;
   height: 72px;
   filter: invert(1);
   position: absolute;
-
-  ${device.mobile} {
+  left: 0;
+  top: 62%;
+  ${device.desktopL} {
+    top: 50%;
+  }
+  ${device.desktop} {
+    top: 60%;
+  }
+  ${device.laptop} {
+    top: 68%;
+  }
+  ${device.tablet} {
     display: none;
   }
 `;

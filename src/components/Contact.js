@@ -12,7 +12,7 @@ export default function About () {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1100);
     return () => clearTimeout(timer);
   }, [])
 

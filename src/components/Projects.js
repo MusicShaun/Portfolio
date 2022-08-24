@@ -30,7 +30,7 @@ export default function Skills() {
           <Headings>Banana Shop</Headings>
           <LI>React store with a mock product api and Stripe payment.</LI>
         </UL>
-        <WebImage style={{backgroundImage: `url(${banana})`, backgroundPositionX: '-8px'}}/>
+        <WebImage style={{backgroundImage: `url(${banana})`}}/>
       </Containers>
 
       <Containers style={{backgroundColor: '#F4A86A'}}
@@ -39,7 +39,7 @@ export default function Skills() {
           <Headings>Quiz</Headings>
           <LI>State. Many, many states. </LI>
         </UL>
-        <WebImage style={{backgroundImage: `url(${quiz})`, backgroundPositionX: '-8px'}}/>
+        <WebImage style={{backgroundImage: `url(${quiz})`}}/>
       </Containers>
 
       <Containers style={{backgroundColor: '#FFE07B'}}
@@ -48,7 +48,7 @@ export default function Skills() {
           <Headings>Todo List</Headings>
           <LI>Simple array manipulation with local storage.</LI>
         </UL>
-      <WebImage style={{backgroundImage: `url(${todo})` , backgroundPositionX: '-8px'}}/>
+      <WebImage style={{backgroundImage: `url(${todo})`}}/>
     </Containers>
     
     <Containers style={{backgroundColor: '#98D0DF'}}
@@ -129,6 +129,7 @@ const WebImage = styled.div`
   display: flex;
   align-self: flex-end;
   justify-items: flex-end;
+  background-position-x: 50%;
   ${device.mobile}{
    display: none;
   }
@@ -138,8 +139,8 @@ const Headings = styled.div`
   font-size: 2rem;
   padding: 0;
   text-decoration: underline;
-  text-decoration-thickness: 4%;
-  text-underline-offset: 10%;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
   white-space: nowrap;
   align-self: flex-start;
   margin-left: -1rem;

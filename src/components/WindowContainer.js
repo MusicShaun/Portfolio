@@ -54,7 +54,7 @@ export default function WindowContainer() {
           <StyledBurger openMobile={openMobile}></StyledBurger>
         </Hamburger>
 
-        {onlyWidth < 500 ? <LeftSide 
+        {onlyWidth < 1025 ? <LeftSide 
           style={{transform: openMobile ? 'translateX(0px)' : 'translateX(-100%)'}}> 
           <Navigation hideHamburger={hideHamburger}/>
         </LeftSide>
@@ -101,7 +101,7 @@ const Container = styled.div`
   height: 85%;
   display: flex;
     
-  ${device.mobile} {
+  ${device.tablet} {
     height: 100%;
     width: 100%;
   }
@@ -111,7 +111,7 @@ const LeftSide = styled.div`
   height: 100%;
   transition: all 1s;
     
-  ${device.mobile} {
+  ${device.tablet} {
     position: absolute;
     left:0;
     top: 0;
@@ -133,7 +133,7 @@ const Hamburger = styled.div`
   display: none;
   z-index: 11;
 
-  ${device.mobile} {
+  ${device.tablet} {
     display: flex;
   }
 `;

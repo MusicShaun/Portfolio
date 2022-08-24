@@ -5,7 +5,10 @@ export default function Loader() {
 
   return (<>
     <Background />
+    <Wrapper>
     <Loading />
+
+    </Wrapper>
     </>)
 }
 const Background = styled.div`
@@ -15,11 +18,16 @@ const Background = styled.div`
   background-color: ${colorWhite};
   z-index: 3;
  `;
+ const Wrapper = styled.div`
+   position: absolute;
+   width: 100%;
+   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ `;
 const Loading = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
   width: 6em;
   height: 6em;
   border: 1.1em solid rgba(0, 0, 0, 0.2);

@@ -42,7 +42,10 @@ const Dog = styled.div`
   background-repeat: no-repeat;
   background-position: right;
   background-position: bottom;
-  ${device.mobile}{
+  ${device.laptopL}{
+    background-position-y: 100px;
+  }
+  ${device.laptop}{
     display: none;
   }
 `;
@@ -55,6 +58,12 @@ const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${device.desktop} {
+    padding-top: 2rem;
+  }
+  ${device.desktopL} {
+    padding-top: 5rem;
+  }
 `;
 const FormCutOut = styled.div`
   width: 100%;
@@ -79,8 +88,12 @@ const Header = styled.div`
 `;
 const Label = styled.label`
   width: 80%;
+  color: ${colorBlack};
   text-align: left;
-  color: ${colorWhite};
+  ${device.tablet}{
+    color: ${colorWhite};
+  }
+
 `;
 const Input = styled.input` 
   width: 100%;

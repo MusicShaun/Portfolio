@@ -112,6 +112,10 @@ const Profile = styled.div`
     width: 7.5rem; 
     height: 7.5rem; 
   }
+  ${device.tablet} {
+    width: 16em; 
+    height: 16em; 
+  }
   ${device.mobile} {
     width: 11rem; 
     height: 11rem; 
@@ -138,8 +142,12 @@ const UnorderedList = styled.ul`
   flex-direction: column;
   justify-content: space-around;
   text-decoration: none;
+  ${device.tablet} {
+    margin-top: 5rem;
+  }
   ${device.mobile} {
     padding-top: 5rem;
+    margin-top: 1rem;
   }
 `;
 const ListItem = styled.li`
@@ -162,12 +170,17 @@ const ListItem = styled.li`
   ${device.laptop} {
     font-size: 1.1rem;
     }
-  ${device.mobile} {
+  ${device.tablet} {
       text-align: center;
       justify-content: center;
       padding-left: 0;
-      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-size: 3rem;
     }
+  ${device.mobile} {
+    font-size: 2rem;
+    margin-bottom: 0rem;
+  }
 `;
 const Footer = styled.div`
   width: 100%;
