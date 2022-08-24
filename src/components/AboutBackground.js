@@ -1,4 +1,4 @@
-import { colorCream, specialAqua, specialBlue, specialMud, specialOrange, specialYellow } from "../helpers/colors";
+import { specialAqua, specialBlue, specialMud, specialOrange, specialYellow } from "../helpers/colors";
 import styled from 'styled-components';
 import { device } from '../helpers/screenSizes';
 
