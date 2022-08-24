@@ -46,7 +46,7 @@ export default function AboutText (props) {
       </Right>  
       <Left>
         <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 9 ? 'flex' : 'none' }}/></Square>
-        <LeftText>My special skill was audio engineering and audio production, namely, Mastering. 
+        <LeftText>My unique skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.</LeftText>
       </Left>
       <Right>
@@ -157,7 +157,7 @@ const Page = styled.div`
     flex-direction: column;
     background-color: ${colorWhite};  
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   
   }
 `;

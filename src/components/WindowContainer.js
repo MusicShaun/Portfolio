@@ -65,15 +65,15 @@ export default function WindowContainer() {
         <RightSide>
           <Routes>
             <Route path='/' element={ <Home />} />
-            <Route path='/#/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
-            <Route path='/#/websites' element={ <Projects />} />
-            <Route path='/websites/banana-shop' element={ <BananaShop /> } />              
-            <Route path='/websites/todo-list' element={ <TodoList /> } />              
-            <Route path='/websites/quiz' element={ <Quiz /> } />              
-            <Route path='/websites/columns' element={ <Columns /> } />              
-            <Route path='/websites/mastering' element={ <Mastering /> } />              
-            <Route path='/#/skills' element={ <Skills /> } />              
-            <Route path='/#/contact' element={ <Contact  onlyWidth={onlyWidth}/> } />              
+            <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
+            <Route path='/projects' element={ <Projects />} />
+            <Route path='/projects/banana-shop' element={ <BananaShop /> } />              
+            <Route path='/projects/todo-list' element={ <TodoList /> } />              
+            <Route path='/projects/quiz' element={ <Quiz /> } />              
+            <Route path='/projects/columns' element={ <Columns /> } />              
+            <Route path='/projects/mastering' element={ <Mastering /> } />              
+            <Route path='/skills' element={ <Skills /> } />              
+            <Route path='/contact' element={ <Contact  onlyWidth={onlyWidth}/> } />              
            
           </Routes>
         </RightSide>

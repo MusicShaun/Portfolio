@@ -39,7 +39,7 @@ export default function AboutBackground() {
         <Zig4></Zig4>
         <Zig4></Zig4>
       </Zigger>
-
+<Colorr/>
     </Wrapper>
   )
 }
@@ -47,8 +47,7 @@ export default function AboutBackground() {
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-color: ${colorCream};
+  min-height: 100%;
   & > div {
     position: absolute;
   }
@@ -56,6 +55,13 @@ const Wrapper = styled.div`
     height: 140%;
   }
 `;
+const Colorr = styled.div`
+  position: absolute;
+  width: 100%;
+  min-height: 200%;
+  background-color: #FFFFE2;
+  z-index: -1;
+`
 const Circle = styled.div`
   top: 10%;
   left: 20%;

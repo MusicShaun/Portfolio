@@ -35,28 +35,28 @@ export default function Navigation(props){
             </ListItem>
           </Link>
 
-          <Link to='/#/about' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+          <Link to='/about' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <AboutSVG  />
                 About
             </ListItem>
           </Link>
 
-          <Link to='/#/Websites' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+          <Link to='/Projects' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <WebsiteSVG />
                 Projects
             </ListItem>
           </Link>
 
-          <Link to='/#/skills' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+          <Link to='/skills' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <SkillsSVG />
                 Skills
             </ListItem>
           </Link>
 
-          <Link to='/#/contact' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+          <Link to='/contact' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <MailSVG  />
                 Contact

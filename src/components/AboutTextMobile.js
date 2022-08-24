@@ -49,7 +49,7 @@ export default function AboutText (props) {
 
 {/* 2nd */}
     <Partition>
-      <Text>My special skill was audio engineering and audio production, namely, Mastering. 
+      <Text>My unique skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.v</Text>
       <ContainerSquare>
         <Flip style={{backgroundImage: `url(${studio})`}}/>
