@@ -17,7 +17,7 @@ import { colorWhite} from "../helpers/colors";
 
 export default function AboutText (props) {
 
-  const {scrollState, pageHeight, handleLoad} = props;
+  const {scrollState, pageHeight} = props;
   const [picSlide, setPicSlide] = useState(0);
 
   useEffect(() => {
