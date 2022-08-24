@@ -101,17 +101,15 @@ export default function About (props) {
     }
   };
 
-
-
 // LOADING 
 const [loading, setLoading] = useState(true);
-
 useEffect(() => {
   const timer = setTimeout(() => {
-    setLoading(false);
-  }, 2400);
-  return () => clearTimeout(timer);
+    setLoading(false)
+  }, 1500);
+return () => clearInterval(timer)
 }, [])
+
 
   return (
     <Wrapper>

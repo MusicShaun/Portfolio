@@ -6,14 +6,10 @@ import { useEffect , useState } from 'react';
 
 export default function Skills() {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 300);
-    return () => clearTimeout(timer);
+    setLoading(false)
   }, [])
-
+  
   useEffect(() => {
     document.title = 'Shaun\'s Skills';
   }, [])

@@ -8,12 +8,11 @@ import { device } from '../helpers/screenSizes';
 
 export default function About () {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1100);
-    return () => clearTimeout(timer);
+      setLoading(false)
+    }, 1400);
+  return () => clearInterval(timer)
   }, [])
   useEffect(() => {
     document.title = 'Contact Me';
