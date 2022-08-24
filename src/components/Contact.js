@@ -44,7 +44,7 @@ export default function About (props) {
 
 
 const Wrapper = styled.div`
-  position: relative;
+  position: absolute;
   margin: 0;
   padding: 0;
   width: 100%;

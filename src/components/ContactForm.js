@@ -64,12 +64,14 @@ const Wrapper = styled.form`
   justify-content: center;
   ${device.desktop} {
     padding-top: 2rem;
+    justify-content: flex-start;
   }
   ${device.desktopL} {
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
 `;
 const FormCutOut = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
