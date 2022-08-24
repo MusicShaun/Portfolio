@@ -7,6 +7,7 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    alert('Thank you for your message!')
   }
 
   return (
@@ -52,7 +53,8 @@ const Dog = styled.div`
 const Wrapper = styled.form`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   border-radius: 10px 10px 0 0 ;
   display: flex;
   flex-direction: column;

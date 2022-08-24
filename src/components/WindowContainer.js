@@ -109,7 +109,7 @@ const Container = styled.div`
 const LeftSide = styled.div`
   width: 320px;
   height: 100%;
-  transition: all 1s;
+  transition: all 0.5s cubic-bezier(0.17, 0.99, 1, 1);
     
   ${device.tablet} {
     position: absolute;
