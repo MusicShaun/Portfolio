@@ -42,10 +42,10 @@ export default function AboutText (props) {
     <Page style={{top: '50%'}}><section>
       <Right>
         <RightText>And lucky enough to travel and collaborate with people from around the world.</RightText>
-        <Rect>{picSlide > 6 && <RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/>}</Rect>
+        <Rect><RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/></Rect>
       </Right>  
       <Left>
-        <Square>{picSlide > 9 && <LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 9 ? 'flex' : 'none' }}/>}</Square>
+        <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 9 ? 'flex' : 'none' }}/></Square>
         <LeftText>My special skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.</LeftText>
       </Left>
@@ -59,16 +59,16 @@ export default function AboutText (props) {
 
     <Page style={{top: '150%'}}><section>
       <Left>
-      <Rect >{picSlide > 28 && <LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>}</Rect>
+      <Rect ><LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}/></Rect>
       <LeftText>The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general. </LeftText>
       </Left>
       <Right>
       <RightText>In less than a week, all my income streams had 
           vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</RightText>
-      <Square>{picSlide > 32 && <RightFlip style={{backgroundImage: `url(${Party})`}}/>}</Square>
+      <Square> <RightFlip style={{backgroundImage: `url(${Party})`, display: picSlide > 32 ? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
-      <Square>{picSlide > 36 && <LeftFlip style={{backgroundImage: `url(${vscode})`}}/>}</Square>
+      <Square><LeftFlip style={{backgroundImage: `url(${vscode})`, display: picSlide > 36 ? 'flex' : 'none' }}/></Square>
       <LeftText style={{maxWidth: '60%'}}>
         It was time to look for a new career opportunity. To find something just as challenging and exciting.
         And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></LeftText>
@@ -79,10 +79,10 @@ export default function AboutText (props) {
     <Page style={{top: '250%'}}><section>
       <Right>
       <RightText>Now I am but a humble Padawan, with much to learn.  </RightText>
-      <Square>{picSlide > 54 && <RightFlip style={{backgroundImage: `url(${eyes})`}}/>} </Square>
+      <Square><RightFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 54? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
-      <Square> {picSlide > 58 && <LeftFlip style={{backgroundImage: `url(${thanks})`}}/>}</Square>
+      <Square><LeftFlip style={{backgroundImage: `url(${thanks})`, display: picSlide > 58? 'flex' : 'none' }}/></Square>
       <LeftText>
         I hope to find myself interning, side by side with the pro's, building apps and 
         games, solving problems, failing compiles. I know this is a field I will be happy.</LeftText>
@@ -90,7 +90,7 @@ export default function AboutText (props) {
       <Right>
       <RightText>I didn't study coding at Uni or a bootcamp. I didn't study because a 
         lecturer required me to complete an assignment or because my Mum said I'd be good at it.</RightText>
-      <Square>   {picSlide > 62 && <RightFlip style={{backgroundImage: `url(${sarcastic})` }}/>}</Square>
+      <Square><RightFlip style={{backgroundImage: `url(${sarcastic})`, display: picSlide > 62? 'flex' : 'none'  }}/></Square>
       </Right>
     </section></Page>
 
