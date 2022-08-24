@@ -42,7 +42,6 @@ export default function AboutText (props) {
       <Text>And lucky enough to travel and collaborate with people around the world.</Text>
 
       <ContainerRect>
-        {/* {picSlide > 3 &&  */}
         <Flip style={{backgroundImage: `url(${Belvoire})`}}/>
       </ContainerRect>      <Cleaner /></Partition>
 
@@ -52,7 +51,6 @@ export default function AboutText (props) {
       <Text>My special skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.v</Text>
       <ContainerSquare>
-        {/* {picSlide > 7 &&  */}
         <Flip style={{backgroundImage: `url(${studio})`}}/>
       </ContainerSquare>      <Cleaner />
       </Partition>
@@ -62,7 +60,6 @@ export default function AboutText (props) {
     <Partition>
       <Text>Then COVID happens.</Text>
       <ContainerSquare >
-        {/* {picSlide > 12 && */}
         <Flip style={{backgroundImage: `url(${corona})` }}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -71,7 +68,6 @@ export default function AboutText (props) {
     <Partition>
       <Text >The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general.</Text>  
       <ContainerRect >
-        {/* {picSlide > 27 &&  */}
         <Flip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>
       </ContainerRect>      <Cleaner />
       </Partition>
@@ -83,7 +79,6 @@ export default function AboutText (props) {
           vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</Text>
 
       <ContainerSquare>
-        {/* {picSlide > 34 &&  */}
         <Flip style={{backgroundImage: `url(${Party})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -94,7 +89,6 @@ export default function AboutText (props) {
       It was time to look for a new career opportunity. To find something just as challenging and exciting.
         And to no surprise, coding is very challenging, creative and incredibly satisfying<br /></Text>
         <ContainerSquare>
-        {/* {picSlide > 41 &&  */}
         <Flip style={{backgroundImage: `url(${vscode})`}}/>
       </ContainerSquare>      <Cleaner />
       </Partition>
@@ -104,7 +98,6 @@ export default function AboutText (props) {
       <Text>Now I am but a humble Padawan, with much to learn.  </Text>
       
       <ContainerSquare>
-        {/* {picSlide > 54 &&  */}
         <Flip style={{backgroundImage: `url(${eyes})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -115,7 +108,6 @@ export default function AboutText (props) {
       I hope to find myself interning, side by side with the pro's, building apps and 
         games, solving problems, failing compiles. I know this is a field I will be happy.</Text>
         <ContainerSquare>
-        {/* {picSlide > 62 &&  */}
         <Flip style={{backgroundImage: `url(${thanks})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -125,7 +117,6 @@ export default function AboutText (props) {
         lecturer required me to complete an assignment or because my Mum said I'd be good at it.</Text>
 
       <ContainerSquare>   
-        {/* {picSlide > 65 &&  */}
         <Flip style={{backgroundImage: `url(${sarcastic})` }}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -140,7 +131,6 @@ export default function AboutText (props) {
 
     </Stage2>
 
-    {/* transform: `translateY(${scrollState - pageHeight}px)` */}
 
     </Paragraphs>
 

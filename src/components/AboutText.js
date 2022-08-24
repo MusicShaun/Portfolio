@@ -198,7 +198,7 @@ const Right = styled.div`
 `;
 const flipIt =  keyframes`${flipInX}`;
 const LeftFlip = styled.div`
-  animation: ${flipIt} 0.8s;
+  animation: ${flipIt} 1.2s ease-in ;
   background-size: cover;
   border-radius: 10px;
   width: 100%;
@@ -210,7 +210,7 @@ const LeftText = styled.div`
   max-width: 50%;
 `;
 const RightFlip = styled.div`
-  animation: ${flipIt} 0.8s;
+  animation: ${flipIt} 1.2s ease-in ;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
