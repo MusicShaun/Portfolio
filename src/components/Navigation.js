@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import HomeSVG from '../img/SVGs/HomeSVG';
 import AboutSVG from '../img/SVGs/AboutSVG';
 import MailSVG from '../img/SVGs/SendMail';
@@ -11,6 +11,9 @@ import Github from '../img/SVGs/Github';
 import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 import {device} from '../helpers/screenSizes';
+import { headShake } from 'react-animations';
+
+const bounceAnimation = keyframes`${headShake}`;
 
 export default function Navigation(props){
   const {hideHamburger} = props;
@@ -31,28 +34,28 @@ export default function Navigation(props){
           <Link to='/' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <HomeSVG  />
-                Home
+                <Home>Home</Home>
             </ListItem>
           </Link>
 
           <Link to='/about' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <AboutSVG  />
-                About
+                <About>About</About>
             </ListItem>
           </Link>
 
           <Link to='/Projects' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <WebsiteSVG />
-                Projects
+                <Projects>Projects</Projects>
             </ListItem>
           </Link>
 
           <Link to='/skills' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <SkillsSVG />
-                Skills
+                <Skills>Skills</Skills>
             </ListItem>
           </Link>
 
@@ -185,30 +188,19 @@ const ListItem = styled.li`
     margin-bottom: 0rem;
   }
   & span {
-  animation: wiggle 10s linear 5s infinite;
-  animation-delay: 10s;
+  animation: wiggle linear 10s infinite;
+  animation-delay: 9s;
   @keyframes wiggle {
-    0%{
-      transform: scale(1) rotate(0);
-    } 5% {
-      transform: scale(1.3) rotate(0);
-    } 7.5% {
-      transform: scale(1.3) rotate(0);
-    }8.5% {
-      transform: scale(1.3)  rotate(-10deg)
-    }9.5% {
-      transform: scale(1.3)  rotate(10deg)
-    }10.5% {
-      transform: scale(1.3) rotate(-10deg);
-    }11.5% {
-      transform: scale(1.3) rotate(10deg);
-    }14% {
-      transform: scale(1.3) rotate(0deg);
-    }15.5% {
-      transform: scale(1) rotate(0);
-    }100% {
-      transform: scale(1) rotate(0);
-    }
+    0%{ transform: scale(1) rotate(0);
+    } 5% {transform: scale(1.3) rotate(0);
+    } 7.5% {transform: scale(1.3) rotate(0);
+    }8.5% {transform: scale(1.3)  rotate(-10deg)
+    }9.5% { transform: scale(1.3)  rotate(10deg)
+    }10.5% {transform: scale(1.3) rotate(-10deg);
+    }11.5% { transform: scale(1.3) rotate(10deg);
+    }14% {transform: scale(1.3) rotate(0deg);
+    }15.5% { transform: scale(1) rotate(0);
+    }100% {transform: scale(1) rotate(0);}
 }}`;
 const Footer = styled.div`
   width: 100%;
@@ -258,3 +250,25 @@ const FootList = styled.div`
     stroke: ${colorBlack};
   }
 `;
+
+
+
+
+
+// ANIMATIONS THAT TAKE UP TOO MUCH ROOM AND ARE JUST CANDY 
+const Home = styled.div`
+  animation: ${bounceAnimation} 2s ;
+  animation-delay: 5s;
+`;
+const About = styled.div`
+animation: ${bounceAnimation} 2s ;
+animation-delay: 6s;
+`;
+const Projects = styled.div`
+animation: ${bounceAnimation} 2s  ;
+animation-delay: 7s;
+`;  
+const Skills = styled.div`
+animation: ${bounceAnimation} 2s  ;
+animation-delay: 8s;
+`;  

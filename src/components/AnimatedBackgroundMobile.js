@@ -43,7 +43,8 @@ const Wrapper = styled.div`
   height: 80%;
   z-index: -3;
   overflow: hidden;
-  ${device.mobile}{
+  
+  ${device.tablet}{
     display: flex;
   }
 

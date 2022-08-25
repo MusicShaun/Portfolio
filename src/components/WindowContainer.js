@@ -24,7 +24,7 @@ export default function WindowContainer() {
   const onlyHeight = useWindowHeight();
   const onlyWidth = useWindowWidth()
   const [openMobile, setOpenMobile] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleLoading = () => {
     setLoading(false); 
@@ -44,7 +44,8 @@ export default function WindowContainer() {
 
   return (<>
   
-  {loading ? <Loader /> : <>
+
+    {loading && <Loader /> }
 
     <AnimatedBackground />
     <AnimatedBackgroundMobile />
@@ -81,8 +82,8 @@ export default function WindowContainer() {
         </RightSide>
 
       </Container>
-    </Wrapper></>
-  }
+    </Wrapper>
+  
   </>)
 }
 

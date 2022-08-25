@@ -3,10 +3,9 @@ import stars from '../img/stars.png';
 import moon from '../img/moon.png';
 import { device } from '../helpers/screenSizes';
 
-const dayLength = '100s'; 
+const dayLength = '90s'; 
 
 export default function AnimatedBackground() {
-
 
   return (<>
     <Wrapper>
@@ -15,10 +14,10 @@ export default function AnimatedBackground() {
       <SunSpot />
       <Sun />
       <SunGlare />
-      <SunGlare2 />
-      <SunGlare3 />
-      <SunGlare4 />
-      <SunGlare5 />
+      <SunGlare2  />
+      <SunGlare3  />
+      <SunGlare4  />
+      <SunGlare5  />
       <MoonContainer>
         <Moon />
       </MoonContainer>
@@ -41,6 +40,10 @@ const Wrapper = styled.div`
   height: 100%;
   z-index: -3;
   overflow: hidden;
+  ${device.tablet}{ 
+    left: 0px;
+    display: none;
+  }
   ${device.mobile}{ 
     display: none;
   }
@@ -85,7 +88,7 @@ const Sun = styled.div`
       opacity: 1;
     } 40% {
       opacity: 1;
-    } 50% {
+    } 50% { 
       opacity: 0;
     } 95%{
       opacity: 0;
@@ -108,11 +111,11 @@ const SunGlare = styled.div`
     0% {
       transform: rotate(180deg); 
       opacity: 0;
-    } 9% {
+    } 6% {
       opacity: 0;
     } 11%{
       opacity: 0.7;
-    } 13%{
+    } 15%{
       opacity: 0;
     } 43% {
       opacity: 0;
@@ -140,10 +143,12 @@ const SunGlare2 = styled.div`
   @keyframes sunGlare2 {
     0% {
       transform: rotate(180deg); 
-      opacity: 0.7;
-    } 5%{
       opacity: 0;
-    } 10%{
+    } 3%{
+      opacity: 0;
+    } 9%{
+      opacity: 0.7;
+    } 14%{
       opacity: 0;
     } 45% {
       opacity: 0;
@@ -154,7 +159,6 @@ const SunGlare2 = styled.div`
     } 50% {
       opacity: 0;
     } 96% {
-      transform: rotate(-180deg);
       opacity:0;
     } 
   }
@@ -205,11 +209,11 @@ const SunGlare4 = styled.div`
     0% {
       transform: rotate(180deg); 
       opacity: 0;
-    } 10% {
+    } 8% {
       opacity: 0;
-    } 13%{
+    } 12%{
       opacity: 0.7;
-    } 17%{
+    } 15%{
       opacity: 0;
     } 37% {
       opacity: 0;
@@ -238,11 +242,12 @@ const SunGlare5 = styled.div`
     0% {
       transform: rotate(180deg); 
       opacity: 0;
-    } 10% {
+      height: 100%;
+    } 9% {
       opacity: 0;
-    } 13%{
+    } 12%{
       opacity: 0.6;
-    } 17%{
+    } 15.5%{
       opacity: 0;
     } 37% {
       opacity: 0;
@@ -297,11 +302,11 @@ const MoonContainer = styled.div`
     0% {
       transform: rotate(0deg);
       opacity: 1;
-    } 10% {
+    } 2% {
       opacity: 0;
-    } 50% {
+    } 20% {
       opacity: 0;
-    } 60%{
+    } 21%{
       opacity: 1;
     } 100% {
       transform: rotate(-360deg);
