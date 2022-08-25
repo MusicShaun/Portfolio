@@ -3,7 +3,7 @@ import HomeSVG from '../img/SVGs/HomeSVG';
 import AboutSVG from '../img/SVGs/AboutSVG';
 import MailSVG from '../img/SVGs/SendMail';
 import WebsiteSVG from '../img/SVGs/WebsiteSVG';
-import profilePic from '../img/profile-pic.jpeg';
+import profilePic from '../img/profile-pic.webp';
 import SkillsSVG from '../img/SVGs/SkillsSVG';
 import Facebook from '../img/SVGs/Facebook';
 import Instagram from '../img/SVGs/Instagram';
@@ -59,7 +59,7 @@ export default function Navigation(props){
           <Link to='/contact' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <MailSVG  />
-                Contact
+                <span>Contact</span>
             </ListItem>
           </Link>
 
@@ -102,8 +102,9 @@ const Profile = styled.div`
   border-radius: 50%;
   border: 2px solid ${colorWhite};
   background-image: url(${profilePic});
-  background-size: contain;
+  background-size: 250px 250px;
   background-repeat: no-repeat;
+  background-position: -29px 0px;
   ${device.laptopL} {
     width: 9rem; 
     height: 9rem; 
@@ -112,6 +113,7 @@ const Profile = styled.div`
   ${device.laptop} {
     width: 7.5rem; 
     height: 7.5rem; 
+    background-position: -40px 0px;
   }
   ${device.tablet} {
     width: 16em; 
@@ -182,7 +184,32 @@ const ListItem = styled.li`
     font-size: 2rem;
     margin-bottom: 0rem;
   }
-`;
+  & span {
+  animation: wiggle 10s linear 5s infinite;
+  animation-delay: 10s;
+  @keyframes wiggle {
+    0%{
+      transform: scale(1) rotate(0);
+    } 5% {
+      transform: scale(1.3) rotate(0);
+    } 7.5% {
+      transform: scale(1.3) rotate(0);
+    }8.5% {
+      transform: scale(1.3)  rotate(-10deg)
+    }9.5% {
+      transform: scale(1.3)  rotate(10deg)
+    }10.5% {
+      transform: scale(1.3) rotate(-10deg);
+    }11.5% {
+      transform: scale(1.3) rotate(10deg);
+    }14% {
+      transform: scale(1.3) rotate(0deg);
+    }15.5% {
+      transform: scale(1) rotate(0);
+    }100% {
+      transform: scale(1) rotate(0);
+    }
+}}`;
 const Footer = styled.div`
   width: 100%;
   min-height: 12%;

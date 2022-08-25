@@ -1,4 +1,5 @@
 import AnimatedBackground from './AnimatedBackground';
+import AnimatedBackgroundMobile from './AnimatedBackgroundMobile';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { Routes , Route } from 'react-router-dom';
@@ -46,6 +47,7 @@ export default function WindowContainer() {
   {loading ? <Loader /> : <>
 
     <AnimatedBackground />
+    <AnimatedBackgroundMobile />
 
     <Wrapper>
       <Container>
@@ -97,8 +99,8 @@ const Wrapper = styled.main`
 `;
 const Container = styled.div`
   position: relative;
-  width: 75%;
-  height: 85%;
+  width: 100%;
+  height: 100%;
   display: flex;
     
   ${device.tablet} {

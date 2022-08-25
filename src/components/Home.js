@@ -2,7 +2,6 @@ import styled, {keyframes} from 'styled-components';
 import { colorCream } from '../helpers/colors';
 import { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
-import arrow from '../img/arrow.png';
 import { device } from '../helpers/screenSizes';
 const animator = keyframes`${flipInX}`;
 
@@ -49,7 +48,9 @@ export default function Home (props) {
 
         </Text>
       </Container>
-      { showSubHeader3 && <BigArrow></BigArrow>}
+
+      {/* { showSubHeader3 && } */}
+
     </Wrapper>
 
     </>)
@@ -85,8 +86,8 @@ const Container = styled.div`
 `;
 const BorderClose  = styled.div`
   position: absolute;
-  width: 98.6%;
-  height: 98.6%;
+  width: 99%;
+  height: 99%;
   border: 10px solid ${colorCream};
   box-sizing: content-box;
   border-radius: 10px;
@@ -128,36 +129,5 @@ const SubHeader = styled.p`
     animation: 2s ${animator};}
   ${device.mobile} {
     font-size: 1.5rem;
-  }
-`;
-const BigArrow = styled.div`
-  @keyframes animator2 {
-    0% { margin-left: 10%; opacity: 0.7;
-    } 100%  { margin-left: 0px; opacity: 1;    
-  }}
-  animation: 0.5s animator2 ease-in-out infinite alternate;
-  transition: all 0.5s; 
-  opacity: 0;
-  background-image: url(${arrow});
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  width: 140px;
-  height: 72px;
-  filter: invert(1);
-  position: absolute;
-  left: 0;
-  top: 62%;
-  ${device.desktopL} {
-    top: 50%;
-  }
-  ${device.desktop} {
-    top: 64%;
-  }
-  ${device.laptop} {
-    top: 68%;
-  }
-  ${device.tablet} {
-    display: none;
   }
 `;

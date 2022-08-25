@@ -49,8 +49,8 @@ export default function AboutText (props) {
         <LeftText>My unique skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.</LeftText>
       </Left>
-      <Right>
-        <RightText style={{textAlign: 'center', width: '80%'}}>Then COVID happens.</RightText>
+      <Right style={{ justifyContent: 'center',}}>
+        <RightText style={{textAlign: 'center', width: '30%'}}>Then COVID happens.</RightText>
         <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 12 ? 'flex' : 'none' }}/></Square>
       </Right>  
     </section></Page>
@@ -132,11 +132,20 @@ const Stage = styled.div`
   overflow: hidden;
   & div {
     border-radius: 10px ;
-    background-position: 0px -0px;
+    background-position: 0px -140px;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+    ${device.desktop} {
+      background-position: 0px -125px;
+    }
+    ${device.laptopL} {
+      background-position: 0px -30px;
+    }
+    ${device.laptop} {
+      background-position: 0px -0px;
+    }
   }
 `;
 const Page = styled.div`
@@ -149,7 +158,7 @@ const Page = styled.div`
   justify-content: center;
   align-items: center;
   & section {
-    width: 75%;
+    width: 82%;
     height: 85%;
     display: flex;
     justify-content: center;
@@ -162,9 +171,15 @@ const Page = styled.div`
   }
 `;
 const Square = styled.div`
+    ${device.desktopL} {
+    width: 280px;
+    height: 280px;}
     ${device.desktop} {
-    width: 220px;
-    height: 220px;}
+    width: 255px;
+    height: 255px;}
+    ${device.desktopS} {
+    width: 230px;
+    height: 230px;}
   ${device.laptopL} {
     width: 180px;
     height: 180px;}
@@ -173,8 +188,14 @@ const Square = styled.div`
     height: 150px;}
 `;
 const Rect = styled.div`
+  ${device.desktopL} {
+    width: 500px;
+    height: 281px;}
   ${device.desktop} {
-    width: 400px;
+    width: 450px;
+    height: 248px;}
+  ${device.desktopS} {
+    width: 410px;
     height: 225px;}
   ${device.laptopL} {
     width: 280px;
@@ -184,13 +205,13 @@ const Rect = styled.div`
     height: 113;}
 `;
 const Left = styled.div`
-  width: 100%;
+  width: 93%;
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 const Right = styled.div`
-  width: 100%;
+  width: 93%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

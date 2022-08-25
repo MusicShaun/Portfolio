@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import stars from '../img/stars.png';
 import moon from '../img/moon.png';
 import { device } from '../helpers/screenSizes';
-
-const dayLength = '100s'; 
+import Mountains from '../img/SVGs/Mountains.js';
+const dayLength = '70s'; 
 
 export default function AnimatedBackground() {
 
@@ -13,7 +13,7 @@ export default function AnimatedBackground() {
 
       <Stars />
       <SunSpot />
-      <Sun />
+      {/* <Sun /> */}
       <SunGlare />
       <SunGlare2 />
       <SunGlare3 />
@@ -27,28 +27,31 @@ export default function AnimatedBackground() {
       <Sunset />
       <Night />
       <StaticBackground />
-
     </Wrapper>
+    <Mountains />
+
   </>)
 
 }
 
 const Wrapper = styled.div`
   position: absolute;
-  left: 130px;
+  display: none;
+  left: 0px;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   z-index: -3;
   overflow: hidden;
-  ${device.mobile}{ 
-    display: none;
+  ${device.mobile}{
+    display: flex;
   }
+
 `;
 const SunSpot = styled.div`
   position: absolute;
   left: -10%;
-  top: 15%;
+  top: 3.5%;
   width: 130%;
   height: 150%;
   z-index: 0;
@@ -56,41 +59,42 @@ const SunSpot = styled.div`
   animation: sunMovement ${dayLength} linear infinite;
   @keyframes sunMovement {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 1;
-    } 40% {
+    } 44% {
       opacity: 1;
-    } 50% {
+    } 54% {
       opacity: 0;
     } 95%{
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 1;
     } 
   }
 `;
 const Sun = styled.div`
   position: absolute;
-  left: -10%;
-  top: 15%;
-  width: 130%;
+  left: -50%;
+  top: 2%;
+  width: 200%;
   height: 150%;
   z-index: -1;
-  background:radial-gradient(circle at 11% 50%, rgba(255,251,125,0.8) 0%, rgba(0, 188, 212, 0) 11%, rgba(238, 130, 238, 0) 100%);
+  background:radial-gradient(circle at 11% 50%, rgba(255,251,125,1) 2%, rgba(255,251,125,1) 4%, rgba(214,241,139,0) 7%, rgba(0,188,212,0) 100%);
   animation: sunMovement ${dayLength} linear infinite;
   @keyframes sunMovement {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 1;
     } 40% {
       opacity: 1;
     } 50% {
       opacity: 0;
+    } 80%{
     } 95%{
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 1;
     } 
   }
@@ -98,7 +102,7 @@ const Sun = styled.div`
 const SunGlare = styled.div`
   position: absolute;
   left: -20%;
-  top: 38%;
+  top: 28%;
   width: 150%;
   height: 100%;
   z-index: -1;
@@ -106,7 +110,7 @@ const SunGlare = styled.div`
   animation: sunGlare ${dayLength} linear infinite;
   @keyframes sunGlare {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 0;
     } 9% {
       opacity: 0;
@@ -123,7 +127,7 @@ const SunGlare = styled.div`
     } 50% {
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 0;
     } 
   }
@@ -131,7 +135,7 @@ const SunGlare = styled.div`
 const SunGlare2 = styled.div`
   position: absolute;
   left: -20%;
-  top: 38%;
+  top: 28%;
   width: 150%;
   height: 100%;
   z-index: -1;
@@ -139,7 +143,7 @@ const SunGlare2 = styled.div`
   background: radial-gradient(circle at 25% 50%, rgba(255,249,181,0) 1%, rgba(219,142,59,1) 1.3%, rgba(226,187,33,0) 1.6%, rgba(0,255,29,0) 6%, rgba(255,249,181,0) 100%);  animation: sunGlare ${dayLength} linear infinite;
   @keyframes sunGlare2 {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 0.7;
     } 5%{
       opacity: 0;
@@ -154,7 +158,7 @@ const SunGlare2 = styled.div`
     } 50% {
       opacity: 0;
     } 96% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity:0;
     } 
   }
@@ -162,7 +166,7 @@ const SunGlare2 = styled.div`
 const SunGlare3 = styled.div`
   position: absolute;
   left: -20%;
-  top: 38%;
+  top: 28%;
   width: 150%;
   height: 100%;
   z-index: -1;
@@ -170,7 +174,7 @@ const SunGlare3 = styled.div`
   background: radial-gradient(circle at 32% 50%, rgba(255,251,203,0) 1%, rgba(244,224,203,1) 1.4%, rgba(244,234,200,0) 1.8%, rgba(255,249,181,0) 100%);
   @keyframes sunGlare3 {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 0;
     } 8% {
       opacity: 0;
@@ -187,7 +191,7 @@ const SunGlare3 = styled.div`
     } 50% {
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 0;
     } 
   }
@@ -195,7 +199,7 @@ const SunGlare3 = styled.div`
 const SunGlare4 = styled.div`
   position: absolute;
   left: -20%;
-  top: 38%;
+  top: 28%;
   width: 150%;
   height: 100%;
   z-index: -1;
@@ -203,7 +207,7 @@ const SunGlare4 = styled.div`
   background: radial-gradient(circle at 35% 50%, rgba(255,251,203,0) 1.6%, rgba(252,244,234,1) 1.8%, rgba(247,243,228,0) 2%, rgba(255,249,181,0) 100%);
   @keyframes sunGlare4 {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 0;
     } 10% {
       opacity: 0;
@@ -220,7 +224,7 @@ const SunGlare4 = styled.div`
     } 50% {
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 0;
     } 
   }
@@ -228,7 +232,7 @@ const SunGlare4 = styled.div`
 const SunGlare5 = styled.div`
   position: absolute;
   left: -20%;
-  top: 38%;
+  top: 28%;
   width: 150%;
   height: 100%;
   z-index: -1;
@@ -236,7 +240,7 @@ const SunGlare5 = styled.div`
   background: radial-gradient(circle at 22% 50%, rgba(255,251,203,0) 0.5%, rgba(255,248,217,1) 0.8%, rgba(247,243,228,0) 1%, rgba(255,249,181,0) 100%);
   @keyframes sunGlare5 {
     0% {
-      transform: rotate(180deg); 
+      transform: rotate(190deg); 
       opacity: 0;
     } 10% {
       opacity: 0;
@@ -253,58 +257,67 @@ const SunGlare5 = styled.div`
     } 50% {
       opacity: 0;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-170deg);
       opacity: 0;
     } 
   }
 `;
 const SettingSun = styled.div`
   position: absolute;
-  left: -20%;
+  left: -50%;
   top: 15%;
-  width: 140%;
+  width: 200%;
   height: 200%;
   z-index: -2;
-  background:radial-gradient(circle at 11% 50%, rgba(255, 75, 0, 1) 0%, rgba(0, 188, 212, 0) 31%, rgba(238, 130, 238, 0) 100%);
+  background:radial-gradient(circle at 6% 50%, rgba(255, 75, 0, 1) 0%, rgba(0, 188, 212, 0) 31%, rgba(238, 130, 238, 0) 100%);
   animation: sunMovement2 ${dayLength} linear infinite;
   @keyframes sunMovement2 {
     0% {
-      transform: rotate(180deg);
+      transform: rotate(162deg);
       opacity: 1;
-    } 5% {
+    } 2% {
       opacity: 0;
-    } 42% {
+    } 9% {
       opacity: 0;
-    } 55%{
+    } 45%{
+      opacity: 0;
+    } 50% {
       opacity: 1;
-    } 60% {
+      transform: rotate(20deg);
+    } 56% {
+      opacity: 1;
+    } 62% {
       opacity: 0;
+    } 86% {
+      opacity: 0;
+    } 90% {
+      opacity: 1;
     } 100% {
-      transform: rotate(-180deg);
+      transform: rotate(-198deg);
       opacity: 1;
     } 
   }
 `;
 const MoonContainer = styled.div`
   position: absolute;
-  top: 35%;
-  left: 5%;
-  width: 90%;
-  height: 100%;
+  top: 50%;
+  left: 19%;
+  width: 60%;
+  height: 60%;
   z-index: 0;
   animation: MoonMovement ${dayLength} linear infinite;
   @keyframes MoonMovement {
     0% {
-      transform: rotate(0deg);
-      opacity: 1;
-    } 10% {
+      transform: rotate(-60deg);
+      opacity: 0.5;
+    } 4% {
       opacity: 0;
     } 50% {
       opacity: 0;
     } 60%{
       opacity: 1;
     } 100% {
-      transform: rotate(-360deg);
+      transform: rotate(-420deg);
       opacity: 1;
     } 
   }
