@@ -50,7 +50,7 @@ const Button = styled.button`
     bottom: -20%;
   }
   ${device.mobile} {
-    bottom: 0%;
+    bottom: -20%;
   }
 
 `;

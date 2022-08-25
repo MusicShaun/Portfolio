@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import {device} from '../helpers/screenSizes';
 import studio from '../img/studio.png';
 import vscode from '../img/vscode.webp';
-import thanks from '../img/thanks.jpg';
+import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite} from "../helpers/colors";
 
@@ -41,17 +41,17 @@ export default function AboutText (props) {
     
     <Page style={{top: '50%'}}><section>
       <Right>
-        <RightText>And lucky enough to travel and collaborate with people from around the world.</RightText>
+        <RightText>And I've lucky enough to travel and collaborate with people from around the world.</RightText>
         <Rect><RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/></Rect>
       </Right>  
       <Left>
-        <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 9 ? 'flex' : 'none' }}/></Square>
+        <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 8 ? 'flex' : 'none' }}/></Square>
         <LeftText>My unique skill was audio engineering and audio production, namely, Mastering. 
         <br />Life was good.</LeftText>
       </Left>
       <Right style={{ justifyContent: 'center',}}>
         <RightText style={{textAlign: 'center', width: '30%'}}>Then COVID happens.</RightText>
-        <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 12 ? 'flex' : 'none' }}/></Square>
+        <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 10 ? 'flex' : 'none' }}/></Square>
       </Right>  
     </section></Page>
 
@@ -65,10 +65,10 @@ export default function AboutText (props) {
       <Right>
       <RightText>In less than a week, all my income streams had 
           vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</RightText>
-      <Square> <RightFlip style={{backgroundImage: `url(${Party})`, display: picSlide > 32 ? 'flex' : 'none' }}/></Square>
+      <Square> <RightFlip style={{backgroundImage: `url(${Party})`, display: picSlide > 31 ? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{backgroundImage: `url(${vscode})`, display: picSlide > 36 ? 'flex' : 'none' }}/></Square>
+      <Square><LeftFlip style={{backgroundImage: `url(${vscode})`, display: picSlide > 34 ? 'flex' : 'none' }}/></Square>
       <LeftText style={{maxWidth: '60%'}}>
         It was time to look for a new career opportunity. To find something just as challenging and exciting.
         And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></LeftText>
@@ -79,18 +79,18 @@ export default function AboutText (props) {
     <Page style={{top: '250%'}}><section>
       <Right>
       <RightText>Now I am but a humble Padawan, with much to learn.  </RightText>
-      <Square><RightFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 54? 'flex' : 'none' }}/></Square>
+      <Square><RightFlip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{backgroundImage: `url(${thanks})`, display: picSlide > 58? 'flex' : 'none' }}/></Square>
+      <Square><LeftFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 57? 'flex' : 'none' }}/></Square>
       <LeftText>
-        I hope to find myself interning, side by side with the pro's, building apps and 
+        I hope to find myself interning side by side with the pro's, building apps and 
         games, solving problems, failing compiles. I know this is a field I will be happy.</LeftText>
       </Left>
       <Right>
       <RightText>I didn't study coding at Uni or a bootcamp. I didn't study because a 
         lecturer required me to complete an assignment or because my Mum said I'd be good at it.</RightText>
-      <Square><RightFlip style={{backgroundImage: `url(${sarcastic})`, display: picSlide > 62? 'flex' : 'none'  }}/></Square>
+      <Square><RightFlip style={{backgroundImage: `url(${sarcastic})`, display: picSlide > 60? 'flex' : 'none'  }}/></Square>
       </Right>
     </section></Page>
 
@@ -181,11 +181,11 @@ const Square = styled.div`
     width: 230px;
     height: 230px;}
   ${device.laptopL} {
+    width: 210px;
+    height: 210px;}
+  ${device.laptop} {
     width: 180px;
     height: 180px;}
-  ${device.laptop} {
-    width: 150px;
-    height: 150px;}
 `;
 const Rect = styled.div`
   ${device.desktopL} {
@@ -198,11 +198,11 @@ const Rect = styled.div`
     width: 410px;
     height: 225px;}
   ${device.laptopL} {
-    width: 280px;
-    height: 158px;}
+    width: 340px;
+    height: 194px;}
   ${device.laptop} {
-    width: 200px;
-    height: 113;}
+    width: 280px;
+    height: 160px;}
 `;
 const Left = styled.div`
   width: 93%;

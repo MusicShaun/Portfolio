@@ -10,7 +10,7 @@ import eyes from '../img/eyes.webp';
 import { useEffect, useState } from "react";
 import studio from '../img/studio.png';
 import vscode from '../img/vscode.webp';
-import thanks from '../img/thanks.jpg';
+import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite } from "../helpers/colors";
 import { device } from '../helpers/screenSizes';
@@ -40,7 +40,7 @@ export default function AboutText (props) {
 
 {/* 1st  */}
     <Partition>
-      <Text>And lucky enough to travel and collaborate with people around the world.</Text>
+      <Text>And I've been lucky enough to travel and collaborate with people around the world.</Text>
 
       <ContainerRect>
         <Flip style={{backgroundImage: `url(${Belvoire})`}}/>
@@ -99,17 +99,17 @@ export default function AboutText (props) {
       <Text>Now I am but a humble Padawan, with much to learn.  </Text>
       
       <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${eyes})`}}/>
+        <Flip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2)'}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
 
 {/*  8th  */}
     <Partition>
       <Text>
-      I hope to find myself interning, side by side with the pro's, building apps and 
+      I hope to find myself interning side by side with the pro's, building apps and 
         games, solving problems, failing compiles. I know this is a field I will be happy.</Text>
         <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${thanks})`}}/>
+        <Flip style={{backgroundImage: `url(${eyes})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  9th  */}
@@ -123,7 +123,8 @@ export default function AboutText (props) {
 
 {/*  10  */}
     <Stage2><Cleaner style={{width: '100%', borderRadius: '20px'}} />
-      <Text style={{ textAlign: 'center', height: '30%', alignItems: 'center'}}>  
+      <Text style={{ height: '30%', fontWeight: '600', backgroundColor: 'hsla(60, 28%, 95%, 0.75)',
+      borderRadius: '15px', display: 'flex', alignItems: 'center'}}>  
       I study because I want to. 
       <br />I study because I see coding as my long term  <br /> 
         future and because I'm a ridiculously passionate person.      
@@ -153,7 +154,7 @@ const Cleaner = styled.div`
   overflow-y: hidden;
   z-index: -1;
   opacity: 0.8;
-  background-color: ${colorWhite};
+  /* background-color: ${colorWhite}; */
 `;
 const Stage = styled.div`
   position: relative;
@@ -199,20 +200,25 @@ const Paragraphs = styled.div`
 `;
 const Partition = styled.div`
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
   font-size: 1rem;
   z-index: 2;
   flex-direction: column;
+  background-color: ${colorWhite};
+  border-radius: 15px;
+  margin: 1rem;
+  padding: 0 1rem 1rem 1rem;
 `;
 const ContainerSquare = styled.div`
     display: flex;
     min-width: 150px;
-    min-height: 250px;
+    min-height: 300px;
     height: 250px;
     width: 100%;
+    
 `;
 const ContainerRect = styled.div`
     display: flex;
@@ -231,8 +237,9 @@ const Flip = styled.div`
 `;
 const Text = styled.div`
   max-width: 95%;
+  min-height: 80px;
   text-align: center;
-  margin: 4rem 0rem 0.6rem;
+  margin: 2rem 0rem 0.8rem;
   font-size: 1.2rem;
 `;
 const Stage2 = styled.div`
