@@ -431,7 +431,7 @@ const Stars = styled.div`
     45% {
       opacity: 0;
       left: -10%;
-      transform: rotate(-4deg);
+      transform: rotate(-8deg);
       }
     65% {
       opacity: 0.8} 

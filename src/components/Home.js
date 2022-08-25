@@ -39,7 +39,7 @@ export default function Home (props) {
 
   return (<>
 
-    <Wrapper>
+    <Wrapper style={{height: `${props.onlyHeight}`}}>
     <BorderClose/>
       <Container>
         <Text>

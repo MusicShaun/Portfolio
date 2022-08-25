@@ -67,7 +67,7 @@ export default function WindowContainer() {
 
         <RightSide>
           <Routes>
-            <Route path='/' element={ <Home />} />
+            <Route path='/' element={ <Home onlyHeight={onlyHeight} />} />
             <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
             <Route path='/projects' element={ <Projects />} />
             <Route path='/projects/banana-shop' element={ <BananaShop /> } />              
@@ -76,7 +76,7 @@ export default function WindowContainer() {
             <Route path='/projects/columns' element={ <Columns /> } />              
             <Route path='/projects/mastering' element={ <Mastering /> } />              
             <Route path='/skills' element={ <Skills /> } />              
-            <Route path='/contact' element={ <Contact  onlyWidth={onlyWidth}/> } />              
+            <Route path='/contact' element={ <Contact  onlyWidth={onlyWidth}  onlyHeight={onlyHeight} /> } />              
            
           </Routes>
         </RightSide>

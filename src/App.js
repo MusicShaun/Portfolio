@@ -3,11 +3,8 @@ import WindowContainer from "./components/WindowContainer";
 
 function App() {
 
-
   return (<>
-      <WindowContainer
-
-      > 
+      <WindowContainer> 
 
       </WindowContainer>
   </>

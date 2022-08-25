@@ -24,7 +24,7 @@ export default function About (props) {
   
   return (
 // 
-    <Wrapper>
+    <Wrapper style={{height: `${props.onlyHeight}`}}>
         { props.onlyWidth > 500 ? loading && <Loader /> : mobileLoading && <Loader /> }
 
       <Container>
