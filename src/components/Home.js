@@ -14,7 +14,7 @@ export default function Home (props) {
   const [showHeader, setShowHeader] = useState(false);
   const [showSubHeader, setShowSubHeader] = useState(false);
   const [showSubHeader2, setShowSubHeader2] = useState(false);
-  const [showSubHeader3, setShowSubHeader3] = useState(false);
+
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -26,14 +26,10 @@ export default function Home (props) {
     const intervalID3 = setInterval(() => {
       setShowSubHeader2(true)
     }, 3100);
-  //   const intervalID4 = setInterval(() => {
-  //     setShowSubHeader3(true)
-  //   }, 7000);
-  //   return (() => clearInterval(intervalID),   
-  //           () => clearInterval(intervalID2),  
-  //           () => clearInterval(intervalID3),
-  //           () => clearInterval(intervalID4))
-  // }, [])
+    return (() => clearInterval(intervalID),   
+            () => clearInterval(intervalID2),  
+            () => clearInterval(intervalID3))
+  }, [])
 
   return (<>
 
@@ -49,7 +45,6 @@ export default function Home (props) {
         </Text>
       </Container>
 
-      {/* { showSubHeader3 && } */}
 
     </Wrapper>
 
