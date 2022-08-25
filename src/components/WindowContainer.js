@@ -24,7 +24,7 @@ export default function WindowContainer() {
   const onlyHeight = useWindowHeight();
   const onlyWidth = useWindowWidth()
   const [openMobile, setOpenMobile] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleLoading = () => {
     setLoading(false); 
