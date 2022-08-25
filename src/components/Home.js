@@ -26,14 +26,14 @@ export default function Home (props) {
     const intervalID3 = setInterval(() => {
       setShowSubHeader2(true)
     }, 3100);
-    const intervalID4 = setInterval(() => {
-      setShowSubHeader3(true)
-    }, 7000);
-    return (() => clearInterval(intervalID),   
-            () => clearInterval(intervalID2),  
-            () => clearInterval(intervalID3),
-            () => clearInterval(intervalID4))
-  }, [])
+  //   const intervalID4 = setInterval(() => {
+  //     setShowSubHeader3(true)
+  //   }, 7000);
+  //   return (() => clearInterval(intervalID),   
+  //           () => clearInterval(intervalID2),  
+  //           () => clearInterval(intervalID3),
+  //           () => clearInterval(intervalID4))
+  // }, [])
 
   return (<>
 

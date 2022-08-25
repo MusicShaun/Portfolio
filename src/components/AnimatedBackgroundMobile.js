@@ -73,32 +73,32 @@ const SunSpot = styled.div`
     } 
   }
 `;
-const Sun = styled.div`
-  position: absolute;
-  left: -50%;
-  top: 2%;
-  width: 200%;
-  height: 150%;
-  z-index: -1;
-  background:radial-gradient(circle at 11% 50%, rgba(255,251,125,1) 2%, rgba(255,251,125,1) 4%, rgba(214,241,139,0) 7%, rgba(0,188,212,0) 100%);
-  animation: sunMovement ${dayLength} linear infinite;
-  @keyframes sunMovement {
-    0% {
-      transform: rotate(190deg); 
-      opacity: 1;
-    } 40% {
-      opacity: 1;
-    } 50% {
-      opacity: 0;
-    } 80%{
-    } 95%{
-      opacity: 0;
-    } 100% {
-      transform: rotate(-170deg);
-      opacity: 1;
-    } 
-  }
-`;
+// const Sun = styled.div`
+//   position: absolute;
+//   left: -50%;
+//   top: 2%;
+//   width: 200%;
+//   height: 150%;
+//   z-index: -1;
+//   background:radial-gradient(circle at 11% 50%, rgba(255,251,125,1) 2%, rgba(255,251,125,1) 4%, rgba(214,241,139,0) 7%, rgba(0,188,212,0) 100%);
+//   animation: sunMovement ${dayLength} linear infinite;
+//   @keyframes sunMovement {
+//     0% {
+//       transform: rotate(190deg); 
+//       opacity: 1;
+//     } 40% {
+//       opacity: 1;
+//     } 50% {
+//       opacity: 0;
+//     } 80%{
+//     } 95%{
+//       opacity: 0;
+//     } 100% {
+//       transform: rotate(-170deg);
+//       opacity: 1;
+//     } 
+//   }
+// `;
 const SunGlare = styled.div`
   position: absolute;
   left: -20%;
