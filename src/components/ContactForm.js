@@ -6,7 +6,7 @@ import { device } from '../helpers/screenSizes';
 export default function ContactForm() {
 
   function handleSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     // alert('Thank you for your message!')
   }
 
