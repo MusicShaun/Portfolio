@@ -37,16 +37,12 @@ export default function Skills(props) {
   function handleAnchor(e) {
     e.stopPropagation();
   }
-console.log(props.onlyHeight)
   return (<>
-
-
-  
     <Wrapper onWheel={(e) => handleWheel(e)} style={{height: `${props.onlyHeight}`}}>
 
         {loading && <Loader /> }
 
-      <Container style={{marginTop: `-${props.onlyHeight / 20}px`}}>
+      <Container >
       {imageArray.map((item, index) => {
         return <TransPages 
                   onClick={handleClick2}
@@ -116,7 +112,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -128,7 +124,7 @@ const TransPages = styled.div`
   min-height: 90%;
   transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
 &:first-child {
-  
+  margin-top: 5vh !important;
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
 @keyframes onLoad {
