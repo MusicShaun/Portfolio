@@ -19,7 +19,8 @@ export default function ContactForm() {
                     method="POST"
                     data-netlify="true"
                     name='contact'
-                    className='contactform'>
+                    >
+          <input type="hidden" name="form-name" value="contact" />
           <Header>Hire me</Header>
           <Label>Name: <br/>
             <Input type='text' name='name' placeholder='' required/>
