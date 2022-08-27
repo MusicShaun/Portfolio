@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream , colorSand} from '../helpers/colors';
+import { colorBlack, colorCream , colorSand, specialYellow} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
@@ -76,11 +76,12 @@ export default function Skills(props) {
                             <Butty>Enter Website</Butty></AA></LI>
                         </UL>
 
-                        <ULMOBILE style={{backgroundColor: item.color}}>
+                        <ULMOBILE style={{backgroundColor: specialYellow}}>
                           <Headings>{item.title}</Headings>
                           <LI>{item.text}</LI>
-                          <LI><AA target='_blank' href={item.url} onClick={handleAnchor}>
-                            <Butty>Enter Website</Butty></AA></LI>
+                          <LI>
+                            <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty>Enter Website</Butty></AA>
+                          </LI>
                         </ULMOBILE>
 
                       </Blurb>
@@ -131,6 +132,11 @@ animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
   from { transform: translateY(100%);
   } to {transform: translateY(0%);
   }}
+  ${device.mobile} {
+    min-width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
 `;
 const Pages = styled.div`
   position: relative;
@@ -170,14 +176,14 @@ const Blurb = styled.div`
   `;
 const UL = styled.ul`
   width: 34%;
-  height: 40%;
+  height: 50%;
   background-color: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 4rem;
-  padding-left: 4rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
   transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
   transition-delay: 1.11s;
   animation: onLoadX 1.4s cubic-bezier(.23,1.15,.41,1.11);
@@ -188,29 +194,22 @@ const UL = styled.ul`
   }}
   ${device.mobile} {
     display: none;
-    align-items: center;
   }
 `;
 const ULMOBILE = styled.ul`
   display: none;
   background-color: white;
   flex-direction: column;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right:1rem;
+  padding-left: 1rem;
   transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
   transition-delay: 1.11s;
-  animation: onLoadX 1.4s cubic-bezier(.23,1.15,.41,1.11);
-  @keyframes onLoadX {
-  0% { transform: translateX(200%);
-  } 65% { transform: translateX(200%);
-  }100% {transform: translateX(0%);
-  }}
   ${device.mobile} {
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 0 0 15px 15px;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding-top: 3rem;
   }
@@ -229,6 +228,8 @@ const Headings = styled.div`
   ${device.mobile} {
     align-self: center;
     text-align: center;
+    margin: 0;
+    padding-bottom: 1rem;
   }
 `;
 const LI = styled.li`
@@ -240,7 +241,6 @@ const LI = styled.li`
   }
 `;
 const AA = styled.a`
-
   color:inherit;
   text-decoration: none;
 `;
@@ -256,8 +256,8 @@ const Butty = styled.button`
     background-color: ${colorSand};
   }
   ${device.mobile}{
-    margin-top: 25%;
     padding: 2rem;
+    margin-top: 2rem;
   }
 `;
 
