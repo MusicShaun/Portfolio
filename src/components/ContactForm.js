@@ -5,16 +5,16 @@ import { device } from '../helpers/screenSizes';
 
 export default function ContactForm() {
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log('form submitted')
-    // alert('Thank you for your message!')
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   console.log('form submitted')
+  //   // alert('Thank you for your message!')
+  // }
 
   return (
 
       <Wrapper >
-        <FormCutOut onSubmit={handleSubmit} 
+        <FormCutOut
                     action="/pages/success"
                     method="POST"
                     data-netlify="true"
@@ -32,7 +32,7 @@ export default function ContactForm() {
               <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' 
                         name='message' required />
           </Label>
-          <Submit type='submit' value='submit'>Send it!</Submit>
+          <Submit type='submit' >Send it!</Submit>
 
         </FormCutOut>
         <Dog />
