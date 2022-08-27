@@ -37,7 +37,7 @@ export default function Skills(props) {
   function handleAnchor(e) {
     e.stopPropagation();
   }
-
+console.log(props.onlyHeight)
   return (<>
 
 
@@ -46,13 +46,14 @@ export default function Skills(props) {
 
         {loading && <Loader /> }
 
-      <Container >
+      <Container style={{marginTop: `-${props.onlyHeight / 20}px`}}>
       {imageArray.map((item, index) => {
         return <TransPages 
                   onClick={handleClick2}
                   style={{transform: 
-                     `translateY(-${counter * 100}vh)
-                     ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` 
+                     `translateY(-${counter * props.onlyHeight}px)
+                     ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
+                     marginTop: `${(props.onlyHeight / 100) * 10}px`
                     }}
                   key={item.id} 
                   >
@@ -124,11 +125,10 @@ const Container = styled.div`
 const TransPages = styled.div`
   position: relative;
   min-width: 90%;
-  min-height: 90vh;
+  min-height: 90%;
   transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
-  margin-top: 10vh;
 &:first-child {
-  margin-top: 5vh;
+  
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
 @keyframes onLoad {
