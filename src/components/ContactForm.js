@@ -6,17 +6,19 @@ import { device } from '../helpers/screenSizes';
 export default function ContactForm() {
 
   function handleSubmit(e) {
-    e.preventDefault();
-    alert('Thank you for your message!')
+    // e.preventDefault();
+    // alert('Thank you for your message!')
   }
 
   return (
 
-      <Wrapper  onSubmit={handleSubmit} 
-                action="/pages/success"
-                method="POST"
-                data-netlify="true">
-        <FormCutOut>
+      <Wrapper >
+        <FormCutOut onSubmit={handleSubmit} 
+                    action="/pages/success"
+                    method="POST"
+                    data-netlify="true"
+                    name='contactform'
+                    className='contactform'>
           <Header>Hire me</Header>
           <Label>Name: <br/>
             <Input type='text' name='name' placeholder='' required/>
@@ -25,7 +27,8 @@ export default function ContactForm() {
             <Input type='email' name='email' placeholder='' required/>
           </Label>
           <Label>Message: <br />
-              <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' name='message' required />
+              <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' 
+                        name='message' required />
           </Label>
           <Submit type='submit' value='submit'>Send it!</Submit>
 
@@ -54,7 +57,7 @@ const Dog = styled.div`
     display: none;
   }
 `;
-const Wrapper = styled.form`
+const Wrapper = styled.div`
   position: relative;
   width: 100%;
   top:0;
@@ -73,7 +76,7 @@ const Wrapper = styled.form`
     padding-top: 3rem;
   }
 `;
-const FormCutOut = styled.div`
+const FormCutOut = styled.form`
   position: relative;
   width: 100%;
   height: 100%;
