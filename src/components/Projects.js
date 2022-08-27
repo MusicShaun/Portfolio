@@ -42,7 +42,7 @@ export default function Skills(props) {
 
 
   
-    <Wrapper onWheel={(e) => handleWheel(e)}>
+    <Wrapper onWheel={(e) => handleWheel(e)} style={{height: `${props.onlyHeight}`}}>
 
         {loading && <Loader /> }
 
