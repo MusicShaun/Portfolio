@@ -85,7 +85,7 @@ export default function AboutText (props) {
       <Square><LeftFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 57? 'flex' : 'none' }}/></Square>
       <LeftText>
         I hope to find myself interning side by side with the pro's, building apps and 
-        games, solving problems, failing compiles. I know this is a field I will be happy.</LeftText>
+        games, solving problems, failing compiles. I know this is a field I will be happy in.</LeftText>
       </Left>
       <Right>
       <RightText>I didn't study coding at Uni or a bootcamp. I didn't study because a 

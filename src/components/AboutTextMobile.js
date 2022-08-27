@@ -50,7 +50,7 @@ export default function AboutText (props) {
 {/* 2nd */}
     <Partition>
       <Text>My unique skill was audio engineering and audio production, namely, Mastering. 
-        <br />Life was good.v</Text>
+        <br />Life was good.</Text>
       <ContainerSquare>
         <Flip style={{backgroundImage: `url(${studio})`}}/>
       </ContainerSquare>      <Cleaner />
@@ -88,7 +88,7 @@ export default function AboutText (props) {
     <Partition>
       <Text>
       It was time to look for a new career opportunity. To find something just as challenging and exciting.
-        And to no surprise, coding is very challenging, creative and incredibly satisfying<br /></Text>
+        And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></Text>
         <ContainerSquare>
         <Flip style={{backgroundImage: `url(${vscode})`}}/>
       </ContainerSquare>      <Cleaner />
@@ -107,7 +107,7 @@ export default function AboutText (props) {
     <Partition>
       <Text>
       I hope to find myself interning side by side with the pro's, building apps and 
-        games, solving problems, failing compiles. I know this is a field I will be happy.</Text>
+        games, solving problems, failing compiles. I know this is a field I will be happy in.</Text>
         <ContainerSquare>
         <Flip style={{backgroundImage: `url(${eyes})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>

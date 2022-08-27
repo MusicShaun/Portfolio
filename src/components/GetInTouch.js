@@ -1,6 +1,7 @@
 import styled , {keyframes }from 'styled-components';
 import { colorBlue, colorCream } from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
+import { Link } from 'react-router-dom';
 import { flipInX } from 'react-animations';
 const animator = keyframes`${flipInX}`;
 
@@ -10,26 +11,30 @@ export default function GetInTouch() {
 
 
   return (
-    <>
-  <Button>
+    <>          
+
+    <Button>
+    <Link to='/contact' style={{textDecoration: 'none', color: 'inherit'}}>
     Get in touch
+    </Link>
   </Button>
+
 
     </>
   )
 }
 
 const Button = styled.button`
-  position: absolute;
+  position: relative;
   width: 200px;
-  height: 100px;
-  bottom: -40%;
+  min-height: 100px;
   border-radius: 10px;
+  margin-top: 4rem;
   background-color: transparent;
-  border: 2px solid ${colorCream};
-  transition: all 0.2s;
+  border: 2.5px solid ${colorCream};
+  transition: all 0.1s;
 
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: ${colorCream};
   &:hover {
@@ -41,16 +46,11 @@ const Button = styled.button`
   animation: ${animator} 3s;
 
   ${device.laptopL} {
-    bottom: -50%;
+    margin-top:3rem;
   }
   ${device.laptop} {
-    bottom: -60%;
+    margin-top: 2rem;
   }
-  ${device.tablet} {
-    bottom: -20%;
-  }
-  ${device.mobile} {
-    bottom: -20%;
-  }
+
 
 `;

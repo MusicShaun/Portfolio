@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
 import { device } from '../helpers/screenSizes';
 import GetInTouch from './GetInTouch';
+
+
 const animator = keyframes`${flipInX}`;
 
 export default function Home (props) {
@@ -29,7 +31,7 @@ export default function Home (props) {
     }, 3100);
     const intervalID4 = setInterval(() => {
       setShowSubHeader3(true)
-    }, 3800);
+    }, 3900);
     return (() => clearInterval(intervalID),   
             () => clearInterval(intervalID2),  
             () => clearInterval(intervalID3),
@@ -38,6 +40,7 @@ export default function Home (props) {
 
 
   return (<>
+
 
     <Wrapper style={{height: `${props.onlyHeight}`}}>
     <BorderClose/>
@@ -48,6 +51,7 @@ export default function Home (props) {
           { showSubHeader && <SubHeader>My name is Shaun.</SubHeader> }
           { showSubHeader2 && <SubHeader >Please take a look around.</SubHeader>}
           { showSubHeader3 && <GetInTouch />}
+
         </Text>
       </Container>
 

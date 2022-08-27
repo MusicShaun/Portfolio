@@ -1,78 +1,99 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream, colorBlue } from '../helpers/colors';
+import { colorBlack, colorCream , colorSand} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
-import column from '../img/columnsdesign.webp';
-import mastering from '../img/mastering.webp';
-import banana from '../img/bananashop.webp';
-import todo from '../img/Todo.webp';
-import quiz from '../img/Quiz.webp';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
+import { imageArray } from './imageArray';
 
-export default function Skills() {
+export default function Skills(props) {
   const [loading, setLoading] = useState(true);
+  const [counter , setCounter ] = useState(0)
+  const [position, setPosition] = useState(0)
+
   useEffect(() => {
     setLoading(false)
   }, [])
-  
   useEffect(() => {
     document.title = 'Shaun\'s Projects';
   }, [])
 
-  return (
-    <Wrapper>
+// TRANSLATEY's THE CONTENT IF NOT === TO 0
+  function handleClick2() {
+    counter !== 4 ? setCounter(prev => prev + 1) : setCounter(0)
+    position !== 400 ? setPosition(prev => prev + 100) : setPosition(0);
+  }
+  // SWITCH PAGES VIA WHEEL TURN   
+  function handleUpWheel() {
+    counter !== 0 ? setCounter(prev => prev - 1) : setCounter(0)
+    position !== 0 ? setPosition(prev => prev - 100) : setPosition(0);
+  }
+  // WHEEL CHANGER
+  function handleWheel(e) {
+    return (e.deltaY / 20 < 0 )
+    ? counter > 0 ? handleUpWheel() : null
+    : counter < 4 ? handleClick2() : null
+  }
+
+  function handleAnchor(e) {
+    e.stopPropagation();
+  }
+
+  return (<>
+
+
+  
+    <Wrapper onWheel={(e) => handleWheel(e)}>
+
         {loading && <Loader /> }
 
-    <Header>Projects</Header>
-    <Containers style={{backgroundColor: '#90ABD1'}}
-      target='_blank' href='https://playful-pudding-43fa23.netlify.app'>
-        <UL>
-          <Headings>Banana Shop</Headings>
-          <LI>React store with a mock product api and Stripe payment.</LI>
-        </UL>
-        <WebImage style={{backgroundImage: `url(${banana})`}}/>
-      </Containers>
+      <Container >
+      {imageArray.map((item, index) => {
+        return <TransPages 
+                  onClick={handleClick2}
+                  style={{transform: 
+                     `translateY(-${counter * 100}vh)
+                     ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` 
+                    }}
+                  key={item.id} 
+                  >
+                  <Pages   
+                      key={item.id} 
+                      style={{zIndex: `${index}`,
+                      transform: counter > index 
+                        ? `scale(${0.8}) translateY(-${10}%) `
+                        : `scale(1)`,
+                        }}
+                      >
+                      <Showcase 
+                        style={{backgroundImage: `url(${item.img})`, }}
+                      ></Showcase>
+                      <Blurb>
 
-      <Containers style={{backgroundColor: '#F4A86A'}}
-        target='_blank' href='https://elegant-pony-0acf58.netlify.app/'>
-        <UL>
-          <Headings>Quiz</Headings>
-          <LI>State. Many, many states. </LI>
-        </UL>
-        <WebImage style={{backgroundImage: `url(${quiz})`}}/>
-      </Containers>
+                        <UL style={{backgroundColor: item.color, 
+                                    transform:
+                                    `${index !== counter ? 'translateX(150%)' : 'translateX(0%)'}`
+                                    }}>
+                          <Headings>{item.title}</Headings>
+                          <LI>{item.text}</LI>
+                          <LI><AA target='_blank' href={item.url} onClick={handleAnchor}>
+                            <Butty>Enter Website</Butty></AA></LI>
+                        </UL>
 
-      <Containers style={{backgroundColor: '#FFE07B'}}
-        target='_blank' href='https://marvelous-kheer-2d615e.netlify.app/'>
-        <UL>
-          <Headings>Todo List</Headings>
-          <LI>Simple array manipulation with local storage.</LI>
-        </UL>
-      <WebImage style={{backgroundImage: `url(${todo})`}}/>
-    </Containers>
-    
-    <Containers style={{backgroundColor: '#98D0DF'}}
-       target='_blank' href='https://www.digital-bath-studio.com/'>
-        <UL>
-          <Headings>Mastering Website</Headings>
-          <LI>Among the first websites I'd created, 
-              this happens to be my personal business.</LI>
-        </UL>
-        <WebImage style={{backgroundImage: `url(${mastering})`}}/>
-    </Containers>
+                        <ULMOBILE style={{backgroundColor: item.color}}>
+                          <Headings>{item.title}</Headings>
+                          <LI>{item.text}</LI>
+                          <LI><AA target='_blank' href={item.url} onClick={handleAnchor}>
+                            <Butty>Enter Website</Butty></AA></LI>
+                        </ULMOBILE>
 
-    <Containers style={{backgroundColor: '#F2BC8D'}} 
-        target='_blank' href='https://creative-cactus-5109fd.netlify.app/'>
-        <UL>
-          <Headings>Delicious Nav</Headings>
-          <LI>This is a website template.  I really enjoy the 
-          creative style of the navigation columns</LI>
-        </UL>
-      <WebImage style={{backgroundImage: `url(${column})`}}/>
-    </Containers>
-
+                      </Blurb>
+                  </Pages>
+        </TransPages>
+      })
+      }
+    </Container>
     </Wrapper>
-  )
+    </>)
 }
 
 
@@ -82,81 +103,169 @@ const Wrapper = styled.div`
   position: relative;
   width:100%;
   height: 100%;
-  background-color: ${colorCream};
-  overflow-y: auto;
+  background-image: ${colorCream};
+  overflow-y: hidden;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
   color:${colorBlack} ;
+
 `;
-const Header = styled.div`
-  font-size: 3rem;
-  margin-top: 1.6rem;
-  padding-left: 1rem;
-  line-height: 75%;
-  width: 90%;
-  align-self: center;
-  z-index: 1;
-  font-family: 'Fredericka the Great', cursive;
-  ${device.mobile}{
-    align-self: flex-start;
-  }
-`;
-const Containers = styled.a`
-  width:90%;
-  height: 20%;
-  margin: 1rem 0;
-  z-index: 1;
-  border-radius: 5px;
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  color: ${colorBlack};
-  &:hover {
-    background-color: ${colorBlue} !important;
-  }
-  ${device.mobile}{
-    height: auto;
-  }
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 `;
-const WebImage = styled.div`
-  width: 22%;
-  min-height: 100%;
-  background-size: cover;
+const TransPages = styled.div`
+  position: relative;
+  min-width: 90%;
+  min-height: 90vh;
+  transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
+  margin-top: 10vh;
+&:first-child {
+  margin-top: 5vh;
+}
+animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
+@keyframes onLoad {
+  from { transform: translateY(100%);
+  } to {transform: translateY(0%);
+  }}
+`;
+const Pages = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out;
+`;
+const Showcase = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  border-radius: 5px;
+  border-radius: 20px;
+  ${device.mobile} {
+    height: 40%;
+    border-radius: 20px 20px 0 0 ;
+  }
+`;
+const Blurb = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
   display: flex;
-  align-self: flex-end;
-  justify-items: flex-end;
-  background-position-x: 50%;
-  ${device.mobile}{
-   display: none;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(72%);
+  ${device.mobile} {
+    position: relative;
+    height: 60%;
+    transform: translateX(0%);
+  }
+  `;
+const UL = styled.ul`
+  width: 34%;
+  height: 40%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
+  transition-delay: 1.11s;
+  animation: onLoadX 1.4s cubic-bezier(.23,1.15,.41,1.11);
+  @keyframes onLoadX {
+  0% { transform: translateX(200%);
+  } 65% { transform: translateX(200%);
+  }100% {transform: translateX(0%);
+  }}
+  ${device.mobile} {
+    display: none;
+    align-items: center;
+  }
+`;
+const ULMOBILE = styled.ul`
+  display: none;
+  background-color: white;
+  flex-direction: column;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
+  transition-delay: 1.11s;
+  animation: onLoadX 1.4s cubic-bezier(.23,1.15,.41,1.11);
+  @keyframes onLoadX {
+  0% { transform: translateX(200%);
+  } 65% { transform: translateX(200%);
+  }100% {transform: translateX(0%);
+  }}
+  ${device.mobile} {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 15px 15px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 3rem;
   }
 `;
 const Headings = styled.div`
   margin-left: 0.6rem;
-  font-size: 2rem;
-  padding: 0;
+  font-size: 2.4rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
-  white-space: nowrap;
   align-self: flex-start;
   margin-left: -1rem;
-  ${device.mobile}{
-    margin: 0;
-    margin-left: -2rem;
+  font-weight: 500;
+  line-height: 3rem;
+  padding-bottom: 2rem;
+  ${device.mobile} {
+    align-self: center;
+    text-align: center;
   }
 `;
-const UL = styled.ul`
-  margin: 0 ;
-  width: 95%;
-  padding-bottom: 1rem;
-
-`;
 const LI = styled.li`
-  font-size: 0.9rem;
-  padding-right: 0.3rem;
-
+  font-size: 1.2rem;
+  ${device.mobile} {
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
 `;
+const AA = styled.a`
+
+  color:inherit;
+  text-decoration: none;
+`;
+const Butty = styled.button`
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: solid 2.2px ${colorBlack};
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.1;
+  z-index: 100;
+  &:hover {
+    background-color: ${colorSand};
+  }
+  ${device.mobile}{
+    margin-top: 25%;
+    padding: 2rem;
+  }
+`;
+
+
+
+
+

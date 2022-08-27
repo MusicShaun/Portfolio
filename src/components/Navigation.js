@@ -25,7 +25,7 @@ export default function Navigation(props){
           <Profile />
         </Link> 
         <Name>Shaun Pickett</Name>
-        <p style={{fontSize: '0.8rem'}}>Novice Developer</p>
+        <p style={{fontSize: '0.8rem'}}>Developer</p>
         <p style={{fontSize: '0.8rem', lineHeight: '0rem', margin: '0rem'}}>0412 220 332</p>
       </HeroImage>
 

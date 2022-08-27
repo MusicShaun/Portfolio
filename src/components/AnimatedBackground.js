@@ -34,7 +34,7 @@ export default function AnimatedBackground() {
 
 const Wrapper = styled.div`
   position: absolute;
-  left: 130px;
+  left: 0;
   top: 0;
   width: 100%;
   height: 100%;

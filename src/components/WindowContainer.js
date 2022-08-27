@@ -68,8 +68,8 @@ export default function WindowContainer() {
         <RightSide>
           <Routes>
             <Route path='/' element={ <Home onlyHeight={onlyHeight} />} />
-            <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight}/>} />
-            <Route path='/projects' element={ <Projects />} />
+            <Route path='/about' element={<About onlyWidth={onlyWidth} onlyHeight={onlyHeight} />} />
+            <Route path='/projects' element={ <Projects  onlyHeight={onlyHeight} />} />
             <Route path='/projects/banana-shop' element={ <BananaShop /> } />              
             <Route path='/projects/todo-list' element={ <TodoList /> } />              
             <Route path='/projects/quiz' element={ <Quiz /> } />              

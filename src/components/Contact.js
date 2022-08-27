@@ -22,8 +22,10 @@ export default function About (props) {
       setMobile(false)
   }, [])
   
-  return (
-// 
+  return (<>
+    
+
+
     <Wrapper style={{height: `${props.onlyHeight}`}}>
         { props.onlyWidth > 500 ? loading && <Loader /> : mobileLoading && <Loader /> }
 
@@ -39,7 +41,7 @@ export default function About (props) {
 
 
     </Wrapper>
-  );
+    </>);
 };
 
 
