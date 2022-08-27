@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream , colorSand, specialYellow} from '../helpers/colors';
+import { colorBlack, colorCream , colorSand,} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
@@ -76,7 +76,7 @@ export default function Skills(props) {
                             <Butty>Enter Website</Butty></AA></LI>
                         </UL>
 
-                        <ULMOBILE style={{backgroundColor: specialYellow}}>
+                        <ULMOBILE style={{backgroundColor: '#F2BC8D'}}>
                           <Headings>{item.title}</Headings>
                           <LI>{item.text}</LI>
                           <LI>
@@ -145,6 +145,10 @@ const Pages = styled.div`
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-out;
+  ${device.mobile}{
+    border: 10px solid ${colorCream};
+    border-radius: 30px;
+  }
 `;
 const Showcase = styled.div`
   position: relative;
@@ -198,20 +202,21 @@ const UL = styled.ul`
 `;
 const ULMOBILE = styled.ul`
   display: none;
-  background-color: white;
-  flex-direction: column;
-  padding-right:1rem;
-  padding-left: 1rem;
-  transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
-  transition-delay: 1.11s;
   ${device.mobile} {
+    background-color: white;
+    flex-direction: column;
+    padding-right:1rem;
+    padding-left: 1rem;
+    transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
+    transition-delay: 1.11s;
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 0 0 15px 15px;
     justify-content: center;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 1rem;
+    border-top: 10px solid ${colorCream};
   }
 `;
 const Headings = styled.div`
@@ -256,7 +261,7 @@ const Butty = styled.button`
     background-color: ${colorSand};
   }
   ${device.mobile}{
-    padding: 2rem;
+    padding: 1rem;
     margin-top: 2rem;
   }
 `;

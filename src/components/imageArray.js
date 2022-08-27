@@ -29,14 +29,14 @@ export const imageArray = [
   {
     id: 3, img: mastering, 
     title: 'Mastering Website', 
-    text: 'Among the first websites I\'d created,this happens to be my personal business.', 
+    text: 'Among the first websites I\'d created, this is my current Mastering business.', 
     color: '#FFE07B', 
     url: 'https://www.digital-bath-studio.com/'
 }, 
   {
     id:4, img: column, 
     title: 'Delicious Nav', 
-    text: 'This is a website template.  I really enjoy the creative style of the navigation columns', 
+    text: 'A website template.  I really enjoy the columns which act as navigation.', 
     color: '#F2BC8D', 
     url: 'https://creative-cactus-5109fd.netlify.app/'
 }]; 

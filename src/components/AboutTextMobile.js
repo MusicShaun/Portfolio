@@ -123,13 +123,13 @@ export default function AboutText (props) {
 
 {/*  10  */}
     <Stage2><Cleaner style={{width: '100%', borderRadius: '20px'}} />
-      <Text style={{ height: '30%', fontWeight: '600', backgroundColor: 'hsla(60, 28%, 95%, 0.75)',
+      <Text style={{ height: '30%', marginTop: '10%', backgroundColor: 'hsla(60, 28%, 95%, 0.92)',
       borderRadius: '15px', display: 'flex', alignItems: 'center'}}>  
       I study because I want to. 
       <br />I study because I see coding as my long term  <br /> 
         future and because I'm a ridiculously passionate person.      
           </Text>
-      <Shot style={{}}/>
+      <Shot style={{maxHeight: '60%'}}/>
 
     </Stage2>
 
