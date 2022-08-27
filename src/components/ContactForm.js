@@ -7,6 +7,7 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log('form submitted')
     // alert('Thank you for your message!')
   }
 
@@ -17,7 +18,7 @@ export default function ContactForm() {
                     action="/pages/success"
                     method="POST"
                     data-netlify="true"
-                    name='contactform'
+                    name='contact'
                     className='contactform'>
           <Header>Hire me</Header>
           <Label>Name: <br/>
