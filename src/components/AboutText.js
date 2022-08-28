@@ -260,10 +260,13 @@ const ClosingPage = styled.div`
     align-items: center;
     text-align: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     background-color: ${colorWhite};
     border-radius: 20px;
     overflow: hidden;
+    ${device.desktop}{
+      font-size: 1.3rem;  
+    }
   }
   & div:first-child {
     height: 40%;} 
