@@ -20,17 +20,16 @@ export default function ContactForm() {
                     data-netlify="true"
                     name='contact'
                     >
-          <input type="hidden" name="form-name" value="contact" />
-          <Header>Hire me</Header>
-          <Label>Name: <br/>
-            <Input type='text' name='name' placeholder='' required/>
+          <input type="hidden" name="form-name" value="contact" />          <Header>Hire me</Header>
+          <Label htmlFor='name'>Name: <br/>
+            <Input type='text' name='name' id='name' placeholder='' required/>
           </Label>
-          <Label>Email: <br />
-            <Input type='email' name='email' placeholder='' required/>
+          <Label htmlFor='email'>Email: <br />
+            <Input type='email' name='email' id='email' placeholder='' required/>
           </Label>
-          <Label>Message: <br />
+          <Label htmlFor='message'>Message: <br />
               <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' 
-                        name='message' required />
+                        name='message' id='message' required />
           </Label>
           <Submit type='submit' >Send it!</Submit>
 

@@ -14,6 +14,7 @@ import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite } from "../helpers/colors";
 import { device } from '../helpers/screenSizes';
+import { aboutTextArray } from "./AboutTextArray";
 
 export default function AboutText (props) {
 
@@ -31,7 +32,7 @@ export default function AboutText (props) {
   return (<>
   <Wrapper>
     <Stage>
-      <Hone>I've been a musician my whole life.</Hone>
+      <Hone>{aboutTextArray[0]}</Hone>
       <Shots />
     </Stage>
 
@@ -40,7 +41,7 @@ export default function AboutText (props) {
 
 {/* 1st  */}
     <Partition>
-      <Text>And I've been lucky enough to travel and collaborate with people around the world.</Text>
+      <Text>{aboutTextArray[1]}</Text>
 
       <ContainerRect>
         <Flip style={{backgroundImage: `url(${Belvoire})`}}/>
@@ -49,8 +50,8 @@ export default function AboutText (props) {
 
 {/* 2nd */}
     <Partition>
-      <Text>My unique skill was audio engineering and audio production, namely, Mastering. 
-        <br />Life was good.</Text>
+      <Text>{aboutTextArray[2]}
+        <br />{aboutTextArray[3]}</Text>
       <ContainerSquare>
         <Flip style={{backgroundImage: `url(${studio})`}}/>
       </ContainerSquare>      <Cleaner />
@@ -59,7 +60,7 @@ export default function AboutText (props) {
 
 {/* 3rd  */}
     <Partition>
-      <Text>Then COVID happens.</Text>
+      <Text>{aboutTextArray[4]}</Text>
       <ContainerSquare >
         <Flip style={{backgroundImage: `url(${corona})` }}/>
       </ContainerSquare>      <Cleaner /></Partition>
@@ -67,7 +68,7 @@ export default function AboutText (props) {
 
 {/* 4th */}
     <Partition>
-      <Text >The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general.</Text>  
+      <Text >{aboutTextArray[5]}</Text>  
       <ContainerRect >
         <Flip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>
       </ContainerRect>      <Cleaner />
@@ -76,8 +77,7 @@ export default function AboutText (props) {
 
 {/* 5th */}
     <Partition>
-      <Text>In less than a week, all my income streams had 
-          vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</Text>
+      <Text>{aboutTextArray[6]}</Text>
 
       <ContainerSquare>
         <Flip style={{backgroundImage: `url(${Party})`}}/>
@@ -86,9 +86,7 @@ export default function AboutText (props) {
 
 {/* 6th */}
     <Partition>
-      <Text>
-      It was time to look for a new career opportunity. To find something just as challenging and exciting.
-        And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></Text>
+      <Text>{aboutTextArray[7]}<br /></Text>
         <ContainerSquare>
         <Flip style={{backgroundImage: `url(${vscode})`}}/>
       </ContainerSquare>      <Cleaner />
@@ -96,7 +94,7 @@ export default function AboutText (props) {
 
 {/* 7th  */}
     <Partition>
-      <Text>Now I am but a humble Padawan, with much to learn.  </Text>
+      <Text>{aboutTextArray[8]}</Text>
       
       <ContainerSquare>
         <Flip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2)'}}/>
@@ -105,17 +103,14 @@ export default function AboutText (props) {
 
 {/*  8th  */}
     <Partition>
-      <Text>
-      I hope to find myself interning side by side with the pro's, building apps and 
-        games, solving problems, failing compiles. I know this is a field I will be happy in.</Text>
+      <Text>{aboutTextArray[9]}</Text>
         <ContainerSquare>
         <Flip style={{backgroundImage: `url(${eyes})`}}/>
       </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  9th  */}
     <Partition>
-      <Text>I didn't study coding at Uni or a bootcamp. I didn't study because a 
-        lecturer required me to complete an assignment or because my Mum said I'd be good at it.</Text>
+      <Text>{aboutTextArray[10]}</Text>
 
       <ContainerSquare>   
         <Flip style={{backgroundImage: `url(${sarcastic})` }}/>
@@ -125,9 +120,9 @@ export default function AboutText (props) {
     <Stage2><Cleaner style={{width: '100%', borderRadius: '20px'}} />
       <Text style={{ height: '30%', marginTop: '10%', backgroundColor: 'hsla(60, 28%, 95%, 0.92)',
       borderRadius: '15px', display: 'flex', alignItems: 'center'}}>  
-      I study because I want to. 
-      <br />I study because I see coding as my long term  <br /> 
-        future and because I'm a ridiculously passionate person.      
+      {aboutTextArray[11]}
+      <br />{aboutTextArray[12]} <br /> 
+      {aboutTextArray[13]}     
           </Text>
       <Shot style={{maxHeight: '60%'}}/>
 
@@ -240,7 +235,7 @@ const Text = styled.div`
   min-height: 80px;
   text-align: center;
   margin: 2rem 0rem 0.8rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 `;
 const Stage2 = styled.div`
   position: relative;

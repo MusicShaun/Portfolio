@@ -17,11 +17,20 @@
   <body>
 
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
+      <input type="hidden" name="form-name" value="contact" />
+      <Label>Name: <br/>
+      <input type='text' name='name' />
+      </Label>
+      <Label>Email: <br />
+      <input type='email' name='email'  >
+      </Label>
+      <Label>Message: <br />
+      <input name='message' />
+      </Label>
+      <Submit type='submit' >Send it!</Submit>
+
     </form>
-    
+
     <div id="root"></div>
   </body>
 </html>

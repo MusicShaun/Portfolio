@@ -14,6 +14,7 @@ import vscode from '../img/vscode.webp';
 import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite} from "../helpers/colors";
+import { aboutTextArray } from "./AboutTextArray";
 
 export default function AboutText (props) {
 
@@ -31,7 +32,7 @@ export default function AboutText (props) {
 
   return (<>
     <Page1>
-      <Opener>I've been a musician my whole life.</Opener>
+      <Opener>{aboutTextArray[0]}</Opener>
         <Stage><div style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
       </Stage>
     </Page1>
@@ -41,16 +42,16 @@ export default function AboutText (props) {
     
     <Page style={{top: '50%'}}><section>
       <Right>
-        <RightText>And I've lucky enough to travel and collaborate with people from around the world.</RightText>
+        <RightText>{aboutTextArray[1]}</RightText>
         <Rect><RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/></Rect>
       </Right>  
       <Left>
         <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 8 ? 'flex' : 'none' }}/></Square>
-        <LeftText>My unique skill was audio engineering and audio production, namely, Mastering. 
-        <br />Life was good.</LeftText>
+        <LeftText>{aboutTextArray[2]}
+        <br />{aboutTextArray[3]}</LeftText>
       </Left>
       <Right style={{ justifyContent: 'center',}}>
-        <RightText style={{textAlign: 'center', width: '30%'}}>Then COVID happens.</RightText>
+        <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
         <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 10 ? 'flex' : 'none' }}/></Square>
       </Right>  
     </section></Page>
@@ -60,36 +61,32 @@ export default function AboutText (props) {
     <Page style={{top: '150%'}}><section>
       <Left>
       <Rect ><LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}/></Rect>
-      <LeftText>The world shuts down and along with it, music, theatre, touring, festivals, clubs, basically art in general. </LeftText>
+      <LeftText>{aboutTextArray[5]} </LeftText>
       </Left>
       <Right>
-      <RightText>In less than a week, all my income streams had 
-          vanished and in case you're wondering, musicians aren't cashing in redundancy payouts.</RightText>
+      <RightText>{aboutTextArray[6]}</RightText>
       <Square> <RightFlip style={{backgroundImage: `url(${Party})`, display: picSlide > 31 ? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
       <Square><LeftFlip style={{backgroundImage: `url(${vscode})`, display: picSlide > 34 ? 'flex' : 'none' }}/></Square>
       <LeftText style={{maxWidth: '60%'}}>
-        It was time to look for a new career opportunity. To find something just as challenging and exciting.
-        And to no surprise, coding is very challenging, creative and incredibly satisfying.<br /></LeftText>
+      {aboutTextArray[7]}<br /></LeftText>
       </Left>
     </section></Page>
 
 
     <Page style={{top: '250%'}}><section>
       <Right>
-      <RightText>Now I am but a humble Padawan, with much to learn.  </RightText>
+      <RightText>{aboutTextArray[8]}</RightText>
       <Square><RightFlip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}/></Square>
       </Right>
       <Left>
       <Square><LeftFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 57? 'flex' : 'none' }}/></Square>
       <LeftText>
-        I hope to find myself interning side by side with the pro's, building apps and 
-        games, solving problems, failing compiles. I know this is a field I will be happy in.</LeftText>
+      {aboutTextArray[9]}</LeftText>
       </Left>
       <Right>
-      <RightText>I didn't study coding at Uni or a bootcamp. I didn't study because a 
-        lecturer required me to complete an assignment or because my Mum said I'd be good at it.</RightText>
+      <RightText>{aboutTextArray[10]}</RightText>
       <Square><RightFlip style={{backgroundImage: `url(${sarcastic})`, display: picSlide > 60? 'flex' : 'none'  }}/></Square>
       </Right>
     </section></Page>
@@ -97,9 +94,9 @@ export default function AboutText (props) {
 
 
     <Page style={{top: '350%'}}><ClosingPage>
-      <LeftText style={{maxWidth: '80%'}}>  I study because I want to. 
-      <br />I study because I see coding as my long term  <br /> 
-        future and because I'm passionate about it'.</LeftText>
+      <LeftText style={{maxWidth: '80%'}}> {aboutTextArray[11]}
+      <br />{aboutTextArray[12]}<br /> 
+      {aboutTextArray[13]}</LeftText>
     <ClosingImg style={{backgroundPositionY: `-${(pageHeight - (scrollState -100))}px`}}/>
     </ClosingPage> </Page>
 
