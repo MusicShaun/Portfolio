@@ -68,13 +68,15 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   ${device.desktop} {
     padding-top: 2rem;
-    justify-content: flex-start;
   }
   ${device.desktopL} {
     padding-top: 3rem;
+  }
+  ${device.laptop}{
+    justify-content: center;
   }
 `;
 const FormCutOut = styled.form`

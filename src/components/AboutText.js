@@ -149,8 +149,8 @@ const Page = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  max-height: 1200px;
-  max-width: 1200px;
+  max-height: 1500px;
+  max-width: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,14 +163,21 @@ const Page = styled.div`
     flex-direction: column;
     background-color: ${colorWhite};  
     border-radius: 20px;
-    font-size: 1.1rem;
-  
+    font-size: 1.6rem;
+    ${device.desktop} {
+      font-size: 1.1rem;
+  }
+  }
+  ${device.desktop} {
+    max-height: 1200px;
+    max-width: 1200px;
   }
 `;
 const Square = styled.div`
+
     ${device.desktopL} {
-    width: 280px;
-    height: 280px;}
+    width: 380px;
+    height: 380px;}
     ${device.desktop} {
     width: 255px;
     height: 255px;}
@@ -186,8 +193,8 @@ const Square = styled.div`
 `;
 const Rect = styled.div`
   ${device.desktopL} {
-    width: 500px;
-    height: 281px;}
+    width: 600px;
+    height: 381px;}
   ${device.desktop} {
     width: 450px;
     height: 248px;}

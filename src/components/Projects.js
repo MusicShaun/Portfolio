@@ -221,7 +221,7 @@ const ULMOBILE = styled.ul`
 `;
 const Headings = styled.div`
   margin-left: 0.6rem;
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
@@ -230,6 +230,12 @@ const Headings = styled.div`
   font-weight: 500;
   line-height: 3rem;
   padding-bottom: 2rem;
+  ${device.desktop}{
+    font-size: 2.4rem;
+  }
+  ${device.laptopL}{
+    font-size: 2rem;
+  }
   ${device.mobile} {
     align-self: center;
     text-align: center;
@@ -238,7 +244,10 @@ const Headings = styled.div`
   }
 `;
 const LI = styled.li`
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  ${device.desktop}{
+    font-size: 1.2rem;
+  }
   ${device.mobile} {
     align-items: center;
     list-style: none;
@@ -250,7 +259,7 @@ const AA = styled.a`
   text-decoration: none;
 `;
 const Butty = styled.button`
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   border-radius: 10px;
   border: solid 2.2px ${colorBlack};
   padding: 1rem;
@@ -259,6 +268,9 @@ const Butty = styled.button`
   z-index: 100;
   &:hover {
     background-color: ${colorSand};
+  }
+  ${device.desktop}{
+    font-size: 1.2rem;
   }
   ${device.mobile}{
     padding: 1rem;

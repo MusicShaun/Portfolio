@@ -92,13 +92,17 @@ const Container = styled.div`
 `;
 const BorderClose  = styled.div`
   position: absolute;
-  width: 99%;
+  width: 99.5%;
   height: 99%;
   border: 10px solid ${colorCream};
   box-sizing: content-box;
   border-radius: 10px;
   ${device.tablet} {
     display: none;
+  }
+  ${device.desktop}{
+    width: 99%;
+    height: 99%;
   }
 `;
 const Text = styled.div`
