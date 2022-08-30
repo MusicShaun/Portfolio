@@ -43,7 +43,7 @@ export default function Skills() {
         <SubHeading>Command Q </SubHeading>
         <UL>
             <LI>Leading a 4 man team, (Booking Agent, Marketing creator, live performer, Manager)</LI>
-            <LI>Producing song artworks, show posters</LI>
+            <LI>Song writing, producing, mixing, mastering and creating artworks.</LI>
             <LI>Liaising with promoters, club owners, labels, fans, artists, managers, lawyers, distro, radio</LI>
             <LI>Working with high pressure deadlines and intense environments</LI>
             <LI>Sometimes not sleeping</LI>
