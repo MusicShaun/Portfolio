@@ -4,6 +4,7 @@ import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
 import { imageArray } from './imageArray';
+import debounce from 'lodash.debounce';
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
@@ -29,16 +30,18 @@ export default function Skills(props) {
   }
   // WHEEL CHANGER
   function handleWheel(e) {
-    return (e.deltaY / 20 < 0 )
+    console.log('scroll debouncing')
+    return (e.deltaY  < 0 )
     ? counter > 0 ? handleUpWheel() : null
     : counter < 4 ? handleClick2() : null
   }
+  const debouncedOnChange = debounce(handleWheel, 50);
 
   function handleAnchor(e) {
     e.stopPropagation();
   }
   return (<>
-    <Wrapper onWheel={(e) => handleWheel(e)} style={{height: `${props.onlyHeight}`}}>
+    <Wrapper onWheel={debouncedOnChange} style={{height: `${props.onlyHeight}`}}>
 
         {loading && <Loader /> }
 
@@ -128,6 +131,7 @@ const TransPages = styled.div`
   margin-top: 5vh !important;
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
+/* animation-delay: 0.3s; */
 @keyframes onLoad {
   from { transform: translateY(100%);
   } to {transform: translateY(0%);
