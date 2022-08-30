@@ -188,7 +188,7 @@ const ListItem = styled.li`
     margin-bottom: 0rem;
   }
   & span {
-  animation: wiggle linear 10s infinite;
+  animation: wiggle linear 10s 3;
   animation-delay: 9s;
   @keyframes wiggle {
     0%{ transform: scale(1) rotate(0);

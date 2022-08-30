@@ -16,9 +16,9 @@ export default function Skills() {
 
 
   return (
-    <Wrapper>
+  <Wrapper>
             {loading && <Loader /> }
-
+    <Box>
     <Header>Skills</Header>
     <Containers style={{backgroundColor: '#90ABD1'}}>
       <Headings>Education      </Headings>
@@ -90,8 +90,8 @@ export default function Skills() {
           <LI>Part-Time teaching music</LI>
         </UL>
     </Containers>
-
-    </Wrapper>
+    </Box>
+  </Wrapper>
   )
 }
 
@@ -106,9 +106,23 @@ const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: row;
+
   color:${colorBlack} ;
+`;
+const Box = styled.div`
+  width:90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  ${device.laptopL}{
+    justify-content: center;
+  }
+
 `;
 const Header = styled.div`
   font-size: 3rem;
@@ -124,12 +138,15 @@ const Header = styled.div`
   }
 `;
 const Containers = styled.div`
-  width:90%;
+  width:49%;
   height: auto;
   margin: 1rem 0;
   z-index: 1;
   border-radius: 5px;
   padding-bottom: 1rem;
+  ${device.laptopL}{
+    width:90%;
+  }
 `;
 const Headings = styled.div`
   margin-left: 0.6rem;
