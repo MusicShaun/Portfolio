@@ -20,7 +20,7 @@ export default function Skills(props) {
 
 // TRANSLATEY's THE CONTENT IF NOT === TO 0
   function handleClick2() {
-    counter !== 4 ? setCounter(prev => prev + 1) : setCounter(0)
+    counter !== 5 ? setCounter(prev => prev + 1) : setCounter(0)
     position !== 400 ? setPosition(prev => prev + 100) : setPosition(0);
   }
   // SWITCH PAGES VIA WHEEL TURN   
@@ -33,7 +33,7 @@ export default function Skills(props) {
     console.log('scroll debouncing')
     return (e.deltaY  < 0 )
     ? counter > 0 ? handleUpWheel() : null
-    : counter < 4 ? handleClick2() : null
+    : counter < 5 ? handleClick2() : null
   }
   const debouncedOnChange = debounce(handleWheel, 50);
 
@@ -104,14 +104,12 @@ const Wrapper = styled.div`
   position: relative;
   width:100%;
   height: 100%;
-  background-image: ${colorCream};
   overflow-y: hidden;
   overflow-x: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
   color:${colorBlack} ;
-
 `;
 const Container = styled.div`
   position: relative;
