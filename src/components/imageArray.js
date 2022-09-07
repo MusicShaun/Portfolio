@@ -3,7 +3,7 @@ import mastering from '../img/mastering.webp';
 import banana from '../img/bananashop.webp';
 import todo from '../img/Todo.webp';
 import quiz from '../img/Quiz.webp';
-import sweardle from '../img/sweardle.png';
+import sweardle from '../img/sweardle.webp';
 
 export const imageArray = [
   {
@@ -43,8 +43,8 @@ export const imageArray = [
 },
 {
   id: 5, img: sweardle, 
-  title: 'Under Construction', 
-  text: 'Dictionary API & keyboard typing yet to come', 
+  title: 'M15+', 
+  text: 'Wordle with only profanity? ', 
   color: '#98D0DF', 
   url: 'https://musical-froyo-937a39.netlify.app/'
 }
