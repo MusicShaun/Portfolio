@@ -4,12 +4,11 @@ import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
 import { useEffect , useState } from 'react';
 import { imageArray } from './imageArray';
-import debounce from 'lodash.debounce';
+import throttle from 'lodash.throttle';
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
   const [counter , setCounter ] = useState(0)
-  const [position, setPosition] = useState(0)
 
   useEffect(() => {
     setLoading(false)
@@ -20,28 +19,31 @@ export default function Skills(props) {
 
 // TRANSLATEY's THE CONTENT IF NOT === TO 0
   function handleClick2() {
-    counter !== 5 ? setCounter(prev => prev + 1) : setCounter(0)
-    position !== 400 ? setPosition(prev => prev + 100) : setPosition(0);
+    counter >= 5 ? setCounter(0) : setCounter(prev => prev + 1);
   }
   // SWITCH PAGES VIA WHEEL TURN   
   function handleUpWheel() {
-    counter !== 0 ? setCounter(prev => prev - 1) : setCounter(0)
-    position !== 0 ? setPosition(prev => prev - 100) : setPosition(0);
+    counter !== 0 ? setCounter(prev => prev - 1) : setCounter(0);
   }
   // WHEEL CHANGER
   function handleWheel(e) {
-    console.log('scroll debouncing')
-    return (e.deltaY  < 0 )
-    ? counter > 0 ? handleUpWheel() : null
-    : counter < 5 ? handleClick2() : null
-  }
-  const debouncedOnChange = debounce(handleWheel, 50);
+    return (Math.floor(e.deltaY) / 30 < 0 )
+    ? counter > 0 ? handleUpWheel() : console.log('cant scroll higher')
+    : counter < 5 ? handleClick2() : console.log('cant scroll lower')
+  }  
+
+  const throttledEventHandler = 
+    throttle(handleWheel, 500, {leading: true,trailing: false});
+     
 
   function handleAnchor(e) {
     e.stopPropagation();
   }
+      
   return (<>
-    <Wrapper onWheel={debouncedOnChange} style={{height: `${props.onlyHeight}`}}>
+    <Wrapper onWheel={throttledEventHandler} 
+    
+              style={{height: `${props.onlyHeight}`}}>
 
         {loading && <Loader /> }
 

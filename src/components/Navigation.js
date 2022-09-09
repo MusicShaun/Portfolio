@@ -12,11 +12,34 @@ import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 import {device} from '../helpers/screenSizes';
 import { headShake } from 'react-animations';
+import { useState } from 'react'; 
+import IconHovers from './IconHovers';
+
 
 const bounceAnimation = keyframes`${headShake}`;
 
 export default function Navigation(props){
   const {hideHamburger} = props;
+  const [ bubble ,setBubble ] = useState(false); 
+  const [ bubble2 ,setBubble2 ] = useState(false); 
+  const [ bubble3 ,setBubble3 ] = useState(false); 
+
+  function handleIconHover(num) {
+    if (num === 3 ){
+      setBubble3(true)}
+    else if (num === 2 ){
+      setBubble2(true)}
+    else{
+      setBubble(true)}
+  }
+  function deleteIconHover(num) {
+    if (num === 3 ){
+      setBubble3(false)}
+    else if (num === 2 ){
+      setBubble2(false)}
+    else{
+      setBubble(false)}
+  }
 
   return (
     <Wrapper>
@@ -25,7 +48,7 @@ export default function Navigation(props){
           <Profile />
         </Link> 
         <Name>Shaun Pickett</Name>
-        <p style={{fontSize: '0.8rem'}}>Developer</p>
+        <p style={{fontSize: '0.8rem'}}>Front End Developer</p>
         <p style={{fontSize: '0.8rem', lineHeight: '0rem', margin: '0rem'}}>0412 220 332</p>
       </HeroImage>
 
@@ -69,10 +92,17 @@ export default function Navigation(props){
         </UnorderedList>
       </NavigationPane>
 
+
+
+    {bubble && <IconHovers text={'Catch up on Facebook'} textD='left' />}
+    {bubble2 && <IconHovers text={'View my Github'} />}
+    {bubble3 && <IconHovers text={'Connect with me on Instagram'} textD='right' />}
+
+
       <Footer>
-        <FootList><Facebook /></FootList>
-        <FootList><Github /></FootList>
-        <FootList><Instagram /></FootList>
+        <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover}><Facebook /></FootList>
+        <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}><Github /></FootList>
+        <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)} ><Instagram /></FootList>
       </Footer>
 
     </Wrapper>
@@ -250,8 +280,6 @@ const FootList = styled.div`
     stroke: ${colorBlack};
   }
 `;
-
-
 
 
 

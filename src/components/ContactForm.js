@@ -1,15 +1,8 @@
 import styled from 'styled-components';
 import { colorGrey, colorBlack, colorCream, colorWhite, } from '../helpers/colors';
-import dog from '../img/Dog-Banner.jpeg';
 import { device } from '../helpers/screenSizes';
 
 export default function ContactForm() {
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   console.log('form submitted')
-  //   // alert('Thank you for your message!')
-  // }
 
   return (
 
@@ -34,30 +27,10 @@ export default function ContactForm() {
           <Submit type='submit' >Send it!</Submit>
 
         </FormCutOut>
-        <Dog />
     </Wrapper>
   )
 }
-const Dog = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  height: 36%; 
-  width: 100%;
-  border-radius: 0 0 10px;
-  background-image: url(${dog});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
-  background-position: bottom;
-  ${device.desktop}{
-    background-position-y: 100px;
-  }
-  ${device.laptopL}{
-    display: none;
-  }
-`;
+
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
