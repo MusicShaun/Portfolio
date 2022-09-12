@@ -106,7 +106,7 @@ const [loading, setLoading] = useState(true);
 useEffect(() => {
   const timer = setTimeout(() => {
     setLoading(false)
-  }, 1500);
+  }, 500);
 return () => clearInterval(timer)
 }, [])
 

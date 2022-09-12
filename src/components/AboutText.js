@@ -15,6 +15,8 @@ import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
 import { colorWhite} from "../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
+import { LazyLoadImage } from 'react-lazy-load-image-component'; 
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function AboutText (props) {
 
@@ -33,7 +35,10 @@ export default function AboutText (props) {
   return (<>
     <Page1>
       <Opener>{aboutTextArray[0]}</Opener>
-        <Stage><div style={{transform: `translateY(${-1.5 * scrollState}px)`, backgroundImage: `url(${StageShot})`}} />
+        <Stage><LazyLoadImage 
+                  src={StageShot}
+                  effect='blur'
+                  style={{transform: `translateY(${-1.5 * scrollState}px)`}} />
       </Stage>
     </Page1>
 
@@ -43,16 +48,25 @@ export default function AboutText (props) {
     <Page style={{top: '50%'}}><section>
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
-        <Rect><RightFlip style={{backgroundImage: `url(${Belvoire})`, display: picSlide > 6 ? 'flex' : 'none' }}/></Rect>
+        <Rect><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
+          <LazyLoadImage src={Belvoire}
+                          effect='blur'/>
+        </RightFlip></Rect>
       </Right>  
       <Left>
-        <Square><LeftFlip style={{backgroundImage: `url(${studio})`, display: picSlide > 8 ? 'flex' : 'none' }}/></Square>
+        <Square><LeftFlip style={{ display: picSlide > 8 ? 'flex' : 'none' }}>
+          <LazyLoadImage src={studio}
+                            effect='blur'/>
+        </LeftFlip></Square>
         <LeftText>{aboutTextArray[2]}
         <br />{aboutTextArray[3]}</LeftText>
       </Left>
       <Right style={{ justifyContent: 'center',}}>
         <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
-        <Square><RightFlip style={{backgroundImage: `url(${corona})`, display: picSlide > 10 ? 'flex' : 'none' }}/></Square>
+        <Square><RightFlip style={{ display: picSlide > 10 ? 'flex' : 'none' }}>
+          <LazyLoadImage src={corona}
+                            effect='blur'/>
+        </RightFlip></Square>
       </Right>  
     </section></Page>
 
@@ -60,15 +74,27 @@ export default function AboutText (props) {
 
     <Page style={{top: '150%'}}><section>
       <Left>
-      <Rect ><LeftFlip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}/></Rect>
+      <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}>
+        <LazyLoadImage src={decks}
+                       effect='blur'/>
+        </LeftFlip>
+      </Rect>
       <LeftText>{aboutTextArray[5]} </LeftText>
       </Left>
       <Right>
       <RightText>{aboutTextArray[6]}</RightText>
-      <Square> <RightFlip style={{backgroundImage: `url(${Party})`, display: picSlide > 31 ? 'flex' : 'none' }}/></Square>
+      <Square> <RightFlip style={{ display: picSlide > 31 ? 'flex' : 'none' }}>
+        <LazyLoadImage src={Party}
+                            effect='blur'/>
+          </RightFlip>
+      </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{backgroundImage: `url(${vscode})`, display: picSlide > 34 ? 'flex' : 'none' }}/></Square>
+      <Square><LeftFlip style={{ display: picSlide > 34 ? 'flex' : 'none' }}>
+        <LazyLoadImage src={vscode}
+                        effect='blur'/>
+        </LeftFlip>
+      </Square>
       <LeftText style={{maxWidth: '60%'}}>
       {aboutTextArray[7]}<br /></LeftText>
       </Left>
@@ -78,16 +104,28 @@ export default function AboutText (props) {
     <Page style={{top: '250%'}}><section>
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
-      <Square><RightFlip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}/></Square>
+      <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}>
+        <LazyLoadImage src={onCar}
+                            effect='blur'/>
+          </RightFlip>
+      </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{backgroundImage: `url(${eyes})`, display: picSlide > 57? 'flex' : 'none' }}/></Square>
+      <Square><LeftFlip style={{display: picSlide > 57? 'flex' : 'none' }}>
+        <LazyLoadImage src={eyes}
+                          effect='blur'/>
+        </LeftFlip>
+      </Square>
       <LeftText>
       {aboutTextArray[9]}</LeftText>
       </Left>
       <Right>
       <RightText>{aboutTextArray[10]}</RightText>
-      <Square><RightFlip style={{backgroundImage: `url(${sarcastic})`, display: picSlide > 60? 'flex' : 'none'  }}/></Square>
+      <Square><RightFlip style={{ display: picSlide > 60? 'flex' : 'none'  }}>
+        <LazyLoadImage src={sarcastic}
+                        effect='blur'/>
+          </RightFlip>
+      </Square>
       </Right>
     </section></Page>
 
@@ -127,7 +165,7 @@ const Stage = styled.div`
   height: 50%;
   z-index: 2;
   overflow: hidden;
-  & div {
+  & img {
     border-radius: 10px ;
     background-position: 0px -140px;
     width: 100%;
@@ -224,10 +262,15 @@ const Right = styled.div`
 const flipIt =  keyframes`${flipInX}`;
 const LeftFlip = styled.div`
   animation: ${flipIt} 1.2s ease-in ;
-  background-size: cover;
-  border-radius: 10px;
   width: 100%;
   height: 100%;
+  & img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
 `;
 const LeftText = styled.div`
   margin-left: 2rem;
@@ -236,11 +279,15 @@ const LeftText = styled.div`
 `;
 const RightFlip = styled.div`
   animation: ${flipIt} 1.2s ease-in ;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 10px;
   width: 100%;
   height: 100%;
+  & img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
 `;
 const RightText = styled.div`
   margin-right: 1rem;
