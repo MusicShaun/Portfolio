@@ -19,7 +19,7 @@ export default function Skills(props) {
 
 // TRANSLATEY's THE CONTENT IF NOT === TO 0
   function handleClick2() {
-    counter >= 5 ? setCounter(0) : setCounter(prev => prev + 1);
+    counter >= imageArray.length -1 ? setCounter(0) : setCounter(prev => prev + 1);
   }
   // SWITCH PAGES VIA WHEEL TURN   
   function handleUpWheel() {
@@ -29,7 +29,7 @@ export default function Skills(props) {
   function handleWheel(e) {
     return (Math.floor(e.deltaY) / 30 < 0 )
     ? counter > 0 ? handleUpWheel() : console.log('cant scroll higher')
-    : counter < 5 ? handleClick2() : console.log('cant scroll lower')
+    : counter < imageArray.length -1 ? handleClick2() : console.log('cant scroll lower')
   }  
 
   const throttledEventHandler = 

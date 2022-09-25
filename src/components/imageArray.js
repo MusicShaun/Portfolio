@@ -4,6 +4,7 @@ import banana from '../img/bananashop.webp';
 import todo from '../img/Todo.webp';
 import quiz from '../img/Quiz.webp';
 import sweardle from '../img/sweardle.webp';
+import axios from '../img/axios.webp';
 
 export const imageArray = [
   {
@@ -47,5 +48,13 @@ export const imageArray = [
   text: 'Wordle with only profanity? ', 
   color: '#98D0DF', 
   url: 'https://musical-froyo-937a39.netlify.app/'
+}
+,
+{
+  id: 6, img: axios, 
+  title: 'Axios Examples', 
+  text: 'CRUD applications', 
+  color: '#F4A86A', 
+  url: 'https://preeminent-buttercream-25f827.netlify.app/'
 }
 ]; 
