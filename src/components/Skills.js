@@ -75,6 +75,7 @@ export default function Skills() {
           <LI>SCSS</LI>
           <LI>Javascript</LI>
           <LI>React</LI>
+          <LI>Typescript</LI>
           <LI>Photoshop</LI>
           <LI>Word Apps</LI>
           <LI>Basic AWS</LI>
