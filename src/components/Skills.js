@@ -71,13 +71,13 @@ export default function Skills() {
       <Headings>Skills</Headings>
         <UL>
           <LI>HTML</LI>
-          <LI>CSS</LI>
-          <LI>SCSS</LI>
+          <LI>CSS/SASS</LI>
           <LI>Javascript</LI>
           <LI>React</LI>
           <LI>Typescript</LI>
+          <LI>Node.js</LI>
+          <LI>Basic Express.js</LI>
           <LI>Photoshop</LI>
-          <LI>Word Apps</LI>
           <LI>Basic AWS</LI>
           <LI>Anything Audio</LI>
           <LI>Making coffee</LI>
