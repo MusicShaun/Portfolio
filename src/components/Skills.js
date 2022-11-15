@@ -24,6 +24,10 @@ export default function Skills() {
       <Headings>Education      </Headings>
         <UL>
           <LI>Bachelors Degree of Classical Music at WAAPA</LI>
+          <LI>Front End Development - LinkedIn Skill Assessment</LI>
+          <LI>React - LinkedIn Skill Assessment</LI>
+          <LI>CSS - LinkedIn Skill Assessment</LI>
+          <LI>HTML - LinkedIn Skill Assessment</LI>
         </UL>
       </Containers>
 
