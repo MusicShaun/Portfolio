@@ -94,7 +94,7 @@ export default function Navigation(props){
 
 
 
-    {bubble && <IconHovers text={'Catch up on Facebook'} textD='left' />}
+    {bubble && <IconHovers text={'View my LinkedIn'} textD='left' />}
     {bubble2 && <IconHovers text={'View my Github'} />}
     {bubble3 && <IconHovers text={'Connect with me on Instagram'} textD='right' />}
 
