@@ -11,7 +11,7 @@ export const imageArray = [
   {
     id: 0, img: mern, 
     title: 'Full Stack MERN', 
-    text: '" Work In Progress" - Login authentication, blog posting, express server, heroku', 
+    text: '" Mongo, Express, React, Node, Cloudinary, Authentication', 
     color: '#F2BC8D', 
     url: 'https://shauns-mern-project.herokuapp.com'
   },
