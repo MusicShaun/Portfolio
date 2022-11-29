@@ -30,7 +30,7 @@ export default function AboutText (props) {
   }, [scrollState, pageHeight])
 
 
-  console.log(`picSlide ${picSlide}%`)
+
 
   return (<>
     <Page1>
@@ -38,14 +38,14 @@ export default function AboutText (props) {
         <Stage><LazyLoadImage 
                   src={StageShot}
                   effect='blur'
-                  style={{transform: `translateY(${-1.5 * scrollState}px)`}} />
+                  style={{transform: `translateY(${-1.65 * scrollState}px)`}} />
       </Stage>
     </Page1>
 
 
 
     
-    <Page style={{top: '50%'}}><section>
+    <Page style={{top: '55%'}}><section>
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
         <Rect><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
@@ -72,7 +72,7 @@ export default function AboutText (props) {
 
 
 
-    <Page style={{top: '150%'}}><section>
+    <Page style={{top: '155%'}}><section>
       <Left>
       <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}>
         <LazyLoadImage src={decks}
@@ -101,7 +101,7 @@ export default function AboutText (props) {
     </section></Page>
 
 
-    <Page style={{top: '250%'}}><section>
+    <Page style={{top: '255%'}}><section>
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
       <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}>
@@ -131,7 +131,7 @@ export default function AboutText (props) {
 
 
 
-    <Page style={{top: '350%'}}><ClosingPage>
+    <Page style={{top: '355%'}}><ClosingPage>
       <LeftText style={{maxWidth: '80%'}}> {aboutTextArray[11]}
       <br />{aboutTextArray[12]}<br /> 
       {aboutTextArray[13]}</LeftText>

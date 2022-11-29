@@ -5,14 +5,14 @@ import AboutTextMobile from "./AboutTextMobile";
 import { useState, useEffect, useRef} from 'react'; 
 import Loader from './Loader';
 import AboutBackground from './AboutBackground';
-
+import arrow from '../img/arrow.png';
 
 export default function About (props) {
-
+  const [ pageSize , setPageSize ] = useState(0);
   useEffect(() => {
     document.title = 'About Shaun';
+    setPageSize(pageRef.current.offsetHeight)
   }, [])
-
   const {onlyWidth} = props; 
   
   //AUTOMATIC SCROLLING 
@@ -20,13 +20,30 @@ export default function About (props) {
   const [pageHeight, setPageHeight] = useState(0)
   const [scrollDir, setScrollDir] = useState(true);
   const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollTo(0, 1000);
+  const pageRef = useRef(null)
+  const [ scrollPos, setScrollPos ] = useState(0);
 
-  // HANDLE WHERE THE PAGE AUTO SCROLLS TOO
-  const firstScrollDestination = ((pageHeight / 100) * 14.2);
-  const secondScrollDestination = ((pageHeight / 100) * 42.8);
-  const thirdScrollDestination = ((pageHeight / 100) * 71.4);
-  const lastScrollDestination = (pageHeight);
+  function executeScroll(direction) {
+    if (direction === 'down'){
+      if (scrollPos < pageSize * 0.55){
+        setScrollPos(prev => prev + (pageSize * 0.55))
+      } else if (scrollPos > (pageSize * 2.55)) {
+        setScrollPos(pageSize * 3.55)
+      } else {
+        setScrollPos(prev => prev + pageSize)
+      }
+    } else {
+      if (scrollPos < (pageSize * 1.55)){
+        setScrollPos(0)
+      } else {
+        setScrollPos(prev => prev - pageSize)
+      }
+    } 
+  }
+  useEffect(() => {
+    myRef.current.scrollTo(0, scrollPos);
+  }, [scrollPos])
+  
 
   //DETERMINE SCROLL DIRECTION
   useEffect(() => {
@@ -61,44 +78,6 @@ export default function About (props) {
     const size = e.currentTarget.scrollHeight - e.target.offsetHeight;
     setScrollState(position);
     setPageHeight(size)
-    let scrollPercentile = Math.floor((100 /pageHeight) * scrollState);
-
-    // Apply AUTO SCROLLING
-    //PAGE 1
-    if (onlyWidth > 500 )
-    {if (scrollPercentile === 4 && scrollDir) {
-      executeScroll();
-      myRef.current.scrollTo({top: firstScrollDestination})
-    } 
-    if (scrollPercentile === 10 && !scrollDir) {
-      executeScroll();
-      myRef.current.scrollTo({top: 0})
-    } 
-    //PAGE 2
-    if (scrollPercentile === 18 && scrollDir ) {
-      executeScroll();
-      myRef.current.scrollTo(0, secondScrollDestination)
-    } if (scrollPercentile === 39 && !scrollDir) {
-      executeScroll();
-      myRef.current.scrollTo(0, firstScrollDestination)
-    } 
-    //PAGE 3
-    if (scrollPercentile === 47 && scrollDir ) {
-      executeScroll();
-      myRef.current.scrollTo(0, thirdScrollDestination)
-    }  if (scrollPercentile === 67 && !scrollDir) {
-      executeScroll();
-      myRef.current.scrollTo(0, secondScrollDestination)
-    } 
-    //PAGE 4
-    if (Math.floor((100 /pageHeight) * scrollState) === 75 && scrollDir ) {
-      executeScroll();
-      myRef.current.scrollTo(0, lastScrollDestination)
-    } if (Math.floor((100 /pageHeight) * scrollState) === 95 && !scrollDir) {
-      executeScroll();
-      myRef.current.scrollTo(0, thirdScrollDestination)
-    } 
-    }
   };
 
 // LOADING 
@@ -111,17 +90,17 @@ return () => clearInterval(timer)
 }, [])
 
   return (
-    <Wrapper>
+    <Wrapper ref={pageRef}>
 
     <BareBack />
         {loading && <Loader /> }
 
-      <ParallaxContainer  style={{transform: `translateY(${-0.3 * scrollState}px)`}}>
+      <ParallaxContainer  style={{transform: `translateY(${-0.1 * scrollState}px)`}}>
       <AboutBackground />
       </ParallaxContainer>
   
 
-        <Text  onScroll={handleScroll} ref={myRef} >
+        <Text  onScroll={handleScroll} ref={myRef}  style={{overflowY: onlyWidth > 600 ? 'hidden' : 'hidden auto'}}>
           {onlyWidth > 500 ? 
           <AboutText scrollState={scrollState}  pageHeight={pageHeight} />
           : 
@@ -129,7 +108,16 @@ return () => clearInterval(timer)
           }
         </Text>
 
-
+      {onlyWidth > 600 && scrollPos > pageSize * 0.5 && 
+        <FixedUpBtn onClick={() => executeScroll('up')}>
+          <div style={{backgroundImage: `url(${arrow})`}}></div>
+        </FixedUpBtn>
+        }
+      {onlyWidth > 600 && scrollPos < pageSize * 3 && 
+      <FixedDownBtn onClick={() => executeScroll('down')}>
+                  <div style={{backgroundImage: `url(${arrow})`}}></div>
+      </FixedDownBtn>
+      }
     </Wrapper>
   )
 }
@@ -170,4 +158,81 @@ const ParallaxContainer = styled.div`
   height: 100%;
   width: 100%;
 `;
+const FixedUpBtn = styled.button`
+  position: fixed;
+  top: 1%;
+  width: 150px;
+  height: 50px; 
+  z-index: 100;
+  transition: all 0.2s;
+  transition: box-shadow 0s 0.2s;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255, 0.5);
+  & div {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+    &:hover {
+      transform: rotate(-90deg) scale(1.1);
+      transition: all 0.2s;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    border: 2px solid orange;
+    transition: all 0.2s;
+    /* background-color: lightblue; */
+  }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: inset 0px -4px 4px grey;
+    transition: all 0.1s;
+  }
 
+`
+const FixedDownBtn = styled.button`
+  position: fixed;
+  top: 94%;
+  width: 150px;
+  height: 50px; 
+  z-index: 100;
+  transition: all 0.2s;
+  transition: box-shadow 0s 0.2s;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255, 0.5);
+  & div {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    &:hover {
+      transform: rotate(90deg) scale(1.1);
+      transition: all 0.2s;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    border: 2px solid orange;
+    transition: all 0.2s;
+    /* background-color: lightblue; */
+  }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: inset 0px 4px 4px grey;
+    transition: all 0.1s;
+  }
+
+`

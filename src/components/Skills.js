@@ -80,8 +80,6 @@ export default function Skills() {
           <LI>React</LI>
           <LI>Typescript</LI>
           <LI>Node.js</LI>
-          <LI>Basic Express.js</LI>
-          <LI>Photoshop</LI>
           <LI>Basic AWS</LI>
           <LI>Anything Audio</LI>
           <LI>Making coffee</LI>
