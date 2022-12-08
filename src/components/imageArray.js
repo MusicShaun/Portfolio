@@ -13,7 +13,7 @@ export const imageArray = [
     title: 'Full Stack MERN', 
     text: '" Mongo, Express, React, Node, Cloudinary, Authentication', 
     color: '#F2BC8D', 
-    url: 'https://shauns-mern-project.herokuapp.com'
+    url: 'https://mern-project-main.herokuapp.com/'
   },
   {
     id: 1, img: sweardle, 
