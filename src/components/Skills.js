@@ -23,52 +23,49 @@ export default function Skills() {
     <Containers style={{backgroundColor: '#90ABD1'}}>
       <Headings>Education      </Headings>
         <UL>
-          <LI>Bachelors Degree of Classical Music at WAAPA</LI>
-          <LI>Front End Development - LinkedIn Skill Assessment</LI>
-          <LI>React - LinkedIn Skill Assessment</LI>
-          <LI>CSS - LinkedIn Skill Assessment</LI>
-          <LI>HTML - LinkedIn Skill Assessment</LI>
+          <LI>WAAPA -  Bachelors Degree of Music</LI>
+          <LI>LinkedIn Skill Tests -  React, Front-End, CSS, HTML</LI>
+          <LI>CodinGame Certifications -  Javascript problem solver, Bronze speed</LI>
+
         </UL>
       </Containers>
 
       <Containers style={{backgroundColor: '#F4A86A'}}>
       <Headings>Work Titles</Headings>
-        <UL>
-          <LI>Mastering Engineer for COMMAND Q - 2015 to present</LI>
-          <LI>Producer, song writer and performer for Monsoon Moon & Command Q</LI>
+          <UL>
+          <LI>Music Teacher - Helena College, Government</LI>
+          <LI>Mastering Engineer - 2015 to present</LI>
+          <LI>Producer, Song Writer</LI>
           <LI>Sound Designer</LI>
-          <LI>Music Teacher - Helena College, 3 years</LI>
-          <LI>Music Teacher - Government, 3 years</LI>
+
         </UL>
       </Containers>
 
       <Containers style={{backgroundColor: '#FFE07B'}}>
-      <Headings>Work Descriptions    </Headings>
-        <SubHeading>Command Q </SubHeading>
-        <UL>
-            <LI>Leading a 4 man team, (Booking Agent, Marketing creator, live performer, Manager)</LI>
-            <LI>Song writing, producing, mixing, mastering and creating artworks.</LI>
-            <LI>Liaising with promoters, club owners, labels, fans, artists, managers, lawyers, distro, radio</LI>
-            <LI>Working with high pressure deadlines and intense environments</LI>
-            <LI>Sometimes not sleeping</LI>
-        </UL>
-          <SubHeading>Monsoon Moon</SubHeading>
-        <UL>
-            <LI>Same as above</LI>
-            <LI>Creating music videos</LI>
-        </UL>  
-          <SubHeading>Sound Designer</SubHeading>
-        <UL>
-            <LI>Workshopping creative audio with actors and lighting</LI>
-            <LI>Producing performance ready content on an unmoveable deadline</LI>
-        </UL>
+        <Headings>Work Descriptions    </Headings>
           <SubHeading>Music Teacher </SubHeading>
         <UL>
             <LI>Liaising with parents, teachers, principles, children and people with learning difficulties</LI>
             <LI>Organising concerts and performances</LI>
             <LI>Creating curriculum for the students</LI>
-          
+            <LI>Safe and inclusive work practices</LI>
         </UL>
+        <SubHeading>Mastering Engineer</SubHeading>
+        <UL>
+            <LI>Liaising with international artists and working towards a common goal.</LI>
+            <LI>Striving for the best product every time.</LI>
+            <LI>Providing community and mentorship to up and coming artists</LI>
+            <LI>Working with high pressure deadlines and intense environments</LI>
+        </UL>
+          <SubHeading>Producer / Sound Designer / Artist</SubHeading>
+        <UL>
+            <LI>Writing & producing music</LI>
+            <LI>Creating visual content and music videos</LI>
+            <LI>Leading a 4 person team throughout many national tours </LI>
+            <LI>Workshopping audio with actors and lighting</LI>
+            <LI>Being performance ready for every show</LI>
+        </UL>
+
     </Containers>
     
     <Containers style={{backgroundColor: '#98D0DF'}}>
@@ -76,9 +73,7 @@ export default function Skills() {
         <UL>
           <LI>HTML</LI>
           <LI>CSS/SASS</LI>
-          <LI>Javascript</LI>
-          <LI>React</LI>
-          <LI>Typescript</LI>
+          <LI>Javascript/React/Typescript</LI>
           <LI>Node.js</LI>
           <LI>Basic AWS</LI>
           <LI>Anything Audio</LI>
@@ -89,8 +84,8 @@ export default function Skills() {
     <Containers style={{backgroundColor: '#F2BC8D'}}>
       <Headings>Current</Headings>
         <UL>
-          <LI>Full-Time study </LI>
-          <LI>Part-Time teaching music</LI>
+          <LI>Current study focus - Node.JS</LI>
+          <LI>Completing a MERN stack site</LI>
         </UL>
     </Containers>
     </Box>

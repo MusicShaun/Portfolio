@@ -31,7 +31,6 @@ export default function AboutText (props) {
 
 
 
-
   return (<>
     <Page1>
       <Opener>{aboutTextArray[0]}</Opener>
@@ -48,13 +47,13 @@ export default function AboutText (props) {
     <Page style={{top: '55%'}}><section>
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
-        <Rect><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
+        <Rect><RightFlip style={{ display: picSlide > 3 ? 'flex' : 'none' }}>
           <LazyLoadImage src={Belvoire}
                           effect='blur'/>
         </RightFlip></Rect>
       </Right>  
       <Left>
-        <Square><LeftFlip style={{ display: picSlide > 8 ? 'flex' : 'none' }}>
+        <Square><LeftFlip style={{ display: picSlide > 4 ? 'flex' : 'none' }}>
           <LazyLoadImage src={studio}
                             effect='blur'/>
         </LeftFlip></Square>
@@ -63,7 +62,7 @@ export default function AboutText (props) {
       </Left>
       <Right style={{ justifyContent: 'center',}}>
         <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
-        <Square><RightFlip style={{ display: picSlide > 10 ? 'flex' : 'none' }}>
+        <Square><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
           <LazyLoadImage src={corona}
                             effect='blur'/>
         </RightFlip></Square>
@@ -74,7 +73,7 @@ export default function AboutText (props) {
 
     <Page style={{top: '155%'}}><section>
       <Left>
-      <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 28 ? 'flex' : 'none' }}>
+      <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 21 ? 'flex' : 'none' }}>
         <LazyLoadImage src={decks}
                        effect='blur'/>
         </LeftFlip>
@@ -83,14 +82,14 @@ export default function AboutText (props) {
       </Left>
       <Right>
       <RightText>{aboutTextArray[6]}</RightText>
-      <Square> <RightFlip style={{ display: picSlide > 31 ? 'flex' : 'none' }}>
+      <Square> <RightFlip style={{ display: picSlide > 22 ? 'flex' : 'none' }}>
         <LazyLoadImage src={Party}
                             effect='blur'/>
           </RightFlip>
       </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{ display: picSlide > 34 ? 'flex' : 'none' }}>
+      <Square><LeftFlip style={{ display: picSlide > 24 ? 'flex' : 'none' }}>
         <LazyLoadImage src={vscode}
                         effect='blur'/>
         </LeftFlip>
@@ -104,14 +103,14 @@ export default function AboutText (props) {
     <Page style={{top: '255%'}}><section>
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
-      <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 54? 'flex' : 'none' }}>
+      <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 49? 'flex' : 'none' }}>
         <LazyLoadImage src={onCar}
                             effect='blur'/>
           </RightFlip>
       </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{display: picSlide > 57? 'flex' : 'none' }}>
+      <Square><LeftFlip style={{display: picSlide > 50? 'flex' : 'none' }}>
         <LazyLoadImage src={eyes}
                           effect='blur'/>
         </LeftFlip>
@@ -121,7 +120,7 @@ export default function AboutText (props) {
       </Left>
       <Right>
       <RightText>{aboutTextArray[10]}</RightText>
-      <Square><RightFlip style={{ display: picSlide > 60? 'flex' : 'none'  }}>
+      <Square><RightFlip style={{ display: picSlide > 52? 'flex' : 'none'  }}>
         <LazyLoadImage src={sarcastic}
                         effect='blur'/>
           </RightFlip>

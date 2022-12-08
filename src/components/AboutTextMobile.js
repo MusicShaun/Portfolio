@@ -7,7 +7,7 @@ import corona from '../img/corona.webp';
 import decks from '../img/decks.jpg';
 import sarcastic from '../img/sarcastic.jpg';
 import eyes from '../img/eyes.webp';
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import studio from '../img/studio.png';
 import vscode from '../img/vscode.webp';
 import onCar from '../img/onTheCar2.webp';
@@ -18,16 +18,15 @@ import { aboutTextArray } from "./AboutTextArray";
 
 export default function AboutText (props) {
 
-  const {scrollState, pageHeight} = props;
-  const [picSlide, setPicSlide] = useState(0);
+  // const {scrollState, pageHeight} = props;
+  // const [picSlide, setPicSlide] = useState(0);
 
-  useEffect(() => {
-    let heights = pageHeight;
-    const percentage = Math.floor((100 / heights) * scrollState);
-    setPicSlide(percentage)
-  }, [scrollState, pageHeight])
+  // useEffect(() => {
+  //   let heights = pageHeight;
+  //   const percentage = Math.floor((100 / heights) * scrollState);
+  //   setPicSlide(percentage)
+  // }, [scrollState, pageHeight])
 
-  console.log(`mobile slide ${picSlide}%`)
 
   return (<>
   <Wrapper>

@@ -4,14 +4,13 @@ import banana from '../img/bananashop.webp';
 import todo from '../img/Todo.webp';
 import quiz from '../img/Quiz.webp';
 import sweardle from '../img/sweardle.webp';
-import axios from '../img/axios.webp';
 import mern from '../img/mern-full-stack.png';
 
 export const imageArray = [
   {
     id: 0, img: mern, 
     title: 'Full Stack MERN', 
-    text: '" Mongo, Express, React, Node, Cloudinary, Authentication', 
+    text: 'Mongo, Express, React, Node, Cloudinary, Authentication', 
     color: '#F2BC8D', 
     url: 'https://mern-project-main.herokuapp.com/'
   },
@@ -58,11 +57,5 @@ export const imageArray = [
     url: 'https://creative-cactus-5109fd.netlify.app/'
 }
 ,
-{
-  id: 7, img: axios, 
-  title: 'Axios Examples', 
-  text: 'CRUD applications', 
-  color: '#F4A86A', 
-  url: 'https://preeminent-buttercream-25f827.netlify.app/'
-}
+
 ]; 
