@@ -22,11 +22,12 @@ export const imageArray = [
     url: 'https://musical-froyo-937a39.netlify.app/'
   },
   {
-    id: 2, img: banana, 
-    title: 'Banana Store', 
-    text: 'React store with a mock product api and Stripe payment.', 
-    color: '#F4A86A', 
-    url: 'https://playful-pudding-43fa23.netlify.app'
+    id: 2, img: column, 
+    title: 'Website Template', 
+    text: 'Ready to go with NextJS and redux toolkit', 
+    color: '#F2BC8D', 
+    url: 'https://63b5019e64a3400009783017--prismatic-stroopwafel-c65a19.netlify.app/'
+
   }, 
   {
     id: 3, img: quiz, 
@@ -50,11 +51,11 @@ export const imageArray = [
     url: 'https://www.digital-bath-studio.com/'
 }, 
   {
-    id: 6, img: column, 
-    title: 'Delicious Nav', 
-    text: 'A website template.  I really enjoy the columns which act as navigation.', 
-    color: '#F2BC8D', 
-    url: 'https://creative-cactus-5109fd.netlify.app/'
+    id: 6, img: banana, 
+    title: 'Banana Store', 
+    text: 'React store with a mock product api and Stripe payment.', 
+    color: '#F4A86A', 
+    url: 'https://playful-pudding-43fa23.netlify.app'
 }
 ,
 
