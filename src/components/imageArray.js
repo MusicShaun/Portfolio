@@ -9,22 +9,22 @@ import mern from '../img/mern-full-stack.png';
 export const imageArray = [
   {
     id: 0, img: mern, 
-    title: 'Full Stack MERN', 
-    text: 'Mongo, Express, React, Node, Cloudinary, Authentication', 
+    title: 'MERN stack', 
+    text: 'Very nice RTK, user authentication, tidy Node server', 
     color: '#F2BC8D', 
     url: 'https://mern-project-main.herokuapp.com/'
   },
   {
     id: 1, img: sweardle, 
     title: 'M15+', 
-    text: 'Wordle with only profanity? ', 
+    text: 'Wordle with profanity? ', 
     color: '#98D0DF', 
     url: 'https://musical-froyo-937a39.netlify.app/'
   },
   {
     id: 2, img: column, 
     title: 'Website Template', 
-    text: 'Ready to go with NextJS and redux toolkit', 
+    text: 'Custom template with NextJS and redux toolkit', 
     color: '#F2BC8D', 
     url: 'https://63b5019e64a3400009783017--prismatic-stroopwafel-c65a19.netlify.app/'
 
