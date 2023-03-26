@@ -2,7 +2,7 @@ import AnimatedBackground from './AnimatedBackground';
 import AnimatedBackgroundMobile from './AnimatedBackgroundMobile';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import { Routes , Route } from 'react-router-dom';
+import { Routes , Route, useLocation } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Projects from './Projects';
@@ -20,11 +20,14 @@ import {useWindowWidth, useWindowHeight} from '@react-hook/window-size';
 import Skills from './Skills';
 
 
+
 export default function WindowContainer() {
   const onlyHeight = useWindowHeight();
   const onlyWidth = useWindowWidth()
   const [openMobile, setOpenMobile] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [paramsPresent, setParamsPresent] = useState(false);
+  const location = useLocation();
 
   const handleLoading = () => {
     setLoading(false); 
@@ -37,6 +40,14 @@ export default function WindowContainer() {
     return (() => clearInterval(intervalID))  
   }, [])
 
+  // URL check and remove animated background 
+  useEffect(() => {
+    const params = ['about', 'skills'];
+    const pathArray = location.pathname.toLowerCase().split('/').filter(Boolean);
+    const paramsPresent = pathArray.some(path => params.includes(path));
+    setParamsPresent(paramsPresent);
+  }, [location]);
+
   function handleHamburger() {
     setOpenMobile(prev => prev = !prev)
   }
@@ -45,13 +56,15 @@ export default function WindowContainer() {
   }
 
 
+
+
   return (<>
   
 
     {loading && <Loader /> }
 
-    <AnimatedBackground />
-    <AnimatedBackgroundMobile />
+    {!paramsPresent ? <AnimatedBackground /> : null}
+    {!paramsPresent ? <AnimatedBackgroundMobile /> : null}
 
     <Wrapper>
       <Container>

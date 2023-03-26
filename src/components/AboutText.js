@@ -4,12 +4,12 @@ import OnStage from '../img/behind-booth.jpeg';
 import Party from '../img/party.webp';
 import Belvoire from '../img/Belvoire.jpg';
 import corona from '../img/corona.webp';
-import decks from '../img/decks.jpg';
-import sarcastic from '../img/sarcastic.jpg';
+import decks from '../img/decks.webp';
+import sarcastic from '../img/sarcastic.webp';
 import eyes from '../img/eyes.webp';
 import { useEffect, useState } from "react";
 import {device} from '../helpers/screenSizes';
-import studio from '../img/studio.png';
+import studio from '../img/studio.webp';
 import vscode from '../img/vscode.webp';
 import onCar from '../img/onTheCar2.webp';
 import StageShot from '../img/big-stage.webp';
@@ -34,10 +34,12 @@ export default function AboutText (props) {
   return (<>
     <Page1>
       <Opener>{aboutTextArray[0]}</Opener>
-        <Stage><LazyLoadImage 
-                  src={StageShot}
-                  effect='blur'
-                  style={{transform: `translateY(${-1.65 * scrollState}px)`}} />
+      <Stage>
+        <div>
+          <img src={StageShot} alt=''
+            style={{ transform: `translateY(${-1.65 * scrollState}px)`, }} 
+          />
+        </div>
       </Stage>
     </Page1>
 
@@ -161,24 +163,31 @@ const Opener = styled.h1`
 const Stage = styled.div`
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 70%;
   z-index: 2;
   overflow: hidden;
-  & img {
-    border-radius: 10px ;
-    background-position: 0px -140px;
+  display: flex;
+  justify-content: center;
+  
+  & > div {
     width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    ${device.desktop} {
-      background-position: 0px -125px;
-    }
-    ${device.laptopL} {
-      background-position: 0px -30px;
-    }
-    ${device.laptop} {
-      background-position: 0px -0px;
+    height: 700px;
+    & img {
+      border-radius: 10px ;
+      background-position: 0px -440px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      ${device.desktop} {
+        background-position: 0px -125px;
+      }
+      ${device.laptopL} {
+        background-position: 0px -30px;
+      }
+      ${device.laptop} {
+        background-position: 0px -0px;
+      }
     }
   }
 `;

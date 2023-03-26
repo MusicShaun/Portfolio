@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { colorBlack, colorCream , colorSand,} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
-import { useEffect , useState } from 'react';
+import { useEffect , useState, useCallback } from 'react';
 import { imageArray } from './imageArray';
 import throttle from 'lodash.throttle';
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
-  const [counter , setCounter ] = useState(0)
+  const [counter, setCounter] = useState(0)
 
   useEffect(() => {
     setLoading(false)
@@ -17,24 +17,37 @@ export default function Skills(props) {
     document.title = 'Shaun\'s Projects';
   }, [])
 
-// TRANSLATEY's THE CONTENT IF NOT === TO 0
-  function handleClick2() {
-    counter >= imageArray.length -1 ? setCounter(0) : setCounter(prev => prev + 1);
+  // TRANSLATEY's THE CONTENT IF NOT === TO 0
+  function handlePageClicking() {
+    counter >= imageArray.length - 1 ? setCounter(0) : setCounter(prev => prev + 1);
   }
-  // SWITCH PAGES VIA WHEEL TURN   
-  function handleUpWheel() {
-    counter !== 0 ? setCounter(prev => prev - 1) : setCounter(0);
-  }
-  // WHEEL CHANGER
-  function handleWheel(e) {
-    return (Math.floor(e.deltaY) / 30 < 0 )
-    ? counter > 0 ? handleUpWheel() : console.log('cant scroll higher')
-    : counter < imageArray.length -1 ? handleClick2() : console.log('cant scroll lower')
-  }  
 
-  const throttledEventHandler = 
-    throttle(handleWheel, 500, {leading: true,trailing: false});
-     
+
+  //  THIS HANDLES THE SCROLLING OR LAPTOP SLIDING 
+  function handleWheel(e) {
+    const deltaY = Math.floor(e.deltaY) / 30;
+    if (deltaY < 0 && counter > 0) {
+      throttledEventHandlerUp();
+    } else if (deltaY > 0 && counter < imageArray.length - 1) {
+      throttledEventHandlerDown();
+    }
+  }
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const throttledEventHandlerUp = useCallback(
+    throttle(() => {
+      setCounter((prevCounter) => prevCounter - 1);
+    }, 250, { trailing: false }),
+    []
+  );
+// eslint-disable-next-line react-hooks/exhaustive-deps
+  const throttledEventHandlerDown = useCallback(
+    throttle(() => {
+      setCounter((prevCounter) => prevCounter + 1);
+    }, 250, { trailing: false }),
+    []
+  );
+  
 
   function handleAnchor(e) {
     e.stopPropagation();
@@ -44,16 +57,14 @@ export default function Skills(props) {
   }
       
   return (<>
-    <Wrapper onWheel={throttledEventHandler} 
-    
-              style={{height: `${props.onlyHeight}`}}>
+    <Wrapper onWheel={handleWheel} style={{height: `${props.onlyHeight}`}}>
 
         {loading && <Loader /> }
 
       <Container >
       {imageArray.map((item, index) => {
         return <TransPages 
-                  onClick={handleClick2}
+                  onClick={handlePageClicking}
                   style={{transform: 
                      `translateY(-${counter * props.onlyHeight}px)
                      ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,

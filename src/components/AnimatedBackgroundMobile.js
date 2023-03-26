@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import stars from '../img/stars.png';
-import moon from '../img/moon.png';
+import stars from '../img/stars.webp';
+import moon from '../img/moon.webp';
 import { device } from '../helpers/screenSizes';
 import Mountains from '../img/SVGs/Mountains.js';
 const dayLength = '70s'; 
