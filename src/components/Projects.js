@@ -51,7 +51,7 @@ export default function Skills(props) {
 
   function handleAnchor(e) {
     e.stopPropagation();
-    if (counter === 0 ) {
+    if (counter === 1 ) {
       alert("Heroku servers can take up to 20 seconds to awaken. Thank you for being patient")
     }
   }
