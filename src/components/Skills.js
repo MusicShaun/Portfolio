@@ -71,13 +71,13 @@ export default function Skills() {
     <Containers style={{backgroundColor: '#98D0DF'}}>
       <Headings>Skills</Headings>
         <UL>
-          <LI>HTML</LI>
           <LI>CSS/SASS</LI>
           <LI>Javascript/React/Typescript</LI>
           <LI>Node.js</LI>
-          <LI>Basic AWS</LI>
+          <LI>RTK - Query</LI>
+          <LI>NextJS</LI>
+          <LI>MUI</LI>
           <LI>Anything Audio</LI>
-          <LI>Making coffee</LI>
         </UL>
     </Containers>
 
@@ -85,7 +85,7 @@ export default function Skills() {
       <Headings>Current</Headings>
         <UL>
           <LI>Current study focus - Node.JS</LI>
-          <LI>Completing a MERN stack site</LI>
+          <LI>Finishing a MERN stack eCommerce Site</LI>
         </UL>
     </Containers>
     </Box>
