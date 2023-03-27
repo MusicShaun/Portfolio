@@ -51,6 +51,9 @@ export default function Skills(props) {
 
   function handleAnchor(e) {
     e.stopPropagation();
+    if (counter === 0 ) {
+      alert("The first API call may take a while as the Heroku server is waking up. Thank you for being patient")
+    }
     if (counter === 1 ) {
       alert("Heroku servers can take up to 20 seconds to awaken. Thank you for being patient")
     }
