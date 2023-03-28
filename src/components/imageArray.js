@@ -13,7 +13,7 @@ export const imageArray = [
     title: 'Clothing store - WIP', 
     text: 'Super fast RTK-Query, guest checkout, user profiles, built on nextJS, MongoDb & Node', 
     color: '#F2BC8D', 
-    url: 'https://641f9ae4feee8100086045c9--tiny-macaron-3acacd.netlify.app/'
+    url: 'https://tiny-macaron-3acacd.netlify.app/'
   },
   {
     id: 1, img: mern, 
