@@ -15,6 +15,8 @@
   - To allow me to be explore my more artistic side
 </p>
 
+<div style='flex'>
 <img src='https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio-mobile-1_p65se7.png' alt='' width='33%'/>
 <img src='https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio-mobile-2_puovwf.png' alt='' width='33%'/>
 <img src='https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio-mobile-3_ott2nf.png' alt='' width='33%'/>
+</div>
