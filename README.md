@@ -1,7 +1,7 @@
 
-<h1 align='center'>
+<a align='center' href='www.shaunpickett.com'>
 <img src='https://res.cloudinary.com/dyneqi48f/image/upload/v1676016779/nsz9k9ogjf64gszkbb02.png' alt='' width='100px'/>
-</h1>
+</a>
 <h1 align='center'> Welcome to my portfolio.  </h1>
 <h2 align='center'><a href='www.ShaunPickett.com'> Please dive in </a></h2>
 
