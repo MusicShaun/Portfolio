@@ -3,7 +3,7 @@ import { colorBlack, colorCream , colorSand,} from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import Loader from './Loader';
 import { useEffect , useState, useCallback } from 'react';
-import { imageArray } from './imageArray';
+import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
 
 export default function Skills(props) {
@@ -62,52 +62,55 @@ export default function Skills(props) {
   return (<>
     <Wrapper onWheel={handleWheel} style={{height: `${props.onlyHeight}`}}>
 
-        {loading && <Loader /> }
+    {loading && <Loader /> }
 
       <Container >
       {imageArray.map((item, index) => {
         return <TransPages 
-                  onClick={handlePageClicking}
-                  style={{transform: 
-                     `translateY(-${counter * props.onlyHeight}px)
-                     ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
-                     marginTop: `${(props.onlyHeight / 100) * 10}px`
-                    }}
-                  key={item.id} 
-                  >
-                  <Pages   
-                      key={item.id} 
-                      style={{zIndex: `${index}`,
-                      transform: counter > index 
-                        ? `scale(${0.8}) translateY(-${10}%) `
-                        : `scale(1)`,
-                        }}
-                      >
-                      <Showcase 
-                        style={{backgroundImage: `url(${item.img})`, }}
-                      ></Showcase>
-                      <Blurb>
+          onClick={handlePageClicking}
+          style={{transform: 
+              `translateY(-${counter * props.onlyHeight}px)
+              ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
+              marginTop: `${(props.onlyHeight / 100) * 10}px`
+            }}
+          key={item.id} 
+          >
+          <Pages   
+              key={item.id} 
+              style={{zIndex: `${index}`,
+              transform: counter > index 
+                ? `scale(${0.8}) translateY(-${10}%) `
+                : `scale(1)`,
+                }}
+              >
+            <Showcase 
+              style={{backgroundImage: `url(${item.img})`, }}
+            ></Showcase>
+  
+            <Blurb>
+              <UL style={{backgroundColor: item.color, 
+                          transform:
+                          `${index !== counter ? 'translateX(150%)' : 'translateX(0%)'}`
+                          }}>
+                <Headings>{item.title}</Headings>
+                <LI>{item.text}</LI>
+                <LI style={{ display: 'flex', gap: '20px' }}>
+                  <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty> Website</Butty></AA>
+                  {item.sandbox ? <AA target='_blank' href={item.sandbox} ><Butty> Sandbox</Butty></AA> : false}
+                </LI>
+              </UL>
 
-                        <UL style={{backgroundColor: item.color, 
-                                    transform:
-                                    `${index !== counter ? 'translateX(150%)' : 'translateX(0%)'}`
-                                    }}>
-                          <Headings>{item.title}</Headings>
-                          <LI>{item.text}</LI>
-                          <LI><AA target='_blank' href={item.url} onClick={handleAnchor}>
-                            <Butty>Enter Website</Butty></AA></LI>
-                        </UL>
+              <ULMOBILE style={{backgroundColor: '#F2BC8D'}}>
+                <Headings>{item.title}</Headings>
+                <LI>{item.text}</LI>
+                <LI>
+                  <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty> Website</Butty></AA>
+                  {item.sandbox ? <AA target='_blank' href={item.sandbox}><Butty> Sandbox</Butty></AA> : false} 
+                </LI>
+              </ULMOBILE>
 
-                        <ULMOBILE style={{backgroundColor: '#F2BC8D'}}>
-                          <Headings>{item.title}</Headings>
-                          <LI>{item.text}</LI>
-                          <LI>
-                            <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty>Enter Website</Butty></AA>
-                          </LI>
-                        </ULMOBILE>
-
-                      </Blurb>
-                  </Pages>
+            </Blurb>
+          </Pages>
         </TransPages>
       })
       }
