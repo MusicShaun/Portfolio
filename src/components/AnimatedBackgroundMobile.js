@@ -3,9 +3,12 @@ import stars from '../img/stars.webp';
 import moon from '../img/moon.webp';
 import { device } from '../helpers/screenSizes';
 import Mountains from '../img/SVGs/Mountains.js';
-const dayLength = '70s'; 
+import { memo } from 'react';
 
-export default function AnimatedBackground() {
+
+const dayLength = '75s'; 
+
+function AnimatedBackground() {
 
 
   return (<>
@@ -33,6 +36,7 @@ export default function AnimatedBackground() {
   </>)
 
 }
+export default memo(AnimatedBackground)
 
 const Wrapper = styled.div`
   position: absolute;
@@ -301,7 +305,7 @@ const SettingSun = styled.div`
 `;
 const MoonContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 62%;
   left: 19%;
   width: 60%;
   height: 60%;
@@ -310,16 +314,12 @@ const MoonContainer = styled.div`
   @keyframes MoonMovement {
     0% {
       transform: rotate(-60deg);
-      opacity: 0.5;
-    } 4% {
-      opacity: 0;
     } 50% {
-      opacity: 0;
-    } 60%{
-      opacity: 1;
+      transform: rotate(-200deg);
+    }95%{
+      transform: rotate(-440deg);
     } 100% {
-      transform: rotate(-420deg);
-      opacity: 1;
+      transform: rotate(-440deg);
     } 
   }
 `;
@@ -431,7 +431,7 @@ const Stars = styled.div`
     45% {
       opacity: 0;
       left: -10%;
-      transform: rotate(-8deg);
+      transform: rotate(-10deg);
       }
     65% {
       opacity: 0.8} 
@@ -440,6 +440,6 @@ const Stars = styled.div`
     100% {
       opacity: 0;
       left: 0;
-      transform: rotate(2deg)} 
+      transform: rotate(10deg)} 
   }
 `;

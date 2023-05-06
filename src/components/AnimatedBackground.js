@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import stars from '../img/stars.webp';
 import moon from '../img/moon.webp';
 import { device } from '../helpers/screenSizes';
+import { memo } from 'react';
 
 const dayLength = '90s'; 
 
-export default function AnimatedBackground() {
+function AnimatedBackground() {
 
   return (<>
     <Wrapper>
@@ -31,6 +32,8 @@ export default function AnimatedBackground() {
   </>)
 
 }
+
+export default memo(AnimatedBackground)
 
 const Wrapper = styled.div`
   position: absolute;
@@ -294,30 +297,23 @@ const MoonContainer = styled.div`
   position: absolute;
   top: 35%;
   left: 5%;
+
   width: 90%;
-  height: 100%;
+  height: 110%;
   z-index: 0;
   animation: MoonMovement ${dayLength} linear infinite;
   @keyframes MoonMovement {
     0% {
       transform: rotate(0deg);
-      opacity: 1;
-    } 2% {
-      opacity: 0;
-    } 20% {
-      opacity: 0;
-    } 21%{
-      opacity: 1;
     } 100% {
       transform: rotate(-360deg);
-      opacity: 1;
     } 
   }
 `;
 const Moon = styled.div`
-  width: 20%;
-  height: 20%;
-  filter: brightness(0.85);
+  width: 13%;
+  height: 13%;
+  filter: brightness(0.88);
   background-size: contain;
   background-image: url(${moon});
   background-repeat: no-repeat;
@@ -422,7 +418,7 @@ const Stars = styled.div`
     45% {
       opacity: 0;
       left: -10%;
-      transform: rotate(-4deg);
+      transform: rotate(-10deg);
       }
     65% {
       opacity: 0.8} 
@@ -431,6 +427,6 @@ const Stars = styled.div`
     100% {
       opacity: 0;
       left: 0;
-      transform: rotate(2deg)} 
+      transform: rotate(10deg)} 
   }
 `;
