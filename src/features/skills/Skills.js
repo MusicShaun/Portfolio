@@ -15,36 +15,71 @@ export default function Skills() {
   }, [])
 
 
+  const DARKBLUE = '#90ABD1';
+  const ORANGE = '#F4A86A';
+  const YELLOW = 'hsl(50,98%,76%)';
+  const LIGHTBLUE = 'hsl(193,60%,78%)';
+  const LIGHTORANGE = '#F2BC8D';
+
+  const SKILLSBOX = {
+    heading: 'Skills',
+    subHeading: [
+      'LANGUAGES', 'FRAMEWORKS', 'LIBRARIES', 'OTHER',
+    ],
+    list: [
+      ['HTML', 'CSS', 'JAVASCRIPT', 'NodeJS'],
+      ['React', 'Vue'],
+      ['RTK-Query', 'NextJS'],
+      ['MongoDb','RESTful API\'s', 'Typescript', 'RTK-Query' ,'Responsive Design'],
+      ['']
+    ],
+  }
+  const INTROBOX = {
+    heading: 'SHAUN PICKETT',
+    subHeading: [''],
+    list: [
+      ['music.ShaunPickett@gmail.com'],
+      ['0412 220 332'], ['Trigg, Perth, Wa 6029'],
+      ['www.ShaunPickett.com']
+    ],
+  }
+
+
   return (
   <Wrapper>
             {loading && <Loader /> }
     <Box>
         <Header>Skills</Header>
 
-{/* 
 
-    <Containers style={{backgroundColor: '#90ABD1'}}>
-      <Headings>Education      </Headings>
+
+    <Containers style={{ backgroundColor: YELLOW }}>
+      <Headings>{INTROBOX.heading}</Headings>
         <UL>
-          <LI>WAAPA -  Bachelors Degree of Music</LI>
-          <LI>LinkedIn Skill Tests -  React, Front-End, CSS, HTML</LI>
-          <LI>CodinGame Certifications -  Javascript problem solver, Bronze speed</LI>
-
+          {INTROBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
+          return (
+            <LI><span>{item}</span></LI>
+          )
+          })}
         </UL>
       </Containers>
 
-      <Containers style={{backgroundColor: '#F4A86A'}}>
-      <Headings>Work Titles</Headings>
-          <UL>
-          <LI>Music Teacher - Helena College, Government</LI>
-          <LI>Mastering Engineer - 2015 to present</LI>
-          <LI>Producer, Song Writer</LI>
-          <LI>Sound Designer</LI>
-
-        </UL>
+      <Containers style={{backgroundColor: LIGHTBLUE}}>
+      {SKILLSBOX.subHeading.map((heading, index) => {  //MAP THE SUB HEADINGS 
+            return (
+              <UL>
+                <SubHeading>{heading}</SubHeading>
+                {SKILLSBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
+                return (
+                  <LI><span>{item}</span></LI>
+                )
+              })}
+              </UL>
+            )
+          })}
       </Containers>
 
-      <Containers style={{backgroundColor: '#FFE07B'}}>
+      <Containers style={{backgroundColor: DARKBLUE}}>
         <Headings>Work Descriptions    </Headings>
           <SubHeading>Music Teacher </SubHeading>
         <UL>
@@ -71,7 +106,7 @@ export default function Skills() {
 
     </Containers>
     
-    <Containers style={{backgroundColor: '#98D0DF'}}>
+    <Containers style={{backgroundColor: LIGHTORANGE}}>
       <Headings>Skills</Headings>
         <UL>
           <LI>CSS/SASS</LI>
@@ -90,7 +125,7 @@ export default function Skills() {
           <LI>Current study focus - Node.JS</LI>
           <LI>Finishing a MERN stack eCommerce Site</LI>
         </UL>
-    </Containers> */}
+    </Containers>
     </Box>
   </Wrapper>
   )
@@ -118,8 +153,9 @@ const Box = styled.div`
   width:90%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   ${device.laptopL}{
     justify-content: center;
   }
@@ -130,7 +166,7 @@ const Header = styled.div`
   margin-top: 1.6rem;
   padding-left: 1rem;
   line-height: 75%;
-  width: 90%;
+  width: 40%;
   align-self: center;
   z-index: 1;
   font-family: 'Fredericka the Great', cursive;
@@ -156,6 +192,7 @@ const Headings = styled.div`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
+
 `;
 const UL = styled.ul`
   margin: 0 ;
@@ -163,10 +200,18 @@ const UL = styled.ul`
 const SubHeading = styled.div`
   font-size: 1.35rem;
   font-weight: 500;
-  margin-left: 1rem;
+  margin-left: 0rem;
   color: ${colorDarkGrey};
 `;
 const LI = styled.li`
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   padding-right: 0.3rem;
+  margin-left: 1rem;
+
+  & span {
+    margin-left: 0.5rem;
+    letter-spacing: 0.7px;
+    font-size: 0.9rem;
+
+  }
 `;
