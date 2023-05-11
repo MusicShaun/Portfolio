@@ -1,11 +1,11 @@
-import column from '../img/columnsdesign.webp';
-import mastering from '../img/mastering.webp';
-import banana from '../img/bananashop.webp';
-import todo from '../img/Todo.webp';
-import quiz from '../img/Quiz.webp';
-import sweardle from '../img/sweardle.webp';
-import mern from '../img/mern-full-stack.webp';
-import ecommerce from '../img/asos.webp';
+import column from '../../img/columnsdesign.webp';
+import mastering from '../../img/mastering.webp';
+import banana from '../../img/bananashop.webp';
+import todo from '../../img/Todo.webp';
+import quiz from '../../img/Quiz.webp';
+import sweardle from '../../img/sweardle.webp';
+import mern from '../../img/mern-full-stack.webp';
+import ecommerce from '../../img/asos.webp';
 
 const projectArray = [
   {

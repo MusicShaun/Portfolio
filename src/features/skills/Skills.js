@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream, colorDarkGrey} from '../helpers/colors';
-import { device } from '../helpers/screenSizes';
-import Loader from './Loader';
+import { colorBlack, colorCream, colorDarkGrey} from '../../helpers/colors';
+import { device } from '../../helpers/screenSizes';
+import Loader from '../../components/Loader';
 import { useEffect , useState } from 'react';
 
 export default function Skills() {
@@ -19,7 +19,10 @@ export default function Skills() {
   <Wrapper>
             {loading && <Loader /> }
     <Box>
-    <Header>Skills</Header>
+        <Header>Skills</Header>
+
+{/* 
+
     <Containers style={{backgroundColor: '#90ABD1'}}>
       <Headings>Education      </Headings>
         <UL>
@@ -87,7 +90,7 @@ export default function Skills() {
           <LI>Current study focus - Node.JS</LI>
           <LI>Finishing a MERN stack eCommerce Site</LI>
         </UL>
-    </Containers>
+    </Containers> */}
     </Box>
   </Wrapper>
   )

@@ -1,9 +1,9 @@
 import styled, {keyframes} from 'styled-components';
-import { colorCream } from '../helpers/colors';
+import { colorCream } from '../../helpers/colors';
 import { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
-import { device } from '../helpers/screenSizes';
-import GetInTouch from './GetInTouch';
+import { device } from '../../helpers/screenSizes';
+import GetInTouch from '../../components/GetInTouch';
 
 
 const animator = keyframes`${flipInX}`;

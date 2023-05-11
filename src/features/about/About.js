@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {colorCream } from '../helpers/colors';
+import {colorCream } from '../../helpers/colors';
 import AboutText from "./AboutText";
 import AboutTextMobile from "./AboutTextMobile";
 import { useState, useEffect, useRef} from 'react'; 
-import Loader from './Loader';
+import Loader from '../../components/Loader';
 import AboutBackground from './AboutBackground';
-import arrow from '../img/arrow.png';
+import arrow from '../../img/arrow.png';
 
 export default function About (props) {
   const [ pageSize , setPageSize ] = useState(0);

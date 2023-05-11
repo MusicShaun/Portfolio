@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import ContactForm from './ContactForm';
-import { colorCream } from '../helpers/colors';
-import Loader from './Loader';
+import { colorCream } from '../../helpers/colors';
+import Loader from '../../components/Loader';
 import { useEffect , useState } from 'react';
-import { device } from '../helpers/screenSizes';
+import { device } from '../../helpers/screenSizes';
 
 export default function About (props) {
   const [loading, setLoading] = useState(true);

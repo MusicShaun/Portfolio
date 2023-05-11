@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colorGrey, colorBlack, colorCream, colorWhite, } from '../helpers/colors';
-import { device } from '../helpers/screenSizes';
+import { colorGrey, colorBlack, colorCream, colorWhite, } from '../../helpers/colors';
+import { device } from '../../helpers/screenSizes';
 
 export default function ContactForm() {
 

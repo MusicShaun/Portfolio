@@ -3,12 +3,12 @@ import AnimatedBackgroundMobile from './AnimatedBackgroundMobile';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { Routes , Route, useLocation } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Projects from './Projects';
+import Home from '../features/home/Home';
+import About from '../features/about/About';
+import Projects from '../features/projects/Projects';
 import BananaShop from './iFrames/BananaShop';
 import TodoList from './iFrames/TodoList';
-import Contact from './Contact';
+import Contact from '../features/contact/Contact';
 import Mastering from './iFrames/Mastering';
 import Quiz from './iFrames/Quiz';
 import Columns from './iFrames/Columns';
@@ -17,7 +17,7 @@ import { useState , useEffect } from 'react';
 import { device } from '../helpers/screenSizes';
 import StyledBurger from './Hamburger';
 import {useWindowWidth, useWindowHeight} from '@react-hook/window-size';
-import Skills from './Skills';
+import Skills from '../features/skills/Skills';
 
 
 
