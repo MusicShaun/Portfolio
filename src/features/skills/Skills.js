@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream, colorDarkGrey} from '../../helpers/colors';
+import { colorBlack, colorCream, colorDarkGrey, colorSand} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
 import { useEffect , useState } from 'react';
+import PDFIcon from '../../img/download-pdf.png'
 
 export default function Skills() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,7 @@ export default function Skills() {
       'LANGUAGES', 'FRAMEWORKS', 'LIBRARIES', 'OTHER',
     ],
     list: [
-      ['HTML', 'CSS', 'JAVASCRIPT', 'NodeJS'],
+      ['HTML', 'CSS', 'Javascript', 'NodeJS'],
       ['React', 'Vue'],
       ['RTK-Query', 'NextJS'],
       ['MongoDb','RESTful API\'s', 'Typescript' ,'Responsive Design'],
@@ -36,11 +37,10 @@ export default function Skills() {
   }
   const INTROBOX = {
     subHeading: ['PROFESSIONAL SUMMARY'],
-    list: [`        Logical and results-driven Web Developer dedicated to building and optimizing user-focused 
-    websites for customers with various business objectives.`,
-    `Judicious and creative when crafting
-     effective websites, apps and platforms to propel competitive advantage and revenue growth.
-      Technically proficient and analytical problem solver with calm and focused demeanor.`
+    list: [`         I am a highly passionate and collaborative team player with excellent communication skills. 
+    One who is always willing to learn new technologies and approaches.
+    I am adept at problem-solving and am constantly seeking news ways to optimize my code and processes. `,`
+    Currently, I'm looking for a role where I can continue to grow and build my long term career. `
     ],
   }
   const ABOUTBOX = {
@@ -75,26 +75,23 @@ export default function Skills() {
 
   return (
   <Wrapper>
-      {loading && <Loader />}
-      <BoxWrap>
-    <Box>
+    {loading && <Loader />}
+    <BoxWrap>
+      <Box>
         {/* <Header>Skills</Header> */}
-
-
-
-    <Containers style={{ backgroundColor: YELLOW }}>
+        <Containers style={{ backgroundColor: YELLOW }}>
           <UL>
-          <SubHeading>{INTROBOX.subHeading}</SubHeading>
-          {INTROBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
-          return (
-            <PARA>{item}</PARA>
-          )
-          })}
-        </UL>
-      </Containers>
+            <SubHeading>{INTROBOX.subHeading}</SubHeading>
+            {INTROBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
+            return (
+              <PARA>{item}</PARA>
+            )
+            })}
+          </UL>
+        </Containers>
 
-      <Containers style={{backgroundColor: LIGHTBLUE}}>
-      {SKILLSBOX.subHeading.map((heading, index) => {  //MAP THE SUB HEADINGS 
+        <Containers style={{backgroundColor: LIGHTBLUE, width: '100%', marginLeft: '0%' }}>
+          {SKILLSBOX.subHeading.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
               <UL>
                 <SubHeading>{heading}</SubHeading>
@@ -106,50 +103,56 @@ export default function Skills() {
               </UL>
             )
           })}
-          </Containers>
+        </Containers>
           
-        <Containers style={{ backgroundColor: ORANGE }}>
-          <PDFPreview></PDFPreview> 
-      <DownloadBtn>Download Resume as PDF</DownloadBtn>
-          
+        <Containers style={{ backgroundColor: ORANGE, width: '100%', marginLeft: '0%'}}>
+          <PDFWrap>
+            <PDFPreview src={PDFIcon} alt='Download PDF'></PDFPreview> 
+          </PDFWrap>
+            <DownloadBtn>
+              <a
+                href='https://drive.google.com/file/d/1wTvSvoMMDYt7WUYRGqbRXEotUnlJlKSo/view?usp=sharing'
+                download='SHAUN-PICKETT-RESUME'
+                target="_blank"
+                rel='noreferrer'>
+                Download Resume as PDF
+            </a></DownloadBtn>
+        </Containers> 
+      </Box>
+        
 
-      </Containers>
-          
-        </Box>
-        <Box>
-          <Containers style={{ backgroundColor: LIGHTORANGE }}>
-            
-      {ABOUTBOX.title.map((heading, index) => {  //MAP THE SUB HEADINGS 
+
+{/* //* RIGHT HAND SIDE  */}
+      <Box>
+        <Containers style={{ backgroundColor: LIGHTORANGE }}>  
+          {ABOUTBOX.title.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
               <UL>
                 <SubHeading >{ABOUTBOX.subHeading[index]}</SubHeading>
                 <Title style={{marginTop: '1rem'}}>{heading}</Title>
                 <Title style={{marginBottom: '1rem', fontStyle: 'italic'}}>{ABOUTBOX.date[index]}</Title>
-                {ABOUTBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
-                return (
-                  <LI><span>{item}</span></LI>
+                  {ABOUTBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
+                    return (
+                      <LI><span>{item}</span></LI>
+                    )
+                  })}
+                  </UL>
                 )
               })}
-              </UL>
-            )
-          })}
-
-    </Containers>
+        </Containers>
     
-    <Containers style={{backgroundColor: DARKBLUE}}>
-              <UL >
-                <SubHeading style={{marginBottom: '1rem'}}>{LASTBOX.subHeading}</SubHeading>
-                {LASTBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
-                return (
-                  <LI><span>{item}</span></LI>
-                )
-              })}
-              </UL>
-    </Containers>
-
-   
-        </Box>
-        </BoxWrap>
+        <Containers style={{backgroundColor: DARKBLUE}}>
+          <UL >
+            <SubHeading style={{marginBottom: '1rem'}}>{LASTBOX.subHeading}</SubHeading>
+              {LASTBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
+              return (
+                <LI><span>{item}</span></LI>
+              )
+            })}
+            </UL>
+          </Containers>
+      </Box>
+    </BoxWrap>
   </Wrapper>
   )
 }
@@ -174,41 +177,43 @@ const Wrapper = styled.div`
 `;
 const BoxWrap = styled.div`
   width: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   gap: 2rem;
+
+  ${device.laptopL}{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
 `
 const Box = styled.div`
   width:40%;
-  height: 100%;
+  min-height: calc(100% - 2rem);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
 
   ${device.laptopL}{
-    /* justify-content: center; */
+    width: 80%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: auto;
   }
 
 `;
-const Header = styled.div`
-  font-size: 3rem;
-  margin-top: 1.6rem;
-  padding-left: 1rem;
-  line-height: 75%;
-  width: 40%;
-  align-self: center;
-  z-index: 1;
-  font-family: 'Fredericka the Great', cursive;
-  ${device.mobile}{
-    align-self: flex-start;
-  }
-`;
+
 const Containers = styled.div`
   z-index: 1;
   border-radius: 5px;
   padding-bottom: 1rem;
   box-shadow: 5px 5px 15px lightgrey;
+  transition: transform 0.1s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
@@ -222,15 +227,7 @@ const Containers = styled.div`
     /* width:90%; */
   }
 `;
-const Headings = styled.div`
-  margin-left: 0.6rem;
-  font-size: 2rem;
-  padding: 0;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
 
-`;
 const UL = styled.ul`
   margin: 0 ;
   padding-right: 1rem;
@@ -271,12 +268,29 @@ const PARA = styled.p`
 const DownloadBtn = styled.button`
   margin-left: 50%;
   transform: translateX(-50%);
-
+  font-size: 1.2rem;
+  border-radius: 10px;
+  height: 60px;
+  width: 290px;
+  border: solid 2.2px hsl(40,3%,17%);
+  cursor: pointer;
+  transition: font-weight 0.08s ease-in-out, background-color 0.08s ease-in-out;
+  &:hover {
+    background-color: ${colorSand};
+    font-weight: 600;
+  }
+& a {
+  text-decoration: none;
+  color: ${colorBlack};
+}
 `
-const PDFPreview = styled.div`
-  border: 1px solid white;
-  width: 70px;
+const PDFWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`
+const PDFPreview = styled.img`
   height: 100px;
-  margin: 1rem auto 0.5rem;
- 
+  margin: 1rem 0 0.5rem;
+  
 `
