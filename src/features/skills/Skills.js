@@ -15,7 +15,7 @@ export default function Skills() {
   }, [])
 
 
-  const DARKBLUE = 'hsl(215,58%,79%)';
+  const DARKBLUE = 'hsl(215,58%,83%)';
   const ORANGE = 'hsl(27,86%,76%)';
   const YELLOW = 'hsl(50,98%,76%)';
   const LIGHTBLUE = 'hsl(193,60%,78%)';
@@ -37,7 +37,8 @@ export default function Skills() {
   const INTROBOX = {
     subHeading: ['PROFESSIONAL SUMMARY'],
     list: [`        Logical and results-driven Web Developer dedicated to building and optimizing user-focused 
-    websites for customers with various business objectives. Judicious and creative when crafting
+    websites for customers with various business objectives.`,
+    `Judicious and creative when crafting
      effective websites, apps and platforms to propel competitive advantage and revenue growth.
       Technically proficient and analytical problem solver with calm and focused demeanor.`
     ],
@@ -107,9 +108,10 @@ export default function Skills() {
           })}
           </Containers>
           
-      <Containers style={{ backgroundColor: ORANGE }}>
-      <DownloadBtn>Download Resume as PDF</DownloadBtn>
+        <Containers style={{ backgroundColor: ORANGE }}>
           <PDFPreview></PDFPreview> 
+      <DownloadBtn>Download Resume as PDF</DownloadBtn>
+          
 
       </Containers>
           
@@ -120,7 +122,7 @@ export default function Skills() {
       {ABOUTBOX.title.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
               <UL>
-                <SubHeading>{ABOUTBOX.subHeading[index]}</SubHeading>
+                <SubHeading >{ABOUTBOX.subHeading[index]}</SubHeading>
                 <Title style={{marginTop: '1rem'}}>{heading}</Title>
                 <Title style={{marginBottom: '1rem', fontStyle: 'italic'}}>{ABOUTBOX.date[index]}</Title>
                 {ABOUTBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
@@ -135,8 +137,8 @@ export default function Skills() {
     </Containers>
     
     <Containers style={{backgroundColor: DARKBLUE}}>
-              <UL>
-                <SubHeading>{LASTBOX.subHeading}</SubHeading>
+              <UL >
+                <SubHeading style={{marginBottom: '1rem'}}>{LASTBOX.subHeading}</SubHeading>
                 {LASTBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
                 return (
                   <LI><span>{item}</span></LI>
@@ -206,6 +208,12 @@ const Containers = styled.div`
   z-index: 1;
   border-radius: 5px;
   padding-bottom: 1rem;
+  box-shadow: 5px 5px 15px lightgrey;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 3px lightgrey;
+  }
 
   & ul:first-child {
     margin-top: 1.5rem;
@@ -225,6 +233,7 @@ const Headings = styled.div`
 `;
 const UL = styled.ul`
   margin: 0 ;
+  padding-right: 1rem;
 `;
 const SubHeading = styled.div`
   font-size: 1.35rem;
@@ -243,7 +252,7 @@ const LI = styled.li`
   padding-bottom: 5px;
 
   & span {
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
     letter-spacing: 0.3px;
     font-size: 0.9rem;
     line-height: 16px;
@@ -256,12 +265,18 @@ const PARA = styled.p`
   font-size: 0.9rem;
   padding-right: 0.3rem;
   margin-left: 1rem;
+  line-height: 16px;
 
 `
 const DownloadBtn = styled.button`
-
+  margin-left: 50%;
+  transform: translateX(-50%);
 
 `
 const PDFPreview = styled.div`
-
+  border: 1px solid white;
+  width: 70px;
+  height: 100px;
+  margin: 1rem auto 0.5rem;
+ 
 `
