@@ -1,22 +1,13 @@
 import styled, {keyframes} from "styled-components";
 import { flipInX} from 'react-animations';
 import OnStage from '../../img/behind-booth.jpeg';
-import Party from '../../img/party.webp';
-import Belvoire from '../../img/Belvoire.jpg';
-import corona from '../../img/corona.webp';
-import decks from '../../img/decks.webp';
-import sarcastic from '../../img/sarcastic.webp';
-import eyes from '../../img/eyes.webp';
 import { useEffect, useState } from "react";
 import {device} from '../../helpers/screenSizes';
-import studio from '../../img/studio.webp';
-import vscode from '../../img/vscode.webp';
-import onCar from '../../img/onTheCar2.webp';
-import StageShot from '../../img/big-stage.webp';
 import { colorWhite} from "../../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
-import { LazyLoadImage } from 'react-lazy-load-image-component'; 
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import ImageGenerator from "./ImageGenerator";
+
 
 export default function AboutText (props) {
 
@@ -31,16 +22,17 @@ export default function AboutText (props) {
 
 
 
+  
+
   return (<>
     <Page1>
       <Opener>{aboutTextArray[0]}</Opener>
       <Stage>
-        <div>
-          <img src={StageShot} alt=''
-            style={{ transform: `translateY(${-1.65 * scrollState}px)`, }} 
+        <div style={{ transform: `translateY(${-1.65 * scrollState}px)` }}>
+          <ImageGenerator publicId='big-stage_emwqm8' alt='Shaun Pickett on stage'
           />
         </div>
-      </Stage>
+      </Stage>  
     </Page1>
 
 
@@ -50,14 +42,13 @@ export default function AboutText (props) {
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
         <Rect><RightFlip style={{ display: picSlide > 3 ? 'flex' : 'none' }}>
-          <LazyLoadImage src={Belvoire}
-                          effect='blur'/>
+          <ImageGenerator publicId='Belvoire_e1mwb6' alt='Command q performing in perth' />
         </RightFlip></Rect>
       </Right>  
       <Left>
         <Square><LeftFlip style={{ display: picSlide > 4 ? 'flex' : 'none' }}>
-          <LazyLoadImage src={studio}
-                            effect='blur'/>
+          <ImageGenerator publicId='studio_r6hmkd' alt='mastering studio' />
+
         </LeftFlip></Square>
         <LeftText>{aboutTextArray[2]}
         <br />{aboutTextArray[3]}</LeftText>
@@ -65,8 +56,8 @@ export default function AboutText (props) {
       <Right style={{ justifyContent: 'center',}}>
         <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
         <Square><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
-          <LazyLoadImage src={corona}
-                            effect='blur'/>
+          <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
+
         </RightFlip></Square>
       </Right>  
     </section></Page>
@@ -76,8 +67,8 @@ export default function AboutText (props) {
     <Page style={{top: '155%'}}><section>
       <Left>
       <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 21 ? 'flex' : 'none' }}>
-        <LazyLoadImage src={decks}
-                       effect='blur'/>
+      <ImageGenerator publicId='decks_aiguch' alt='no drinks on the fucking decks' />
+
         </LeftFlip>
       </Rect>
       <LeftText>{aboutTextArray[5]} </LeftText>
@@ -85,15 +76,15 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[6]}</RightText>
       <Square> <RightFlip style={{ display: picSlide > 22 ? 'flex' : 'none' }}>
-        <LazyLoadImage src={Party}
-                            effect='blur'/>
+      <ImageGenerator publicId='party_zeaz8u' alt='command q party in queensland' />
+
           </RightFlip>
       </Square>
       </Right>
       <Left>
       <Square><LeftFlip style={{ display: picSlide > 24 ? 'flex' : 'none' }}>
-        <LazyLoadImage src={vscode}
-                        effect='blur'/>
+      <ImageGenerator publicId='vscode_hmnal5' alt='vscode' />
+
         </LeftFlip>
       </Square>
       <LeftText style={{maxWidth: '60%'}}>
@@ -106,15 +97,15 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
       <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 49? 'flex' : 'none' }}>
-        <LazyLoadImage src={onCar}
-                            effect='blur'/>
+      <ImageGenerator publicId='onTheCar2_rwrwu5' alt='monsoon moon doing yoga' />
+
           </RightFlip>
       </Square>
       </Right>
       <Left>
       <Square><LeftFlip style={{display: picSlide > 50? 'flex' : 'none' }}>
-        <LazyLoadImage src={eyes}
-                          effect='blur'/>
+      <ImageGenerator publicId='eyes_tbgcjy' alt='monsoon moon album artwork' />
+
         </LeftFlip>
       </Square>
       <LeftText>
@@ -123,8 +114,8 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[10]}</RightText>
       <Square><RightFlip style={{ display: picSlide > 52? 'flex' : 'none'  }}>
-        <LazyLoadImage src={sarcastic}
-                        effect='blur'/>
+      <ImageGenerator publicId='sarcastic_uapm6i' alt='command q album cover' />
+
           </RightFlip>
       </Square>
       </Right>
@@ -136,7 +127,9 @@ export default function AboutText (props) {
       <LeftText style={{maxWidth: '80%'}}> {aboutTextArray[11]}
       <br />{aboutTextArray[12]}<br /> 
       {aboutTextArray[13]}</LeftText>
-    <ClosingImg style={{backgroundPositionY: `-${(pageHeight - (scrollState -100))}px`}}/>
+      <ClosingImg style={{ backgroundPositionY: `-${(pageHeight - (scrollState - 100))}px` }}>
+      <ImageGenerator publicId='behind-booth_jsjn9q' alt='command q in perth bunbury' />
+      </ClosingImg>
     </ClosingPage> </Page>
 
 
@@ -171,8 +164,8 @@ const Stage = styled.div`
   
   & > div {
     width: 100%;
-    height: 700px;
-    & img {
+    height: 700px; 
+   /* & img {
       border-radius: 10px ;
       background-position: 0px -440px;
       width: 100%;
@@ -188,7 +181,7 @@ const Stage = styled.div`
       ${device.laptop} {
         background-position: 0px -0px;
       }
-    }
+    } */
   }
 `;
 const Page = styled.div`
