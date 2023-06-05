@@ -1,12 +1,25 @@
 import styled, {keyframes} from "styled-components";
 import { flipInX} from 'react-animations';
-import OnStage from '../../img/behind-booth.jpeg';
 import { useEffect, useState } from "react";
 import {device} from '../../helpers/screenSizes';
 import { colorWhite} from "../../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
 import ImageGenerator from "./ImageGenerator";
 
+
+const flipIt =  keyframes`${flipInX}`;
+const left_flip_class = {
+  animationDuration: '1.2s',
+  animationFillMode: 'forwards',
+  animationIterationCount: '1',
+  annimationTimingFunction: 'ease-in',
+  opacity: 1
+};
+const animation_off = {
+  animation: 'none',
+  opacity: 0  
+}
+// where has all the color gone below? 
 
 export default function AboutText (props) {
 
@@ -40,12 +53,12 @@ export default function AboutText (props) {
     <Page style={{top: '55%'}}><section>
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
-        <Rect><RightFlip style={{ display: picSlide > 3 ? 'flex' : 'none' }}>
+        <Rect><RightFlip style={picSlide > 3 ? left_flip_class : animation_off}>
           <ImageGenerator publicId='Belvoire_e1mwb6' alt='Command q performing in perth' />
         </RightFlip></Rect>
       </Right>  
       <Left>
-        <Square><LeftFlip style={{ display: picSlide > 4 ? 'flex' : 'none' }}>
+        <Square><LeftFlip style={picSlide > 4 ? left_flip_class : animation_off}>
           <ImageGenerator publicId='studio_r6hmkd' alt='mastering studio' />
 
         </LeftFlip></Square>
@@ -54,18 +67,20 @@ export default function AboutText (props) {
       </Left>
       <Right style={{ justifyContent: 'center',}}>
         <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
-        <Square><RightFlip style={{ display: picSlide > 6 ? 'flex' : 'none' }}>
-          <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
-
-        </RightFlip></Square>
+        <Square>
+          <RightFlip style={picSlide > 6 ? left_flip_class : animation_off}>
+            <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
+          </RightFlip>
+        </Square>
       </Right>  
-    </section></Page>
+    </section>
+    </Page>
 
 
 
     <Page style={{top: '155%'}}><section>
       <Left>
-      <Rect ><LeftFlip style={{ backgroundPosition: 'top', display: picSlide > 21 ? 'flex' : 'none' }}>
+      <Rect ><LeftFlip style={{...(picSlide > 21 ? left_flip_class : animation_off), backgroundPosition: 'top' }}>
       <ImageGenerator publicId='decks_aiguch' alt='no drinks on the fucking decks' />
 
         </LeftFlip>
@@ -74,14 +89,14 @@ export default function AboutText (props) {
       </Left>
       <Right>
       <RightText>{aboutTextArray[6]}</RightText>
-      <Square> <RightFlip style={{ display: picSlide > 22 ? 'flex' : 'none' }}>
+      <Square> <RightFlip style={picSlide > 22 ? left_flip_class : animation_off}>
       <ImageGenerator publicId='party_zeaz8u' alt='command q party in queensland' />
 
           </RightFlip>
       </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{ display: picSlide > 24 ? 'flex' : 'none' }}>
+      <Square><LeftFlip style={picSlide > 24 ? left_flip_class : animation_off}>
       <ImageGenerator publicId='vscode_hmnal5' alt='vscode' />
 
         </LeftFlip>
@@ -95,14 +110,14 @@ export default function AboutText (props) {
     <Page style={{top: '255%'}}><section>
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
-      <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', display: picSlide > 49? 'flex' : 'none' }}>
+      <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', ...(picSlide > 50 ? left_flip_class : animation_off) }}>
       <ImageGenerator publicId='onTheCar2_rwrwu5' alt='monsoon moon doing yoga' />
 
           </RightFlip>
       </Square>
       </Right>
       <Left>
-      <Square><LeftFlip style={{display: picSlide > 50? 'flex' : 'none' }}>
+      <Square><LeftFlip  style={picSlide > 50 ? left_flip_class : animation_off}>
       <ImageGenerator publicId='eyes_tbgcjy' alt='monsoon moon album artwork' />
 
         </LeftFlip>
@@ -112,7 +127,7 @@ export default function AboutText (props) {
       </Left>
       <Right>
       <RightText>{aboutTextArray[10]}</RightText>
-      <Square><RightFlip style={{ display: picSlide > 52? 'flex' : 'none'  }}>
+      <Square><RightFlip  style={picSlide > 52 ? left_flip_class : animation_off}>
       <ImageGenerator publicId='sarcastic_uapm6i' alt='command q album cover' />
 
           </RightFlip>
@@ -260,11 +275,10 @@ const Right = styled.div`
   justify-content: flex-end;
   align-items: center;
 `;
-const flipIt =  keyframes`${flipInX}`;
 const LeftFlip = styled.div`
-  animation: ${flipIt} 1.2s ease-in ;
   width: 100%;
   height: 100%;
+  animation-name: ${flipIt};
   & img {
     background-size: cover;
     background-repeat: no-repeat;
@@ -279,7 +293,7 @@ const LeftText = styled.div`
   max-width: 50%;
 `;
 const RightFlip = styled.div`
-  animation: ${flipIt} 1.2s ease-in ;
+  animation-name: ${flipIt} ;
   width: 100%;
   height: 100%;
   & img {
@@ -325,7 +339,6 @@ const ClosingImg = styled.div`
   min-width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url(${OnStage});
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -100px;
