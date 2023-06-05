@@ -1,38 +1,22 @@
 import styled, {keyframes} from "styled-components";
 import { flipInX} from 'react-animations';
-import OnStage from '../../img/behind-booth.jpeg';
-import Party from '../../img/party.webp';
-import Belvoire from '../../img/Belvoire.jpg';
-import corona from '../../img/corona.webp';
-import decks from '../../img/decks.webp';
-import sarcastic from '../../img/sarcastic.webp';
-import eyes from '../../img/eyes.webp';
-// import { useEffect, useState } from "react";
-import studio from '../../img/studio.webp';
-import vscode from '../../img/vscode.webp';
-import onCar from '../../img/onTheCar2.webp';
-import StageShot from '../../img/big-stage.webp';
 import { colorWhite } from "../../helpers/colors";
 import { device } from '../../helpers/screenSizes';
 import { aboutTextArray } from "./AboutTextArray";
+import ImageGenerator from "./ImageGenerator";
 
 export default function AboutText (props) {
 
-  // const {scrollState, pageHeight} = props;
-  // const [picSlide, setPicSlide] = useState(0);
 
-  // useEffect(() => {
-  //   let heights = pageHeight;
-  //   const percentage = Math.floor((100 / heights) * scrollState);
-  //   setPicSlide(percentage)
-  // }, [scrollState, pageHeight])
 
 
   return (<>
   <Wrapper>
     <Stage>
       <Hone>{aboutTextArray[0]}</Hone>
-      <Shots />
+        <Shots >
+          <ImageGenerator publicId='big-stage_emwqm8' alt='Shaun Pickett on stage' />
+        </Shots>
     </Stage>
 
     <Paragraphs >
@@ -43,7 +27,9 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[1]}</Text>
 
       <ContainerRect>
-        <Flip style={{backgroundImage: `url(${Belvoire})`}}/>
+        <Flip >
+              <ImageGenerator publicId='Belvoire_e1mwb6' alt='Command q performing in perth' />
+            </Flip>
       </ContainerRect>      <Cleaner /></Partition>
 
 
@@ -52,7 +38,9 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[2]}
         <br />{aboutTextArray[3]}</Text>
       <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${studio})`}}/>
+        <Flip>
+              <ImageGenerator publicId='studio_r6hmkd' alt='mastering studio' />
+            </Flip>
       </ContainerSquare>      <Cleaner />
       </Partition>
 
@@ -61,7 +49,9 @@ export default function AboutText (props) {
     <Partition>
       <Text>{aboutTextArray[4]}</Text>
       <ContainerSquare >
-        <Flip style={{backgroundImage: `url(${corona})` }}/>
+            <Flip >
+              <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
+            </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
 
@@ -69,7 +59,9 @@ export default function AboutText (props) {
     <Partition>
       <Text >{aboutTextArray[5]}</Text>  
       <ContainerRect >
-        <Flip style={{backgroundImage: `url(${decks})`, backgroundPosition: 'top'}}/>
+        <Flip >
+          <ImageGenerator publicId='decks_aiguch' alt='no drinks on the fucking decks' />
+          </Flip>
       </ContainerRect>      <Cleaner />
       </Partition>
 
@@ -79,7 +71,9 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[6]}</Text>
 
       <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${Party})`}}/>
+        <Flip>
+              <ImageGenerator publicId='party_zeaz8u' alt='command q party in queensland'  />
+            </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
 
@@ -87,7 +81,9 @@ export default function AboutText (props) {
     <Partition>
       <Text>{aboutTextArray[7]}<br /></Text>
         <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${vscode})`}}/>
+        <Flip >
+              <ImageGenerator publicId='vscode_hmnal5' alt='vscode' />
+            </Flip>
       </ContainerSquare>      <Cleaner />
       </Partition>
 
@@ -96,7 +92,9 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[8]}</Text>
       
       <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${onCar})`, filter: 'brightness(1.2) contrast(1.2)'}}/>
+            <Flip style={{ filter: 'brightness(1.2) contrast(1.2)' }}>
+              <ImageGenerator publicId='onTheCar2_rwrwu5' alt='monsoon moon doing yoga' />
+              </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
 
@@ -104,7 +102,9 @@ export default function AboutText (props) {
     <Partition>
       <Text>{aboutTextArray[9]}</Text>
         <ContainerSquare>
-        <Flip style={{backgroundImage: `url(${eyes})`}}/>
+        <Flip >
+        <ImageGenerator publicId='eyes_tbgcjy' alt='monsoon moon album artwork' />
+        </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  9th  */}
@@ -112,7 +112,9 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[10]}</Text>
 
       <ContainerSquare>   
-        <Flip style={{backgroundImage: `url(${sarcastic})` }}/>
+        <Flip >
+        <ImageGenerator publicId='sarcastic_uapm6i' alt='command q album cover' />
+        </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
 {/*  10  */}
@@ -123,7 +125,9 @@ export default function AboutText (props) {
       <br />{aboutTextArray[12]} <br /> 
       {aboutTextArray[13]}     
           </Text>
-      <Shot style={{maxHeight: '60%'}}/>
+      <Shot>
+      <ImageGenerator publicId='behind-booth_jsjn9q' alt='command q in perth bunbury' />
+      </Shot>
 
     </Stage2>
 
@@ -171,16 +175,19 @@ const Hone = styled.h1`
 `;
 const Shots = styled.div`
   position: relative;
-  border-radius: 10px ;
-  background-position: 0px -150px;
-  background-size: cover;
   width: 150%;
   height: 60%;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  background-image: url(${StageShot});
-  background-position: top;
-  ;
+  
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px ;
+    background-position: 0px -150px;
+    overflow: hidden;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
 `;
 const Paragraphs = styled.div`
   position: relative;
@@ -224,10 +231,16 @@ const ContainerRect = styled.div`
 const leftFlip =  keyframes`${flipInX}`;
 const Flip = styled.div`
   animation: ${leftFlip} 0.8s;
-  background-size: cover;
   border-radius: 10px;
   width: 100%;
   height: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+  }
 `;
 const Text = styled.div`
   max-width: 95%;
@@ -245,16 +258,21 @@ const Stage2 = styled.div`
   align-items: center;
 `;
 const Shot = styled.div`
-  background-image: url(${OnStage});
   border-radius: 10px ;
   width: 100%;
-  height: 70%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: -300px -0px;
+  height: 70vh;
+  position: relative;
 
-  ${device.mobile} {
-    background-position: -130px -0px;
-
+  & img {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    background-position: -300px 0px;
+    transform: translateX(-150px);
+    ${device.mobile} {
+    background-position: -130px 0px;
+    bottom: 0px;
   }
+  }
+
 `;

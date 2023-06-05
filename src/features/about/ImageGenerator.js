@@ -1,4 +1,4 @@
-import {AdvancedImage, responsive, lazyload, placeholder} from '@cloudinary/react';
+import {AdvancedImage, responsive, placeholder} from '@cloudinary/react';
 import React from 'react'
 import { Cloudinary } from '@cloudinary/url-gen';
 
@@ -11,9 +11,15 @@ function ImageGenerator({publicId, alt}) {
       cloudName: 'dyneqi48f'
     }
   }); 
+
+  const quality = publicId.includes(
+    'big-stage') || publicId.includes('behind-booth')
+    ? '100'
+    : 'auto';
+
   const myImage = cld.image(publicId)
     .format('auto')
-    .quality('auto');
+    .quality(quality);
   
   // lazyload ({rootMargin: '0px', threshold: 0.25}), placeholder ('blur'), 
   
