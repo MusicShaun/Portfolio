@@ -232,9 +232,11 @@ const UL = styled.ul`
   margin: 0 ;
   padding-right: 1rem;
 `;
-const SubHeading = styled.div`
+const SubHeading = styled.h2`
   font-size: 1.35rem;
   font-weight: 600;
+  padding: 0;
+  margin: 0;
   color: ${colorDarkGrey};
 `;
 const Title = styled.div`

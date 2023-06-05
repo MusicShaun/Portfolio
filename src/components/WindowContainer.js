@@ -93,7 +93,7 @@ export default function WindowContainer() {
             <Route path='/projects/mastering' element={ <Mastering /> } />              
             <Route path='/skills' element={ <Skills /> } />              
             <Route path='/contact' element={<Contact onlyWidth={onlyWidth} onlyHeight={onlyHeight} />} />              
-            <Route path='*' element={<ErrorPage />} /> 
+            <Route path='/404' element={<ErrorPage />} /> 
            
           </Routes>
         </RightSide>

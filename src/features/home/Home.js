@@ -120,7 +120,7 @@ const Text = styled.div`
     height: 45%;
   }
 `;
-const Header = styled.h1`
+const Header = styled.p`
   animation: 1.5s ${animator};
   margin: 1rem;
   color: ${colorCream};
