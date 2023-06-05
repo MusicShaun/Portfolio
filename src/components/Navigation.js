@@ -3,7 +3,6 @@ import HomeSVG from '../img/SVGs/HomeSVG';
 import AboutSVG from '../img/SVGs/AboutSVG';
 import MailSVG from '../img/SVGs/SendMail';
 import WebsiteSVG from '../img/SVGs/WebsiteSVG';
-import profilePic from '../img/profile-pic.webp';
 import SkillsSVG from '../img/SVGs/SkillsSVG';
 import Facebook from '../img/SVGs/Facebook';
 import Instagram from '../img/SVGs/Instagram';
@@ -14,15 +13,20 @@ import {device} from '../helpers/screenSizes';
 import { headShake } from 'react-animations';
 import { useState } from 'react'; 
 import IconHovers from './IconHovers';
+import ImageGenerator from '../features/about/ImageGenerator';
+
 
 
 const bounceAnimation = keyframes`${headShake}`;
 
-export default function Navigation(props){
+export default function Navigation(props) {
+  
   const {hideHamburger} = props;
   const [ bubble ,setBubble ] = useState(false); 
   const [ bubble2 ,setBubble2 ] = useState(false); 
   const [ bubble3 ,setBubble3 ] = useState(false); 
+
+
 
   function handleIconHover(num) {
     if (num === 3 ){
@@ -45,7 +49,9 @@ export default function Navigation(props){
     <Wrapper>
       <HeroImage> 
         <Link to='/' style={{textDecoration: 'none'}}>
-          <Profile />
+          <Profile>
+            <ImageGenerator publicId='profile-pic_sbcjkf' alt='Shaun Pickett' />
+          </Profile>
         </Link> 
         <Name>Shaun Pickett</Name>
         <p style={{fontSize: '0.8rem'}}>Front End Developer</p>
@@ -134,27 +140,26 @@ const Profile = styled.div`
   height: 11em; 
   border-radius: 50%;
   border: 2px solid ${colorWhite};
-  background-image: url(${profilePic});
-  background-size: 250px 250px;
-  background-repeat: no-repeat;
-  background-position: -29px 0px;
-  ${device.laptopL} {
-    width: 9rem; 
-    height: 9rem; 
-    margin-top: 1rem;
-  }
-  ${device.laptop} {
-    width: 7.5rem; 
-    height: 7.5rem; 
-    background-position: -40px 0px;
-  }
-  ${device.tablet} {
-    width: 16em; 
-    height: 16em; 
-  }
-  ${device.mobile} {
-    width: 11rem; 
-    height: 11rem; 
+  overflow: hidden;
+
+  & img {
+    width: 140%;
+    height: 140%;
+    transform: translate(-10px, 0px);
+
+    ${device.laptopL} {
+      width: 13rem; 
+      height: 13rem; 
+    }
+
+    ${device.tablet} {
+      width: 16em; 
+      height: 16em; 
+    }
+    ${device.mobile} {
+      width: 11rem; 
+      height: 11rem; 
+    }
   }
 `;
 const Name = styled.h3`

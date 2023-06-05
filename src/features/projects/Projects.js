@@ -5,6 +5,7 @@ import Loader from '../../components/Loader';
 import { useEffect , useState, useCallback } from 'react';
 import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
+import ImageGenerator from '../about/ImageGenerator';
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
@@ -83,9 +84,9 @@ export default function Skills(props) {
                 : `scale(1)`,
                 }}
               >
-            <Showcase 
-              style={{backgroundImage: `url(${item.img})`, }}
-            ></Showcase>
+            <Showcase>
+              <ImageGenerator publicId={item.img} alt={item.alt} />
+            </Showcase>
   
             <Blurb>
               <UL style={{backgroundColor: item.color, 
@@ -179,13 +180,20 @@ const Showcase = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   border-radius: 20px;
+
+  & img {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    max-width: 80vw;
+    
   ${device.mobile} {
     height: 40%;
     border-radius: 20px 20px 0 0 ;
   }
+}
 `;
 const Blurb = styled.div`
   position: absolute;

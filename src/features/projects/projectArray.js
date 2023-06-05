@@ -1,15 +1,9 @@
-import column from '../../img/columnsdesign.webp';
-import mastering from '../../img/mastering.webp';
-import banana from '../../img/bananashop.webp';
-import todo from '../../img/Todo.webp';
-import quiz from '../../img/Quiz.webp';
-import sweardle from '../../img/sweardle.webp';
-import mern from '../../img/mern-full-stack.webp';
-import ecommerce from '../../img/asos.webp';
 
 const projectArray = [
   {
-    id: 0, img: ecommerce, 
+    id: 0,
+    img: 'asos_z7gsur', 
+    alt:'MERN clothing store',
     title: 'Clothing store - WIP', 
     text: 'Super fast RTK-Query, guest checkout, user profiles, built on nextJS, MongoDb & Node', 
     color: '#F2BC8D', 
@@ -18,7 +12,7 @@ const projectArray = [
 
   },
   {
-    id: 1, img: mern, 
+    id: 1, img: 'mern-full-stack_ysxsbr', alt: 'mern stack blog',
     title: 'MERN stack', 
     text: 'Very nice RTK, user authentication, tidy Node server', 
     color: '#F2BC8D', 
@@ -27,7 +21,7 @@ const projectArray = [
 
   },
   {
-    id: 2, img: sweardle, 
+    id: 2, img: 'sweardle_p0jigu', alt: 'wordle with profanity',
     title: 'M15+', 
     text: 'Wordle with profanity? ', 
     color: '#98D0DF', 
@@ -35,7 +29,7 @@ const projectArray = [
     sandbox: 'https://codesandbox.io/p/github/MusicShaun/wordle-imitation/master?file=%2FREADME.md&workspace=%257B%2522activeFilepath%2522%253A%2522%252FREADME.md%2522%252C%2522openFiles%2522%253A%255B%2522%252FREADME.md%2522%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clggb0b7t000x3b6lc5lzmujj%2522%253A%257B%2522key%2522%253A%2522clggb0b7t000x3b6lc5lzmujj%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522key%2522%253A%2522clggb0b7v000y3b6lr8qtuu9g%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clggb0b7t000x3b6lc5lzmujj%2522%252C%2522spacesOrder%2522%253A%255B%2522clggb0b7t000x3b6lc5lzmujj%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D'
   },
   {
-    id: 3, img: column, 
+    id: 3, img: 'columnsdesign_z98sqj', alt: 'beautiful website design',
     title: 'Website Template', 
     text: 'Custom template with NextJS and redux toolkit', 
     color: '#F2BC8D', 
@@ -44,28 +38,28 @@ const projectArray = [
 
   }, 
   {
-    id: 4, img: quiz, 
+    id: 4, img: 'Quiz_ceikkd', alt: 'quiz app',
     title: 'Quiz', 
     text: 'State. Many, many states.', 
     color: '#F4A86A', 
     url: 'https://elegant-pony-0acf58.netlify.app/'
 }, 
   {
-    id: 5, img: todo, 
+    id: 5, img: 'Todo_icepff', alt: 'todo list',
     title: 'Todo List', 
     text: 'Simple array manipulation with local storage.', 
     color: '#90ABD1', 
     url: 'https://marvelous-kheer-2d615e.netlify.app/'
 } ,
   {
-    id: 6, img: mastering, 
+    id: 6, img: 'mastering_fkcm9n', alt: 'mastering website',
     title: 'Mastering Website', 
     text: 'Among the first websites I\'d created, this is my current Mastering business.', 
     color: '#FFE07B', 
     url: 'https://www.digital-bath-studio.com/'
 }, 
   {
-    id: 7, img: banana, 
+    id: 7, img: 'bananashop_ubqhwi', alt: 'banana store',
     title: 'Banana Store', 
     text: 'React store with a mock product api and Stripe payment.', 
     color: '#F4A86A', 
