@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {device} from '../../helpers/screenSizes';
 import { colorWhite} from "../../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
-import 'react-lazy-load-image-component/src/effects/blur.css';
 import ImageGenerator from "./ImageGenerator";
 
 
@@ -164,8 +163,9 @@ const Stage = styled.div`
   
   & > div {
     width: 100%;
-    height: 700px; 
-   /* & img {
+    min-width: 100%;
+    min-height: 700px; 
+   & img {
       border-radius: 10px ;
       background-position: 0px -440px;
       width: 100%;
@@ -181,7 +181,7 @@ const Stage = styled.div`
       ${device.laptop} {
         background-position: 0px -0px;
       }
-    } */
+    }
   }
 `;
 const Page = styled.div`
@@ -330,5 +330,9 @@ const ClosingImg = styled.div`
   background-repeat: no-repeat;
   background-position-y: -100px;
   border-radius:  20px 20px 0px 0px !important;
+
+  & img { 
+    width: 100%;
+  }
 `;
 

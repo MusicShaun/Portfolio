@@ -14,13 +14,14 @@ function ImageGenerator({publicId, alt}) {
   const myImage = cld.image(publicId)
     .format('auto')
     .quality('auto');
-
-
+  
+  // lazyload ({rootMargin: '0px', threshold: 0.25}), placeholder ('blur'), 
+  
   return (
     <AdvancedImage
       cldImg={myImage}
       alt={alt} 
-      plugins={[ lazyload ('0', 1), placeholder ('blur'), responsive({ steps: 100 })]}
+      plugins={[ placeholder (),responsive({ steps: 100 })]}
       />
   )
 }
