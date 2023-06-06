@@ -6,6 +6,7 @@ import { useEffect , useState, useCallback } from 'react';
 import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
 import ImageGenerator from '../about/ImageGenerator';
+import { Helmet } from "react-helmet";
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
@@ -62,6 +63,12 @@ export default function Skills(props) {
       
   return (<>
     <Wrapper onWheel={handleWheel} style={{height: `${props.onlyHeight}`}}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>See Shaun's Projects </title>
+        <meta name="Take a look at Shaun's projects" content="Each project is made from the ground up, starting from the most recent" />
+        <link rel='canonical' href='https://www.shaunpickett.com/projects' />
+      </Helmet>
 
     {loading && <Loader /> }
 

@@ -4,6 +4,7 @@ import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
 import { useEffect , useState } from 'react';
 import PDFIcon from '../../img/download-pdf.png'
+import { Helmet } from "react-helmet";
 
 export default function Skills() {
   const [loading, setLoading] = useState(true);
@@ -74,7 +75,14 @@ export default function Skills() {
 
 
   return (
-  <Wrapper>
+    <Wrapper>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Shaun's Resume and skills</title>
+        <meta name="Shaun's CV" content="View or Download Shauns CV here" />
+        <link rel='canonical' href='https://www.shaunpickett.com/skills' />
+      </Helmet>
+
     {loading && <Loader />}
     <BoxWrap>
       <Box>

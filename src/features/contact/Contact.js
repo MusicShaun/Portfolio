@@ -4,6 +4,7 @@ import { colorCream } from '../../helpers/colors';
 import Loader from '../../components/Loader';
 import { useEffect , useState } from 'react';
 import { device } from '../../helpers/screenSizes';
+import { Helmet } from "react-helmet";
 
 export default function About (props) {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,12 @@ export default function About (props) {
 
     <Wrapper style={{height: `${props.onlyHeight}`}}>
         { props.onlyWidth > 500 ? loading && <Loader /> : mobileLoading && <Loader /> }
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Get in touch with Shaun</title>
+        <meta name="Contact Form" content="Feel free to get in touch or hit me up for a coffee" />
+        <link rel='canonical' href='https://www.shaunpickett.com/contact' />
+      </Helmet>
 
       <Container>
         <IFrame

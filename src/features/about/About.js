@@ -6,6 +6,7 @@ import { useState, useEffect, useRef} from 'react';
 import Loader from '../../components/Loader';
 import AboutBackground from './AboutBackground';
 import arrow from '../../img/arrow.png';
+import { Helmet } from "react-helmet";
 
 export default function About (props) {
   const [ pageSize , setPageSize ] = useState(0);
@@ -91,6 +92,12 @@ return () => clearInterval(timer)
 
   return (
     <Wrapper ref={pageRef}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>About Shaun Pickett</title>
+        <meta name="About Shaun Pickett" content="A brief biography of how Shaun left the music industry and became a developer" />
+        <link rel='canonical' href='https://www.shaunpickett.com/about' />
+      </Helmet>
 
     <BareBack />
         {loading && <Loader /> }

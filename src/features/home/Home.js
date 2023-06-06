@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
 import { device } from '../../helpers/screenSizes';
 import GetInTouch from '../../components/GetInTouch';
+import { Helmet } from "react-helmet";
 
 
 const animator = keyframes`${flipInX}`;
@@ -40,9 +41,15 @@ export default function Home (props) {
 
 
   return (<>
+    <Wrapper style={{ height: `${props.onlyHeight}` }}>
+      
+    <Helmet>
+        <meta charSet="utf-8" />
+        <title>Welcome to Shaun Pickett's Portfolio</title>
+        <meta name="Shaun Pickett's Portfolio" content="Front End Developer & Musical extraordinaire"
+    />  <link rel='canonical' href='https://www.shaunpickett.com/' />
+      </Helmet>
 
-
-    <Wrapper style={{height: `${props.onlyHeight}`}}>
     <BorderClose/>
       <Container>
         <Text>
