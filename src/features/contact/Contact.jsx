@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import { colorCream } from '../../helpers/colors';
 import Loader from '../../components/Loader';
-import { useEffect , useState } from 'react';
+import React,{ useEffect , useState } from 'react';
 import { device } from '../../helpers/screenSizes';
 import { Helmet } from "react-helmet";
 

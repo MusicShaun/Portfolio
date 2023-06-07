@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colorGrey, colorBlack, colorCream, colorWhite, } from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
+import React from 'react';
 
 export default function ContactForm() {
 

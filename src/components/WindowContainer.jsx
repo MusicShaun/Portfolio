@@ -13,7 +13,7 @@ import Mastering from './iFrames/Mastering';
 import Quiz from './iFrames/Quiz';
 import Columns from './iFrames/Columns';
 import Loader from './Loader';
-import { useState , useEffect } from 'react'; 
+import React, { useState , useEffect } from 'react'; 
 import { device } from '../helpers/screenSizes';
 import StyledBurger from './Hamburger';
 import {useWindowWidth, useWindowHeight} from '@react-hook/window-size';

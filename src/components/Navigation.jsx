@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { colorBlack, colorSand, colorWhite } from '../helpers/colors';
 import {device} from '../helpers/screenSizes';
 import { headShake } from 'react-animations';
-import { useState } from 'react'; 
+import React, { useState } from 'react'; 
 import IconHovers from './IconHovers';
 import ImageGenerator from '../features/about/ImageGenerator';
 

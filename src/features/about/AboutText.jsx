@@ -5,6 +5,7 @@ import {device} from '../../helpers/screenSizes';
 import { colorWhite} from "../../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
 import ImageGenerator from "./ImageGenerator";
+import React from 'react';
 
 
 const flipIt =  keyframes`${flipInX}`;

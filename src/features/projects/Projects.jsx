@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colorBlack, colorCream , colorSand,} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
-import { useEffect , useState, useCallback } from 'react';
+import React, { useEffect , useState, useCallback } from 'react';
 import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
 import ImageGenerator from '../about/ImageGenerator';

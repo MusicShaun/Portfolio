@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { colorWhite } from '../helpers/colors';
-
+import React from 'react';
 export default function Loader() {
+  
 
   return (<>
     <Background />

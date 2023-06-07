@@ -1,6 +1,7 @@
 import { specialAqua, specialBlue, specialMud, specialOrange, specialYellow } from "../../helpers/colors";
 import styled from 'styled-components';
 import { device } from '../../helpers/screenSizes';
+import React from 'react';
 
 export default function AboutBackground() {
 

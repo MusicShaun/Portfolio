@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {colorCream } from '../../helpers/colors';
 import AboutText from "./AboutText";
 import AboutTextMobile from "./AboutTextMobile";
-import { useState, useEffect, useRef} from 'react'; 
+import React, { useState, useEffect, useRef} from 'react'; 
 import Loader from '../../components/Loader';
 import AboutBackground from './AboutBackground';
 import arrow from '../../img/arrow.png';
@@ -16,7 +16,7 @@ export default function About (props) {
   useEffect(() => {
     setPageSize(pageRef.current.offsetHeight)
   }, [])
- 
+
   
   //AUTOMATIC SCROLLING 
   const [scrollState, setScrollState] = useState(0);

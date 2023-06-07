@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colorCream , colorBlack} from '../helpers/colors';
+import React from 'react';
 
 export default function StyledBurger(props) {
   const { openMobile } = props;

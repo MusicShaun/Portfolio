@@ -4,6 +4,7 @@ import { colorWhite } from "../../helpers/colors";
 import { device } from '../../helpers/screenSizes';
 import { aboutTextArray } from "./AboutTextArray";
 import ImageGenerator from "./ImageGenerator";
+import React from 'react';
 
 export default function AboutText (props) {
 

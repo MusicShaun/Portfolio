@@ -3,6 +3,8 @@ import { colorBlue, colorCream } from '../helpers/colors';
 import { device } from '../helpers/screenSizes';
 import { Link } from 'react-router-dom';
 import { flipInX } from 'react-animations';
+import React from 'react';
+
 const animator = keyframes`${flipInX}`;
 
 

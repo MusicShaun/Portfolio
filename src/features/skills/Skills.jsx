@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colorBlack, colorCream, colorDarkGrey, colorSand} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
-import { useEffect , useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import PDFIcon from '../../img/download-pdf.png'
 import { Helmet } from "react-helmet";
 
@@ -87,7 +87,7 @@ export default function Skills() {
             <SubHeading>{INTROBOX.subHeading}</SubHeading>
             {INTROBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
             return (
-              <PARA>{item}</PARA>
+              <PARA key={index + 300}>{item}</PARA>
             )
             })}
           </UL>
@@ -96,11 +96,11 @@ export default function Skills() {
         <Containers style={{backgroundColor: LIGHTBLUE, width: '100%', marginLeft: '0%' }}>
           {SKILLSBOX.subHeading.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
-              <UL>
+              <UL key={index + 200}>
                 <SubHeading>{heading}</SubHeading>
                 {SKILLSBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
                 return (
-                  <LI><span>{item}</span></LI>
+                  <LI key={index + 400}><span>{item}</span></LI>
                 )
               })}
               </UL>
@@ -130,13 +130,13 @@ export default function Skills() {
         <Containers style={{ backgroundColor: LIGHTORANGE }}>  
           {ABOUTBOX.title.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
-              <UL>
+              <UL key={index + 100}>
                 <SubHeading >{ABOUTBOX.subHeading[index]}</SubHeading>
                 <Title style={{marginTop: '1rem'}}>{heading}</Title>
                 <Title style={{marginBottom: '1rem', fontStyle: 'italic'}}>{ABOUTBOX.date[index]}</Title>
                   {ABOUTBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
                     return (
-                      <LI><span>{item}</span></LI>
+                      <LI key={index + 700}><span>{item}</span></LI>
                     )
                   })}
                   </UL>
@@ -149,7 +149,7 @@ export default function Skills() {
             <SubHeading style={{marginBottom: '1rem'}}>{LASTBOX.subHeading}</SubHeading>
               {LASTBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
               return (
-                <LI><span>{item}</span></LI>
+                <LI key={index + 150}><span>{item}</span></LI>
               )
             })}
             </UL>
