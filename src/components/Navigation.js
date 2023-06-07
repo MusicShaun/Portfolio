@@ -74,7 +74,7 @@ export default function Navigation(props) {
             </ListItem>
           </Link>
 
-          <Link to='/Projects' style={{textDecoration: 'none'}} onClick={hideHamburger}>
+          <Link to='/projects' style={{textDecoration: 'none'}} onClick={hideHamburger}>
             <ListItem>
               <WebsiteSVG />
                 <Projects>Projects</Projects>

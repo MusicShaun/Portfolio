@@ -9,12 +9,14 @@ import arrow from '../../img/arrow.png';
 import { Helmet } from "react-helmet";
 
 export default function About (props) {
-  const [ pageSize , setPageSize ] = useState(0);
+  const [pageSize, setPageSize] = useState(0);
+  const { onlyWidth } = props; 
+  
+
   useEffect(() => {
-    document.title = 'About Shaun';
     setPageSize(pageRef.current.offsetHeight)
   }, [])
-  const {onlyWidth} = props; 
+ 
   
   //AUTOMATIC SCROLLING 
   const [scrollState, setScrollState] = useState(0);
@@ -155,7 +157,6 @@ const Text = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden auto;
-  
 `;
 
 const ParallaxContainer = styled.div`
@@ -202,7 +203,6 @@ const FixedUpBtn = styled.button`
     box-shadow: inset 0px -4px 4px grey;
     transition: all 0.1s;
   }
-
 `
 const FixedDownBtn = styled.button`
   position: fixed;

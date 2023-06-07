@@ -17,9 +17,6 @@ export default function About(props) {
   return () => clearInterval(timer)
   }, [])
 
-  useEffect(() => {
-    document.title = 'Contact Me';
-  }, [])
 
   const [mobileLoading, setMobile] = useState(true);
   useEffect(() => {
@@ -48,7 +45,7 @@ export default function About(props) {
           
         </IFrame>
         </IFrameContainer>
-        
+
         <FormWrapper> 
           <ContactForm />
         </FormWrapper>

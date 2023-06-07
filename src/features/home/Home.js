@@ -10,9 +10,6 @@ import { Helmet } from "react-helmet";
 const animator = keyframes`${flipInX}`;
 
 export default function Home (props) {
-  useEffect(() => {
-    document.title = 'Shaun\'s Portfolio';
-  }, [])
 
   const [showHeader, setShowHeader] = useState(false);
   const [showSubHeader, setShowSubHeader] = useState(false);

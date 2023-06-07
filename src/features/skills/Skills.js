@@ -11,11 +11,6 @@ export default function Skills() {
   useEffect(() => {
     setLoading(false)
   }, [])
-  
-  useEffect(() => {
-    document.title = 'Shaun\'s Skills';
-  }, [])
-
 
   const DARKBLUE = 'hsl(215,58%,83%)';
   const ORANGE = 'hsl(27,86%,76%)';

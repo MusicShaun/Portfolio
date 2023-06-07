@@ -15,9 +15,7 @@ export default function Skills(props) {
   useEffect(() => {
     setLoading(false)
   }, [])
-  useEffect(() => {
-    document.title = 'Shaun\'s Projects';
-  }, [])
+
 
   // TRANSLATEY's THE CONTENT IF NOT === TO 0
   function handlePageClicking() {
