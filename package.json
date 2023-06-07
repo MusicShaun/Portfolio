@@ -46,8 +46,6 @@
     "eslint": "^8.42.0",
     "eslint-config-react-app": "^7.0.1",
     "vite": "^4.3.9",
-    "vite-plugin-eslint": "^1.8.1",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "vite-plugin-eslint": "^1.8.1"
   }
 }
