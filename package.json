@@ -21,8 +21,9 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build && cp src/_redirects build/"
-
+    "build": "vite build && cp src/_redirects dist/",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
