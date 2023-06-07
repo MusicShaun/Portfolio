@@ -1,3 +1,1 @@
-/404    /404.html   404
-/index / 200
-/index/* / 301
+/*    /index.html   200
