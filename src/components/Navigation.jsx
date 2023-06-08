@@ -54,8 +54,8 @@ export default function Navigation(props) {
           </Profile>
         </Link> 
         <Name>Shaun Pickett</Name>
-        <h2 style={{fontSize: '0.8rem'}}>Front End Developer</h2>
-        <h2 style={{fontSize: '0.8rem', lineHeight: '0rem', margin: '0rem'}}>0412 220 332</h2>
+        <h3 style={{fontSize: '0.8rem'}}>Front End Developer <br />
+        0412 220 332</h3>
       </HeroImage>
 
       <NavigationPane>
@@ -123,8 +123,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  & h2 {
-    font-weight: 500
+  & h3 {
+    font-weight: 500;
+    text-align: center;
+    user-select: none;
   }
 `;
 
@@ -167,7 +169,7 @@ const Profile = styled.div`
     }
   }
 `;
-const Name = styled.h1`
+const Name = styled.h2`
   margin: 2rem 0 0 0 ;
   padding: 0;
   line-height: 0rem;

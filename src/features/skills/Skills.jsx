@@ -116,7 +116,7 @@ export default function Skills() {
               <a
                 href='https://drive.google.com/file/d/1wTvSvoMMDYt7WUYRGqbRXEotUnlJlKSo/view?usp=sharing'
                 download='SHAUN-PICKETT-RESUME'
-                target="_blank"
+                target="_blank" 
                 rel='noreferrer'>
                 Download Resume as PDF
             </a></DownloadBtn>
