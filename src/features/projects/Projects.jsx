@@ -25,40 +25,27 @@ export default function Skills(props) {
 
   //  THIS HANDLES THE SCROLLING OR LAPTOP SLIDING 
   function handleWheel(e) {
-    
-    const deltaY = Math.floor(e.deltaY) / 30;
+  // Check for touch-based scroll events
+  if (e.touches && e.touches.length > 0) {
+    const touch = e.touches[0]
+    const deltaY = Math.floor(touch.clientY)
     if (deltaY < 0 && counter > 0) {
       throttledEventHandlerUp();
     } else if (deltaY > 0 && counter < imageArray.length - 1) {
       throttledEventHandlerDown();
     }
   }
+  }
 
   //MOBILE SWIPING
-  useEffect(() => {
-    let startY = 0;
-
-    const handleTouchStart = (event) => {
-      startY = event.touches[0].clientY;
-    };
-
-    const handleTouchMove = (event) => {
-      const deltaY = event.touches[0].clientY - startY;
-
-      if (deltaY < 0 && counter > 0) {
-        throttledEventHandlerUp();
-      } else if (deltaY > 0 && counter < imageArray.length - 1) {
-        throttledEventHandlerDown();
-      }
-    };
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchmove', handleTouchMove);
-
-    return () => {
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
+  function handleTouch(e) {
+    const deltaY = Math.floor(e.deltaY);
+    if (deltaY < 0 && counter > 0) {
+      throttledEventHandlerUp();
+    } else if (deltaY > 0 && counter < imageArray.length - 1) {
+      throttledEventHandlerDown();
+    }
+  }
   
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -111,7 +98,7 @@ export default function Skills(props) {
   )
 
   return (<>
-    <Wrapper onWheel={handleWheel} style={{height: `${props.onlyHeight}`}}>
+    <Wrapper onWheel={handleWheel} onTouchStart={handleTouch} onTouchMove={handleTouch}  style={{height: `${props.onlyHeight}`}}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
