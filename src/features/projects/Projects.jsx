@@ -11,6 +11,7 @@ import ProjectPages from './ProjectPages';
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0)
+  let direction = 0
 
   useEffect(() => {
     setLoading(false)
@@ -22,21 +23,19 @@ export default function Skills(props) {
     counter >= imageArray.length - 1 ? setCounter(0) : setCounter(prev => prev + 1);
   }
 
-
+  // Touch based scroll events 
   function handleTouch(e) {
-    // Check for touch-based scroll events
-    console.log('touch fired ')
-  if (e.touches && e.touches.length > 0) {
-    const touch = e.touches[0]
-    const deltaY = Math.floor(touch.clientY)
-    if (deltaY < 0 && counter > 0) {
-      throttledEventHandlerUp();
-      console.log('up')
-    } else if (deltaY > 0 && counter < imageArray.length - 1) {
-      console.log('down')
-      throttledEventHandlerDown();
+    if (e.touches && e.touches.length > 0) {
+      const touch = e.touches[0]
+      const deltaY = Math.floor(touch.clientY)
+
+      if (direction > deltaY && counter > 0) {
+        throttledEventHandlerUp();
+      } else if (direction < deltaY && counter < imageArray.length - 1) {
+        throttledEventHandlerDown();
+      }
+      direction = deltaY
     }
-  }
   }
 
   function handleWheel(e) {
