@@ -11,9 +11,9 @@ function NavFooter({handleIconHover, deleteIconHover}) {
 
   return (
     <Footer>
-      <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover}><img src={LinkedInIcon} alt='' /></FootList>
-    <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}><img src={InstagramIcon} alt=''/>  </FootList>
-    <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)} ><img src={GithubIcon} alt='' /> </FootList>
+      <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover}><img src={LinkedInIcon} alt='Connect with me on Linked In' /></FootList>
+    <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}><img  src={GithubIcon} alt='View my Github' />  </FootList>
+    <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)} ><img src={InstagramIcon} alt='Visit me on Instagram'/> </FootList>
   </Footer>
   )
 }
