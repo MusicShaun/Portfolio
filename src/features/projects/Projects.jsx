@@ -110,7 +110,7 @@ export default function Skills(props) {
                 <Headings>{item.title}</Headings>
                 <LI>{item.text}</LI>
                 <LI>
-                  <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty> Website</Butty></AA>
+                  <AA target='_blank' href={item.url} onClick={handleAnchor} style={{marginRight: '16px'}}><Butty> Website</Butty></AA>
                   {item.sandbox ? <AA target='_blank' href={item.sandbox}><Butty> Sandbox</Butty></AA> : false} 
                 </LI>
               </ULMOBILE>

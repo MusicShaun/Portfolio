@@ -152,10 +152,10 @@ const ListItem = styled.li`
       justify-content: center;
       padding-left: 0;
       margin-bottom: 2rem;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
     }
   ${device.mobile} {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 0rem;
   }
   & h3 {

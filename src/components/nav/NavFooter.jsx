@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colorBlack, colorSand, colorWhite } from '../../helpers/colors';
 import React from 'react'
+import {device} from '../../helpers/screenSizes';
 
 import LinkedInIcon from '@images/LinkedIn_ICON.png'
 import InstagramIcon from '@images/Instagram_ICON.png'
@@ -30,6 +31,10 @@ const Footer = styled.div`
   justify-content: center;
   align-items: flex-end;
   gap: 0.5rem;
+
+  ${device.tablet} {
+    gap: 3rem;
+  }
 `;
 const FootList = styled.div`
   position: relative;
