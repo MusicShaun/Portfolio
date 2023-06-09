@@ -74,7 +74,7 @@ export default function Skills() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Shaun's Resume and skills</title>
-        <meta name="description" content="View or Download Shauns CV here" />
+        <meta name="description" content="View or download Shaun's CV and explore his skills. Get insights into his professional experience, accomplishments, and more." />
         <link rel='canonical' href='https://www.shaunpickett.com/skills' />
       </Helmet>
 

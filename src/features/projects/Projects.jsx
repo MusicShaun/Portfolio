@@ -103,7 +103,7 @@ export default function Skills(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
-        <meta name="description" content="Each project is made from the ground up, starting from the most recent" />
+        <meta name="description" content="A React component that displays a collection of project pages and allows navigation through them using touch or scroll events." />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />
       </Helmet>
 

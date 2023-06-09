@@ -32,7 +32,7 @@ export default function About(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Get in touch with Shaun</title>
-        <meta name="description" content="Feel free to get in touch or hit me up for a coffee" />
+        <meta name="description" content="Contact page with a form and location map. Get in touch with Shaun by filling out the form. Contact information and directions are provided on this page." />
         <link rel='canonical' href='https://www.shaunpickett.com/contact' />
       </Helmet>
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>Get in touch with me </h1>

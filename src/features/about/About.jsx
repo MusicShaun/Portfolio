@@ -97,7 +97,7 @@ return () => clearInterval(timer)
       <Helmet>
         <meta charSet="utf-8" />
         <title>About Shaun Pickett</title>
-        <meta name="description" content="A brief biography of how Shaun left the music industry and became a developer" />
+        <meta name="description" content="A React component representing the About page of Shaun Pickett's portfolio website. This page provides a biography and information about how Shaun got into front-end development." />
         <link rel='canonical' href='https://www.shaunpickett.com/about' />
       </Helmet>
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>My biography</h1>
