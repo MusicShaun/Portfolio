@@ -158,12 +158,6 @@ const TransPages = styled.div`
   transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
 &:first-child {
   margin-top: 5vh !important;
-  ${device.mobile} {
-    margin-top: 2.5vh !important;
-  }
-}
-  ${device.mobile} {
-    min-height: 95%;
 
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
