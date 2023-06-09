@@ -11,7 +11,6 @@ import ProjectPages from './ProjectPages';
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
   const [counter, setCounter] = useState(0)
-  let direction = 0
 
   useEffect(() => {
     setLoading(false)
@@ -24,17 +23,23 @@ export default function Skills(props) {
   }
 
   // Touch based scroll events 
-  function handleTouch(e) {
-    if (e.touches && e.touches.length > 0) {
-      const touch = e.touches[0]
-      const deltaY = Math.floor(touch.clientY)
-
-      if (direction > deltaY && counter > 0) {
-        throttledEventHandlerUp();
-      } else if (direction < deltaY && counter < imageArray.length - 1) {
-        throttledEventHandlerDown();
-      }
-      direction = deltaY
+  let touchStartY = 0;
+  let touchEndY = 0;
+  
+  function handleTouchStart(event) {
+    touchStartY = event.touches[0].clientY;
+  }
+  function handleTouchMove(event) {
+    touchEndY = event.touches[0].clientY;
+  }
+  function handleTouchEnd(event) {
+    const swipeDistance = touchEndY - touchStartY;
+    if (swipeDistance > 0) {
+      // User swiped right
+      setCounter((prevCounter) => prevCounter + 1);
+    } else if (swipeDistance < 0) {
+      // User swiped left
+      setCounter((prevCounter) => prevCounter - 1);
     }
   }
 
@@ -98,7 +103,12 @@ export default function Skills(props) {
   )
 
   return (<>
-    <Wrapper onWheel={handleWheel} onTouchStart={handleTouch} onTouchMove={handleTouch}  style={{height: `${props.onlyHeight}`}}>
+    <Wrapper
+      onWheel={handleWheel}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ height: `${props.onlyHeight}` }}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
