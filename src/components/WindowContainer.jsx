@@ -18,7 +18,6 @@ import { device } from '../helpers/screenSizes';
 import StyledBurger from './Hamburger';
 import {useWindowWidth, useWindowHeight} from '@react-hook/window-size';
 import Skills from '../features/skills/Skills';
-import ErrorPage from '../features/ErrorPage';
 
 
 export default function WindowContainer() {
@@ -93,7 +92,6 @@ export default function WindowContainer() {
             <Route path='/projects/mastering' element={ <Mastering /> } />              
             <Route path='/skills' element={ <Skills /> } />              
             <Route path='/contact' element={<Contact onlyWidth={onlyWidth} onlyHeight={onlyHeight} />} />              
-            <Route path='/404' element={<ErrorPage />} /> 
            
           </Routes>
         </RightSide>
