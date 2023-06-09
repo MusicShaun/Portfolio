@@ -23,23 +23,24 @@ export default function Skills(props) {
   }
 
 
-  //  THIS HANDLES THE SCROLLING OR LAPTOP SLIDING 
-  function handleWheel(e) {
-  // Check for touch-based scroll events
+  function handleTouch(e) {
+    // Check for touch-based scroll events
+    console.log('touch fired ')
   if (e.touches && e.touches.length > 0) {
     const touch = e.touches[0]
     const deltaY = Math.floor(touch.clientY)
     if (deltaY < 0 && counter > 0) {
       throttledEventHandlerUp();
+      console.log('up')
     } else if (deltaY > 0 && counter < imageArray.length - 1) {
+      console.log('down')
       throttledEventHandlerDown();
     }
   }
   }
 
-  //MOBILE SWIPING
-  function handleTouch(e) {
-    const deltaY = Math.floor(e.deltaY);
+  function handleWheel(e) {
+    const deltaY = Math.floor(e.deltaY) /30;
     if (deltaY < 0 && counter > 0) {
       throttledEventHandlerUp();
     } else if (deltaY > 0 && counter < imageArray.length - 1) {
