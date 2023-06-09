@@ -213,6 +213,9 @@ const Box = styled.div`
     align-items: center;
     min-height: auto;
   }
+  ${device.mobile}{
+    width:90%;
+  }
 
 `;
 
@@ -231,14 +234,16 @@ const Containers = styled.div`
   & ul:first-child {
     margin-top: 1.5rem;
   }
-  ${device.laptopL}{
-    /* width:90%; */
-  }
+
 `;
 
 const UL = styled.ul`
   margin: 0 ;
   padding-right: 1rem;
+
+  ${device.mobile}{
+    padding-left: 1rem;
+  }
 `;
 const SubHeading = styled.h2`
   font-size: 1.35rem;

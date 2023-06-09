@@ -34,11 +34,11 @@ export default function Skills(props) {
   }
   function handleTouchEnd(event) {
     const swipeDistance = touchEndY - touchStartY;
-    if (swipeDistance > 0) {
-      // User swiped right
+    if (swipeDistance > 0 && counter < imageArray.length - 1) {
+      // User swiped down
       setCounter((prevCounter) => prevCounter - 1);
-    } else if (swipeDistance < 0) {
-      // User swiped left
+    } else if (swipeDistance < 0 && counter > 0) {
+      // User swiped up
       setCounter((prevCounter) => prevCounter + 1);
     }
   }
@@ -158,6 +158,13 @@ const TransPages = styled.div`
   transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
 &:first-child {
   margin-top: 5vh !important;
+  ${device.mobile} {
+    margin-top: 2.5vh !important;
+  }
+}
+  ${device.mobile} {
+    min-height: 95%;
+
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
 /* animation-delay: 0.3s; */
