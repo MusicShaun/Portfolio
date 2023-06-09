@@ -34,10 +34,10 @@ export default function Skills(props) {
   }
   function handleTouchEnd(event) {
     const swipeDistance = touchEndY - touchStartY;
-    if (swipeDistance > 0 && counter < imageArray.length - 1) {
+    if (swipeDistance > 0 && counter > 0) {
       // User swiped down
       setCounter((prevCounter) => prevCounter - 1);
-    } else if (swipeDistance < 0 && counter > 0) {
+    } else if (swipeDistance < 0 && counter < imageArray.length - 1) {
       // User swiped up
       setCounter((prevCounter) => prevCounter + 1);
     }
