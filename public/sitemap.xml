@@ -6,24 +6,14 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://www.shaunpickett.com/subfont/fonts-8d3a75c2d3.css</loc>
-    <lastmod>2023-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://www.shaunpickett.com/projects</loc>
     <lastmod>2023-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.shaunpickett.com/assets/index-6f82e97c.css</loc>
-    <lastmod>2023-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://www.shaunpickett.com/about</loc>
     <lastmod>2023-06-09</lastmod>
