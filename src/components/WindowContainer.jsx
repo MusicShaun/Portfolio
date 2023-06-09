@@ -1,7 +1,7 @@
 import AnimatedBackground from './AnimatedBackground';
 import AnimatedBackgroundMobile from './AnimatedBackgroundMobile';
 import styled from 'styled-components';
-import Navigation from './Navigation';
+import Navigation from './nav/Navigation';
 import { Routes , Route, useLocation } from 'react-router-dom';
 import Home from '../features/home/Home';
 import About from '../features/about/About';
