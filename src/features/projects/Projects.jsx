@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { colorBlack, colorCream , colorSand,} from '../../helpers/colors';
+import { colorBlack ,} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
 import React, { useEffect , useState, useCallback } from 'react';
 import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
-import ImageGenerator from '../about/ImageGenerator';
 import { Helmet } from "react-helmet";
+import ProjectPages from './ProjectPages';
 
 export default function Skills(props) {
   const [loading, setLoading] = useState(true);
@@ -59,6 +59,27 @@ export default function Skills(props) {
     }
   }
       
+  const Pages = (<Container>
+          {imageArray.map((item, index) => {
+        return(
+          <TransPages 
+            onClick={handleAnchor}
+            style={{transform: 
+                `translateY(-${counter * props.onlyHeight}px)
+                ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
+                marginTop: `${(props.onlyHeight / 100) * 10}px`
+              }}
+            key={item.id} 
+          >
+            <ProjectPages item={item} index={index} counter={counter} handlePageClicking={handlePageClicking} />
+
+          </TransPages>
+          )
+        })
+      }
+    </Container>
+  )
+
   return (<>
     <Wrapper onWheel={handleWheel} style={{height: `${props.onlyHeight}`}}>
       <Helmet>
@@ -70,57 +91,8 @@ export default function Skills(props) {
 
     {loading && <Loader /> }
 
-      <Container >
-      {imageArray.map((item, index) => {
-        return <TransPages 
-          onClick={handlePageClicking}
-          style={{transform: 
-              `translateY(-${counter * props.onlyHeight}px)
-              ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
-              marginTop: `${(props.onlyHeight / 100) * 10}px`
-            }}
-          key={item.id} 
-          >
-          <Pages   
-              key={item.id} 
-              style={{zIndex: `${index}`,
-              transform: counter > index 
-                ? `scale(${0.8}) translateY(-${10}%) `
-                : `scale(1)`,
-                }}
-              >
-            <Showcase>
-              <ImageGenerator publicId={item.img} alt={item.alt} />
-            </Showcase>
-  
-            <Blurb>
-              <UL style={{backgroundColor: item.color, 
-                          transform:
-                          `${index !== counter ? 'translateX(150%)' : 'translateX(0%)'}`
-                          }}>
-                <Headings>{item.title}</Headings>
-                <LI>{item.text}</LI>
-                <LI style={{ display: 'flex', gap: '20px' }}>
-                  <AA target='_blank' href={item.url} onClick={handleAnchor}><Butty> Website</Butty></AA>
-                  {item.sandbox ? <AA target='_blank' href={item.sandbox} ><Butty> Sandbox</Butty></AA> : false}
-                </LI>
-              </UL>
+    {Pages}
 
-              <ULMOBILE style={{backgroundColor: '#F2BC8D'}}>
-                <Headings>{item.title}</Headings>
-                <LI>{item.text}</LI>
-                <LI>
-                  <AA target='_blank' href={item.url} onClick={handleAnchor} style={{marginRight: '16px'}}><Butty> Website</Butty></AA>
-                  {item.sandbox ? <AA target='_blank' href={item.sandbox}><Butty> Sandbox</Butty></AA> : false} 
-                </LI>
-              </ULMOBILE>
-
-            </Blurb>
-          </Pages>
-        </TransPages>
-      })
-      }
-    </Container>
     </Wrapper>
     </>)
 }
@@ -138,6 +110,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   color:${colorBlack} ;
+  overflow-x: hidden;
 `;
 const Container = styled.div`
   position: relative;
@@ -168,154 +141,4 @@ animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
     padding-bottom: 5%;
   }
 `;
-const Pages = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease-out;
-  ${device.mobile}{
-    border: 10px solid ${colorCream};
-    border-radius: 30px;
-  }
-`;
-const Showcase = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  border-radius: 20px;
-
-  & img {
-    border-radius: 20px;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    max-width: 80vw;
-    
-  ${device.mobile} {
-    height: 40%;
-    border-radius: 20px 20px 0 0 ;
-  }
-}
-`;
-const Blurb = styled.div`
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translateX(72%);
-  ${device.mobile} {
-    position: relative;
-    height: 60%;
-    transform: translateX(0%);
-  }
-  `;
-const UL = styled.ul`
-  width: 34%;
-  height: 50%;
-  background-color: white;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
-  transition-delay: 1.11s;
-  animation: onLoadX 1.4s cubic-bezier(.23,1.15,.41,1.11);
-  @keyframes onLoadX {
-  0% { transform: translateX(200%);
-  } 65% { transform: translateX(200%);
-  }100% {transform: translateX(0%);
-  }}
-  ${device.mobile} {
-    display: none;
-  }
-`;
-const ULMOBILE = styled.ul`
-  display: none;
-  ${device.mobile} {
-    background-color: white;
-    flex-direction: column;
-    padding-right:1rem;
-    padding-left: 1rem;
-    transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
-    transition-delay: 1.11s;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 15px 15px;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 10px solid ${colorCream};
-  }
-`;
-const Headings = styled.div`
-  margin-left: 0.6rem;
-  font-size: 3.4rem;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-  align-self: flex-start;
-  margin-left: -1rem;
-  font-weight: 500;
-  line-height: 3rem;
-  padding-bottom: 2rem;
-  ${device.desktop}{
-    font-size: 2.4rem;
-  }
-  ${device.laptopL}{
-    font-size: 2rem;
-  }
-  ${device.mobile} {
-    align-self: center;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 1rem;
-  }
-`;
-const LI = styled.li`
-  font-size: 1.8rem;
-  ${device.desktop}{
-    font-size: 1.2rem;
-  }
-  ${device.mobile} {
-    align-items: center;
-    list-style: none;
-    text-align: center;
-  }
-`;
-const AA = styled.a`
-  color:inherit;
-  text-decoration: none;
-`;
-const Butty = styled.button`
-  font-size: 1.8rem;
-  border-radius: 10px;
-  border: solid 2.2px ${colorBlack};
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.1;
-  z-index: 100;
-  &:hover {
-    background-color: ${colorSand};
-  }
-  ${device.desktop}{
-    font-size: 1.2rem;
-  }
-  ${device.mobile}{
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-`;
-
-
-
-
 
