@@ -7,7 +7,7 @@ function BlurbMobile({item, handleAnchor}) {
   return (
     <ULMOBILE style={{ backgroundColor: '#F2BC8D' }}>
       <Headings>{item.title}</Headings>
-      <LI>{item.text}</LI>
+      <LI style={{userSelect: 'none'}}>{item.text}</LI>
       <LI>
         <AA
           
@@ -63,6 +63,8 @@ const Headings = styled.div`
   font-weight: 500;
   line-height: 3rem;
   padding-bottom: 2rem;
+  user-select: none;
+
   ${device.desktop}{
     font-size: 2.4rem;
   }

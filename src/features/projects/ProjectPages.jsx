@@ -47,6 +47,7 @@ const Pages = styled.div`
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-out;
+  overflow-y: hidden;
   ${device.mobile}{
     border: 10px solid ${colorCream};
     border-radius: 30px;
@@ -65,6 +66,7 @@ const Showcase = styled.div`
     width: 100%;
     object-fit: cover;
     max-width: 80vw;
+    user-select: none;
     
   ${device.mobile} {
     border-radius: 20px 20px 0 0 ;

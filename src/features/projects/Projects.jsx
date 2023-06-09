@@ -36,10 +36,10 @@ export default function Skills(props) {
     const swipeDistance = touchEndY - touchStartY;
     if (swipeDistance > 0) {
       // User swiped right
-      setCounter((prevCounter) => prevCounter + 1);
+      setCounter((prevCounter) => prevCounter - 1);
     } else if (swipeDistance < 0) {
       // User swiped left
-      setCounter((prevCounter) => prevCounter - 1);
+      setCounter((prevCounter) => prevCounter + 1);
     }
   }
 
