@@ -25,6 +25,7 @@ export default function Skills(props) {
 
   //  THIS HANDLES THE SCROLLING OR LAPTOP SLIDING 
   function handleWheel(e) {
+    
     const deltaY = Math.floor(e.deltaY) / 30;
     if (deltaY < 0 && counter > 0) {
       throttledEventHandlerUp();
@@ -32,6 +33,33 @@ export default function Skills(props) {
       throttledEventHandlerDown();
     }
   }
+
+  //MOBILE SWIPING
+  useEffect(() => {
+    let startY = 0;
+
+    const handleTouchStart = (event) => {
+      startY = event.touches[0].clientY;
+    };
+
+    const handleTouchMove = (event) => {
+      const deltaY = event.touches[0].clientY - startY;
+
+      if (deltaY < 0 && counter > 0) {
+        throttledEventHandlerUp();
+      } else if (deltaY > 0 && counter < imageArray.length - 1) {
+        throttledEventHandlerDown();
+      }
+    };
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+  
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const throttledEventHandlerUp = useCallback(
@@ -59,11 +87,12 @@ export default function Skills(props) {
     }
   }
       
-  const Pages = (<Container>
-          {imageArray.map((item, index) => {
+  const Pages = (
+    
+    <Container >
+      {imageArray.map((item, index) => {
         return(
           <TransPages 
-            onClick={handleAnchor}
             style={{transform: 
                 `translateY(-${counter * props.onlyHeight}px)
                 ${index !== counter ? 'scale(0.7)' : 'scale(1)'}` ,
@@ -71,13 +100,14 @@ export default function Skills(props) {
               }}
             key={item.id} 
           >
-            <ProjectPages item={item} index={index} counter={counter} handlePageClicking={handlePageClicking} />
+            <ProjectPages item={item} index={index} counter={counter} handleAnchor={handleAnchor} />
 
           </TransPages>
           )
         })
       }
-    </Container>
+      </Container>
+      
   )
 
   return (<>

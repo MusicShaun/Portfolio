@@ -10,6 +10,7 @@ function BlurbMobile({item, handleAnchor}) {
       <LI>{item.text}</LI>
       <LI>
         <AA
+          
           target="_blank"
           href={item.url}
           onClick={handleAnchor}
