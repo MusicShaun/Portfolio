@@ -67,8 +67,8 @@ const Showcase = styled.div`
     max-width: 80vw;
     
   ${device.mobile} {
-    height: 40%;
     border-radius: 20px 20px 0 0 ;
+    max-width: 100%;
   }
 }
 `;

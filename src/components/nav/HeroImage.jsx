@@ -40,6 +40,15 @@ const Profile = styled.div`
   border: 2px solid ${colorWhite};
   overflow: hidden;
 
+  ${device.tablet} {
+      width: 11em; 
+      height: 11em; 
+    }
+    ${device.mobile} {
+      width: 8rem; 
+      height: 8rem; 
+    }
+
   & img {
     width: 140%;
     height: 140%;
