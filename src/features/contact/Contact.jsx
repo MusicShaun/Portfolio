@@ -32,10 +32,12 @@ export default function About(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Get in touch with Shaun</title>
-        <meta name="Contact Form" content="Feel free to get in touch or hit me up for a coffee" />
+        <meta name="description" content="Feel free to get in touch or hit me up for a coffee" />
         <link rel='canonical' href='https://www.shaunpickett.com/contact' />
       </Helmet>
-
+      <h1 style={{ position: 'absolute', visibility: 'hidden' }}>Get in touch with me </h1>
+      <h2 style={{ position: 'absolute', visibility: 'hidden' }}>Fill out the form and I will get back to you asap!</h2>
+      
       <Container>
         <IFrameContainer>
         {props.onlyWidth > 500 ? loading && <Loader /> : mobileLoading && <Loader />}

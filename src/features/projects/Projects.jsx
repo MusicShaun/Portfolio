@@ -103,9 +103,12 @@ export default function Skills(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
-        <meta name="Take a look at Shaun's projects" content="Each project is made from the ground up, starting from the most recent" />
+        <meta name="description" content="Each project is made from the ground up, starting from the most recent" />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />
       </Helmet>
+
+      <h1 style={{ position: 'absolute', visibility: 'hidden' }}>View my recent projects</h1>
+      <h2  style={{ position: 'absolute', visibility: 'hidden' }}>Each one carefully crafted from the ground up</h2>
 
     {loading && <Loader /> }
 

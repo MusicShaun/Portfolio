@@ -74,9 +74,12 @@ export default function Skills() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Shaun's Resume and skills</title>
-        <meta name="Shaun's CV" content="View or Download Shauns CV here" />
+        <meta name="description" content="View or Download Shauns CV here" />
         <link rel='canonical' href='https://www.shaunpickett.com/skills' />
       </Helmet>
+
+      <h1 style={{ position: 'absolute', visibility: 'hidden' }}>View my skills and CV </h1>
+      <h2  style={{ position: 'absolute', visibility: 'hidden' }}>You can download the CV by clicking the button</h2>
 
     {loading && <Loader />}
     <BoxWrap>
@@ -155,7 +158,9 @@ export default function Skills() {
             </UL>
           </Containers>
       </Box>
-    </BoxWrap>
+      </BoxWrap>
+      
+
   </Wrapper>
   )
 }

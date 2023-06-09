@@ -43,10 +43,13 @@ export default function Home (props) {
     <Helmet>
         <meta charSet="utf-8" />
         <title>Welcome to Shaun Pickett's Portfolio</title>
-        <meta name="Shaun Pickett's Portfolio" content="Front End Developer & Musical extraordinaire"
+        <meta name="description" content="Front End Developer & Musical extraordinaire"
     />  <link rel='canonical' href='https://www.shaunpickett.com/' />
       </Helmet>
 
+      <h1 style={{ position: 'absolute', visibility: 'hidden' }}>Welcome to Shaun's Portfolio</h1>
+      <h2  style={{ position: 'absolute', visibility: 'hidden' }}>Front End Developer & Musical extraordinaire</h2>
+      
     <BorderClose/>
       <Container>
         <Text>

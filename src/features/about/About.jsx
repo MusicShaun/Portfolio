@@ -97,9 +97,11 @@ return () => clearInterval(timer)
       <Helmet>
         <meta charSet="utf-8" />
         <title>About Shaun Pickett</title>
-        <meta name="About Shaun Pickett" content="A brief biography of how Shaun left the music industry and became a developer" />
+        <meta name="description" content="A brief biography of how Shaun left the music industry and became a developer" />
         <link rel='canonical' href='https://www.shaunpickett.com/about' />
       </Helmet>
+      <h1 style={{ position: 'absolute', visibility: 'hidden' }}>My biography</h1>
+      <h2  style={{ position: 'absolute', visibility: 'hidden' }}>How I got into front end development</h2>
 
     <BareBack />
         {loading && <Loader /> }
