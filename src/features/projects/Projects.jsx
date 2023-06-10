@@ -114,8 +114,8 @@ export default function Skills(props) {
         <title>See Shaun's Projects </title>
         <meta property='og:title' content='See Shauns Projects' />
         <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1680132772/columns_x8ilzq.png' />
-        <meta property='og:description' content='A React component that displays a collection of project pages and allows navigation through them using touch or scroll events.' />
-        <meta name="description" content="A React component that displays a collection of project pages and allows navigation through them using touch or scroll events." />
+        <meta property='og:description' content="Browse through Shaun's collection of projects. Use scroll to navigate" />
+        <meta name="description" content="Browse through Shaun's collection of projects. Use scroll to navigate." />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />
         <meta property='og:url' content='https://www.shaunpickett.com/projects' />
       </Helmet>

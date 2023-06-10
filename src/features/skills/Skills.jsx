@@ -76,8 +76,8 @@ export default function Skills() {
         <title>Shaun's Resume and skills</title>
         <meta property='og:title' content="Shaun's Resume and skills" />
         <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1686370752/Screenshot_2023-06-10_at_12.19.04_pm_ib2s0p.png' />
-        <meta property='og:description' content="View or download Shaun's CV and explore his skills. Get insights into his professional experience, accomplishments, and more." />
-        <meta name="description" content="View or download Shaun's CV and explore his skills. Get insights into his professional experience, accomplishments, and more." />
+        <meta property='og:description' content="View or download Shaun's CV and explore his skills. Get insights into his professional experience and accomplishments." />
+        <meta name="description" content="View or download Shaun's CV and explore his skills. Get insights into his professional experience and  accomplishments." />
         <link rel='canonical' href='https://www.shaunpickett.com/skills' />
         <meta property='og:url' content='https://www.shaunpickett.com/skills' />
       </Helmet>

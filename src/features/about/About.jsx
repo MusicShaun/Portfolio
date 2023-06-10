@@ -99,8 +99,8 @@ return () => clearInterval(timer)
         <title>About Shaun Pickett</title>
         <meta property="og:title" content="About Shaun Pickett" />
         <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1685866919/eyes_tbgcjy.webp" />
-        <meta property="og:description" content="A React component representing the About page of Shaun Pickett's portfolio website. This page provides a biography and information about how Shaun got into front-end development." />
-        <meta name="description" content="A React component representing the About page of Shaun Pickett's portfolio website. This page provides a biography and information about how Shaun got into front-end development." />
+        <meta property="og:description" content="A brief biography and information about how Shaun got into front-end development." />
+        <meta name="description" content="A brief biography and information about how Shaun got into front-end development." />
         <link rel='canonical' href='https://www.shaunpickett.com/about' />
         <meta property="og:url" content="https://www.shaunpickett.com/about" />
       </Helmet>
