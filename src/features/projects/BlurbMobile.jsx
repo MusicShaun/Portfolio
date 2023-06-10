@@ -78,8 +78,14 @@ const Headings = styled.div`
     padding-bottom: 1rem;
   }
 `;
-const LI = styled.li`
+const LI = styled.div`
+display: flex;
+flex-direction: row;
   font-size: 1.8rem;
+  height: 48px;  
+  gap: 1rem;
+
+
   ${device.desktop}{
     font-size: 1.2rem;
   }
@@ -92,12 +98,17 @@ const LI = styled.li`
 const AA = styled.a`
   color:inherit;
   text-decoration: none;
+  min-height: 48px;
+  min-width: 76px;
 `;
 const Butty = styled.button`
   font-size: 1.8rem;
   border-radius: 10px;
   border: solid 2.2px ${colorBlack};
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  min-width: 88px;
+  min-height: 48px;
   cursor: pointer;
   transition: all 0.1;
   z-index: 100;
@@ -108,7 +119,6 @@ const Butty = styled.button`
     font-size: 1.2rem;
   }
   ${device.mobile}{
-    padding: 1rem;
     margin-top: 2rem;
   }
 `;
