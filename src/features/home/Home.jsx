@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { flipInX } from 'react-animations';
 import { device } from '../../helpers/screenSizes';
 import GetInTouch from '../../components/GetInTouch';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 
 const animator = keyframes`${flipInX}`;
@@ -43,7 +43,7 @@ export default function Home (props) {
     <Helmet>
         <meta charSet="utf-8" />
         <title>Welcome to Shaun Pickett's Portfolio</title>
-        <meta name="description" content="A React component representing Shaun Pickett's portfolio website homepage. It showcases his skills as a front-end developer and musical extraordinaire."
+        <meta name="description" content="Check out my portfolio and let's build something amazing together."
     />  <link rel='canonical' href='https://www.shaunpickett.com/' />
       </Helmet>
 

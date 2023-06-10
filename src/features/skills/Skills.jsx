@@ -4,7 +4,7 @@ import { device } from '../../helpers/screenSizes';
 import Loader from '../../components/Loader';
 import React, { useEffect , useState } from 'react';
 import PDFIcon from '../../img/download-pdf.png'
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function Skills() {
   const [loading, setLoading] = useState(true);

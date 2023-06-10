@@ -4,7 +4,7 @@ import { colorCream } from '../../helpers/colors';
 import Loader from '../../components/Loader';
 import React,{ useEffect , useState } from 'react';
 import { device } from '../../helpers/screenSizes';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function About(props) {
   

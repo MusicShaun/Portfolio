@@ -5,7 +5,7 @@ import Loader from '../../components/Loader';
 import React, { useEffect , useState, useCallback } from 'react';
 import imageArray from './projectArray';
 import throttle from 'lodash.throttle';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import ProjectPages from './ProjectPages';
 
 export default function Skills(props) {

@@ -6,7 +6,7 @@ import React, { useState, useEffect, useRef} from 'react';
 import Loader from '../../components/Loader';
 import AboutBackground from './AboutBackground';
 import arrow from '../../img/arrow.png';
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function About (props) {
   const [pageSize, setPageSize] = useState(0);
