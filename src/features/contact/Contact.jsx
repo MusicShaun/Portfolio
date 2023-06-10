@@ -32,8 +32,12 @@ export default function About(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Get in touch with Shaun</title>
+        <meta property='og:title' content='Get in touch with Shaun' />
+        <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio_mexfvi.png" />
+        <meta property='og:description' content='Contact page with a form and location map. Get in touch with Shaun by filling out the form. Contact information and directions are provided on this page.' />
         <meta name="description" content="Contact page with a form and location map. Get in touch with Shaun by filling out the form. Contact information and directions are provided on this page." />
         <link rel='canonical' href='https://www.shaunpickett.com/contact' />
+        <meta property='og:url' content='https://www.shaunpickett.com/contact' />
       </Helmet>
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>Get in touch with me </h1>
       <h2 style={{ position: 'absolute', visibility: 'hidden' }}>Fill out the form and I will get back to you asap!</h2>

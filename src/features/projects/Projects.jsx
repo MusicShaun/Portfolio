@@ -112,8 +112,12 @@ export default function Skills(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
+        <meta property='og:title' content='See Shauns Projects' />
+        <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1680132772/columns_x8ilzq.png' />
+        <meta property='og:description' content='A React component that displays a collection of project pages and allows navigation through them using touch or scroll events.' />
         <meta name="description" content="A React component that displays a collection of project pages and allows navigation through them using touch or scroll events." />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />
+        <meta property='og:url' content='https://www.shaunpickett.com/projects' />
       </Helmet>
 
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>View my recent projects</h1>
