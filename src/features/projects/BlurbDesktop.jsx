@@ -36,15 +36,18 @@ export default BlurbDesktop
 
 
 const UL = styled.ul`
+  ${device.mobile}{
+    display: none;
+  }
   width: 34%;
-  height: 50%;
+  height: fit-content;
   background-color: white;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 3rem;
-  padding-left: 3rem;
+
+  padding: 0 3rem 3rem;
 
   transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
   transition-delay: 1.11s;
@@ -55,9 +58,7 @@ const UL = styled.ul`
   } 65% { transform: translateX(200%);
   }100% {transform: translateX(0%);
   }}
-  ${device.mobile} {
-    display: none;
-  }
+
 `;
 
 const Headings = styled.div`
@@ -71,37 +72,42 @@ const Headings = styled.div`
   font-weight: 500;
   line-height: 3rem;
   padding-bottom: 2rem;
+  padding-top: 2rem;
+
   ${device.desktop}{
     font-size: 2.4rem;
   }
   ${device.laptopL}{
     font-size: 2rem;
   }
-  ${device.mobile} {
-    align-self: center;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 1rem;
-  }
+
 `;
-const LI = styled.li`
-  font-size: 1.8rem;
-  ${device.desktop}{
-    font-size: 1.2rem;
-  }
-  ${device.mobile} {
-    align-items: center;
-    list-style: none;
-    text-align: center;
+const LI = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-size: 1.1rem;
+  height: 48px;  
+  gap: 1rem;
+  align-items: center;
+  list-style: none;
+
+  &:last-child {
+    margin-top: 2rem;
   }
 `;
 const AA = styled.a`
   color:inherit;
   text-decoration: none;
+  min-height: 48px;
+  min-width: 76px;
 `;
 const Butty = styled.button`
   font-size: 1.8rem;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  min-width: 88px;
+  min-height: 48px;
   border: solid 2.2px ${colorBlack};
   padding: 1rem;
   cursor: pointer;

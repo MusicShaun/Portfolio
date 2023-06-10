@@ -38,23 +38,21 @@ const ULMOBILE = styled.ul`
   ${device.mobile} {
     background-color: white;
     flex-direction: column;
-    padding-right:1rem;
-    padding-left: 1rem;
     transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
     transition-delay: 1.11s;
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 0 0 15px 15px;
-    justify-content: center;
     align-items: center;
-    padding-top: 1rem;
+    padding: 0rem 1rem;
     border-top: 10px solid ${colorCream};
   }
 `;
 const Headings = styled.div`
   margin-left: 0.6rem;
-  font-size: 3.4rem;
+  padding: 0.5rem 0;
+  font-size: 2rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
@@ -62,38 +60,24 @@ const Headings = styled.div`
   margin-left: -1rem;
   font-weight: 500;
   line-height: 3rem;
-  padding-bottom: 2rem;
   user-select: none;
+  align-self: center;
+  text-align: center;
+  margin: 0;
 
-  ${device.desktop}{
-    font-size: 2.4rem;
-  }
-  ${device.laptopL}{
-    font-size: 2rem;
-  }
-  ${device.mobile} {
-    align-self: center;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 1rem;
-  }
+
 `;
 const LI = styled.div`
 display: flex;
 flex-direction: row;
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   height: 48px;  
   gap: 1rem;
 
-
-  ${device.desktop}{
-    font-size: 1.2rem;
-  }
-  ${device.mobile} {
     align-items: center;
     list-style: none;
     text-align: center;
-  }
+
 `;
 const AA = styled.a`
   color:inherit;
