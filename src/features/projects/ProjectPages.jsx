@@ -47,10 +47,14 @@ const Pages = styled.div`
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-out;
-  overflow-y: hidden;
+  
+  ${device.tablet }{
+
+  }
   ${device.mobile}{
     border: 10px solid ${colorCream};
     border-radius: 30px;
+
   }
 `;
 const Showcase = styled.div`
@@ -83,9 +87,12 @@ const Blurb = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   transform: translateX(72%);
+  margin-top: 32px;
+
   ${device.mobile} {
     position: relative;
     height: 60%;
     transform: translateX(0%);
+    margin-top: 0;
   }
   `;

@@ -107,6 +107,10 @@ const NavigationPane = styled.div`
   height: 50%;
   max-height: 450px;
   padding-top: 1rem;
+
+  ${device.tablet} {
+    padding-top: 0;
+  }
 `;
 const UnorderedList = styled.ul`
   list-style: none;
@@ -156,7 +160,7 @@ const ListItem = styled.li`
     }
   ${device.mobile} {
     font-size: 1.7rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0.5rem;
   }
   & h3 {
     margin: 0px;

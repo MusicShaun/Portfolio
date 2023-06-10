@@ -140,7 +140,6 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   color:${colorBlack} ;
-  overflow-x: hidden;
 `;
 const Container = styled.div`
   position: relative;
