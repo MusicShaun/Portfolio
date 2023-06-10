@@ -10,8 +10,12 @@ body {
 
 }
 * {
-  font-family: 'Poppins', 'IBM plex sans', 'ariel';
+  font-family:  'Poppins', 'sans-serif', 'Helvetica';
+  
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+p, div {
+  /* font-weight: 400; */
 }
 
