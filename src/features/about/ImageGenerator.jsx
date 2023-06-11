@@ -31,13 +31,13 @@ function ImageGenerator({publicId, alt}) {
     .format('webp')
     .quality('auto:good')
     
-
+  console.log(imagePath)
 
   return (
     <AdvancedImage
       cldImg={myImage}
       alt={alt} 
-      plugins={[ responsive({ steps: [200] })]}
+      plugins={imagePath === 'portfolio' ? [ responsive({ steps: [1200, 1600] })] : [ responsive({ steps: [600, 800, 1000] })]}
       />
   )
 }

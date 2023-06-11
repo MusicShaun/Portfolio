@@ -64,6 +64,12 @@ const Showcase = styled.div`
   display: flex;
   border-radius: 20px;
 
+  ${device.mobile} {
+    border-radius: 20px 20px 0 0 ;
+    max-width: 100%;
+    height: 70%;
+  }
+
   & img {
     border-radius: 20px;
     height: 100%;
@@ -71,11 +77,13 @@ const Showcase = styled.div`
     object-fit: cover;
     max-width: 80vw;
     user-select: none;
-    
-  ${device.mobile} {
-    border-radius: 20px 20px 0 0 ;
+
+    ${device.mobile} {
     max-width: 100%;
+    border-radius: 20px 20px 0 0 ;
+
   }
+  
 }
 `;
 const Blurb = styled.div`
