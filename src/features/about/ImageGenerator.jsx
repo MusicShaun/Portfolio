@@ -1,11 +1,14 @@
-import {AdvancedImage, responsive, placeholder} from '@cloudinary/react';
-import React from 'react'
+import {AdvancedImage, responsive, placeholder, lazyload} from '@cloudinary/react';
+import React, {useState, useEffect} from 'react'
 import { Cloudinary } from '@cloudinary/url-gen';
 
 
 
 function ImageGenerator({publicId, alt}) {
   
+  const [imagePath, setImagePath] = useState('');
+
+
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'dyneqi48f'
@@ -15,22 +18,26 @@ function ImageGenerator({publicId, alt}) {
     }
   }); 
 
-  const quality = publicId.includes(
-    'profile-pic')
-    ? '100'
-    : 'auto:good';
+  useEffect(() => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+    const path = isMobile ? 'portfolio-mobile' : 'portfolio';
+    setImagePath(path);
+  }, []);
 
-  const myImage = cld.image(`portfolio/${publicId}`)
-    .format('auto')
-    .quality(quality);
-  
-  // lazyload ({rootMargin: '0px', threshold: 0.25}), placeholder ('blur'), 
-  
+
+  const myImage = cld.image(`${imagePath}/${publicId}`)
+    .format('webp')
+    .quality('auto:good')
+    
+
+
   return (
     <AdvancedImage
       cldImg={myImage}
       alt={alt} 
-      plugins={[ placeholder (),responsive({ steps: 100 })]}
+      plugins={[ responsive({ steps: [200] })]}
       />
   )
 }
