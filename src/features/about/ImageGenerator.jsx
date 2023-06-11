@@ -9,15 +9,18 @@ function ImageGenerator({publicId, alt}) {
   const cld = new Cloudinary({
     cloud: {
       cloudName: 'dyneqi48f'
+    },
+    url: {
+      secure: true
     }
   }); 
 
   const quality = publicId.includes(
-    'big-stage') || publicId.includes('behind-booth')
+    'profile-pic')
     ? '100'
-    : 'auto';
+    : 'auto:good';
 
-  const myImage = cld.image(publicId)
+  const myImage = cld.image(`portfolio/${publicId}`)
     .format('auto')
     .quality(quality);
   

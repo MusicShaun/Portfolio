@@ -4,13 +4,19 @@ import React from 'react'
 import ImageGenerator from '../../features/about/ImageGenerator';
 import { colorWhite } from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
+import { useMemo } from 'react';
 
 function HeroImage() {
+
+  const DontWantTheProfilePictureToRefetchWhenNavigating = useMemo(() => (
+    <ImageGenerator publicId='profile-pic_sbcjkf' alt='Shaun Pickett' />
+  ), [])
+
   return (
     <Hero> 
     <Link to='/' style={{textDecoration: 'none'}}>
       <Profile>
-        <ImageGenerator publicId='profile-pic_sbcjkf' alt='Shaun Pickett' />
+        {DontWantTheProfilePictureToRefetchWhenNavigating }
       </Profile>
     </Link> 
     <Name>Shaun Pickett</Name>

@@ -12,9 +12,15 @@ function NavFooter({handleIconHover, deleteIconHover}) {
 
   return (
     <Footer>
-      <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover}><img src={LinkedInIcon} alt='Connect with me on Linked In' /></FootList>
-    <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}><img  src={GithubIcon} alt='View my Github' />  </FootList>
-    <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)} ><img src={InstagramIcon} alt='Visit me on Instagram'/> </FootList>
+      <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover} 
+      href='https://www.linkedin.com/in/shaun-pickett/' target='_blank'>
+        <img src={LinkedInIcon} alt='Connect with me on Linked In' /></FootList>
+      <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}
+        href='https://github.com/MusicShaun' target='_blank'>
+        <img src={GithubIcon} alt='View my Github' />  </FootList>
+      <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)}
+      href='https://www.instagram.com/shaun.picketty/' target='_blank'>
+        <img src={InstagramIcon} alt='Visit me on Instagram' /> </FootList>
   </Footer>
   )
 }
@@ -36,7 +42,7 @@ const Footer = styled.div`
     gap: 3rem;
   }
 `;
-const FootList = styled.div`
+const FootList = styled.a`
   position: relative;
   margin-bottom: 1rem;
   padding-top: 0.7rem;
