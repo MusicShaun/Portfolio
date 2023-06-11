@@ -5,7 +5,7 @@ import { device } from '../../helpers/screenSizes';
 
 function BlurbMobile({item, handleAnchor}) {
   return (
-    <ULMOBILE style={{ backgroundColor: '#F2BC8D' }}>
+    <ULMOBILE style={{ backgroundColor:  'hsla(40, 3%, 17%, 90%)' }}>
       <Headings>{item.title}</Headings>
       <LI style={{userSelect: 'none'}}>{item.text}</LI>
       <LI>
@@ -36,23 +36,22 @@ export default BlurbMobile
 const ULMOBILE = styled.ul`
   display: none;
   ${device.mobile} {
-    background-color: white;
     flex-direction: column;
     transition: all 0.5s cubic-bezier(.23,1.15,.41,1.11);
     transition-delay: 1.11s;
     display: flex;
     width: 100%;
     height: 100%;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 10px 10px;
     align-items: center;
+    justify-content: space-between;
     padding: 0rem 1rem;
-    border-top: 10px solid ${colorCream};
+    color: ${colorCream};
   }
 `;
 const Headings = styled.div`
-  margin-left: 0.6rem;
-  padding: 0.5rem 0;
-  font-size: 2rem;
+  padding: 0rem 0;
+  font-size: 1.8rem;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
@@ -70,25 +69,34 @@ const Headings = styled.div`
 const LI = styled.div`
 display: flex;
 flex-direction: row;
-  font-size: 1.1rem;
-  height: 48px;  
-  gap: 1rem;
+  font-size: 1rem;
+  height: 40px;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  text-align: center;
 
-    align-items: center;
-    list-style: none;
-    text-align: center;
-
+  &:nth-child(2) {
+    user-select: none;
+  }
 `;
 const AA = styled.a`
+display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   color:inherit;
   text-decoration: none;
-  min-height: 48px;
+  height: 150%;
   min-width: 76px;
+  margin-bottom: 1.5rem;
 `;
 const Butty = styled.button`
   font-size: 1.8rem;
   border-radius: 10px;
-  border: solid 2.2px ${colorBlack};
+  border: solid 2.2px ${colorCream};
+  color: ${colorSand};
+  background-color: ${colorBlack};
   width: 100%;
   height: 100%;
   min-width: 88px;

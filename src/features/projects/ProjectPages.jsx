@@ -44,44 +44,46 @@ const Pages = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 98%;
   height: 100%;
   transition: transform 0.3s ease-out;
   
   ${device.tablet }{
-
+    border-radius: 10px;
   }
-  ${device.mobile}{
-    border: 10px solid ${colorCream};
-    border-radius: 30px;
 
-  }
 `;
 const Showcase = styled.div`
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
-  border-radius: 20px;
+  align-items: flex-start;
+  border-radius: 0px;
 
-  ${device.mobile} {
-    border-radius: 20px 20px 0 0 ;
+  ${device.tablet} {
+    border-radius: 10px  ;
     max-width: 100%;
-    height: 70%;
+    height: 100%;
   }
 
   & img {
-    border-radius: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
     height: 100%;
     width: 100%;
     object-fit: cover;
     max-width: 80vw;
     user-select: none;
 
-    ${device.mobile} {
-    max-width: 100%;
-    border-radius: 20px 20px 0 0 ;
-
+    ${device.tablet} {
+    position: absolute;
+    max-width: none;
+    border-radius: 10px ;
+    top: 0;
+    
   }
   
 }
@@ -97,10 +99,10 @@ const Blurb = styled.div`
   transform: translateX(72%);
   margin-top: 32px;
 
-  ${device.mobile} {
-    position: relative;
-    height: 60%;
+  ${device.tablet} {
+    border-radius: 10px;
+    height: 34%;
     transform: translateX(0%);
-    margin-top: 0;
+    bottom: 0;
   }
   `;

@@ -1,6 +1,7 @@
-import {AdvancedImage, responsive, placeholder, lazyload} from '@cloudinary/react';
+import {AdvancedImage, responsive } from '@cloudinary/react';
 import React, {useState, useEffect} from 'react'
 import { Cloudinary } from '@cloudinary/url-gen';
+import { fill, scale } from '@cloudinary/url-gen/actions/resize';
 
 
 
@@ -26,18 +27,22 @@ function ImageGenerator({publicId, alt}) {
     setImagePath(path);
   }, []);
 
+  const resizeAction = imagePath === 'portfolio'
+  ? scale().width(0.99)
+  : fill().height(0.99).gravity('north');
 
   const myImage = cld.image(`${imagePath}/${publicId}`)
     .format('webp')
-    .quality('auto:good')
-    
-  console.log(imagePath)
+    .quality('auto:good')    
+    .resize(resizeAction)
 
   return (
     <AdvancedImage
       cldImg={myImage}
       alt={alt} 
-      plugins={imagePath === 'portfolio' ? [ responsive({ steps: [1200, 1600] })] : [ responsive({ steps: [600, 800, 1000] })]}
+      plugins={imagePath === 'portfolio' ?
+        [responsive({ steps: [1200, 1600] })]
+        : [responsive({ steps: [600, 800, 1000] })]}
       />
   )
 }

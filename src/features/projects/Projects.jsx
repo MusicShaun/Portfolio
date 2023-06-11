@@ -161,7 +161,11 @@ const TransPages = styled.div`
   transition: transform 1s cubic-bezier(.23,1.15,.41,1.11);
 &:first-child {
   margin-top: 5vh !important;
+}
 
+${device.tablet}{
+  display: flex;
+  justify-content: center;
 }
 animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
 /* animation-delay: 0.3s; */
@@ -169,10 +173,9 @@ animation: onLoad 1s cubic-bezier(.23,1.15,.41,1.11);
   from { transform: translateY(100%);
   } to {transform: translateY(0%);
   }}
-  ${device.mobile} {
+  ${device.tablet} {
     min-width: 100%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+
   }
 `;
 
