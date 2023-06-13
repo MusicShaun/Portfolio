@@ -6,7 +6,7 @@ import { colorWhite} from "../../helpers/colors";
 import { aboutTextArray } from "./AboutTextArray";
 import ImageGenerator from "./ImageGenerator";
 import React from 'react';
-
+import { ABOUT_IMGS } from "@helpers/images";
 
 const flipIt =  keyframes`${flipInX}`;
 const left_flip_class = {
@@ -42,7 +42,7 @@ export default function AboutText (props) {
       <Opener>{aboutTextArray[0]}</Opener>
       <Stage>
         <div style={{ transform: `translateY(${-1.65 * scrollState}px)` }}>
-          <ImageGenerator publicId='big-stage_emwqm8' alt='Shaun Pickett on stage'
+          <ImageGenerator publicId={ABOUT_IMGS.BIG_STAGE} alt='Shaun Pickett on stage'
           />
         </div>
       </Stage>  
@@ -55,12 +55,12 @@ export default function AboutText (props) {
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
         <Rect><RightFlip style={picSlide > 3 ? left_flip_class : animation_off}>
-          <ImageGenerator publicId='belvoire' alt='Command q performing in perth' />
+          <ImageGenerator publicId={ABOUT_IMGS.BELVOIRE} alt='Command q performing in perth' />
         </RightFlip></Rect>
       </Right>  
       <Left>
         <Square><LeftFlip style={picSlide > 4 ? left_flip_class : animation_off}>
-          <ImageGenerator publicId='studio_r6hmkd' alt='mastering studio' />
+          <ImageGenerator publicId={ABOUT_IMGS.STUDIO} alt='mastering studio' />
 
         </LeftFlip></Square>
         <LeftText>{aboutTextArray[2]}
@@ -70,7 +70,7 @@ export default function AboutText (props) {
         <RightText style={{textAlign: 'center', width: '30%'}}>{aboutTextArray[4]}</RightText>
         <Square>
           <RightFlip style={picSlide > 6 ? left_flip_class : animation_off}>
-            <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
+            <ImageGenerator publicId={ABOUT_IMGS.CORONA} alt='covid in cartoon' />
           </RightFlip>
         </Square>
       </Right>  
@@ -82,7 +82,7 @@ export default function AboutText (props) {
     <Page style={{top: '155%'}}><section>
       <Left>
       <Rect ><LeftFlip style={{...(picSlide > 21 ? left_flip_class : animation_off), backgroundPosition: 'top' }}>
-      <ImageGenerator publicId='decks_aiguch' alt='no drinks on the fucking decks' />
+      <ImageGenerator publicId={ABOUT_IMGS.DECKS} alt='no drinks on the fucking decks' />
 
         </LeftFlip>
       </Rect>
@@ -91,14 +91,14 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[6]}</RightText>
       <Square> <RightFlip style={picSlide > 22 ? left_flip_class : animation_off}>
-      <ImageGenerator publicId='party_zeaz8u' alt='command q party in queensland' />
+      <ImageGenerator publicId={ABOUT_IMGS.PARTY} alt='command q party in queensland' />
 
           </RightFlip>
       </Square>
       </Right>
       <Left>
       <Square><LeftFlip style={picSlide > 24 ? left_flip_class : animation_off}>
-      <ImageGenerator publicId='vscode_hmnal5' alt='vscode' />
+          <ImageGenerator publicId={ABOUT_IMGS.VSCODE}  alt='vscode' />
 
         </LeftFlip>
       </Square>
@@ -112,14 +112,14 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[8]}</RightText>
       <Square><RightFlip style={{ filter: 'brightness(1.2) contrast(1.2) ', ...(picSlide > 50 ? left_flip_class : animation_off) }}>
-      <ImageGenerator publicId='onTheCar2_rwrwu5' alt='monsoon moon doing yoga' />
+      <ImageGenerator publicId={ABOUT_IMGS.ONTHECAR} alt='monsoon moon doing yoga' />
 
           </RightFlip>
       </Square>
       </Right>
       <Left>
       <Square><LeftFlip  style={picSlide > 50 ? left_flip_class : animation_off}>
-      <ImageGenerator publicId='eyes_tbgcjy' alt='monsoon moon album artwork' />
+      <ImageGenerator publicId={ABOUT_IMGS.EYES} alt='monsoon moon album artwork' />
 
         </LeftFlip>
       </Square>
@@ -129,7 +129,7 @@ export default function AboutText (props) {
       <Right>
       <RightText>{aboutTextArray[10]}</RightText>
       <Square><RightFlip  style={picSlide > 52 ? left_flip_class : animation_off}>
-      <ImageGenerator publicId='sarcastic_uapm6i' alt='command q album cover' />
+      <ImageGenerator publicId={ABOUT_IMGS.SARCASTIC} alt='command q album cover' />
 
           </RightFlip>
       </Square>
@@ -143,7 +143,7 @@ export default function AboutText (props) {
       <br />{aboutTextArray[12]}<br /> 
       {aboutTextArray[13]}</LeftText>
       <ClosingImg style={{ backgroundPositionY: `-${(pageHeight - (scrollState - 100))}px` }}>
-      <ImageGenerator publicId='behind-booth_jsjn9q' alt='command q in perth bunbury' />
+      <ImageGenerator publicId={ABOUT_IMGS.BEHIND_BOOTH} alt='command q in perth bunbury' />
       </ClosingImg>
     </ClosingPage> </Page>
 

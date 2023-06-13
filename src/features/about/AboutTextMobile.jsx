@@ -5,6 +5,7 @@ import { device } from '../../helpers/screenSizes';
 import { aboutTextArray } from "./AboutTextArray";
 import ImageGenerator from "./ImageGenerator";
 import React from 'react';
+import { ABOUT_IMGS } from "@helpers/images";
 
 export default function AboutText (props) {
 
@@ -16,7 +17,7 @@ export default function AboutText (props) {
     <Stage>
       <Hone>{aboutTextArray[0]}</Hone>
         <Shots >
-          <ImageGenerator publicId='big-stage_emwqm8' alt='Shaun Pickett on stage' />
+          <ImageGenerator publicId={ABOUT_IMGS.BIG_STAGE} alt='Shaun Pickett on stage' />
         </Shots>
     </Stage>
 
@@ -29,7 +30,7 @@ export default function AboutText (props) {
 
       <ContainerRect>
         <Flip >
-              <ImageGenerator publicId='belvoire' alt='Command q performing in perth' />
+              <ImageGenerator publicId={ABOUT_IMGS.BELVOIRE} alt='Command q performing in perth' />
             </Flip>
       </ContainerRect>      <Cleaner /></Partition>
 
@@ -40,7 +41,7 @@ export default function AboutText (props) {
         <br />{aboutTextArray[3]}</Text>
       <ContainerSquare>
         <Flip>
-              <ImageGenerator publicId='studio_r6hmkd' alt='mastering studio' />
+              <ImageGenerator publicId={ABOUT_IMGS.STUDIO} alt='mastering studio' />
             </Flip>
       </ContainerSquare>      <Cleaner />
       </Partition>
@@ -51,7 +52,7 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[4]}</Text>
       <ContainerSquare >
             <Flip >
-              <ImageGenerator publicId='corona_k34bil' alt='covid in cartoon' />
+              <ImageGenerator publicId={ABOUT_IMGS.CORONA} alt='covid in cartoon' />
             </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -61,7 +62,7 @@ export default function AboutText (props) {
       <Text >{aboutTextArray[5]}</Text>  
       <ContainerRect >
         <Flip >
-          <ImageGenerator publicId='decks_aiguch' alt='no drinks on the fucking decks' />
+          <ImageGenerator publicId={ABOUT_IMGS.DECKS} alt='no drinks on the fucking decks' />
           </Flip>
       </ContainerRect>      <Cleaner />
       </Partition>
@@ -73,7 +74,7 @@ export default function AboutText (props) {
 
       <ContainerSquare>
         <Flip>
-              <ImageGenerator publicId='party_zeaz8u' alt='command q party in queensland'  />
+              <ImageGenerator publicId={ABOUT_IMGS.PARTY} alt='command q party in queensland'  />
             </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -83,7 +84,7 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[7]}<br /></Text>
         <ContainerSquare>
         <Flip >
-              <ImageGenerator publicId='vscode_hmnal5' alt='vscode' />
+              <ImageGenerator publicId={ABOUT_IMGS.VSCODE} alt='vscode' />
             </Flip>
       </ContainerSquare>      <Cleaner />
       </Partition>
@@ -94,7 +95,7 @@ export default function AboutText (props) {
       
       <ContainerSquare>
             <Flip style={{ filter: 'brightness(1.2) contrast(1.2)' }}>
-              <ImageGenerator publicId='onTheCar2_rwrwu5' alt='monsoon moon doing yoga' />
+              <ImageGenerator publicId={ABOUT_IMGS.ONTHECAR} alt='monsoon moon doing yoga' />
               </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -104,7 +105,7 @@ export default function AboutText (props) {
       <Text>{aboutTextArray[9]}</Text>
         <ContainerSquare>
         <Flip >
-        <ImageGenerator publicId='eyes_tbgcjy' alt='monsoon moon album artwork' />
+        <ImageGenerator publicId={ABOUT_IMGS.EYES} alt='monsoon moon album artwork' />
         </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -114,7 +115,7 @@ export default function AboutText (props) {
 
       <ContainerSquare>   
         <Flip >
-        <ImageGenerator publicId='sarcastic_uapm6i' alt='command q album cover' />
+        <ImageGenerator publicId={ABOUT_IMGS.SARCASTIC} alt='command q album cover' />
         </Flip>
       </ContainerSquare>      <Cleaner /></Partition>
 
@@ -127,7 +128,7 @@ export default function AboutText (props) {
       {aboutTextArray[13]}     
           </Text>
       <Shot>
-      <ImageGenerator publicId='behind-booth_jsjn9q' alt='command q in perth bunbury' />
+      <ImageGenerator publicId={ABOUT_IMGS.BEHIND_BOOTH} alt='command q in perth bunbury' />
       </Shot>
 
     </Stage2>
