@@ -51,7 +51,6 @@ const Pages = styled.div`
   ${device.tablet }{
     border-radius: 10px;
   }
-
 `;
 const Showcase = styled.div`
   position: absolute;
@@ -61,29 +60,32 @@ const Showcase = styled.div`
   align-items: flex-start;
   border-radius: 0px;
 
+
   ${device.tablet} {
-    border-radius: 10px  ;
+    border-radius: 10px ;
     max-width: 100%;
     height: 100%;
   }
 
   & img {
-    position: relative;
     top: 0;
-    left: 0;
+
     border-radius: 10px;
     height: 100%;
-    width: 100%;
+    width: auto;
     object-fit: cover;
     max-width: 80vw;
     user-select: none;
 
     ${device.tablet} {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: none;
     border-radius: 10px ;
     top: 0;
-    
+    background-position: 0%;
+
   }
   
 }

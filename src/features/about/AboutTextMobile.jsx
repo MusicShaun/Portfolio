@@ -29,7 +29,7 @@ export default function AboutText (props) {
 
       <ContainerRect>
         <Flip >
-              <ImageGenerator publicId='Belvoire_e1mwb6' alt='Command q performing in perth' />
+              <ImageGenerator publicId='belvoire' alt='Command q performing in perth' />
             </Flip>
       </ContainerRect>      <Cleaner /></Partition>
 

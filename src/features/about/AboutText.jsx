@@ -55,7 +55,7 @@ export default function AboutText (props) {
       <Right>
         <RightText>{aboutTextArray[1]}</RightText>
         <Rect><RightFlip style={picSlide > 3 ? left_flip_class : animation_off}>
-          <ImageGenerator publicId='Belvoire_e1mwb6' alt='Command q performing in perth' />
+          <ImageGenerator publicId='belvoire' alt='Command q performing in perth' />
         </RightFlip></Rect>
       </Right>  
       <Left>

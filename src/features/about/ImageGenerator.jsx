@@ -35,6 +35,7 @@ function ImageGenerator({publicId, alt}) {
     .format('webp')
     .quality('auto:good')    
     .resize(resizeAction)
+  
 
   return (
     <AdvancedImage
