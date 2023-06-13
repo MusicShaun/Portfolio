@@ -8,7 +8,7 @@ import { fill, scale } from '@cloudinary/url-gen/actions/resize';
 function ImageGenerator({publicId, alt}) {
   
   const [imagePath, setImagePath] = useState('');
-
+  const [isLoading, setIsLoading] = useState(true);
 
   const cld = new Cloudinary({
     cloud: {
@@ -27,6 +27,12 @@ function ImageGenerator({publicId, alt}) {
     setImagePath(path);
   }, []);
 
+  useEffect(() => {
+    if (imagePath !== '') {
+      setIsLoading(false);
+    }
+  }, [imagePath]);
+
   const resizeAction = imagePath === 'portfolio'
   ? scale().width(0.99)
   : fill().height(0.99).gravity('north');
@@ -37,15 +43,17 @@ function ImageGenerator({publicId, alt}) {
     .resize(resizeAction)
   
 
-  return (
-    <AdvancedImage
-      cldImg={myImage}
-      alt={alt} 
-      plugins={imagePath === 'portfolio' ?
-        [responsive({ steps: [1200, 1600] })]
-        : [responsive({ steps: [600, 800, 1000] })]}
-      />
-  )
+  return (<>
+    {!isLoading && (
+      <AdvancedImage
+        cldImg={myImage}
+        alt={alt} 
+        plugins={imagePath === 'portfolio' ?
+          [responsive({ steps: [1200, 1600] })]
+          : [responsive({ steps: [600, 800, 1000] })]}
+        />
+      )}
+  </>)
 }
 
 export default ImageGenerator
