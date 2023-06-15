@@ -33,9 +33,9 @@ export default function Skills() {
   }
   const INTROBOX = {
     subHeading: ['PROFESSIONAL SUMMARY'],
-    list: [`         I am a highly passionate and collaborative team player with excellent communication skills. 
-    One who is always willing to learn new technologies and approaches.
-    I am adept at problem-solving and am constantly seeking news ways to optimize my code and processes. `,`
+    list: [`         I am a passionate and collaborative team player with strong communication skills.
+    My secret power is motivation!
+    Learning new technologies and approaches has always been a joy for me. `,`
     Currently, I'm looking for a role where I can continue to grow and build my long term career. `
     ],
   }
