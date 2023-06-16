@@ -42,11 +42,11 @@ export default function Navigation(props) {
   }
 
   const navigationMenuArray = [
-    { name: 'Home', link: '/', image: HomeICON, alt: 'Navigate to Home', delay: '5s', title: 'Go to Home Page'},
-    { name: 'About', link: '/about', image: AboutICON, alt: 'Navigate to About', delay: '6s' , title: 'Go to About Page'},
-    { name: 'Projects', link: '/projects', image: ProjectsICON, alt: 'Navigate to Projects', delay: '7s', title: 'Go to Projects Page' },
-    { name: 'Skills', link: '/skills', image: SkillsICON, alt: 'Navigate to Skills' , delay: '8s', title: 'Go to Skills Page'},
-    { name: 'Contact', link: '/contact', image: ContactICON , alt: 'Navigate to Contact', delay: '10s', title: 'Go to Contact Page'}
+    { name: 'Home', link: '/', image: HomeICON, alt: 'Navigate to Home', delay: '5s', title: 'Go to Home Page', ariaLabel: "Navigate to Home"},
+    { name: 'About', link: '/about', image: AboutICON, alt: 'Navigate to About', delay: '6s' , title: 'Go to About Page', ariaLabel: "Navigate to About"},
+    { name: 'Projects', link: '/projects', image: ProjectsICON, alt: 'Navigate to Projects', delay: '7s', title: 'Go to Projects Page', ariaLabel: "Navigate to Projects" },
+    { name: 'Skills', link: '/skills', image: SkillsICON, alt: 'Navigate to Skills' , delay: '8s', title: 'Go to Skills Page', ariaLabel: "Navigate to Skills"},
+    { name: 'Contact', link: '/contact', image: ContactICON , alt: 'Navigate to Contact', delay: '10s', title: 'Go to Contact Page', ariaLabel: "Navigate to Contact"}
   ]
 
   const NavigationMenu =
@@ -54,7 +54,7 @@ export default function Navigation(props) {
     {navigationMenuArray.map((item, index) => {
       return (
         <ListItem>
-          <Link to={item.link} style={{ textDecoration: 'none' }} onClick={hideHamburger} key={index} title={item.title}>
+          <Link to={item.link} style={{ textDecoration: 'none' }} onClick={hideHamburger} key={index} title={item.title} aria-label={item.ariaLabel}>
             <Icons><img src={item.image} alt={item.alt} /></Icons>
             {item.name === 'Contact'
               ? <Contact>Contact</Contact>

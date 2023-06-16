@@ -16,16 +16,33 @@ export default function ContactForm() {
                     >
           <input type="hidden" name="form-name" value="contact" />          <Header>Hire me</Header>
           <Label htmlFor='name'>Name: <br/>
-            <Input type='text' name='name' id='name' placeholder='' required/>
+          <Input
+            type='text'
+            name='name'
+            id='name'
+            placeholder=''
+            required
+            aria-label="Your name"
+          />
           </Label>
           <Label htmlFor='email'>Email: <br />
-            <Input type='email' name='email' id='email' placeholder='' required/>
+          <Input
+            type='email'
+            name='email'
+            id='email'
+            placeholder=''
+            required
+            aria-label="Your email address"
+          />
           </Label>
           <Label htmlFor='message'>Message: <br />
               <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' 
                         name='message' id='message' required />
           </Label>
-          <Submit type='submit' title='This message will be sent to me and I will get back to you ASAP'>Send it!</Submit>
+        <Submit
+          type='submit'
+          title='This message will be sent to me and I will get back to you ASAP'
+        >Send it!</Submit>
 
         </FormCutOut>
     </Wrapper>

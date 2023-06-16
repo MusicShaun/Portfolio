@@ -13,13 +13,13 @@ function NavFooter({handleIconHover, deleteIconHover}) {
   return (
     <Footer>
       <FootList onMouseEnter={handleIconHover} onMouseLeave={deleteIconHover} 
-      href='https://www.linkedin.com/in/shaun-pickett/' target='_blank'>
+      href='https://www.linkedin.com/in/shaun-pickett/' target='_blank' aria-label="Go to Shaun's Linked In">
         <img src={LinkedInIcon} alt='Connect with me on Linked In' /></FootList>
       <FootList onMouseEnter={() => handleIconHover(2)} onMouseLeave={() => deleteIconHover(2)}
-        href='https://github.com/MusicShaun' target='_blank'>
+        href='https://github.com/MusicShaun' target='_blank' aria-label="Go to Shaun's GitHub">
         <img src={GithubIcon} alt='View my Github' />  </FootList>
       <FootList onMouseEnter={() => handleIconHover(3)} onMouseLeave={() => deleteIconHover(3)}
-      href='https://www.instagram.com/shaun.picketty/' target='_blank'>
+      href='https://www.instagram.com/shaun.picketty/' target='_blank' aria-label="Go to Shaun's Instagram">
         <img src={InstagramIcon} alt='Visit me on Instagram' /> </FootList>
   </Footer>
   )
