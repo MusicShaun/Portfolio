@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import React from 'react'
-import { colorBlack, colorSand,} from '../../helpers/colors';
+import { colorBlack, colorSand,colorCream} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 
 function BlurbDesktop({item, counter, index, handleAnchor}) {
   return (
     <UL
-      style={{
-        backgroundColor: item.color,
+      style={{backgroundColor:  'hsla(40, 3%, 17%, 90%)',
         transform: `${
           index !== counter ? 'translateX(150%)' : 'translateX(0%)'
         }`,
@@ -83,6 +82,7 @@ const Headings = styled.div`
   line-height: 3rem;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  color: white;
 
   ${device.desktop}{
     font-size: 2.4rem;
@@ -100,6 +100,7 @@ const LI = styled.div`
   gap: 1rem;
   align-items: center;
   list-style: none;
+  color: white;
 
   &:last-child {
     margin-top: 2rem;
@@ -118,7 +119,9 @@ const Butty = styled.button`
   height: 100%;
   min-width: 88px;
   min-height: 48px;
-  border: solid 2.2px ${colorBlack};
+  border: solid 2.2px ${colorCream};
+  color: ${colorSand};
+  background-color: ${colorBlack};
   padding: 1rem;
   cursor: pointer;
   transition: all 0.1;
