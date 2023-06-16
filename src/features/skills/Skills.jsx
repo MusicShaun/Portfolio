@@ -120,7 +120,7 @@ export default function Skills() {
             <PDFPreview src={PDFIcon} alt='Download PDF'></PDFPreview> 
           </PDFWrap>
             <DownloadBtn>
-              <a
+              <a title='Click here to download my resume as a PDF'
                 href='https://drive.google.com/file/d/1wTvSvoMMDYt7WUYRGqbRXEotUnlJlKSo/view?usp=sharing'
                 download='SHAUN-PICKETT-RESUME'
                 target="_blank" 

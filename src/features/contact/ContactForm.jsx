@@ -25,7 +25,7 @@ export default function ContactForm() {
               <Message  style={{height: '200px'}} placeholder='Ie. When are you free for a coffee? ' 
                         name='message' id='message' required />
           </Label>
-          <Submit type='submit' >Send it!</Submit>
+          <Submit type='submit' title='This message will be sent to me and I will get back to you ASAP'>Send it!</Submit>
 
         </FormCutOut>
     </Wrapper>

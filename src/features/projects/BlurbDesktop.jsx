@@ -18,11 +18,11 @@ function BlurbDesktop({item, counter, index, handleAnchor}) {
       <LI>{item.text}</LI>
 
       <LI style={{ display: 'flex', gap: '20px' }}>
-        <AA target="_blank" href={item.url} onClick={handleAnchor}>
+        <AA target="_blank" href={item.url} onClick={handleAnchor} title='Visit this website'>
           <Butty> Website</Butty>
         </AA>
         {item.sandbox
-          ? <AA target="_blank" href={item.sandbox}>
+          ? <AA target="_blank" href={item.sandbox} title='View this pages sandbox'>
             <Butty> Sandbox</Butty>
           </AA>
         : false

@@ -42,19 +42,19 @@ export default function Navigation(props) {
   }
 
   const navigationMenuArray = [
-    { name: 'Home', link: '/', image: HomeICON, alt: 'Navigate to Home', delay: '5s'},
-    { name: 'About', link: '/about', image: AboutICON, alt: 'Navigate to About', delay: '6s' },
-    { name: 'Projects', link: '/projects', image: ProjectsICON, alt: 'Navigate to Projects', delay: '7s' },
-    { name: 'Skills', link: '/skills', image: SkillsICON, alt: 'Navigate to Skills' , delay: '8s'},
-    { name: 'Contact', link: '/contact', image: ContactICON , alt: 'Navigate to Contact', delay: '10s'}
+    { name: 'Home', link: '/', image: HomeICON, alt: 'Navigate to Home', delay: '5s', title: 'Go to Home Page'},
+    { name: 'About', link: '/about', image: AboutICON, alt: 'Navigate to About', delay: '6s' , title: 'Go to About Page'},
+    { name: 'Projects', link: '/projects', image: ProjectsICON, alt: 'Navigate to Projects', delay: '7s', title: 'Go to Projects Page' },
+    { name: 'Skills', link: '/skills', image: SkillsICON, alt: 'Navigate to Skills' , delay: '8s', title: 'Go to Skills Page'},
+    { name: 'Contact', link: '/contact', image: ContactICON , alt: 'Navigate to Contact', delay: '10s', title: 'Go to Contact Page'}
   ]
 
   const NavigationMenu =
     <UnorderedList>
     {navigationMenuArray.map((item, index) => {
       return (
-        <Link to={item.link} style={{ textDecoration: 'none' }} onClick={hideHamburger} key={index}>
-          <ListItem>
+        <ListItem>
+          <Link to={item.link} style={{ textDecoration: 'none' }} onClick={hideHamburger} key={index} title={item.title}>
             <Icons><img src={item.image} alt={item.alt} /></Icons>
             {item.name === 'Contact'
               ? <Contact>Contact</Contact>
@@ -62,8 +62,8 @@ export default function Navigation(props) {
                 {item.name}
               </AnimationHolder>
             }
-          </ListItem>
-        </Link>
+          </Link>
+        </ListItem>
       )
     })
   }
@@ -140,7 +140,6 @@ const ListItem = styled.li`
   font-size: 1.4rem;
   font-weight: 500;
   color: white;
-  gap: 1rem;
   text-decoration: none;
   transition: all 0.1s ease-out;
   &:hover {
@@ -161,6 +160,12 @@ const ListItem = styled.li`
   ${device.mobile} {
     font-size: 1.7rem;
     margin-bottom: 0.5rem;
+  }
+
+  & a {
+    display: flex;
+    color: inherit;
+    gap: 1rem;
   }
   & h3 {
     margin: 0px;

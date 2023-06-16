@@ -10,9 +10,9 @@
 <h3>What does it do?</h3>
 <p>
 
-  - Provides a means to contact me
-  - To display my skills and previous projects
-  - To allow me to be explore my more artistic side
+  - Show case my projects 
+  - Provide a method of contact  
+  - To allow me to be explore my more artistic side and give a brief background
 </p>
 
 <div style='display: flex; gap:0'>
