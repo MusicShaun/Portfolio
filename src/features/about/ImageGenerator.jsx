@@ -1,4 +1,4 @@
-import {AdvancedImage, responsive } from '@cloudinary/react';
+import {AdvancedImage, responsive, lazyload } from '@cloudinary/react';
 import React, {useState, useEffect} from 'react'
 import { Cloudinary } from '@cloudinary/url-gen';
 import { fill, scale } from '@cloudinary/url-gen/actions/resize';
@@ -49,7 +49,7 @@ function ImageGenerator({publicId, alt}) {
         cldImg={myImage}
         alt={alt} 
         plugins={imagePath === 'portfolio' ?
-          [responsive({ steps: [1200, 1600] })]
+          publicId.includes('CLOTHING') || publicId.includes('big-stage') ?  [responsive({ steps: [1200, 1600] }), lazyload] : [responsive({ steps: [1200, 1600] })] 
           : [responsive({ steps: [600, 800, 1000] })]}
         />
       )}

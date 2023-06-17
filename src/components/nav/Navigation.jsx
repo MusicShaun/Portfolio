@@ -53,7 +53,7 @@ export default function Navigation(props) {
     <UnorderedList>
     {navigationMenuArray.map((item, index) => {
       return (
-        <ListItem>
+        <ListItem key={index}>
           <Link to={item.link} style={{ textDecoration: 'none' }} onClick={hideHamburger} key={index} title={item.title} aria-label={item.ariaLabel}>
             <Icons><img src={item.image} alt={item.alt} /></Icons>
             {item.name === 'Contact'
