@@ -113,7 +113,7 @@ export default function Skills(props) {
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
         <meta property='og:title' content='See Shauns Projects' />
-        <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1680132772/columns_x8ilzq.png' />
+        <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1680132772/portfolio/columns_x8ilzq.png' />
         <meta property='og:description' content="Browse through Shaun's collection of projects. Use scroll to navigate" />
         <meta name="description" content="Browse through Shaun's collection of projects. Use scroll to navigate." />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />

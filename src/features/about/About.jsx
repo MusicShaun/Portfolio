@@ -98,7 +98,7 @@ return () => clearInterval(timer)
         <meta charSet="utf-8" />
         <title>About Shaun Pickett</title>
         <meta property="og:title" content="About Shaun Pickett" />
-        <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1685866919/eyes_tbgcjy.webp" />
+        <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1685866919/portfolio/eyes_tbgcjy.webp" />
         <meta property="og:description" content="A brief biography and information about how Shaun got into front-end development." />
         <meta name="description" content="A brief biography and information about how Shaun got into front-end development." />
         <link rel='canonical' href='https://www.shaunpickett.com/about' />
