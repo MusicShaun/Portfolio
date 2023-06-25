@@ -44,11 +44,10 @@ export default function Home (props) {
         <meta charSet="utf-8" />
         <title>Welcome to Shaun Pickett's Portfolio</title>
         <meta property='og:title' content='Welcome to Shaun Picketts Portfolio' />
-        <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio_mexfvi.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/dyneqi48f/image/upload/v1680078416/portfolio/portfolio_mexfvi.png" />
         <meta property='og:description' content='Check out my portfolio and lets build something amazing together! Hit the contacts page to reach me' />
         <meta name="description" content="Check out my portfolio and let's build something amazing together! Hit the contacts page to reach me"
         />  <link rel='canonical' href='https://www.shaunpickett.com/' />
-        <meta property='og:url' content='https://www.shaunpickett.com/' />
       </Helmet>
 
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>Welcome to Shaun's Portfolio</h1>

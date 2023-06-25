@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react'
-import { colorCream} from '../../helpers/colors';
 import { device } from '../../helpers/screenSizes';
 import ImageGenerator from '@features/about/ImageGenerator';
 import BlurbDesktop from './BlurbDesktop';
