@@ -18,9 +18,9 @@ export default function Skills(props) {
 
 
   // TRANSLATEY's THE CONTENT IF NOT === TO 0
-  function handlePageClicking() {
-    counter >= imageArray.length - 1 ? setCounter(0) : setCounter(prev => prev + 1);
-  }
+  // function handlePageClicking() {
+  //   counter >= imageArray.length - 1 ? setCounter(0) : setCounter(prev => prev + 1);
+  // }
 
   // Touch based scroll events 
   let touchStartY = 0;
@@ -113,11 +113,10 @@ export default function Skills(props) {
         <meta charSet="utf-8" />
         <title>See Shaun's Projects </title>
         <meta property='og:title' content='See Shauns Projects' />
-        <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1680132772/portfolio/columns_x8ilzq.png' />
+        <meta property='og:image' content='https://res.cloudinary.com/dyneqi48f/image/upload/v1686449078/portfolio/WEBSITE-TEMPLATE.webp' />
         <meta property='og:description' content="Browse through Shaun's collection of projects. Use scroll to navigate" />
         <meta name="description" content="Browse through Shaun's collection of projects. Use scroll to navigate." />
         <link rel='canonical' href='https://www.shaunpickett.com/projects' />
-        <meta property='og:url' content='https://www.shaunpickett.com/projects' />
       </Helmet>
 
       <h1 style={{ position: 'absolute', visibility: 'hidden' }}>View my recent projects</h1>
