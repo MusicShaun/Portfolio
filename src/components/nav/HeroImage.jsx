@@ -20,7 +20,7 @@ function HeroImage() {
       </Profile>
     </Link> 
     <Name>Shaun Pickett</Name>
-    <h3 style={{fontSize: '0.8rem'}}>Front End Developer <br />
+    <h3>Front End Developer <br />
     0412 220 332</h3>
   </Hero>  )
 }
@@ -35,8 +35,20 @@ const Hero = styled.div`
   align-items: center;
   flex-direction: column;
   color: white;
+
+
+  & h3 {
+    font-size: 0.8rem;
+  }
   ${device.mobile}{
     padding-top: 2rem;
+
+    & h2 {
+      font-size: 1.5rem;
+    }
+    & h3 {
+    font-size: 16px;
+  }
   }
 `;
 const Profile = styled.div`

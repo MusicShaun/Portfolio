@@ -159,7 +159,7 @@ const ListItem = styled.li`
     }
   ${device.mobile} {
     font-size: 1.7rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
   }
 
   & a {
