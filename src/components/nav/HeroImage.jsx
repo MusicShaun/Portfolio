@@ -48,7 +48,7 @@ const Hero = styled.div`
     }
     & h3 {
     font-size: 16px;
-  }
+    }
   }
 `;
 const Profile = styled.div`

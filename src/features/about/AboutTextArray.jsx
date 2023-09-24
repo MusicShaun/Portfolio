@@ -18,11 +18,11 @@ export const aboutTextArray = [
 
 'Now I am but a humble Padawan, on a journey to seek wisdom. ',
 
-'I hope to sit side by side with the javascript jedi\'s, building apps and games, solving problems, failing compiles, learning new tools.',
+'I hope to sit side by side with the javascript jedi\'s, crafting apps and games, solving problems, failing compiles, learning new tools.',
 
-' I didn\'t study coding at Uni or a bootcamp. I didn\'t study because a lecturer required me to complete an assignment or because my Mum said I\'d be good at it.',
+' I didn\'t begin coding because my mum said I\'d be good at it or because I thought I had to',
 
-'I study because I love this stuff.',
+'I code because I genuinely enjoy the experience.',
 
 '',
 

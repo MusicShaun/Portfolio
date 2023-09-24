@@ -62,7 +62,7 @@ export default function Skills() {
   }
   const LASTBOX = {
     subHeading: 'ACCOMPLISHMENTS',
-    list: ['At Helena College, I achieved a 250% increase in student enrollment by the third year of employment',
+    list: ['Graduate Certificate in Information Technology at QUT','At Helena College, I achieved a 250% increase in student enrollment by the third year of employment',
     'As an audio engineer I maintained consistent music clientele from around the world by repeatedly producing exceptional results and collaborating closely with clients to ensure their complete satisfaction',
       'As an artist and brand, I successfully managed global releases, national touring, marketing, and video productions through careful prioritization of tasks using S.M.A.R.T goals'
     ]

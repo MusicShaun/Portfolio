@@ -154,12 +154,12 @@ const ListItem = styled.li`
       text-align: center;
       justify-content: center;
       padding-left: 0;
-      margin-bottom: 2rem;
+      padding-bottom: 2rem;
       font-size: 1.8rem;
     }
   ${device.mobile} {
     font-size: 1.7rem;
-    margin-bottom: 0.7rem;
+    padding-bottom: 0.7rem;
   }
 
   & a {
