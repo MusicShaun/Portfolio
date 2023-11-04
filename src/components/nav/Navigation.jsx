@@ -164,8 +164,11 @@ const ListItem = styled.li`
 
   & a {
     display: flex;
+    align-items: center;
     color: inherit;
     gap: 1rem;
+    height: 100%;
+    width: 100%;
   }
   & h3 {
     margin: 0px;

@@ -6,7 +6,7 @@ const projectArray = [
     img: PROJECT_IMGS.CLOTHING_STORE, 
     alt:'MERN clothing store',
     title: 'Clothing store - WIP', 
-    text: 'Super fast, custom login, built on nextJS, MongoDb & Node', 
+    text: 'Super fast, AWS login, built on nextJS, MongoDb & Node', 
     color: '#F2BC8D', 
     url: 'https://www.shaunysshop.com/',
     sandbox: 'https://codesandbox.io/p/github/MusicShaun/eCommerce-frontend/main?file=%2FREADME.md&workspace=%257B%2522activeFilepath%2522%253A%2522%252FREADME.md%2522%252C%2522openFiles%2522%253A%255B%2522%252FREADME.md%2522%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clgfsk072000x3b6l3f3g19vp%2522%253A%257B%2522key%2522%253A%2522clgfsk072000x3b6l3f3g19vp%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522clgga55xj00co3b6lpb9xcmmr%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522key%2522%253A%2522clgga54w6009g3b6le68mdu1e%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clgfsk072000x3b6l3f3g19vp%2522%252C%2522spacesOrder%2522%253A%255B%2522clgfsk072000x3b6l3f3g19vp%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D'
@@ -58,13 +58,6 @@ const projectArray = [
     text: 'Among the first websites I\'d created, this is my current Mastering business.', 
     color: '#FFE07B', 
     url: 'https://www.digital-bath-studio.com/'
-}, 
-  {
-    id: 7, img: PROJECT_IMGS.BANANA, alt: 'banana store',
-    title: 'Banana Store', 
-    text: 'React store with a mock product api and Stripe payment.', 
-    color: '#F4A86A', 
-    url: 'https://playful-pudding-43fa23.netlify.app'
 }
 ,
 

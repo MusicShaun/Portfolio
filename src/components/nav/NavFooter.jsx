@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorBlack, colorSand, colorWhite } from '../../helpers/colors';
+import {colorSand, colorWhite } from '../../helpers/colors';
 import React from 'react'
 import {device} from '../../helpers/screenSizes';
 
@@ -73,7 +73,6 @@ const FootList = styled.a`
     width: 32px;
     height: 32px;
     filter: invert(100%);
-    
   }
   &:hover {
     background-color: ${colorSand}; 
@@ -81,11 +80,10 @@ const FootList = styled.a`
   &:hover:after {
     opacity: 1;  
     transform: scale(1.12);
+
     transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
   }
   &:hover img {
-    stroke: ${colorBlack};
-    color: ${colorBlack};
-    
+    filter: invert(20%);
   }
 `;

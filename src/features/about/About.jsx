@@ -186,6 +186,7 @@ const FixedUpBtn = styled.button`
   justify-content: center;
   align-items: center;
   background: rgba(255,255,255, 0.5);
+  cursor: pointer;
   & div {
     display: flex;
     width: 33%;
@@ -224,6 +225,7 @@ const FixedDownBtn = styled.button`
   justify-content: center;
   align-items: center;
   background: rgba(255,255,255, 0.5);
+  cursor: pointer;
   & div {
     display: flex;
     width: 33%;
