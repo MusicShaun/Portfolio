@@ -80,7 +80,7 @@ const Showcase = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    max-width: none;
+    max-width: 95%;
     border-radius: 10px ;
     top: 0;
     background-position: 0%;

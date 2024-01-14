@@ -13,7 +13,14 @@ const projectArray = [
 
   },
   {
-    id: 1, img: PROJECT_IMGS.MERN_BLOG, alt: 'mern stack blog',
+    id: 1, img: PROJECT_IMGS.BREWTIFUL, alt: 'Coffee Bean Store',
+    title: 'Brewtiful Coffee Store', 
+    text: 'Made with SQLite, Flask, Jinja, Bootstrap, and Python. ', 
+    color: '#90ABD1', 
+    url: 'https://flaskapp-shaun-04f1e4731a00.herokuapp.com/'
+  },
+  {
+    id: 2, img: PROJECT_IMGS.MERN_BLOG, alt: 'mern stack blog',
     title: 'MERN stack', 
     text: 'Very nice RTK, user authentication, tidy Node server', 
     color: '#F2BC8D', 
@@ -22,7 +29,7 @@ const projectArray = [
 
   },
   {
-    id: 2, img: PROJECT_IMGS.SWEARDLE, alt: 'wordle with profanity',
+    id: 3, img: PROJECT_IMGS.SWEARDLE, alt: 'wordle with profanity',
     title: 'M15+', 
     text: 'Wordle with profanity? ', 
     color: '#98D0DF', 
@@ -30,7 +37,7 @@ const projectArray = [
     sandbox: 'https://codesandbox.io/p/github/MusicShaun/wordle-imitation/master?file=%2FREADME.md&workspace=%257B%2522activeFilepath%2522%253A%2522%252FREADME.md%2522%252C%2522openFiles%2522%253A%255B%2522%252FREADME.md%2522%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522clggb0b7t000x3b6lc5lzmujj%2522%253A%257B%2522key%2522%253A%2522clggb0b7t000x3b6lc5lzmujj%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%257B%2522key%2522%253A%2522clggb0b7v000y3b6lr8qtuu9g%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Afalse%257D%255D%257D%257D%252C%2522currentSpace%2522%253A%2522clggb0b7t000x3b6lc5lzmujj%2522%252C%2522spacesOrder%2522%253A%255B%2522clggb0b7t000x3b6lc5lzmujj%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D'
   },
   {
-    id: 3, img: PROJECT_IMGS.WEBSITE_TEMPLATE, alt: 'beautiful website design',
+    id: 4, img: PROJECT_IMGS.WEBSITE_TEMPLATE, alt: 'beautiful website design',
     title: 'Website Template', 
     text: 'Custom template with NextJS and redux toolkit', 
     color: '#F2BC8D', 
@@ -39,21 +46,21 @@ const projectArray = [
 
   }, 
   {
-    id: 4, img:PROJECT_IMGS.MORAL_QUIZ , alt: 'quiz app',
+    id: 5, img:PROJECT_IMGS.MORAL_QUIZ , alt: 'quiz app',
     title: 'Quiz', 
     text: 'State. Many, many states.', 
     color: '#F4A86A', 
     url: 'https://elegant-pony-0acf58.netlify.app/'
 }, 
   {
-    id: 5, img: PROJECT_IMGS.TODO_LIST, alt: 'todo list',
+    id: 6, img: PROJECT_IMGS.TODO_LIST, alt: 'todo list',
     title: 'Todo List', 
     text: 'Simple array manipulation with local storage.', 
     color: '#90ABD1', 
     url: 'https://marvelous-kheer-2d615e.netlify.app/'
 } ,
   {
-    id: 6, img: PROJECT_IMGS.MASTERING, alt: 'mastering website',
+    id: 7, img: PROJECT_IMGS.MASTERING, alt: 'mastering website',
     title: 'Mastering Website', 
     text: 'Among the first websites I\'d created, this is my current Mastering business.', 
     color: '#FFE07B', 
@@ -64,3 +71,5 @@ const projectArray = [
 ]; 
 
 export default projectArray
+
+
