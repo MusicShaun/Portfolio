@@ -169,6 +169,9 @@ const ListItem = styled.li`
     gap: 1rem;
     height: 100%;
     width: 100%;
+    ${device.mobile} {
+    justify-content: center;
+  }
   }
   & h3 {
     margin: 0px;
@@ -176,9 +179,7 @@ const ListItem = styled.li`
     line-height: 1;
     margin-top: 6px;
   }
-  ${device.mobile} {
-    justify-content: center;
-  }
+
 `;
 const Icons = styled.div`
 position: relative;
