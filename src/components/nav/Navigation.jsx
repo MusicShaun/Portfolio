@@ -176,6 +176,9 @@ const ListItem = styled.li`
     line-height: 1;
     margin-top: 6px;
   }
+  ${device.mobile} {
+    justify-content: center;
+  }
 `;
 const Icons = styled.div`
 position: relative;
