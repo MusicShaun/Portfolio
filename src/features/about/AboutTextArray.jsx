@@ -20,9 +20,9 @@ export const aboutTextArray = [
 
 'I hope to sit side by side with the javascript jedi\'s, building networks, solving problems, failing compiles, learning new tools.',
 
-'It's a good experience transitioning careers. ',
+'It\'s a good experience transitioning careers. ',
 
-'I am now on the job hunt. Please don't hesitate to say hello. ',
+'I am now on the job hunt. Please don\'t hesitate to say hello. ',
 
 '',
 
