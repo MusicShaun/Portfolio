@@ -68,13 +68,14 @@ const Profile = styled.div`
     }
 
   & img {
-    width: 140%;
-    height: 140%;
-    transform: translate(-10px, 0px);
+    width: 120%;
+    height: 120%;
+    transform: translate(-14px, 0px);
 
     ${device.laptopL} {
       width: 13rem; 
       height: 13rem; 
+      transform: translate(-16px, 0px);
     }
 
     ${device.tablet} {
