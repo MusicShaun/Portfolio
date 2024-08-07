@@ -83,8 +83,9 @@ const Profile = styled.div`
       height: 16em; 
     }
     ${device.mobile} {
-      width: 11rem; 
-      height: 11rem; 
+      width: 10.4rem; 
+      height: 10.4rem; 
+      transform: translate(-18px, -4px);
     }
   }
 `;
