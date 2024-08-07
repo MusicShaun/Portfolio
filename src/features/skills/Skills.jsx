@@ -18,27 +18,55 @@ export default function Skills() {
   const LIGHTBLUE = 'hsl(193,60%,78%)';
   const LIGHTORANGE = 'hsl(28,90%,80%)';
 
-  const SKILLSBOX = {
-    heading: 'Skills',
-    subHeading: [
-      'LANGUAGES', 'FRAMEWORKS', 'LIBRARIES', 'OTHER',
-    ],
-    list: [
-      ['HTML', 'CSS', 'Javascript', 'NodeJS'],
-      ['React', 'Vue'],
-      ['RTK-Query', 'NextJS'],
-      ['MongoDb','RESTful API\'s', 'Typescript' ,'Responsive Design'],
-      ['']
-    ],
-  }
   const INTROBOX = {
     subHeading: ['PROFESSIONAL SUMMARY'],
-    list: [`         I am a passionate and collaborative team player with strong communication skills.
-    My secret power is motivation!
-    Learning new technologies and approaches has always been a joy for me. `,`
-    Currently, I'm looking for a role where I can continue to grow and build my long term career. `
+    list: [`Passionate and collaborative IT professional with strong communication skills and a 
+      knack for motivation. Eager to leverage my diverse skill set in a dynamic role where I 
+      can continue to grow and build a long-term career.`
     ],
   }
+
+  const SKILLSBOX = {
+    title: [
+      'IT SUPPORT & NETWORKING', 'FRONTEND DEVELOPMENT', 'RECENT CERTIFICATIONS'
+    ],
+    subHeading: [
+      [
+        'HARDWARE', "OPERATING SYSTEMS", 'NETWORKING', 'SECURITY', 'TROUBLESHOOTING', 'OPERATIONAL PROCEDURES'
+      ],
+      [
+        'LANGUAGES', 'LIBRARIES', 'FRAMEWORKS', 'DATABASES',
+      ],
+      [
+        'QUEENSLAND UNIVERSITY OF TECHNOLOGY', 
+        'COMPTIA', 
+        'COMPTIA', 
+      ]
+    ],
+    list: [
+      [
+        ['Installation, configuration, and troubleshooting of PCs, laptops, mobiles'],
+        ['Windows, macOS installation, configuration, and management'],
+        ['TCP/IP, DNS, DHCP, and wireless protocols;'],
+        ['Basic security measures, understanding and troubleshooting security issues'],
+        ['Identifying and resolving software issues, maintaining operating systems'],
+        ['Best practices in documentation, safety procedures, and environmental impacts']
+      ],
+      [
+        ['HTML, CSS, Javascript, NodeJS'],
+        ['React, Vue'],
+        ['TypeScript, RTK, NextJS'],
+        ['MongoDb, RESTful API\'s'],
+      ],
+      [
+        ['Post-gradudate Certificate in ICT'],
+        ['Network+'],
+        ['A+']
+      ]
+    ],
+    
+  }
+
   const ABOUTBOX = {
     subHeading: [
       'PROFESSIONAL EXPERIENCE'
@@ -62,9 +90,11 @@ export default function Skills() {
   }
   const LASTBOX = {
     subHeading: 'ACCOMPLISHMENTS',
-    list: ['Graduate Certificate in Information Technology at QUT','At Helena College, I achieved a 250% increase in student enrollment by the third year of employment',
-    'As an audio engineer I maintained consistent music clientele from around the world by repeatedly producing exceptional results and collaborating closely with clients to ensure their complete satisfaction',
-      'As an artist and brand, I successfully managed global releases, national touring, marketing, and video productions through careful prioritization of tasks using S.M.A.R.T goals'
+    list: ['18 months full-time frontend development home study with deployment of various websites and technologies', 
+      'Achieved a 250% increase in student enrollment by the third year of employment at Helena College.', 
+      'Maintained a consistent global music clientele by producing exceptional results and collaborating closely with clients. ',
+      'Successfully managed global releases, national touring, marketing, and video productions through careful prioritization of tasks using S.M.A.R.T goals.'
+      
     ]
   }
 
@@ -97,45 +127,79 @@ export default function Skills() {
             )
             })}
           </UL>
-        </Containers>
-
-        <Containers style={{backgroundColor: LIGHTBLUE, width: '100%', marginLeft: '0%' }}>
-          {SKILLSBOX.subHeading.map((heading, index) => {  //MAP THE SUB HEADINGS 
-            return (
-              <UL key={index + 200}>
-                <SubHeading>{heading}</SubHeading>
-                {SKILLSBOX.list[index].map((item, index) => {  // MAP THE LIST ARRAY
-                return (
-                  <LI key={index + 400}><span>{item}</span></LI>
-                )
-              })}
-              </UL>
-            )
-          })}
-        </Containers>
+          </Containers>
           
-        <Containers style={{ backgroundColor: ORANGE, width: '100%', marginLeft: '0%'}}>
-          <PDFWrap>
-            <PDFPreview src={PDFIcon} alt='Download PDF'></PDFPreview> 
-          </PDFWrap>
-            <DownloadBtn>
-              <a title='Click here to download my resume as a PDF'
-                href='https://drive.google.com/file/d/1wTvSvoMMDYt7WUYRGqbRXEotUnlJlKSo/view?usp=sharing'
-                download='SHAUN-PICKETT-RESUME'
-                target="_blank" 
-                rel='noreferrer'
-                aria-label="Download my resume as a PDF"
-              >
-                Download Resume as PDF
-            </a></DownloadBtn>
-        </Containers> 
+        {/*! CERTIFICATIONS  */}
+        <Containers style={{backgroundColor: LIGHTBLUE, width: '100%', marginLeft: '0%' }}>
+              <UL key={0 + 200}>
+                <SubHeading>{SKILLSBOX.title[2]}</SubHeading>
+                {SKILLSBOX.subHeading[2].map((item, listNo) => {
+                  return (
+                    <div>
+                      <LI key={listNo + 400}>
+                      <Title  style={{marginTop: '1rem'}}>{item}</Title> 
+                        <span>
+                          {SKILLSBOX.list[2][listNo]}
+                      </span>
+                      </LI>
+                      </div>
+                    )
+                  })
+                }
+              </UL>
+          </Containers>
+
+          {/* NETWORKING  */}
+        <Containers style={{backgroundColor: ORANGE, width: '100%', marginLeft: '0%' }}>
+              <UL key={0 + 200}>
+                <SubHeading>{SKILLSBOX.title[0]}</SubHeading>
+                {SKILLSBOX.subHeading[0].map((item, listNo) => {
+                  return (
+                    <div>
+                      <LI key={listNo + 400}>
+                      <Title  style={{marginTop: '1rem'}}>{item}</Title> 
+                        <span>
+                          {SKILLSBOX.list[0][listNo]}
+                      </span>
+                      </LI>
+                      </div>
+                    )
+                  })
+                }
+              </UL>
+          </Containers>
+          
+
+
       </Box>
         
 
 
 {/* //* RIGHT HAND SIDE  */}
-      <Box>
-        <Containers style={{ backgroundColor: LIGHTORANGE }}>  
+        <Box>
+          
+          {/* FRONT END DEV */}
+          <Containers style={{backgroundColor: DARKBLUE, width: '100%', marginLeft: '0%' }}>
+              <UL key={0 + 200}>
+                <SubHeading>{SKILLSBOX.title[1]}</SubHeading>
+                {SKILLSBOX.subHeading[1].map((item, listNo) => {
+                  return (
+                    <div>
+                      <LI key={listNo + 400}>
+                      <Title  style={{marginTop: '1rem'}}>{item}</Title> 
+                        <span>
+                          {SKILLSBOX.list[1][listNo]}
+                      </span>
+                      </LI>
+                      </div>
+                    )
+                  })
+                }
+              </UL>
+          </Containers>
+
+        {/* PROFESSIONAL CAREER */}
+        {/* <Containers style={{ backgroundColor: DARKBLUE }}>  
           {ABOUTBOX.title.map((heading, index) => {  //MAP THE SUB HEADINGS 
             return (
               <UL key={index + 100}>
@@ -150,9 +214,9 @@ export default function Skills() {
                   </UL>
                 )
               })}
-        </Containers>
+        </Containers> */}
     
-        <Containers style={{backgroundColor: DARKBLUE}}>
+        <Containers style={{backgroundColor: YELLOW}}>
           <UL >
             <SubHeading style={{marginBottom: '1rem'}}>{LASTBOX.subHeading}</SubHeading>
               {LASTBOX.list.map((item, index) => {  // MAP THE LIST ARRAY
@@ -162,6 +226,22 @@ export default function Skills() {
             })}
             </UL>
           </Containers>
+
+          <Containers style={{ backgroundColor: LIGHTBLUE, width: '100%', marginLeft: '0%'}}>
+          <PDFWrap>
+            <PDFPreview src={PDFIcon} alt='Download PDF'></PDFPreview> 
+          </PDFWrap>
+            <DownloadBtn>
+              <a title='Click here to download my resume as a PDF'
+                href='https://drive.google.com/file/d/1wTvSvoMMDYt7WUYRGqbRXEotUnlJlKSo/view?usp=sharing'
+                download='SHAUN-PICKETT-RESUME'
+                target="_blank" 
+                rel='noreferrer'
+                aria-label="Download my resume as a PDF"
+              >
+                Download Resume as PDF
+            </a></DownloadBtn>
+        </Containers> 
       </Box>
       </BoxWrap>
       
@@ -207,9 +287,10 @@ const Box = styled.div`
   min-height: calc(100% - 2rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 2rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 
   ${device.laptopL}{
     width: 80%;
